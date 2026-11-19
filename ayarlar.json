@@ -13,7 +13,8 @@
   "erken_dur": 1,
   "sicaklik": 0.5,
   "referans": "canli",
-  "hakem": "large-v3"
+  "hakem": "large-v3",
+  "uzatma": 1.7
  },
  "parca_en_cok_kelime": 28
 }

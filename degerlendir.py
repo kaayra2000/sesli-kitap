@@ -26,9 +26,12 @@ OLCUT = {  # ad: (alan, karşılaştırma, sınır)
     "kırpılma yok": ("kirpilma", "==", 0),
     "UTMOS ort >= 3.3": ("mos_ort", ">=", 3.3),
     "hız 11-15.5 harf/sn": ("hiz_ort", "aralik", (11, 15.5)),
+    "uzun ünlü / kısa ünlü >= 1.4": ("uzun_kisa_sonra", ">=", 1.4),
+    "tonlama insan aralığında >= %75": ("tonlama_uyum_ort", ">=", 0.75),
+    "düz cümle sonu düşüyor >= %80": ("duz_sonu_dusen", ">=", 0.8),
 }
 GECMIS_ALAN = ["whisper_cer_ort", "whisper_wer_ort", "ctc_cer_ort", "mos_ort", "yanlis", "kuyruk", "takilma",
-               "hiz_ort", "aday_ort", "sure_sn"]
+               "hiz_ort", "uzun_kisa_sonra", "tonlama_uyum_ort", "duz_sonu_dusen", "perde_std_ort", "aday_ort", "sure_sn"]
 
 
 def gecti(deger, kar, sinir) -> bool:
@@ -65,6 +68,10 @@ def main() -> None:
     satir = [f"# {hedef.name}", "", "## Ölçütler", ""]
     hepsi = True
     for ad, (alan, kar, sinir) in OLCUT.items():
+        if oz.get(alan) is None:
+            satir.append(f"- [ ] {ad}: ölçülmedi")
+            hepsi = False
+            continue
         ok = gecti(oz[alan], kar, sinir)
         hepsi &= ok
         satir.append(f"- [{'x' if ok else ' '}] {ad}: {oz[alan]}")
@@ -89,8 +96,8 @@ def main() -> None:
         satirlar = ["\t".join(["tur"] + GECMIS_ALAN + ["ayar"])]
         kayitlar = []
     if onceki:
-        satir += ["## Önceki turla fark", ""] + [f"- {k}: {onceki[k]} -> {oz[k]}" for k in GECMIS_ALAN[:8]]
-    yeni = "\t".join([hedef.name] + [str(oz[k]) for k in GECMIS_ALAN] + [json.dumps(oz["ayar"], ensure_ascii=False)])
+        satir += ["## Önceki turla fark", ""] + [f"- {k}: {onceki.get(k)} -> {oz.get(k)}" for k in GECMIS_ALAN[:12]]
+    yeni = "\t".join([hedef.name] + [str(oz.get(k)) for k in GECMIS_ALAN] + [json.dumps(oz["ayar"], ensure_ascii=False)])
     gecmis.write_text("\n".join([satirlar[0]] + ["\t".join(k) for k in kayitlar] + [yeni]) + "\n", encoding="utf-8")
     (hedef / "rapor.md").write_text("\n".join(satir) + "\n", encoding="utf-8")
     print("\n".join(satir))

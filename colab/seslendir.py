@@ -30,6 +30,8 @@ import torch
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from olcum import hata, normalize  # noqa: E402
+import tonlama  # noqa: E402
+import uzatma  # noqa: E402
 
 POCKET_REPO = "kaanhgunay/pocket-tts-tr"
 SR_OUT = 48000
@@ -49,6 +51,7 @@ VARSAYILAN = {
     "kurtarma_sicaklik": 0.35,
     "bolum_kelime": 14,    # pocket-tts sınırı 50 jeton; şapkalı Osmanlıca kelimeler çok jeton tutar
     "bolum_ara": 0.18,
+    "uzatma": 1.0,         # uzun ünlü (â î û) seste bu oranda uzatılır (uzatma.py); 1 = kapalı
 }
 SAKIN_METIN = ("Ey kardeşim, bilesin ki gönül, sevdiğinin yanında huzur bulur. "
                "Bu yol sabır ve muhabbet yoludur; acele etmeden, adım adım yürünür.")
@@ -207,7 +210,58 @@ class Hakem:
             sonuc["ctc"] = hata(hedef, ctc_metin)
             sonuc["ctc_esit"] = hata(hedef, ctc_metin, esit=True)
         sonuc["mos"] = round(self.utmos(torch.from_numpy(x16).unsqueeze(0).to(DEV)).item(), 3)
+        sonuc["_kelimeler"] = kelimeler
         return sonuc
+
+    @torch.inference_mode()
+    def emisyon(self, x16: np.ndarray) -> np.ndarray:
+        girdi = self.fe(x16, sampling_rate=16000, return_tensors="pt").input_values.to(DEV)
+        return torch.log_softmax(self.ctc(girdi).logits[0].float(), -1).cpu().numpy()
+
+    def kelimeler(self, x16: np.ndarray) -> list:
+        seg, _ = self.asr.transcribe(x16, language="tr", beam_size=5, condition_on_previous_text=False,
+                                     word_timestamps=True, vad_filter=False)
+        return [w for s in seg for w in (s.words or [])]
+
+
+INSAN_VERI = "serdarcaglar/turkish-tts-audiobooks"
+
+
+def insan_profili(hakem: Hakem, ayar: dict, cikti: Path) -> None:
+    """İnsan anlatıcı kayıtlarından tonlama özelliklerinin dağılımı (yalnız istatistik; ses saklanmaz)."""
+    import io
+
+    import soundfile as sf
+    from datasets import Audio, load_dataset
+
+    ds = load_dataset(INSAN_VERI, split="train", streaming=True)
+    sutun_ses = next(k for k, v in ds.features.items() if isinstance(v, Audio))
+    sutun_metin = next(k for k in ("text", "sentence", "transcription", "transcript", "normalized_text")
+                       if k in ds.features)
+    ds = ds.cast_column(sutun_ses, Audio(decode=False))
+    log(f"insan verisi: {INSAN_VERI}, sütunlar {list(ds.features)}")
+    kayitlar = []
+    for n, ornek in enumerate(ds):
+        if len(kayitlar) >= ayar.get("insan_n", 200) or n > 2000:
+            break
+        try:
+            a = ornek[sutun_ses]
+            x, sr = sf.read(io.BytesIO(a["bytes"])) if a.get("bytes") else sf.read(a["path"])
+            x = x.mean(1) if x.ndim > 1 else x
+            metin = str(ornek[sutun_metin]).strip()
+            if not (1.5 <= len(x) / sr <= 15) or len(metin.split()) < 3:
+                continue
+            x16 = resample(x.astype(np.float32), sr, 16000)
+            o = tonlama.ozellikler(x16, hakem.kelimeler(x16), metin)
+            if o:
+                kayitlar.append(o)
+        except Exception as e:  # noqa: BLE001
+            log(f"insan örneği {n} atlandı: {e}")
+    prof = tonlama.profil(kayitlar)
+    prof["_kaynak"] = {"veri": INSAN_VERI, "ornek": len(kayitlar)}
+    (cikti / "insan_profil.json").write_text(json.dumps(prof, ensure_ascii=False, indent=1, default=jsonla),
+                                             encoding="utf-8")
+    log("insan profili: " + json.dumps(prof, ensure_ascii=False, default=jsonla))
 
 
 def yanlis(p: dict, ayar: dict) -> bool:
@@ -227,6 +281,43 @@ def anahtar(p: dict, ayar: dict) -> tuple:
             p["bosluk"] > ayar["sessizlik_sinir"], round(p["whisper"]["cer"] + 0.5 * p.get("ctc_esit", {}).get("cer", ctc), 4), -p["mos"])
 
 
+def uzun_unlu(x, p, parca, ayar, ses, hakem):
+    """Uzun ünlüleri seste uzatır; uzatılmış ses yeniden ölçülür, yanlışa düşerse uzatılmamış ses kalır."""
+    sozluk = hakem.tok.get_vocab()
+    uzun = set(parca["uzun"])
+    sure0 = uzatma.harf_sureleri(hakem.emisyon(resample(x, ses.sr, 16000)), parca["okunus"], sozluk)
+    oran0 = uzatma.uzun_kisa_orani(sure0, parca["okunus"], uzun)
+    y = uzatma.uzat(x, ses.sr, [sure0[i] for i in uzun if i in sure0], ayar["uzatma"])
+    py = hakem.olc(y, ses.sr, parca.get("hedef", parca["okunus"]))
+    sure1 = uzatma.harf_sureleri(hakem.emisyon(resample(y, ses.sr, 16000)), parca["okunus"], sozluk)
+    oran1 = uzatma.uzun_kisa_orani(sure1, parca["okunus"], uzun)
+    if yanlis(py, ayar) and not yanlis(p, ayar):
+        return x, {**p, "uzatma": {"oran_once": oran0, "oran_sonra": oran1, "uygulandi": False}}
+    return y, {**py, "uzatma": {"oran_once": oran0, "oran_sonra": oran1, "uygulandi": True,
+                                 "cer_once": p["whisper"]["cer"]}}
+
+
+def tonlama_ozet(rapor: list) -> dict:
+    t = [r.get("tonlama", {}) for r in rapor]
+    duz = [x["son_egim"] for x in t if x.get("bitis") == "duz" and "son_egim" in x]
+    soru = [x["son_egim"] for x in t if x.get("bitis") == "soru" and "son_egim" in x]
+    uyum = [x["tonlama_uyum"] for x in t if x.get("tonlama_uyum") is not None]
+    return {"perde_std_ort": round(float(np.mean([x["perde_std"] for x in t if "perde_std" in x] or [0])), 2),
+            "duz_sonu_dusen": round(sum(e < 0 for e in duz) / len(duz), 3) if duz else None,
+            "soru_sonu_yukselen": round(sum(e > 0 for e in soru) / len(soru), 3) if soru else None,
+            "tonlama_uyum_ort": round(float(np.mean(uyum)), 3) if uyum else None,
+            **uzatma_ozet(rapor)}
+
+
+def uzatma_ozet(rapor: list) -> dict:
+    u = [r["uzatma"] for r in rapor if r.get("uzatma")]
+    once = [x["oran_once"] for x in u if x.get("oran_once")]
+    sonra = [x["oran_sonra"] for x in u if x.get("oran_sonra") and x.get("uygulandi")]
+    return {"uzun_kisa_once": round(float(np.mean(once)), 3) if once else None,
+            "uzun_kisa_sonra": round(float(np.mean(sonra)), 3) if sonra else None,
+            "uzatma_geri_alinan": sum(not x.get("uygulandi") for x in u)}
+
+
 def jsonla(o):
     return o.item() if hasattr(o, "item") else str(o)
 
@@ -242,6 +333,13 @@ def main() -> None:
     cikti = HERE / "cikti"
     (cikti / "secilen").mkdir(parents=True, exist_ok=True)
     t0 = time.time()
+    if is_.get("mod") == "insan":
+        insan_profili(Hakem(ayar), ayar, cikti)
+        (cikti / "sonuc.json").write_text(json.dumps({"ozet": {"mod": "insan"}, "parcalar": []}), encoding="utf-8")
+        return
+    prof_yol = HERE / "referans/insan_profil.json"
+    prof = {k: v for k, v in json.loads(prof_yol.read_text(encoding="utf-8")).items() if not k.startswith("_")} \
+        if prof_yol.exists() else None
     ses = Ses(ayar, cikti)
     hakem = Hakem(ayar)
     ref = ses.referans_kur(hakem)
@@ -254,7 +352,7 @@ def main() -> None:
             t1 = time.time()
             x = ses.soyle(parca["okunus"], tohum)
             t2 = time.time()
-            p = hakem.olc(x, ses.sr, parca["okunus"])
+            p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
             t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
             adaylar.append((p, tohum, x))
             if sum(temiz(a[0], ayar) for a in adaylar) >= ayar["erken_dur"]:
@@ -266,7 +364,7 @@ def main() -> None:
                 t1 = time.time()
                 x = ses.soyle(parca["okunus"], tohum)
                 t2 = time.time()
-                p = hakem.olc(x, ses.sr, parca["okunus"])
+                p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
                 t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
                 adaylar.append((p, tohum, x))
                 if temiz(p, ayar):
@@ -274,7 +372,18 @@ def main() -> None:
             ses.model.temp = ayar["sicaklik"]
         p, tohum, x = min(adaylar, key=lambda a: anahtar(a[0], ayar))
         x = x * min(1.0, 0.9 / max(1e-6, float(np.abs(x).max())))  # tepe -1 dBFS altı (son ses ayrıca loudnorm'dan geçer)
+        if ayar["uzatma"] > 1 and parca.get("uzun") and hakem.ctc is not None:
+            x, p = uzun_unlu(x, p, parca, ayar, ses, hakem)
         p = {**p, "tepe_ham": p["tepe"], "tepe": round(float(np.abs(x).max()), 3)}
+        try:
+            p["tonlama"] = tonlama.ozellikler(resample(x, ses.sr, 16000), p["_kelimeler"], parca["okunus"])
+            if prof:
+                p["tonlama"].update(tonlama.puan(p["tonlama"], prof))
+        except Exception as e:  # noqa: BLE001
+            log(f"tonlama ölçülemedi: {e}")
+        p.pop("_kelimeler", None)
+        for a in adaylar:
+            a[0].pop("_kelimeler", None)
         x48 = resample(x, ses.sr, SR_OUT)
         wav_yaz(cikti / "secilen" / f"{parca['id']}.wav", x48, SR_OUT)
         iz.append((parca, x48))
@@ -303,6 +412,7 @@ def main() -> None:
         "hiz_ort": round(float(np.mean([r["hiz"] for r in rapor])), 2),
         "aday_ort": round(float(np.mean([r["aday_sayisi"] for r in rapor])), 2),
         "sure_sn": round(time.time() - t0),
+        **tonlama_ozet(rapor),
         "ctc_hakem": getattr(hakem, "ctc_ad", None), "ayar": ayar,
     }
     (cikti / "sonuc.json").write_text(json.dumps({"ozet": ozet, "parcalar": rapor}, ensure_ascii=False, indent=1, default=jsonla),

@@ -1,0 +1,17 @@
+{
+ "aciklama": "Uzun ünlü (â î û) deneyi: aynı cümle şapkasız, şapkalı ve çift ünlüyle; doğruluk ve süre karşılaştırılır.",
+ "varyantlar": ["kaldir", "koru", "cift"],
+ "ayar": {"aday": 4, "erken_dur": 99, "kurtarma_aday": 0},
+ "cumleler": [
+  {"id": "u01", "metin": "Kur’ân-ı Kerîm’in âyetlerini te’emmül eden mü’min, hakîkati anlar."},
+  {"id": "u02", "metin": "Rahmân ve Rahîm olan Allâh’ın adıyla."},
+  {"id": "u03", "metin": "Bu hakîkat Kur’ân-ı Kerîm’de beyân buyurulmuşdur."},
+  {"id": "u04", "metin": "Îmân nûrdur, kalbe Allâh’dan gelir."},
+  {"id": "u05", "metin": "Mâdâm ki siz rızâ-yı Allâh içün muhabbet esâsına müsteniden benim ile arkadaşlığı taleb ediyorsunuz."},
+  {"id": "u06", "metin": "Kemâl-i tekrîm ve teşrîf içün bütün enbiyâ ve mürselîni Allâh Te‘âlâ bu dâra da‘vet ediyor."},
+  {"id": "u07", "metin": "Ve sıfâtının zılâlinin ğâyet-i tenezzülâtı olan ve dâ’ire-i vücûb-ı zıllînin mebdei bulunan makâma duhûl eyler."},
+  {"id": "u08", "metin": "Sünnet ve ‘âdet-i İlâhiyye böyle câridir."},
+  {"id": "u09", "metin": "Zîrâ kişi sevdiği ile dünyâ ve âhiretde berâberdir."},
+  {"id": "u10", "metin": "Hamd, yüce ve en yüce olan Allâh’adır."}
+ ]
+}

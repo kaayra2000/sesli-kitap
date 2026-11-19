@@ -40,8 +40,12 @@ def main() -> None:
     p.add_argument("parcalar", type=Path)
     p.add_argument("-o", "--cikti", type=Path, required=True)
     p.add_argument("--tohum", type=int, default=7)
+    p.add_argument("--haric", type=Path, help="bu kümedeki cümleleri alma (doğrulama kümesi için)")
+    p.add_argument("--zor-yok", action="store_true", help="elle yazılmış zor cümleleri ekleme")
     a = p.parse_args()
-    parcalar = [x for x in json.loads(a.parcalar.read_text(encoding="utf-8")) if x["tur"] == "paragraf"]
+    haric = {t["id"].removeprefix("kitap-") for t in json.loads(a.haric.read_text(encoding="utf-8"))} if a.haric else set()
+    parcalar = [x for x in json.loads(a.parcalar.read_text(encoding="utf-8"))
+                if x["tur"] == "paragraf" and x["id"] not in haric]
     rnd = random.Random(a.tohum)
     katman = {"kisa": (1, 8, 10), "orta": (9, 20, 18), "uzun": (21, 99, 10)}
     secilen = []
@@ -52,7 +56,8 @@ def main() -> None:
         for x in rnd.sample(ust_yari, adet // 2) + rnd.sample(havuz, adet - adet // 2):
             if x["id"] not in {s["id"] for s in secilen}:
                 secilen.append({"id": f"kitap-{x['id']}", "katman": ad, "sayfa": x["sayfa"], "metin": x["metin"]})
-    secilen += [{"id": k, "katman": "zor", "sinar": n, "metin": m} for k, m, n in ZOR]
+    if not a.zor_yok:
+        secilen += [{"id": k, "katman": "zor", "sinar": n, "metin": m} for k, m, n in ZOR]
     a.cikti.write_text(json.dumps(secilen, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{len(secilen)} test cümlesi -> {a.cikti}")
 

@@ -27,19 +27,31 @@ KELIME_DK = 125
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("mod", choices=["test", "ornek"])
+    p.add_argument("mod", choices=["test", "ornek", "deney", "insan"])
     p.add_argument("--tur", type=int, default=0)
     p.add_argument("--bas", default="b0008-c00")
     p.add_argument("--sn", type=float, default=110)
+    p.add_argument("--kume", default="test/test_kumesi.json", help="test modunda cümle kümesi")
+    p.add_argument("--ad", default="tur", help="konu adı öneki (tur, dogrulama)")
     a = p.parse_args()
     ayarlar = json.loads((KOK / "ayarlar.json").read_text(encoding="utf-8"))
     sozluk = sozluk_yukle()
 
     if a.mod == "test":
-        konu = f"tur{a.tur:02d}"
-        test = json.loads((KOK / "test/test_kumesi.json").read_text(encoding="utf-8"))
+        konu = f"{a.ad}{a.tur:02d}"
+        test = json.loads((KOK / a.kume).read_text(encoding="utf-8"))
         parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "ara": 0.5} for t in test]
+    elif a.mod == "insan":
+        konu, parcalar = "insan", []
+    elif a.mod == "deney":
+        # Uzun ünlü deneyi: her cümle her şapka biçimiyle; hakem metnin aslıyla (hedef) karşılaştırır.
+        konu = f"deney{a.tur:02d}"
+        deney = json.loads((KOK / "test/uzatma_deneyi.json").read_text(encoding="utf-8"))
+        parcalar = [{"id": f"{t['id']}-{v}", "metin": t["metin"], "hedef": t["metin"], "ara": 0.5,
+                     "okunus": okunus(t["metin"], sozluk, {**ayarlar["okunus"], "sapka": v})}
+                    for t in deney["cumleler"] for v in deney["varyantlar"]]
+        ayarlar["seslendirme"] = {**ayarlar["seslendirme"], **deney["ayar"]}
     else:
         konu = f"ornek{a.tur:02d}"
         hepsi = hazirla(KITAP.read_text(encoding="utf-8"), ayarlar["parca_en_cok_kelime"], ayarlar["okunus"])
@@ -50,15 +62,20 @@ def main() -> None:
             kelime += len(x["okunus"].split())
             if kelime / KELIME_DK * 60 >= a.sn:
                 break
+    # Uzun ünlü indeksleri: şapkalı okunuşla karşılaştırılır (şapka 1:1 harf, uzunluk aynı).
+    for x in parcalar:
+        sapkali = okunus(x["metin"], sozluk, {**ayarlar["okunus"], "sapka": "koru"})
+        if len(sapkali) == len(x["okunus"]):
+            x["uzun"] = [i for i, (a, b) in enumerate(zip(x["okunus"], sapkali)) if a != b]
     is_ = {"konu": konu, "mod": a.mod, "ayar": ayarlar["seslendirme"], "parcalar": parcalar}
     hedef = KOK / "dist" / f"is-{konu}.zip"
     hedef.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(hedef, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("is.json", json.dumps(is_, ensure_ascii=False, indent=1))
-        for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py"]:
+        for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py", "colab/tonlama.py", "colab/uzatma.py"]:
             if (KOK / f).exists():
                 z.write(KOK / f, Path(f).name)
-        for f in sorted((KOK / "referans").glob("*.wav")):
+        for f in sorted((KOK / "referans").glob("*.wav")) + sorted((KOK / "referans").glob("*.json")):
             z.write(f, f"referans/{f.name}")
     print(f"{hedef}  ({len(parcalar)} parça)")
 

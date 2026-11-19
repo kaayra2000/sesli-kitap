@@ -16,7 +16,7 @@ HERE = Path(__file__).resolve().parent
 
 AYARLAR = {
     # Varsayılan: Osmanlıca bilen bir okuyucu gibi, kelime değiştirmeden (kullanıcı kararı, 2026-11-19).
-    "sapka": "koru",          # â î û: "koru" (uzun ünlü) ya da "kaldir"
+    "sapka": "koru",          # â î û: "koru" (uzun ünlü), "kaldir" ya da "cift" (â -> aa: Kur’ân -> Kuraan)
     "gayn": True,             # ğ (gayn) -> g: ğâyet -> gâyet (TTS "ğ"yi yumuşak g gibi yutar)
     "tire_birlestir": True,   # fi’l-hakîka -> filhakîka, mertebe-i ‘azîmet -> mertebei azîmet
     "izafet_y": True,         # ünlüden sonra izafet: mertebe-i -> mertebeyi, Hudâ-ı -> Hudâyı (okuyucunun y kayması)
@@ -142,6 +142,8 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
             w = re.sub(r"([iıîİ])yy([eaâ])", r"\1y\2", w)
         if a["ünsüz_benzesme"]:
             w = benzesme(w)
+        if a["sapka"] == "cift":
+            w = re.sub(r"[âîûÂÎÛ]", lambda m: {"â": "aa", "î": "ii", "û": "uu", "Â": "Aa", "Î": "İi", "Û": "Uu"}[m.group(0)], w)
         if a["sapka"] == "kaldir":
             w = w.translate(str.maketrans("âîûÂÎÛ", "aiuAİU"))
         return w
