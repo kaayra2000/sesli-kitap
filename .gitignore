@@ -1,0 +1,7 @@
+dist/
+iterasyonlar/*/
+!iterasyonlar/gecmis.tsv
+kitaplar/*/parcalar.json
+__pycache__/
+*.pyc
+.playwright-mcp/

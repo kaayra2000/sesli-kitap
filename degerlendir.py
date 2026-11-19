@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+"""
+Colab çıktısını açar, başarı ölçütlerine göre değerlendirir, en kötü parçaları ve önceki turla farkı yazar.
+
+  python3 degerlendir.py <cikti-turNN.zip> [--tur N]
+
+Çıktı: iterasyonlar/turNN/ (açılmış çıktı + rapor.md), iterasyonlar/gecmis.tsv (tur başına bir satır).
+"""
+import argparse
+import json
+import zipfile
+from pathlib import Path
+
+KOK = Path(__file__).resolve().parent
+OLCUT = {  # ad: (alan, karşılaştırma, sınır)
+    "yanlış kelimeli parça yok": ("yanlis", "==", 0),
+    "ortalama Whisper CER <= %1.5": ("whisper_cer_ort", "<=", 0.015),
+    "kuyruk (ses artığı) yok": ("kuyruk", "==", 0),
+    "takılma (uzun sessizlik) yok": ("takilma", "==", 0),
+    "kırpılma yok": ("kirpilma", "==", 0),
+    "UTMOS ort >= 3.3": ("mos_ort", ">=", 3.3),
+    "hız 11-15.5 harf/sn": ("hiz_ort", "aralik", (11, 15.5)),
+}
+GECMIS_ALAN = ["whisper_cer_ort", "whisper_wer_ort", "ctc_cer_ort", "mos_ort", "yanlis", "kuyruk", "takilma",
+               "hiz_ort", "aday_ort", "sure_sn"]
+
+
+def gecti(deger, kar, sinir) -> bool:
+    return {"==": deger == sinir, "<=": deger <= sinir, ">=": deger >= sinir,
+            "aralik": sinir[0] <= deger <= sinir[1] if kar == "aralik" else False}[kar]
+
+
+def main() -> None:
+    p = argparse.ArgumentParser()
+    p.add_argument("cikti", type=Path)
+    p.add_argument("--tur", type=int)
+    a = p.parse_args()
+    tur = a.tur if a.tur is not None else int("".join(c for c in a.cikti.stem if c.isdigit()) or 0)
+    hedef = KOK / "iterasyonlar" / a.cikti.stem.replace("cikti-", "")
+    if a.cikti.suffix == ".zip":
+        hedef.mkdir(parents=True, exist_ok=True)
+        zipfile.ZipFile(a.cikti).extractall(hedef)
+    else:
+        hedef = a.cikti
+    veri = json.loads((hedef / "sonuc.json").read_text(encoding="utf-8"))
+    oz, parcalar = veri["ozet"], veri["parcalar"]
+
+    satir = [f"# {hedef.name}", "", "## Ölçütler", ""]
+    hepsi = True
+    for ad, (alan, kar, sinir) in OLCUT.items():
+        ok = gecti(oz[alan], kar, sinir)
+        hepsi &= ok
+        satir.append(f"- [{'x' if ok else ' '}] {ad}: {oz[alan]}")
+    satir += ["", f"**SONUÇ: {'BAŞARILI' if hepsi else 'DEVAM'}**", "",
+              f"CTC CER ort {oz['ctc_cer_ort']} ({oz.get('ctc_hakem')}), WER {oz['whisper_wer_ort']}, "
+              f"aday ort {oz['aday_ort']}, süre {oz['sure_sn']} sn", "",
+              "## En kötü parçalar (Whisper + 0.5 CTC)", ""]
+    kotu = sorted(parcalar, key=lambda r: -(r["whisper"]["cer"] + 0.5 * r.get("ctc", {}).get("cer", 0)))[:15]
+    for r in kotu:
+        satir += [f"### {r['id']}  CER {r['whisper']['cer']}  CTC {r.get('ctc', {}).get('cer')}  MOS {r['mos']}  "
+                  f"kuyruk {r['kuyruk']}  boşluk {r['bosluk']}  hız {r['hiz']}",
+                  f"- hedef:   {r['okunus']}", f"- whisper: {r['duyulan']}", f"- ctc:     {r.get('ctc_duyulan', '')}", ""]
+
+    gecmis = KOK / "iterasyonlar" / "gecmis.tsv"
+    onceki = None
+    if gecmis.exists():
+        satirlar = gecmis.read_text(encoding="utf-8").splitlines()
+        kayitlar = [s.split("\t") for s in satirlar[1:] if s and not s.startswith(hedef.name + "\t")]
+        if kayitlar:
+            onceki = dict(zip(satirlar[0].split("\t"), kayitlar[-1]))
+    else:
+        satirlar = ["\t".join(["tur"] + GECMIS_ALAN + ["ayar"])]
+        kayitlar = []
+    if onceki:
+        satir += ["## Önceki turla fark", ""] + [f"- {k}: {onceki[k]} -> {oz[k]}" for k in GECMIS_ALAN[:8]]
+    yeni = "\t".join([hedef.name] + [str(oz[k]) for k in GECMIS_ALAN] + [json.dumps(oz["ayar"], ensure_ascii=False)])
+    gecmis.write_text("\n".join([satirlar[0]] + ["\t".join(k) for k in kayitlar] + [yeni]) + "\n", encoding="utf-8")
+    (hedef / "rapor.md").write_text("\n".join(satir) + "\n", encoding="utf-8")
+    print("\n".join(satir))
+
+
+if __name__ == "__main__":
+    main()

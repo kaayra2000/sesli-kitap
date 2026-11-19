@@ -1,0 +1,5 @@
+{
+ "okunus": {"sapka": "kaldir", "ünsüz_benzesme": true, "eski_ekler": true, "cift_y": true, "tire_birlestir": true},
+ "seslendirme": {"aday": 6, "erken_dur": 2, "sicaklik": 0.5, "referans": "canli", "hakem": "large-v3"},
+ "parca_en_cok_kelime": 28
+}
