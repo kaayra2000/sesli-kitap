@@ -5,3 +5,4 @@ kitaplar/*/parcalar.json
 __pycache__/
 *.pyc
 .playwright-mcp/
+ornekler/

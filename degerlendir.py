@@ -16,9 +16,10 @@ KOK = Path(__file__).resolve().parent
 sys.path.insert(0, str(KOK / "metin"))
 from olcum import hata  # noqa: E402
 
-CER_SINIR = 0.03
+CER_SINIR = 0.03   # Whisper (eşitlenmiş)
+CTC_SINIR = 0.06   # CTC (eşitlenmiş); bir cümle iki hakem de hata görürse yanlış sayılır
 OLCUT = {  # ad: (alan, karşılaştırma, sınır)
-    "yanlış kelimeli parça yok": ("yanlis", "==", 0),
+    "yanlış kelimeli parça yok (Whisper > %3 ve CTC > %6)": ("yanlis", "==", 0),
     "ortalama Whisper CER <= %1.5": ("whisper_cer_ort", "<=", 0.015),
     "kuyruk (ses artığı) yok": ("kuyruk", "==", 0),
     "takılma (uzun sessizlik) yok": ("takilma", "==", 0),
@@ -54,9 +55,11 @@ def main() -> None:
     for r in parcalar:
         r.setdefault("whisper_colab", r["whisper"])
         r["whisper"] = hata(r["okunus"], r["duyulan"], esit=True)
+        r["ctc_esit"] = hata(r["okunus"], r.get("ctc_duyulan", ""), esit=True)
     oz["whisper_cer_ort"] = round(sum(r["whisper"]["cer"] for r in parcalar) / len(parcalar), 4)
     oz["whisper_wer_ort"] = round(sum(r["whisper"]["wer"] for r in parcalar) / len(parcalar), 4)
-    oz["yanlis"] = sum(r["whisper"]["cer"] > CER_SINIR for r in parcalar)
+    oz["yanlis"] = sum(r["whisper"]["cer"] > CER_SINIR and r["ctc_esit"]["cer"] > CTC_SINIR for r in parcalar)
+    oz["ctc_esit_cer_ort"] = round(sum(r["ctc_esit"]["cer"] for r in parcalar) / len(parcalar), 4)
     (hedef / "sonuc.json").write_text(json.dumps(veri, ensure_ascii=False, indent=1), encoding="utf-8")
 
     satir = [f"# {hedef.name}", "", "## Ölçütler", ""]

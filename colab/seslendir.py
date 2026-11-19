@@ -44,6 +44,9 @@ VARSAYILAN = {
     "kuyruk_sinir": 0.35,
     "sessizlik_sinir": 0.9,
     "cer_sinir": 0.03,
+    "ctc_sinir": 0.06,
+    "kurtarma_aday": 8,       # hâlâ yanlış / kuyruklu cümleye düşük sıcaklıkta ek aday
+    "kurtarma_sicaklik": 0.35,
     "bolum_kelime": 14,    # pocket-tts sınırı 50 jeton; şapkalı Osmanlıca kelimeler çok jeton tutar
     "bolum_ara": 0.18,
 }
@@ -202,8 +205,14 @@ class Hakem:
             ctc_metin = self.tok.decode(ids)
             sonuc["ctc_duyulan"] = ctc_metin
             sonuc["ctc"] = hata(hedef, ctc_metin)
+            sonuc["ctc_esit"] = hata(hedef, ctc_metin, esit=True)
         sonuc["mos"] = round(self.utmos(torch.from_numpy(x16).unsqueeze(0).to(DEV)).item(), 3)
         return sonuc
+
+
+def yanlis(p: dict, ayar: dict) -> bool:
+    """İki hakem de hata görürse yanlış: Whisper (eşitlenmiş) > cer_sinir ve CTC (eşitlenmiş) > ctc_sinir."""
+    return p["whisper"]["cer"] > ayar["cer_sinir"] and p.get("ctc_esit", {}).get("cer", 1) > ayar["ctc_sinir"]
 
 
 def temiz(p: dict, ayar: dict) -> bool:
@@ -214,8 +223,8 @@ def temiz(p: dict, ayar: dict) -> bool:
 def anahtar(p: dict, ayar: dict) -> tuple:
     """Yanlış kelime > kuyruk > takılma > (Whisper + 0.5 CTC) hata > doğallık."""
     ctc = p.get("ctc", {}).get("cer", 0)
-    return (p["whisper"]["cer"] > ayar["cer_sinir"], p["kuyruk"] > ayar["kuyruk_sinir"],
-            p["bosluk"] > ayar["sessizlik_sinir"], round(p["whisper"]["cer"] + 0.5 * ctc, 4), -p["mos"])
+    return (yanlis(p, ayar), p["kuyruk"] > ayar["kuyruk_sinir"],
+            p["bosluk"] > ayar["sessizlik_sinir"], round(p["whisper"]["cer"] + 0.5 * p.get("ctc_esit", {}).get("cer", ctc), 4), -p["mos"])
 
 
 def jsonla(o):
@@ -250,6 +259,19 @@ def main() -> None:
             adaylar.append((p, tohum, x))
             if sum(temiz(a[0], ayar) for a in adaylar) >= ayar["erken_dur"]:
                 break
+        en_iyi = min(adaylar, key=lambda a: anahtar(a[0], ayar))
+        if yanlis(en_iyi[0], ayar) or en_iyi[0]["kuyruk"] > ayar["kuyruk_sinir"]:
+            ses.model.temp = ayar["kurtarma_sicaklik"]
+            for tohum in range(100, 100 + ayar["kurtarma_aday"]):
+                t1 = time.time()
+                x = ses.soyle(parca["okunus"], tohum)
+                t2 = time.time()
+                p = hakem.olc(x, ses.sr, parca["okunus"])
+                t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
+                adaylar.append((p, tohum, x))
+                if temiz(p, ayar):
+                    break
+            ses.model.temp = ayar["sicaklik"]
         p, tohum, x = min(adaylar, key=lambda a: anahtar(a[0], ayar))
         x = x * min(1.0, 0.9 / max(1e-6, float(np.abs(x).max())))  # tepe -1 dBFS altı (son ses ayrıca loudnorm'dan geçer)
         p = {**p, "tepe_ham": p["tepe"], "tepe": round(float(np.abs(x).max()), 3)}
@@ -263,7 +285,7 @@ def main() -> None:
         (cikti / "ara-sonuc.json").write_text(json.dumps(rapor, ensure_ascii=False, default=jsonla), encoding="utf-8")
         uyari = " ".join(w for w, c in (("KUYRUK", p["kuyruk"] > ayar["kuyruk_sinir"]),
                                          ("TAKILMA", p["bosluk"] > ayar["sessizlik_sinir"]),
-                                         ("YANLIŞ", p["whisper"]["cer"] > ayar["cer_sinir"])) if c)
+                                         ("YANLIŞ", yanlis(p, ayar))) if c)
         log(f"[{i + 1}/{len(is_['parcalar'])}] {parca['id']} aday {len(adaylar)} tohum {tohum} "
             f"CER {p['whisper']['cer']:.3f} CTC {p.get('ctc', {}).get('cer', -1):.3f} MOS {p['mos']:.2f} "
             f"({p['sure']:.1f} sn ses; üretim {t_ses:.0f} sn, hakem {t_hakem:.0f} sn) {uyari}")
@@ -274,7 +296,7 @@ def main() -> None:
         "whisper_wer_ort": round(float(np.mean([r["whisper"]["wer"] for r in rapor])), 4),
         "ctc_cer_ort": round(float(np.mean([r.get("ctc", {}).get("cer", 0) for r in rapor])), 4),
         "mos_ort": round(float(np.mean([r["mos"] for r in rapor])), 3),
-        "yanlis": int(sum(r["whisper"]["cer"] > ayar["cer_sinir"] for r in rapor)),
+        "yanlis": int(sum(yanlis(r, ayar) for r in rapor)),
         "kuyruk": sum(r["kuyruk"] > ayar["kuyruk_sinir"] for r in rapor),
         "takilma": sum(r["bosluk"] > ayar["sessizlik_sinir"] for r in rapor),
         "kirpilma": sum(r["tepe"] >= 0.999 for r in rapor),

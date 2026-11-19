@@ -19,10 +19,10 @@ def normalize(text: str) -> str:
 
 
 def esitle(metin: str) -> str:
-    """Günümüz imlâsı + yazım farkları: kelime sonu çift ünsüz (Hakk/hak, hâss/has), izafet ünlüsü (huzurı/huzuru),
+    """Günümüz imlâsı + yazım farkları: çift ünsüz (Hakk/hak, hâssdır/hastır), izafet ünlüsü (huzurı/huzuru),
     eklerin kesme ve tireyle ayrılması (Ekber'den, daire-i)."""
-    t = normalize(okunus(metin.replace("-", ""), [], GUNUMUZ))
-    t = re.sub(r"([bcçdfgğhjklmnprsştvyz])\1\b", r"\1", t)
+    t = normalize(okunus(metin, [], GUNUMUZ))
+    t = re.sub(r"([bcçdfgğhjklmnprsştvyz])\1", r"\1", t)   # çift ünsüz: hâssdır/hastır, Hakk/hak
     t = re.sub(r"(?<=\w)[ıiuü]\b", "i", t)
     return t
 
