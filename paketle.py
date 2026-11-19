@@ -27,7 +27,7 @@ KELIME_DK = 125
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("mod", choices=["test", "ornek", "deney", "insan"])
+    p.add_argument("mod", choices=["test", "ornek", "deney", "insan", "yaris"])
     p.add_argument("--tur", type=int, default=0)
     p.add_argument("--bas", default="b0008-c00")
     p.add_argument("--sn", type=float, default=110)
@@ -42,6 +42,22 @@ def main() -> None:
         test = json.loads((KOK / a.kume).read_text(encoding="utf-8"))
         parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "ara": 0.5} for t in test]
+    elif a.mod == "yaris":
+        # Model yarışı: test kümesinden 12 cümle (6 kitap, 6 zor) + örnek bölümden 6 cümle; sabit ses = standarttaki
+        # temel ses (Piper Fahrettin) referansı ve metni (it_yapisi iletisim/ses/zamanli_seslendir.py REFERENCE_TEXT).
+        konu = f"yaris{a.tur:02d}"
+        test = json.loads((KOK / "test/test_kumesi.json").read_text(encoding="utf-8"))
+        secim = [t for t in test if t["katman"] in ("orta", "uzun")][:6] + [t for t in test if t["katman"] == "zor"][:6]
+        hepsi = hazirla(KITAP.read_text(encoding="utf-8"), ayarlar["parca_en_cok_kelime"], ayarlar["okunus"])
+        secim += [{"id": f"ornek-{x['id']}", "metin": x["metin"]} for x in hepsi
+                  if x["id"] in ("b0011-c00", "b0011-c03", "b0012-c00", "b0013-c01", "b0013-c09", "b0014-c01")]
+        cumleler = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
+                     "okunus_sapka": okunus(t["metin"], sozluk, {**ayarlar["okunus"], "sapka": "koru"})} for t in secim]
+        is_ = {"konu": konu, "mod": "yaris", "cumleler": cumleler, "referans": {
+            "yol": "referans/referans-temel-ses.wav",
+            "metin": "Birimler ve yöneticiler artık düzenli kartlarda, net bir ağaç yapısında görünür. "
+                     "Bir isme ya da fotoğrafa tıkladığınızda, sağda kişi kartı açılır."}}
+        parcalar = []
     elif a.mod == "insan":
         konu, parcalar = "insan", []
     elif a.mod == "deney":
@@ -62,6 +78,20 @@ def main() -> None:
             kelime += len(x["okunus"].split())
             if kelime / KELIME_DK * 60 >= a.sn:
                 break
+    if a.mod == "yaris":
+        hedef = KOK / "dist" / f"is-{konu}.zip"
+        hedef.parent.mkdir(exist_ok=True)
+        with zipfile.ZipFile(hedef, "w", zipfile.ZIP_DEFLATED) as z:
+            z.writestr("is.json", json.dumps(is_, ensure_ascii=False, indent=1))
+            for f in ["colab/seslendir.py", "colab/calistir.sh", "colab/tonlama.py", "colab/uzatma.py", "metin/okunus.py",
+                      "metin/okunus.tsv", "metin/olcum.py"]:
+                z.write(KOK / f, Path(f).name)
+            for f in sorted((KOK / "colab/yaris").glob("*")):
+                z.write(f, f"yaris/{f.name}")
+            for f in sorted((KOK / "referans").glob("*")):
+                z.write(f, f"referans/{f.name}")
+        print(f"{hedef}  ({len(is_['cumleler'])} cümle)")
+        return
     # Uzun ünlü indeksleri: şapkalı okunuşla karşılaştırılır (şapka 1:1 harf, uzunluk aynı).
     for x in parcalar:
         sapkali = okunus(x["metin"], sozluk, {**ayarlar["okunus"], "sapka": "koru"})

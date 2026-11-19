@@ -15,6 +15,13 @@ export LD_LIBRARY_PATH
 python3 -c "import torch;print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'UYARI: GPU yok')"
 
 rm -rf cikti
+if [[ "$(python3 -c 'import json;print(json.load(open("is.json"))["mod"])')" == "yaris" ]]; then
+  bash yaris/yaris.sh
+  for f in cikti/yaris/*/*.wav; do ffmpeg -v error -y -i "$f" -c:a libopus -b:a 48k "${f%.wav}.opus" && rm "$f"; done
+  cp is.json cikti/ && (cd cikti && zip -q -r "../cikti-${konu}.zip" .)
+  echo "TAMAM: cikti-${konu}.zip hazır ($(du -h "cikti-${konu}.zip" | cut -f1))"
+  exit 0
+fi
 python3 seslendir.py is.json 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\(" 
 [[ -f cikti/sonuc.json ]] || { echo "Seslendirme bitmedi." >&2; exit 1; }
 cp is.json cikti/
