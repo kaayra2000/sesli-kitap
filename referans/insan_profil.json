@@ -2,7 +2,8 @@
  "perde_std": [2.419, 3.855, 8.101],
  "alcalma": [0.345, 2.15, 5.2],
  "hiz_cv": [0.38, 0.46, 0.59],
- "son_egim_duz": [-10.342, -0.35, 0.898],
+ "son_kelime_duz": [0.0, 1.8, 3.675],
+ "_bilgi_son_egim_duz": [-10.342, -0.35, 0.898],
  "_kaynak": {"veri": "google/fleurs tr_tr test (CC BY 4.0)", "ornek": 200,
              "not": "virgul_ara çıkarıldı: Whisper kelime zamanları duraklamayı kelimeye katıyor (insanda 0-0.12 sn)"}
 }

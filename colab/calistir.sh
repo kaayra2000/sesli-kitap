@@ -19,6 +19,7 @@ python3 seslendir.py is.json 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warn
 [[ -f cikti/sonuc.json ]] || { echo "Seslendirme bitmedi." >&2; exit 1; }
 cp is.json cikti/
 # Çıktıyı küçült: seçilen cümleler Opus (tarayıcıdan alınan çıktı küçük kalsın), örnekte yalnız mp3.
+shopt -s nullglob
 for f in cikti/secilen/*.wav; do ffmpeg -v error -y -i "$f" -c:a libopus -b:a 48k "${f%.wav}.opus" && rm "$f"; done
 rm -f cikti/ornek.wav cikti/ara-sonuc.json
 (cd cikti && zip -q -r "../cikti-${konu}.zip" .)

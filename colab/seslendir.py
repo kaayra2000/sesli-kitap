@@ -55,7 +55,7 @@ VARSAYILAN = {
 }
 SAKIN_METIN = ("Bilesin ki gönül, sevdiğinin yanında huzur bulur. Bu yol sabır ve muhabbet yoludur. "
                "Acele etmeden, adım adım yürünür.")
-INSAN_SON_KELIME = 2.0   # insan okuyucuda düz cümle son kelime düşüşü (yarım ton); insan_profil.json varsa oradan
+INSAN_SON_KELIME = 1.8   # insan okuyucuda düz cümle son kelime düşüşü (yarım ton); insan_profil.json varsa oradan
 
 
 def log(*a):
