@@ -19,12 +19,13 @@ AYARLAR = {
     "sapka": "koru",          # â î û: "koru" (uzun ünlü) ya da "kaldir"
     "gayn": True,             # ğ (gayn) -> g: ğâyet -> gâyet (TTS "ğ"yi yumuşak g gibi yutar)
     "tire_birlestir": True,   # fi’l-hakîka -> filhakîka, mertebe-i ‘azîmet -> mertebei azîmet
+    "izafet_y": True,         # ünlüden sonra izafet: mertebe-i -> mertebeyi, Hudâ-ı -> Hudâyı (okuyucunun y kayması)
     # Günümüz okunuşuna çeviren kurallar; varsayılan kapalı, yalnız hakem eşitlemesinde kullanılır:
     "ünsüz_benzesme": False,  # etdim -> ettim, sebeb -> sebep
     "eski_ekler": False,      # içün -> için, anı -> onu
     "cift_y": False,          # ehemmiyyet -> ehemmiyet
 }
-GUNUMUZ = {"sapka": "kaldir", "gayn": True, "tire_birlestir": True, "ünsüz_benzesme": True, "eski_ekler": True,
+GUNUMUZ = {"sapka": "kaldir", "gayn": True, "tire_birlestir": True, "izafet_y": True, "ünsüz_benzesme": True, "eski_ekler": True,
            "cift_y": True}
 
 ARAP = r"؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿"
@@ -120,6 +121,8 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
     t = t.replace("‘", "")
     if a["eski_ekler"]:
         t = t.replace("Nakşbend", "Nakşibend")
+    if a["izafet_y"]:
+        t = re.sub(rf"(?<=[aeıioöuüâîû])-([ıi])(?![{HARF}])", r"y\1", t)
     if a["tire_birlestir"]:
         t = re.sub(rf"(?<=[{HARF}])[’']?-(?=[{HARF}])", "", t)
     t = re.sub(rf"(?<=[{HARF}])[’'](?=[{HARF}])", "", t)    # hemze ve kesme: şey’in -> şeyin, Allah’ın -> Allahın

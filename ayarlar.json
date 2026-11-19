@@ -5,10 +5,11 @@
   "tire_birlestir": true,
   "ünsüz_benzesme": false,
   "eski_ekler": false,
-  "cift_y": false
+  "cift_y": false,
+  "izafet_y": true
  },
  "seslendirme": {
-  "aday": 4,
+  "aday": 8,
   "erken_dur": 1,
   "sicaklik": 0.5,
   "referans": "canli",
