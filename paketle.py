@@ -27,7 +27,7 @@ KELIME_DK = 125
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("mod", choices=["test", "ornek", "deney", "insan", "yaris"])
+    p.add_argument("mod", choices=["test", "ornek", "deney", "insan", "yaris", "metin"])
     p.add_argument("--tur", type=int, default=0)
     p.add_argument("--bas", default="b0008-c00")
     p.add_argument("--sn", type=float, default=110)
@@ -42,6 +42,13 @@ def main() -> None:
         test = json.loads((KOK / a.kume).read_text(encoding="utf-8"))
         parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "ara": 0.5} for t in test]
+    elif a.mod == "metin":
+        # Serbest metinler (ör. düz Türkçe örnekler): her metin tek parça, ayrı dosya olarak döner.
+        konu = f"metin{a.tur:02d}"
+        metinler = json.loads((KOK / a.kume).read_text(encoding="utf-8"))
+        parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
+                     "ara": 1.0} for t in metinler]
+        a.mod = "ornek"
     elif a.mod == "yaris":
         # Model yarışı: test kümesinden 12 cümle (6 kitap, 6 zor) + örnek bölümden 6 cümle; sabit ses = standarttaki
         # temel ses (Piper Fahrettin) referansı ve metni (it_yapisi iletisim/ses/zamanli_seslendir.py REFERENCE_TEXT).
