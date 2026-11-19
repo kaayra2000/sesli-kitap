@@ -53,8 +53,9 @@ VARSAYILAN = {
     "bolum_ara": 0.18,
     "uzatma": 1.0,         # uzun ünlü (â î û) seste bu oranda uzatılır (uzatma.py); 1 = kapalı
 }
-SAKIN_METIN = ("Ey kardeşim, bilesin ki gönül, sevdiğinin yanında huzur bulur. "
-               "Bu yol sabır ve muhabbet yoludur; acele etmeden, adım adım yürünür.")
+SAKIN_METIN = ("Bilesin ki gönül, sevdiğinin yanında huzur bulur. Bu yol sabır ve muhabbet yoludur. "
+               "Acele etmeden, adım adım yürünür.")
+INSAN_SON_EGIM = -0.35   # insan okuyucuda düz cümle sonu perde eğimi ortancası (insan_profil.json)
 
 
 def log(*a):
@@ -140,15 +141,19 @@ class Ses:
         return str(yol)
 
     def sakin_uret(self, hakem: "Hakem") -> Path:
-        """Sakin anlatım referansı: temel sesle SAKIN_METIN, 8 tohum; doğru okunanlardan UTMOS'u en yüksek olanı."""
+        """Sakin anlatım referansı: temel sesle SAKIN_METIN, 12 tohum. Doğru okunanlar (CER <= %2) arasından
+        tonlaması insana en yakın olan seçilir: cümle sonu eğimi insan ortancasına yakın, perde oynaklığı 2.4-8 yarım ton."""
         self.state = self.model.get_state_for_audio_prompt(str(HERE / "referans/referans-temel-ses.wav"))
         self.model.temp = 0.5
         en_iyi = None
-        for tohum in range(8):
+        for tohum in range(12):
             x = self.soyle(SAKIN_METIN, tohum)
             p = hakem.olc(x, self.sr, SAKIN_METIN)
-            log(f"sakin referans tohum {tohum}: CER {p['whisper']['cer']:.3f} MOS {p['mos']:.2f}")
-            anahtar = (p["whisper"]["cer"] > 0.02, -p["mos"])
+            t = tonlama.ozellikler(resample(x, self.sr, 16000), p.pop("_kelimeler"), SAKIN_METIN)
+            sapma = abs(t.get("son_egim", -20) - INSAN_SON_EGIM) / 5 + (0 if 2.4 <= t.get("perde_std", 0) <= 8 else 2)
+            log(f"sakin referans tohum {tohum}: CER {p['whisper']['cer']:.3f} son eğim {t.get('son_egim')} "
+                f"perde {t.get('perde_std')} sapma {sapma:.2f}")
+            anahtar = (p["whisper"]["cer"] > 0.02, sapma)
             if en_iyi is None or anahtar < en_iyi[0]:
                 en_iyi = (anahtar, x)
         yol = self.cikti / "referans-sakin.wav"
