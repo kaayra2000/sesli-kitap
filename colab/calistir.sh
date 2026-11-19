@@ -4,11 +4,14 @@ set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 konu=$(python3 -c 'import json;print(json.load(open("is.json"))["konu"])')
 
-if [[ ! -f /content/.sesli-kitap-kurulu ]]; then
+if [[ ! -f /content/.sesli-kitap-kurulu-2 ]]; then
   echo "Bağımlılıklar kuruluyor..."
-  pip install -q pocket-tts faster-whisper 2>&1 | grep -vE "^(\s|Requirement|  )" | tail -5 || true
-  touch /content/.sesli-kitap-kurulu
+  # faster-whisper (CTranslate2) CUDA 12 kütüphanelerini ister; Colab'in torch'u daha yeni CUDA ile gelebilir.
+  pip install -q pocket-tts faster-whisper nvidia-cublas-cu12 "nvidia-cudnn-cu12==9.*" 2>&1 | tail -3 || true
+  touch /content/.sesli-kitap-kurulu-2
 fi
+LD_LIBRARY_PATH="$(python3 -c 'import os, nvidia.cublas.lib as a, nvidia.cudnn.lib as b; print(list(a.__path__)[0] + ":" + list(b.__path__)[0])'):${LD_LIBRARY_PATH:-}"
+export LD_LIBRARY_PATH
 python3 -c "import torch;print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'UYARI: GPU yok')"
 
 rm -rf cikti

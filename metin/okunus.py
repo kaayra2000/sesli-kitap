@@ -1,8 +1,10 @@
 """
 Okunuş: transliterasyonlu Osmanlı Türkçesi metni, TTS modelinin doğru okuyacağı yazıya çevirir.
 
-Alt yazıda metnin aslı kalır; yalnız modele giden metin değişir. Kurallar bir insan okuyucunun eski imlâyı
-sesli okurken yaptığına göre seçildi ("etdim" -> "ettim", "içün" -> "için", "sebeb" -> "sebep").
+Alt yazıda metnin aslı kalır; yalnız modele giden metin değişir. Varsayılan, Osmanlıca bilen bir okuyucu gibi
+kelimeyi değiştirmeden okumaktır (içün, ma‘lûm -> mâlûm, etdim); yalnız TTS'in gerektirdiği mekanik dönüşüm yapılır.
+Günümüz okunuşuna çeviren kurallar (GUNUMUZ) hakemin eşitlemesi içindir: Whisper "içün"ü "için" diye yazar,
+bu hata sayılmasın.
 Kural ayarları `AYARLAR`'dadır; döngü (README, "Öz yinelemeli test") bu ayarları dener.
 Sözlük `okunus.tsv` (yazılan<TAB>okunacak, tam kelime) kurallardan önce uygulanır.
 """
@@ -13,12 +15,17 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 
 AYARLAR = {
-    "sapka": "kaldir",       # â î û: "koru" ya da "kaldir"
-    "ünsüz_benzesme": True,  # etdim -> ettim, çokdur -> çoktur, sebeb -> sebep
-    "eski_ekler": True,      # içün -> için, anı -> onu, etmeğe -> etmeye
-    "cift_y": True,          # ehemmiyyet -> ehemmiyet
-    "tire_birlestir": True,  # şerî‘at-i ğarrâ -> şeriati garra, fi’l-hakîka -> filhakika
+    # Varsayılan: Osmanlıca bilen bir okuyucu gibi, kelime değiştirmeden (kullanıcı kararı, 2026-11-19).
+    "sapka": "koru",          # â î û: "koru" (uzun ünlü) ya da "kaldir"
+    "gayn": True,             # ğ (gayn) -> g: ğâyet -> gâyet (TTS "ğ"yi yumuşak g gibi yutar)
+    "tire_birlestir": True,   # fi’l-hakîka -> filhakîka, mertebe-i ‘azîmet -> mertebei azîmet
+    # Günümüz okunuşuna çeviren kurallar; varsayılan kapalı, yalnız hakem eşitlemesinde kullanılır:
+    "ünsüz_benzesme": False,  # etdim -> ettim, sebeb -> sebep
+    "eski_ekler": False,      # içün -> için, anı -> onu
+    "cift_y": False,          # ehemmiyyet -> ehemmiyet
 }
+GUNUMUZ = {"sapka": "kaldir", "gayn": True, "tire_birlestir": True, "ünsüz_benzesme": True, "eski_ekler": True,
+           "cift_y": True}
 
 ARAP = r"؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿"
 HARF = "A-Za-zÇĞİÖŞÜçğıöşüÂÎÛâîû"
@@ -111,7 +118,8 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
     t = re.sub(r"\b(\d+)/(\d+)\b", lambda m: f"{sayi_yazi(int(m.group(1)))} {sayi_yazi(int(m.group(2)))}", t)
     t = re.sub(r"\b\d{1,6}\b", lambda m: sayi_yazi(int(m.group(0))), t)
     t = t.replace("‘", "")
-    t = t.replace("Nakşbend", "Nakşibend")
+    if a["eski_ekler"]:
+        t = t.replace("Nakşbend", "Nakşibend")
     if a["tire_birlestir"]:
         t = re.sub(rf"(?<=[{HARF}])[’']?-(?=[{HARF}])", "", t)
     t = re.sub(rf"(?<=[{HARF}])[’'](?=[{HARF}])", "", t)    # hemze ve kesme: şey’in -> şeyin, Allah’ın -> Allahın
@@ -122,10 +130,11 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
         if a["eski_ekler"]:
             w = eski_ek(w)
         # ğ (gayn) -> g: kelime başında, ünsüzden sonra ya da â/û önünde (ğâyet, meşğûl, ğark)
-        w = re.sub(r"^ğ", "g", w)
-        w = re.sub(r"^Ğ", "G", w)
-        w = re.sub(r"(?<=[bcçdfghjklmnprsştvyz])ğ", "g", w)
-        w = re.sub(r"ğ(?=[âû])", "g", w)
+        if a["gayn"]:
+            w = re.sub(r"^ğ", "g", w)
+            w = re.sub(r"^Ğ", "G", w)
+            w = re.sub(r"(?<=[bcçdfghjklmnprsştvyz])ğ", "g", w)
+            w = re.sub(r"ğ(?=[âû])", "g", w)
         if a["cift_y"]:
             w = re.sub(r"([iıîİ])yy([eaâ])", r"\1y\2", w)
         if a["ünsüz_benzesme"]:

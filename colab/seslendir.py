@@ -5,8 +5,9 @@ adayı seçer ve raporlar.
 
 Hakemler:
   - Whisper large-v3 (faster-whisper, fp16): duyulan metin, karakter hatası (CER). Metin ipucu verilmez.
-  - wav2vec2 CTC (Türkçe, dil modeli yok, açgözlü çözme): Whisper kulağın duyduğu ünlü kaymalarını düzeltir;
-    CTC daha "harfi harfine" yazar, telaffuz hatasını daha iyi yakalar.
+  - wav2vec2 CTC (Türkçe, dil modeli yok, açgözlü çözme): Whisper kulağın duyduğunu günümüz imlâsına düzeltir
+    (içün -> için); CTC harfi harfine yazar, okunuşun metne sadakatini o ölçer. Whisper ve hedef karşılaştırmadan
+    önce aynı günümüz biçimine getirilir (esitle), CTC ham metinle karşılaştırılır.
   - UTMOS22: doğallık tahmini (1-5).
 Ayrıca: cümle sonunda ses artığı (kuyruk), cümle içinde uzun sessizlik (takılma), konuşma hızı, kırpılma.
 
@@ -28,7 +29,7 @@ import torch
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from okunus import sayi_yazi  # noqa: E402
+from okunus import GUNUMUZ, okunus, sayi_yazi  # noqa: E402
 
 POCKET_REPO = "kaanhgunay/pocket-tts-tr"
 SR_OUT = 48000
@@ -77,20 +78,30 @@ def hata(ref: str, hyp: str) -> dict:
             "wer": round(distance(rw, hw) / max(1, len(rw)), 4)}
 
 
+def esitle(metin: str) -> str:
+    """Whisper duyduğunu günümüz imlâsıyla yazar (içün -> için, mâlûm -> malum); iki taraf da aynı biçime getirilir."""
+    return okunus(metin, [], GUNUMUZ)
+
+
 def resample(x: np.ndarray, sr: int, hedef: int) -> np.ndarray:
-    raw = subprocess.run(["ffmpeg", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-",
-                          "-ar", str(hedef), "-f", "f32le", "-"],
-                         input=x.astype(np.float32).tobytes(), capture_output=True, check=True).stdout
-    return np.frombuffer(raw, np.float32).copy()
+    """torchaudio ile yeniden örnekleme (her aday için ffmpeg süreci açmak Colab'in 2 çekirdeğini dolduruyordu)."""
+    import torchaudio.functional as F
+    if sr == hedef:
+        return x.astype(np.float32)
+    return F.resample(torch.from_numpy(x.astype(np.float32)), sr, hedef).numpy()
 
 
-def kirp(x: np.ndarray, sr: int) -> np.ndarray:
-    """Baştaki ve sondaki sessizliği atar (-45 dB)."""
-    trim = ("silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-            "silenceremove=start_periods=1:start_threshold=-45dB,areverse")
-    raw = subprocess.run(["ffmpeg", "-v", "error", "-f", "f32le", "-ar", str(sr), "-ac", "1", "-i", "-", "-af", trim,
-                          "-f", "f32le", "-"], input=x.astype(np.float32).tobytes(), capture_output=True, check=True).stdout
-    y = np.frombuffer(raw, np.float32).copy()
+def kirp(x: np.ndarray, sr: int, esik_db: float = -45) -> np.ndarray:
+    """Baştaki ve sondaki sessizliği atar: 10 ms pencerelerde tepe -45 dB altındaysa sessiz."""
+    pencere = max(1, sr // 100)
+    n = len(x) // pencere
+    if n == 0:
+        return x
+    tepe = np.abs(x[: n * pencere]).reshape(n, pencere).max(1)
+    ses = np.where(tepe > 10 ** (esik_db / 20))[0]
+    if len(ses) == 0:
+        return x
+    y = x[ses[0] * pencere: (ses[-1] + 1) * pencere]
     return y if len(y) > sr * 0.2 else x
 
 
@@ -122,6 +133,7 @@ class Ses:
         self.model = TTSModel.load_model(config=str(config))
         if DEV != "cpu":
             self.model.to(DEV)
+        log("pocket-tts cihazı:", next(self.model.parameters()).device)
         self.sr = self.model.sample_rate
         self.ayar = ayar
         self.cikti = cikti
@@ -153,7 +165,6 @@ class Ses:
         wav_yaz(yol, en_iyi[1], self.sr)
         return yol
 
-    @torch.inference_mode()
     def soyle(self, metin: str, tohum: int) -> np.ndarray:
         torch.manual_seed(tohum)
         x = self.model.generate_audio(self.state, metin).float().cpu().numpy().squeeze()
@@ -191,7 +202,7 @@ class Hakem:
         kelimeler = [w for s in seg for w in (s.words or [])]
         kuyruk = sure - (kelimeler[-1].end if kelimeler else 0)
         bosluk = max([b.start - a.end for a, b in zip(kelimeler, kelimeler[1:])] + [0])
-        sonuc = {"sure": round(sure, 2), "duyulan": duyulan, "whisper": hata(hedef, duyulan),
+        sonuc = {"sure": round(sure, 2), "duyulan": duyulan, "whisper": hata(esitle(hedef), esitle(duyulan)),
                  "kuyruk": round(kuyruk, 2), "bosluk": round(bosluk, 2),
                  "tepe": round(float(np.abs(x).max()), 3),
                  "hiz": round(len(normalize(hedef).replace(" ", "")) / max(0.1, sure), 2)}
@@ -235,10 +246,13 @@ def main() -> None:
 
     rapor, iz = [], []
     for i, parca in enumerate(is_["parcalar"]):
-        adaylar = []
+        adaylar, t_ses, t_hakem = [], 0.0, 0.0
         for tohum in range(ayar["aday"]):
+            t1 = time.time()
             x = ses.soyle(parca["okunus"], tohum)
+            t2 = time.time()
             p = hakem.olc(x, ses.sr, parca["okunus"])
+            t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
             adaylar.append((p, tohum, x))
             if sum(temiz(a[0], ayar) for a in adaylar) >= ayar["erken_dur"]:
                 break
@@ -254,7 +268,8 @@ def main() -> None:
                                          ("TAKILMA", p["bosluk"] > ayar["sessizlik_sinir"]),
                                          ("YANLIŞ", p["whisper"]["cer"] > ayar["cer_sinir"])) if c)
         log(f"[{i + 1}/{len(is_['parcalar'])}] {parca['id']} aday {len(adaylar)} tohum {tohum} "
-            f"CER {p['whisper']['cer']:.3f} CTC {p.get('ctc', {}).get('cer', -1):.3f} MOS {p['mos']:.2f} {uyari}")
+            f"CER {p['whisper']['cer']:.3f} CTC {p.get('ctc', {}).get('cer', -1):.3f} MOS {p['mos']:.2f} "
+            f"({p['sure']:.1f} sn ses; üretim {t_ses:.0f} sn, hakem {t_hakem:.0f} sn) {uyari}")
 
     ozet = {
         "parca": len(rapor),
