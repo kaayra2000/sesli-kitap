@@ -27,7 +27,7 @@ KELIME_DK = 125
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("mod", choices=["test", "ornek", "deney", "insan", "yaris", "metin"])
+    p.add_argument("mod", choices=["test", "ornek", "deney", "insan", "yaris", "metin", "ayar"])
     p.add_argument("--tur", type=int, default=0)
     p.add_argument("--bas", default="b0008-c00")
     p.add_argument("--sn", type=float, default=110)
@@ -42,6 +42,16 @@ def main() -> None:
         test = json.loads((KOK / a.kume).read_text(encoding="utf-8"))
         parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "ara": 0.5} for t in test]
+    elif a.mod == "ayar":
+        konu = f"ayar{a.tur:02d}"
+        metinler = [
+            {"id": "duz", "metin": "Değerli çalışma arkadaşlarımız, yarın sabah saat dokuzdan on bire kadar e posta "
+                                   "sisteminde planlı bakım çalışması yapılacaktır. Anlayışınız için teşekkür ederiz."},
+            {"id": "osmanlica", "metin": "Ma‘lûmunuz olsun ki: Muhabbet, fi’l-hakîka Allâh’dan mevhûbdur. Hakîkat-i fenâ "
+                                         "ile müşerref olan sâlik, Mevlâ-yı Müte‘âl’in rızâsına nâil olur."}]
+        parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
+                     "ara": 1.0} for t in metinler]
+        ayarlar["seslendirme"] = {**ayarlar["seslendirme"], "aday": 2}
     elif a.mod == "metin":
         # Serbest metinler (ör. düz Türkçe örnekler): her metin tek parça, ayrı dosya olarak döner.
         konu = f"metin{a.tur:02d}"
@@ -109,7 +119,8 @@ def main() -> None:
     hedef.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(hedef, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("is.json", json.dumps(is_, ensure_ascii=False, indent=1))
-        for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py", "colab/tonlama.py", "colab/uzatma.py"]:
+        for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py", "colab/tonlama.py", "colab/uzatma.py",
+                  "colab/ayar_tarama.py"]:
             if (KOK / f).exists():
                 z.write(KOK / f, Path(f).name)
         for f in sorted((KOK / "referans").glob("*.wav")) + sorted((KOK / "referans").glob("*.json")):
