@@ -3,7 +3,10 @@ Tonlama (prosodi) ölçümü: perde (F0) eğrisinden ve kelime zamanlarından sa
 
 ASR hakemleri kelimenin doğru olup olmadığını söyler, tonlamayı ölçmez. Bu modül şunları ölçer:
   perde_std   cümle içi perde oynaklığı (yarım ton std). Çok düşük = tekdüze, çok yüksek = abartılı.
-  son_egim    son 0.45 sn'deki perde eğimi (yarım ton/sn). Düz cümle sonunda düşmeli, soru (?) sonunda yükselmeli.
+  son_egim    son 0.45 sn'deki perde eğimi (yarım ton/sn). Ses temizliğine duyarlı: insan kaydında son hece çoğu
+              zaman gırtlaksı/ötümsüz kalır, eğim düz görünür. Bilgi için tutulur, profilde kullanılmaz.
+  son_kelime  cümlenin ortanca perdesi - son kelimenin ortanca perdesi (yarım ton). Düz cümlede pozitif (düşüş);
+              son birkaç kareye değil bütün kelimeye dayanır, kayıt temizliğinden az etkilenir.
   alcalma     cümle başı ile sonu arasındaki perde farkı (yarım ton); doğal okumada cümle boyunca perde iner.
   virgul_ara  virgüldeki ortalama duraklama (sn); okuyucu virgülde nefes alır.
   hiz_cv      kelime sürelerinin değişkenlik katsayısı; robot gibi eşit tempo düşük çıkar.
@@ -33,6 +36,10 @@ def ozellikler(x16: np.ndarray, kelimeler: list, metin: str) -> dict:
     son = t >= t[-1] - 0.45
     if son.sum() >= 5:
         sonuc["son_egim"] = round(float(np.polyfit(t[son], st[son], 1)[0]), 2)
+    if kelimeler:
+        son = (t >= kelimeler[-1].start) & (t <= kelimeler[-1].end)
+        if son.sum() >= 3:
+            sonuc["son_kelime"] = round(float(np.median(st) - np.median(st[son])), 2)
     uc = max(1, len(st) // 3)
     sonuc["alcalma"] = round(float(np.median(st[:uc]) - np.median(st[-uc:])), 2)
     if len(kelimeler) >= 3:
@@ -57,18 +64,37 @@ def profil(kayitlar: list[dict]) -> dict:
         if len(v) >= 5:
             p[ad] = [round(float(np.percentile(v, q)), 3) for q in (10, 50, 90)]
     for bitis in ("duz", "soru", "virgul"):
-        v = [k["son_egim"] for k in kayitlar if k.get("bitis") == bitis and "son_egim" in k]
+        v = [k["son_kelime"] for k in kayitlar if k.get("bitis") == bitis and "son_kelime" in k]
         if len(v) >= 5:
-            p[f"son_egim_{bitis}"] = [round(float(np.percentile(v, q)), 3) for q in (10, 50, 90)]
+            p[f"son_kelime_{bitis}"] = [round(float(np.percentile(v, q)), 3) for q in (10, 50, 90)]
+    v = [k["son_egim"] for k in kayitlar if k.get("bitis") == "duz" and "son_egim" in k]
+    if len(v) >= 5:
+        p["_bilgi_son_egim_duz"] = [round(float(np.percentile(v, q)), 3) for q in (10, 50, 90)]
     return p
+
+
+def sapma(o: dict, prof: dict) -> float:
+    """İnsan 10-90 aralığının dışına taşma miktarı (aralık genişliğine bölünmüş, özellikler toplamı); içerideyse 0."""
+    toplam = 0.0
+    for ad, (alt, _, ust) in prof.items():
+        if ad.startswith("_"):
+            continue
+        anahtar = "son_kelime" if ad.startswith("son_kelime_") else ad
+        if anahtar not in o or (ad.startswith("son_kelime_") and ad != f"son_kelime_{o.get('bitis')}"):
+            continue
+        genislik = max(1e-3, ust - alt)
+        toplam += max(0.0, alt - o[anahtar], o[anahtar] - ust) / genislik
+    return round(toplam, 3)
 
 
 def puan(o: dict, prof: dict) -> dict:
     """Her özellik insan dağılımının 10-90 aralığında mı? Oran = aralıkta kalan özellik / ölçülen özellik."""
     sonuc = {}
     for ad, aralik in prof.items():
-        anahtar = "son_egim" if ad.startswith("son_egim_") else ad
-        if anahtar not in o or (ad.startswith("son_egim_") and ad != f"son_egim_{o.get('bitis')}"):
+        if ad.startswith("_"):
+            continue
+        anahtar = "son_kelime" if ad.startswith("son_kelime_") else ad
+        if anahtar not in o or (ad.startswith("son_kelime_") and ad != f"son_kelime_{o.get('bitis')}"):
             continue
         sonuc[ad] = aralik[0] <= o[anahtar] <= aralik[2]
     return {"tonlama_uyum": round(sum(sonuc.values()) / len(sonuc), 3) if sonuc else None,

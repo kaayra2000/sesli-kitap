@@ -55,7 +55,7 @@ VARSAYILAN = {
 }
 SAKIN_METIN = ("Bilesin ki gönül, sevdiğinin yanında huzur bulur. Bu yol sabır ve muhabbet yoludur. "
                "Acele etmeden, adım adım yürünür.")
-INSAN_SON_EGIM = -0.35   # insan okuyucuda düz cümle sonu perde eğimi ortancası (insan_profil.json)
+INSAN_SON_KELIME = 2.0   # insan okuyucuda düz cümle son kelime düşüşü (yarım ton); insan_profil.json varsa oradan
 
 
 def log(*a):
@@ -150,8 +150,8 @@ class Ses:
             x = self.soyle(SAKIN_METIN, tohum)
             p = hakem.olc(x, self.sr, SAKIN_METIN)
             t = tonlama.ozellikler(resample(x, self.sr, 16000), p.pop("_kelimeler"), SAKIN_METIN)
-            sapma = abs(t.get("son_egim", -20) - INSAN_SON_EGIM) / 5 + (0 if 2.4 <= t.get("perde_std", 0) <= 8 else 2)
-            log(f"sakin referans tohum {tohum}: CER {p['whisper']['cer']:.3f} son eğim {t.get('son_egim')} "
+            sapma = abs(t.get("son_kelime", 6) - INSAN_SON_KELIME) / 2 + (0 if 2.4 <= t.get("perde_std", 0) <= 8 else 2)
+            log(f"sakin referans tohum {tohum}: CER {p['whisper']['cer']:.3f} son kelime {t.get('son_kelime')} "
                 f"perde {t.get('perde_std')} sapma {sapma:.2f}")
             anahtar = (p["whisper"]["cer"] > 0.02, sapma)
             if en_iyi is None or anahtar < en_iyi[0]:
@@ -281,10 +281,24 @@ def temiz(p: dict, ayar: dict) -> bool:
 
 
 def anahtar(p: dict, ayar: dict) -> tuple:
-    """Yanlış kelime > kuyruk > takılma > (Whisper + 0.5 CTC) hata > doğallık."""
-    ctc = p.get("ctc", {}).get("cer", 0)
-    return (yanlis(p, ayar), p["kuyruk"] > ayar["kuyruk_sinir"],
-            p["bosluk"] > ayar["sessizlik_sinir"], round(p["whisper"]["cer"] + 0.5 * p.get("ctc_esit", {}).get("cer", ctc), 4), -p["mos"])
+    """Yanlış kelime > kuyruk > takılma > hata kovası (%1'lik) > tonlama sapması > (Whisper + 0.5 CTC) > doğallık.
+
+    Hata kovası: hatası aynı yüzdelik dilimde olan adaylar arasında tonlaması insana yakın olan seçilir."""
+    ctc = p.get("ctc_esit", p.get("ctc", {})).get("cer", 0)
+    hata_top = p["whisper"]["cer"] + 0.5 * ctc
+    return (yanlis(p, ayar), p["kuyruk"] > ayar["kuyruk_sinir"], p["bosluk"] > ayar["sessizlik_sinir"],
+            int(p["whisper"]["cer"] * 100), p.get("tonlama_sapma", 0), round(hata_top, 4), -p["mos"])
+
+
+def tonlama_ekle(p: dict, x: np.ndarray, sr: int, metin: str, prof: dict | None) -> None:
+    """İnsan profili varsa adayın tonlama sapmasını hesaplar (aday seçiminde kullanılır)."""
+    if not prof:
+        return
+    try:
+        o = tonlama.ozellikler(resample(x, sr, 16000), p["_kelimeler"], metin)
+        p["tonlama_sapma"] = tonlama.sapma(o, prof)
+    except Exception as e:  # noqa: BLE001
+        log(f"tonlama ölçülemedi: {e}")
 
 
 def uzun_unlu(x, p, parca, ayar, ses, hakem):
@@ -359,9 +373,11 @@ def main() -> None:
             x = ses.soyle(parca["okunus"], tohum)
             t2 = time.time()
             p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
+            tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
             t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
             adaylar.append((p, tohum, x))
-            if sum(temiz(a[0], ayar) for a in adaylar) >= ayar["erken_dur"]:
+            if sum(temiz(a[0], ayar) and (not prof or a[0].get("tonlama_sapma", 0) == 0)
+                   for a in adaylar) >= ayar["erken_dur"]:
                 break
         en_iyi = min(adaylar, key=lambda a: anahtar(a[0], ayar))
         if yanlis(en_iyi[0], ayar) or en_iyi[0]["kuyruk"] > ayar["kuyruk_sinir"]:
@@ -371,6 +387,7 @@ def main() -> None:
                 x = ses.soyle(parca["okunus"], tohum)
                 t2 = time.time()
                 p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
+                tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
                 t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
                 adaylar.append((p, tohum, x))
                 if temiz(p, ayar):
