@@ -29,7 +29,7 @@ import torch
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from okunus import GUNUMUZ, okunus, sayi_yazi  # noqa: E402
+from olcum import hata, normalize  # noqa: E402
 
 POCKET_REPO = "kaanhgunay/pocket-tts-tr"
 SR_OUT = 48000
@@ -44,6 +44,8 @@ VARSAYILAN = {
     "kuyruk_sinir": 0.35,
     "sessizlik_sinir": 0.9,
     "cer_sinir": 0.03,
+    "bolum_kelime": 14,    # pocket-tts sınırı 50 jeton; şapkalı Osmanlıca kelimeler çok jeton tutar
+    "bolum_ara": 0.18,
 }
 SAKIN_METIN = ("Ey kardeşim, bilesin ki gönül, sevdiğinin yanında huzur bulur. "
                "Bu yol sabır ve muhabbet yoludur; acele etmeden, adım adım yürünür.")
@@ -53,34 +55,16 @@ def log(*a):
     print(*a, flush=True)
 
 
-def normalize(text: str) -> str:
-    text = re.sub(r"\d+", lambda m: " " + sayi_yazi(int(m.group(0))) + " " if len(m.group(0)) <= 6 else m.group(0), text)
-    text = text.replace("İ", "i").replace("I", "ı").lower()
-    text = text.translate(str.maketrans("îâû", "iau"))
-    text = re.sub(r"[’'`‘]", "", text)
-    return " ".join(re.sub(r"[^\wçğıöşü ]+", " ", text).split())
-
-
-def distance(a, b) -> int:
-    row = list(range(len(b) + 1))
-    for i, x in enumerate(a, 1):
-        prev, row[0] = row[0], i
-        for j, y in enumerate(b, 1):
-            prev, row[j] = row[j], min(row[j] + 1, row[j - 1] + 1, prev + (x != y))
-    return row[-1]
-
-
-def hata(ref: str, hyp: str) -> dict:
-    r, h = normalize(ref), normalize(hyp)
-    rn, hn = r.replace(" ", ""), h.replace(" ", "")
-    rw, hw = r.split(), h.split()
-    return {"cer": round(distance(rn, hn) / max(1, len(rn)), 4),   # boşluksuz: "fil hakika" = "filhakika"
-            "wer": round(distance(rw, hw) / max(1, len(rw)), 4)}
-
-
-def esitle(metin: str) -> str:
-    """Whisper duyduğunu günümüz imlâsıyla yazar (içün -> için, mâlûm -> malum); iki taraf da aynı biçime getirilir."""
-    return okunus(metin, [], GUNUMUZ)
+def bol(metin: str, en_cok: int) -> list[str]:
+    """en_cok kelimeden uzun metni ortaya en yakın virgülden (yoksa "ve"den, yoksa ortadan) böler."""
+    w = metin.split()
+    if len(w) <= en_cok:
+        return [metin]
+    orta = len(w) / 2
+    adaylar = [i for i in range(3, len(w) - 2) if w[i - 1].endswith((",", ";", ":"))]
+    adaylar = adaylar or [i for i in range(3, len(w) - 2) if w[i] in ("ve", "ile", "ki")]
+    i = min(adaylar, key=lambda k: abs(k - orta)) if adaylar else round(orta)
+    return bol(" ".join(w[:i]), en_cok) + bol(" ".join(w[i:]), en_cok)
 
 
 def resample(x: np.ndarray, sr: int, hedef: int) -> np.ndarray:
@@ -166,9 +150,15 @@ class Ses:
         return yol
 
     def soyle(self, metin: str, tohum: int) -> np.ndarray:
+        """pocket-tts 50 jetondan uzun parçada kelime atlayabilir; uzun cümle virgülden bölünüp kısa araya birleştirilir."""
         torch.manual_seed(tohum)
-        x = self.model.generate_audio(self.state, metin).float().cpu().numpy().squeeze()
-        return kirp(x, self.sr)
+        parcalar = []
+        for k, bolum in enumerate(bol(metin, self.ayar["bolum_kelime"])):
+            if k:
+                parcalar.append(np.zeros(int(self.ayar["bolum_ara"] * self.sr), np.float32))
+            x = self.model.generate_audio(self.state, bolum).float().cpu().numpy().squeeze()
+            parcalar.append(kirp(x, self.sr))
+        return np.concatenate(parcalar)
 
 
 class Hakem:
@@ -202,7 +192,7 @@ class Hakem:
         kelimeler = [w for s in seg for w in (s.words or [])]
         kuyruk = sure - (kelimeler[-1].end if kelimeler else 0)
         bosluk = max([b.start - a.end for a, b in zip(kelimeler, kelimeler[1:])] + [0])
-        sonuc = {"sure": round(sure, 2), "duyulan": duyulan, "whisper": hata(esitle(hedef), esitle(duyulan)),
+        sonuc = {"sure": round(sure, 2), "duyulan": duyulan, "whisper": hata(hedef, duyulan, esit=True),
                  "kuyruk": round(kuyruk, 2), "bosluk": round(bosluk, 2),
                  "tepe": round(float(np.abs(x).max()), 3),
                  "hiz": round(len(normalize(hedef).replace(" ", "")) / max(0.1, sure), 2)}
@@ -226,6 +216,10 @@ def anahtar(p: dict, ayar: dict) -> tuple:
     ctc = p.get("ctc", {}).get("cer", 0)
     return (p["whisper"]["cer"] > ayar["cer_sinir"], p["kuyruk"] > ayar["kuyruk_sinir"],
             p["bosluk"] > ayar["sessizlik_sinir"], round(p["whisper"]["cer"] + 0.5 * ctc, 4), -p["mos"])
+
+
+def jsonla(o):
+    return o.item() if hasattr(o, "item") else str(o)
 
 
 def srt_zaman(t: float) -> str:
@@ -257,6 +251,8 @@ def main() -> None:
             if sum(temiz(a[0], ayar) for a in adaylar) >= ayar["erken_dur"]:
                 break
         p, tohum, x = min(adaylar, key=lambda a: anahtar(a[0], ayar))
+        x = x * min(1.0, 0.9 / max(1e-6, float(np.abs(x).max())))  # tepe -1 dBFS altı (son ses ayrıca loudnorm'dan geçer)
+        p = {**p, "tepe_ham": p["tepe"], "tepe": round(float(np.abs(x).max()), 3)}
         x48 = resample(x, ses.sr, SR_OUT)
         wav_yaz(cikti / "secilen" / f"{parca['id']}.wav", x48, SR_OUT)
         iz.append((parca, x48))
@@ -264,6 +260,7 @@ def main() -> None:
                       **{k: v for k, v in p.items()}, "aday_sayisi": len(adaylar),
                       "adaylar": [{"tohum": t, **{k: v for k, v in a.items() if k not in ("duyulan", "ctc_duyulan")}}
                                   for a, t, _ in adaylar]})
+        (cikti / "ara-sonuc.json").write_text(json.dumps(rapor, ensure_ascii=False, default=jsonla), encoding="utf-8")
         uyari = " ".join(w for w, c in (("KUYRUK", p["kuyruk"] > ayar["kuyruk_sinir"]),
                                          ("TAKILMA", p["bosluk"] > ayar["sessizlik_sinir"]),
                                          ("YANLIŞ", p["whisper"]["cer"] > ayar["cer_sinir"])) if c)
@@ -277,7 +274,7 @@ def main() -> None:
         "whisper_wer_ort": round(float(np.mean([r["whisper"]["wer"] for r in rapor])), 4),
         "ctc_cer_ort": round(float(np.mean([r.get("ctc", {}).get("cer", 0) for r in rapor])), 4),
         "mos_ort": round(float(np.mean([r["mos"] for r in rapor])), 3),
-        "yanlis": sum(r["whisper"]["cer"] > ayar["cer_sinir"] for r in rapor),
+        "yanlis": int(sum(r["whisper"]["cer"] > ayar["cer_sinir"] for r in rapor)),
         "kuyruk": sum(r["kuyruk"] > ayar["kuyruk_sinir"] for r in rapor),
         "takilma": sum(r["bosluk"] > ayar["sessizlik_sinir"] for r in rapor),
         "kirpilma": sum(r["tepe"] >= 0.999 for r in rapor),
@@ -286,7 +283,7 @@ def main() -> None:
         "sure_sn": round(time.time() - t0),
         "ctc_hakem": getattr(hakem, "ctc_ad", None), "ayar": ayar,
     }
-    (cikti / "sonuc.json").write_text(json.dumps({"ozet": ozet, "parcalar": rapor}, ensure_ascii=False, indent=1),
+    (cikti / "sonuc.json").write_text(json.dumps({"ozet": ozet, "parcalar": rapor}, ensure_ascii=False, indent=1, default=jsonla),
                                       encoding="utf-8")
 
     if is_.get("mod") == "ornek":
@@ -307,7 +304,7 @@ def main() -> None:
         (cikti / "ham.wav").unlink()
         (cikti / "altyazi.srt").write_text("\n".join(srt), encoding="utf-8")
         log(f"örnek: {simdi:.1f} sn")
-    log("ÖZET " + json.dumps({k: v for k, v in ozet.items() if k != "ayar"}, ensure_ascii=False))
+    log("ÖZET " + json.dumps({k: v for k, v in ozet.items() if k != "ayar"}, ensure_ascii=False, default=jsonla))
 
 
 if __name__ == "__main__":

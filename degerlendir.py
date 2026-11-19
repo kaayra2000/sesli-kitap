@@ -8,10 +8,15 @@ Colab çıktısını açar, başarı ölçütlerine göre değerlendirir, en kö
 """
 import argparse
 import json
+import sys
 import zipfile
 from pathlib import Path
 
 KOK = Path(__file__).resolve().parent
+sys.path.insert(0, str(KOK / "metin"))
+from olcum import hata  # noqa: E402
+
+CER_SINIR = 0.03
 OLCUT = {  # ad: (alan, karşılaştırma, sınır)
     "yanlış kelimeli parça yok": ("yanlis", "==", 0),
     "ortalama Whisper CER <= %1.5": ("whisper_cer_ort", "<=", 0.015),
@@ -26,8 +31,9 @@ GECMIS_ALAN = ["whisper_cer_ort", "whisper_wer_ort", "ctc_cer_ort", "mos_ort", "
 
 
 def gecti(deger, kar, sinir) -> bool:
-    return {"==": deger == sinir, "<=": deger <= sinir, ">=": deger >= sinir,
-            "aralik": sinir[0] <= deger <= sinir[1] if kar == "aralik" else False}[kar]
+    if kar == "aralik":
+        return sinir[0] <= deger <= sinir[1]
+    return {"==": deger == sinir, "<=": deger <= sinir, ">=": deger >= sinir}[kar]
 
 
 def main() -> None:
@@ -44,6 +50,14 @@ def main() -> None:
         hedef = a.cikti
     veri = json.loads((hedef / "sonuc.json").read_text(encoding="utf-8"))
     oz, parcalar = veri["ozet"], veri["parcalar"]
+    # Whisper hatası yerelde, güncel eşitleme kuralıyla yeniden hesaplanır (Colab'deki değer "whisper_colab").
+    for r in parcalar:
+        r.setdefault("whisper_colab", r["whisper"])
+        r["whisper"] = hata(r["okunus"], r["duyulan"], esit=True)
+    oz["whisper_cer_ort"] = round(sum(r["whisper"]["cer"] for r in parcalar) / len(parcalar), 4)
+    oz["whisper_wer_ort"] = round(sum(r["whisper"]["wer"] for r in parcalar) / len(parcalar), 4)
+    oz["yanlis"] = sum(r["whisper"]["cer"] > CER_SINIR for r in parcalar)
+    (hedef / "sonuc.json").write_text(json.dumps(veri, ensure_ascii=False, indent=1), encoding="utf-8")
 
     satir = [f"# {hedef.name}", "", "## Ölçütler", ""]
     hepsi = True

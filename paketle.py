@@ -55,7 +55,7 @@ def main() -> None:
     hedef.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(hedef, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("is.json", json.dumps(is_, ensure_ascii=False, indent=1))
-        for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv"]:
+        for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py"]:
             if (KOK / f).exists():
                 z.write(KOK / f, Path(f).name)
         for f in sorted((KOK / "referans").glob("*.wav")):
