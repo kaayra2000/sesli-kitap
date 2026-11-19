@@ -14,7 +14,9 @@
   "sicaklik": 0.5,
   "referans": "canli",
   "hakem": "large-v3",
-  "uzatma": 1.5
+  "uzatma": 1.5,
+  "motor": "voxcpm",
+  "bolum_kelime": 40
  },
  "parca_en_cok_kelime": 28
 }

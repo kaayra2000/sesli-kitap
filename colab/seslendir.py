@@ -40,6 +40,7 @@ VARSAYILAN = {
     "aday": 6,             # en çok aday
     "erken_dur": 2,        # bu kadar temiz aday olunca dur
     "sicaklik": 0.5,
+    "motor": "pocket",     # pocket (pocket-tts-tr) | voxcpm (VoxCPM2, standart 2026-11-19)
     "referans": "canli",   # canli | temel | sakin | referans/<dosya>.wav
     "hakem": "large-v3",
     "ctc": ["mpoyraz/wav2vec2-xls-r-300m-cv8-turkish", "m3hrdadfi/wav2vec2-large-xlsr-turkish"],
@@ -108,6 +109,44 @@ def wav_yaz(yol: Path, x: np.ndarray, sr: int) -> None:
 def wav_oku(yol: Path) -> tuple[np.ndarray, int]:
     with wave.open(str(yol)) as w:
         return np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768, w.getframerate()
+
+
+TEMEL_METIN = ("Birimler ve yöneticiler artık düzenli kartlarda, net bir ağaç yapısında görünür. "
+               "Bir isme ya da fotoğrafa tıkladığınızda, sağda kişi kartı açılır.")
+
+
+class VoxSes:
+    """VoxCPM2 (openbmb/VoxCPM2, Apache-2.0), standarttaki sabit ses: temel ses (Piper Fahrettin) tam klon.
+
+    Referans klip + metni + tını referansı (prompt_wav_path, prompt_text, reference_wav_path); cfg 2.0, 10 adım.
+    Sıcaklık yoktur; adaylar tohumla çeşitlenir. Kurtarma geçişinde (model.temp düşürülünce) cfg 2.5 kullanılır.
+    """
+
+    def __init__(self, ayar: dict, cikti: Path):
+        from voxcpm import VoxCPM
+
+        self.vox = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+        self.sr = self.vox.tts_model.sample_rate
+        self.ayar = ayar
+        self.model = self  # seslendir döngüsü model.temp'e yazar
+        self.temp = ayar["sicaklik"]
+        self.ref = str(HERE / "referans/referans-temel-ses.wav")
+
+    def referans_kur(self, hakem: "Hakem") -> str:
+        return self.ref + " (VoxCPM2 tam klon)"
+
+    def soyle(self, metin: str, tohum: int) -> np.ndarray:
+        torch.manual_seed(tohum)
+        np.random.seed(tohum)
+        cfg = 2.5 if self.temp < self.ayar["sicaklik"] else 2.0
+        parcalar = []
+        for k, bolum in enumerate(bol(metin, self.ayar["bolum_kelime"])):
+            if k:
+                parcalar.append(np.zeros(int(self.ayar["bolum_ara"] * self.sr), np.float32))
+            x = self.vox.generate(text=bolum, prompt_wav_path=self.ref, prompt_text=TEMEL_METIN,
+                                  reference_wav_path=self.ref, cfg_value=cfg, inference_timesteps=10)
+            parcalar.append(kirp(np.asarray(x, dtype=np.float32), self.sr))
+        return np.concatenate(parcalar)
 
 
 class Ses:
@@ -360,7 +399,7 @@ def main() -> None:
     prof_yol = HERE / "referans/insan_profil.json"
     prof = {k: v for k, v in json.loads(prof_yol.read_text(encoding="utf-8")).items() if not k.startswith("_")} \
         if prof_yol.exists() else None
-    ses = Ses(ayar, cikti)
+    ses = VoxSes(ayar, cikti) if ayar["motor"] == "voxcpm" else Ses(ayar, cikti)
     hakem = Hakem(ayar)
     ref = ses.referans_kur(hakem)
     log(f"cihaz {DEV}, referans {ref}, sıcaklık {ayar['sicaklik']}, yükleme {time.time() - t0:.0f} sn")

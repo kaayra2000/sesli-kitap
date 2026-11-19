@@ -24,7 +24,20 @@ if [[ "$(python3 -c 'import json;print(json.load(open("is.json"))["mod"])')" == 
   echo "TAMAM: cikti-${konu}.zip hazır ($(du -h "cikti-${konu}.zip" | cut -f1))"
   exit 0
 fi
+MOTOR=$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("motor","pocket"))')
+if [[ "$MOTOR" == "voxcpm" ]]; then
+  # VoxCPM2 Python 3.12 ister (Colab 3.13): seslendir.py ve hakemler ayrı ortamda, CUDA 12.6 torch ile çalışır.
+  VX=/content/vx
+  env LD_LIBRARY_PATH="$COLAB_LD" $VX/bin/python -c "import torch, voxcpm, faster_whisper, librosa; assert torch.cuda.is_available()" 2>/dev/null || {
+    echo "VoxCPM ortamı kuruluyor..."; rm -rf $VX; pip install -q uv 2>&1 | tail -1
+    uv venv -q -p 3.12 $VX
+    uv pip install -q -p $VX/bin/python torch torchaudio --index-url https://download.pytorch.org/whl/cu126 2>&1 | tail -2
+    uv pip install -q -p $VX/bin/python voxcpm faster-whisper transformers librosa soundfile huggingface_hub 2>&1 | tail -2; }
+  VXLD=$($VX/bin/python -c 'import os,glob,nvidia;print(":".join(sorted({os.path.dirname(p) for p in glob.glob(os.path.join(list(nvidia.__path__)[0],"*","lib","*.so*"))})))')
+  env LD_LIBRARY_PATH="$VXLD:$COLAB_LD" $VX/bin/python seslendir.py is.json 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\("
+else
 python3 seslendir.py is.json 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\(" 
+fi
 [[ -f cikti/sonuc.json ]] || { echo "Seslendirme bitmedi." >&2; exit 1; }
 cp is.json cikti/
 # Çıktıyı küçült: seçilen cümleler Opus (tarayıcıdan alınan çıktı küçük kalsın), örnekte yalnız mp3.
