@@ -18,6 +18,7 @@ HERE = Path(__file__).resolve().parent
 is_ = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
 cikti = Path(sys.argv[2])
 ref = is_["referans"]
+print("cuda:", torch.cuda.is_available(), flush=True)
 model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
 sr = model.tts_model.sample_rate
 print("VoxCPM2 hazır, sr", sr, flush=True)
