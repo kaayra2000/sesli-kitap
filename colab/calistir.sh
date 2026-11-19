@@ -10,6 +10,8 @@ if [[ ! -f /content/.sesli-kitap-kurulu-2 ]]; then
   pip install -q pocket-tts faster-whisper nvidia-cublas-cu12 "nvidia-cudnn-cu12==9.*" 2>&1 | tail -3 || true
   touch /content/.sesli-kitap-kurulu-2
 fi
+# Colab'in özgün yolu (sürücü: /usr/lib64-nvidia) ayrı ortamlar için saklanır.
+export COLAB_LD="${LD_LIBRARY_PATH:-}"
 LD_LIBRARY_PATH="$(python3 -c 'import os, nvidia.cublas.lib as a, nvidia.cudnn.lib as b; print(list(a.__path__)[0] + ":" + list(b.__path__)[0])'):${LD_LIBRARY_PATH:-}"
 export LD_LIBRARY_PATH
 python3 -c "import torch;print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'UYARI: GPU yok')"
