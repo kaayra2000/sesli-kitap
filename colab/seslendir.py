@@ -224,31 +224,32 @@ class Hakem:
         return [w for s in seg for w in (s.words or [])]
 
 
-INSAN_VERI = "serdarcaglar/turkish-tts-audiobooks"
+INSAN_VERI = "https://huggingface.co/api/datasets/google/fleurs/parquet/tr_tr/test/0.parquet"
 
 
 def insan_profili(hakem: Hakem, ayar: dict, cikti: Path) -> None:
-    """İnsan anlatıcı kayıtlarından tonlama özelliklerinin dağılımı (yalnız istatistik; ses saklanmaz)."""
+    """İnsan okuyucu kayıtlarından tonlama özelliklerinin dağılımı (Google FLEURS Türkçe, CC BY 4.0; yalnız
+    istatistik, ses saklanmaz)."""
     import io
+    import urllib.request
 
+    import pandas as pd
     import soundfile as sf
-    from datasets import Audio, load_dataset
 
-    ds = load_dataset(INSAN_VERI, split="train", streaming=True)
-    sutun_ses = next(k for k, v in ds.features.items() if isinstance(v, Audio))
-    sutun_metin = next(k for k in ("text", "sentence", "transcription", "transcript", "normalized_text")
-                       if k in ds.features)
-    ds = ds.cast_column(sutun_ses, Audio(decode=False))
-    log(f"insan verisi: {INSAN_VERI}, sütunlar {list(ds.features)}")
+    yol = Path("/tmp/fleurs-tr.parquet")
+    if not yol.exists():
+        urllib.request.urlretrieve(INSAN_VERI, yol)
+    df = pd.read_parquet(yol)
+    log(f"insan verisi: FLEURS tr_tr test, {len(df)} kayıt, sütunlar {list(df.columns)}")
     kayitlar = []
-    for n, ornek in enumerate(ds):
-        if len(kayitlar) >= ayar.get("insan_n", 200) or n > 2000:
+    for n, ornek in df.sample(frac=1, random_state=0).iterrows():
+        if len(kayitlar) >= ayar.get("insan_n", 200):
             break
         try:
-            a = ornek[sutun_ses]
-            x, sr = sf.read(io.BytesIO(a["bytes"])) if a.get("bytes") else sf.read(a["path"])
+            a = ornek["audio"]
+            x, sr = sf.read(io.BytesIO(a["bytes"]))
             x = x.mean(1) if x.ndim > 1 else x
-            metin = str(ornek[sutun_metin]).strip()
+            metin = str(ornek["raw_transcription"]).strip()
             if not (1.5 <= len(x) / sr <= 15) or len(metin.split()) < 3:
                 continue
             x16 = resample(x.astype(np.float32), sr, 16000)
@@ -258,7 +259,7 @@ def insan_profili(hakem: Hakem, ayar: dict, cikti: Path) -> None:
         except Exception as e:  # noqa: BLE001
             log(f"insan örneği {n} atlandı: {e}")
     prof = tonlama.profil(kayitlar)
-    prof["_kaynak"] = {"veri": INSAN_VERI, "ornek": len(kayitlar)}
+    prof["_kaynak"] = {"veri": "google/fleurs tr_tr test (CC BY 4.0)", "ornek": len(kayitlar)}
     (cikti / "insan_profil.json").write_text(json.dumps(prof, ensure_ascii=False, indent=1, default=jsonla),
                                              encoding="utf-8")
     log("insan profili: " + json.dumps(prof, ensure_ascii=False, default=jsonla))

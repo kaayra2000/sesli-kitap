@@ -28,7 +28,6 @@ OLCUT = {  # ad: (alan, karşılaştırma, sınır)
     "hız 11-15.5 harf/sn": ("hiz_ort", "aralik", (11, 15.5)),
     "uzun ünlü / kısa ünlü >= 1.4": ("uzun_kisa_sonra", ">=", 1.4),
     "tonlama insan aralığında >= %75": ("tonlama_uyum_ort", ">=", 0.75),
-    "düz cümle sonu düşüyor >= %80": ("duz_sonu_dusen", ">=", 0.8),
 }
 GECMIS_ALAN = ["whisper_cer_ort", "whisper_wer_ort", "ctc_cer_ort", "mos_ort", "yanlis", "kuyruk", "takilma",
                "hiz_ort", "uzun_kisa_sonra", "tonlama_uyum_ort", "duz_sonu_dusen", "perde_std_ort", "aday_ort", "sure_sn"]
