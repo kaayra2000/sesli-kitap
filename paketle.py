@@ -27,7 +27,7 @@ KELIME_DK = 125
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("mod", choices=["test", "ornek", "deney", "insan", "yaris", "metin", "ayar", "referans", "gercek"])
+    p.add_argument("mod", choices=["test", "ornek", "deney", "insan", "yaris", "metin", "ayar", "referans", "gercek", "aday"])
     p.add_argument("--tur", type=int, default=0)
     p.add_argument("--bas", default="b0008-c00")
     p.add_argument("--sn", type=float, default=110)
@@ -42,7 +42,7 @@ def main() -> None:
         test = json.loads((KOK / a.kume).read_text(encoding="utf-8"))
         parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "ara": 0.5} for t in test]
-    elif a.mod in ("ayar", "referans", "gercek"):
+    elif a.mod in ("ayar", "referans", "gercek", "aday"):
         konu = f"{a.mod}{a.tur:02d}"
         metinler = [
             {"id": "duz", "metin": "Değerli çalışma arkadaşlarımız, yarın sabah saat dokuzdan on bire kadar e posta "
@@ -121,7 +121,7 @@ def main() -> None:
         z.writestr("is.json", json.dumps(is_, ensure_ascii=False, indent=1))
         for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py", "colab/tonlama.py", "colab/uzatma.py",
                   "colab/ayar_tarama.py", "colab/referans_ara.py",
-                  "colab/gercek_ses.py"]:
+                  "colab/gercek_ses.py", "colab/ses_adaylari.py"]:
             if (KOK / f).exists():
                 z.write(KOK / f, Path(f).name)
         for f in sorted((KOK / "referans").glob("*.wav")) + sorted((KOK / "referans").glob("*.json")):
