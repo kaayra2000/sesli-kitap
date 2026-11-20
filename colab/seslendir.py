@@ -115,8 +115,13 @@ TEMEL_METIN = ("Birimler ve yöneticiler artık düzenli kartlarda, net bir ağa
                "Bir isme ya da fotoğrafa tıkladığınızda, sağda kişi kartı açılır.")
 
 
+CANLI_METIN = "Size harika bir haberim var! Yeni sistemimiz hazır. Hadi, birlikte keşfedelim!"
+
+
 class VoxSes:
-    """VoxCPM2 (openbmb/VoxCPM2, Apache-2.0), standarttaki sabit ses: temel ses (Piper Fahrettin) tam klon.
+    """VoxCPM2 (openbmb/VoxCPM2, Apache-2.0), standarttaki sabit ses: canlı referans (temel ses Piper Fahrettin'in
+    tınısında canlı okunmuş klip, standartlar tasarim/ses/referans-canli.wav) tam klon. 2026-11-20 kör dinlemede Piper'ın
+    düz referansından (robotik) daha insansı bulundu.
 
     Referans klip + metni + tını referansı (prompt_wav_path, prompt_text, reference_wav_path); cfg 2.0, 10 adım.
     Sıcaklık yoktur; adaylar tohumla çeşitlenir. Kurtarma geçişinde (model.temp düşürülünce) cfg 2.5 kullanılır.
@@ -130,7 +135,8 @@ class VoxSes:
         self.ayar = ayar
         self.model = self  # seslendir döngüsü model.temp'e yazar
         self.temp = ayar["sicaklik"]
-        self.ref = str(HERE / "referans/referans-temel-ses.wav")
+        self.ref = str(HERE / "referans" / ayar.get("vox_referans", "referans-canli.wav"))
+        self.ref_metin = ayar.get("vox_referans_metin", CANLI_METIN)
 
     def referans_kur(self, hakem: "Hakem") -> str:
         return self.ref + " (VoxCPM2 tam klon)"
@@ -143,7 +149,7 @@ class VoxSes:
         for k, bolum in enumerate(bol(metin, self.ayar["bolum_kelime"])):
             if k:
                 parcalar.append(np.zeros(int(self.ayar["bolum_ara"] * self.sr), np.float32))
-            x = self.vox.generate(text=bolum, prompt_wav_path=self.ref, prompt_text=TEMEL_METIN,
+            x = self.vox.generate(text=bolum, prompt_wav_path=self.ref, prompt_text=self.ref_metin,
                                   reference_wav_path=self.ref, cfg_value=cfg, inference_timesteps=10)
             parcalar.append(kirp(np.asarray(x, dtype=np.float32), self.sr))
         return np.concatenate(parcalar)

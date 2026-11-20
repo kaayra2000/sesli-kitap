@@ -35,7 +35,9 @@ if [[ "$MOTOR" == "voxcpm" ]]; then
     uv pip install -q -p $VX/bin/python voxcpm faster-whisper transformers librosa soundfile huggingface_hub 2>&1 | tail -2; }
   VXLD=$($VX/bin/python -c 'import os,glob,nvidia;print(":".join(sorted({os.path.dirname(p) for p in glob.glob(os.path.join(list(nvidia.__path__)[0],"*","lib","*.so*"))})))')
   PY_BETIK=seslendir.py
-  [[ "$(python3 -c 'import json;print(json.load(open("is.json"))["mod"])')" == "ayar" ]] && { PY_BETIK=ayar_tarama.py;
+  MOD=$(python3 -c 'import json;print(json.load(open("is.json"))["mod"])')
+  [[ "$MOD" == "referans" ]] && PY_BETIK=referans_ara.py
+  [[ "$MOD" == "ayar" || "$MOD" == "referans" ]] && { [[ "$MOD" == "ayar" ]] && PY_BETIK=ayar_tarama.py;
     $VX/bin/python -c "import speechbrain" 2>/dev/null || uv pip install -q -p $VX/bin/python speechbrain 2>&1 | tail -1; }
   env LD_LIBRARY_PATH="$VXLD:$COLAB_LD" $VX/bin/python $PY_BETIK is.json 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\("
 else
@@ -45,7 +47,7 @@ fi
 cp is.json cikti/
 # Çıktıyı küçült: seçilen cümleler Opus (tarayıcıdan alınan çıktı küçük kalsın), örnekte yalnız mp3.
 shopt -s nullglob
-for f in cikti/secilen/*.wav cikti/tarama/*/*.wav; do ffmpeg -v error -y -i "$f" -c:a libopus -b:a 48k "${f%.wav}.opus" && rm "$f"; done
+for f in cikti/secilen/*.wav cikti/tarama/*/*.wav cikti/referans/sinav/*/*.wav; do ffmpeg -v error -y -i "$f" -c:a libopus -b:a 48k "${f%.wav}.opus" && rm "$f"; done
 rm -f cikti/ornek.wav cikti/ara-sonuc.json
 (cd cikti && zip -q -r "../cikti-${konu}.zip" .)
 echo "TAMAM: cikti-${konu}.zip hazır ($(du -h "cikti-${konu}.zip" | cut -f1))"
