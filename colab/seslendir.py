@@ -144,6 +144,17 @@ class VoxSes:
         self.temp = ayar["sicaklik"]
         self.ref = str(HERE / "referans" / ayar.get("vox_referans", "referans-canli.wav"))
         self.ref_metin = ayar.get("vox_referans_metin", CANLI_METIN)
+        if not self.ref_metin:  # metni bilinmeyen kayıt: Whisper ile yazıya dökülür
+            from faster_whisper import WhisperModel
+            w = WhisperModel("large-v3", device=DEV, compute_type="float16" if DEV == "cuda" else "int8")
+            import soundfile as sf
+            x, xsr = sf.read(self.ref, dtype="float32")  # PyAV sürümü faster-whisper ile uyumsuz: ses numpy verilir
+            x = x.mean(1) if x.ndim > 1 else x
+            seg, _ = w.transcribe(resample(x, xsr, 16000), language="tr", beam_size=5)
+            self.ref_metin = " ".join(s.text.strip() for s in seg)
+            del w
+            log(f"referans metni (Whisper): {self.ref_metin}")
+            (cikti / "referans_metin.txt").write_text(self.ref_metin, encoding="utf-8")
 
     def referans_kur(self, hakem: "Hakem") -> str:
         return self.ref + " (VoxCPM2 tam klon)"

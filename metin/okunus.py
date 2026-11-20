@@ -20,6 +20,9 @@ AYARLAR = {
     "gayn": True,             # ğ (gayn) -> g: ğâyet -> gâyet (TTS "ğ"yi yumuşak g gibi yutar)
     "tire_birlestir": True,   # fi’l-hakîka -> filhakîka, mertebe-i ‘azîmet -> mertebei azîmet
     "izafet_y": True,         # ünlüden sonra izafet: mertebe-i -> mertebeyi, Hudâ-ı -> Hudâyı (okuyucunun y kayması)
+    # s+h, c+h, t+h, z+h, d+h, k+h, p+h: model İngilizce çift harf sanıyor (ashâbına -> "ahşabına", 2026-11-20).
+    # "yok", "tire" (as-hâbına), "kesme" (as’hâbına) ya da "zwnj" (görünmez ayraç U+200C).
+    "harf_ayir": "zwnj",
     # Günümüz okunuşuna çeviren kurallar; varsayılan kapalı, yalnız hakem eşitlemesinde kullanılır:
     "ünsüz_benzesme": False,  # etdim -> ettim, sebeb -> sebep
     "eski_ekler": False,      # içün -> için, anı -> onu
@@ -131,6 +134,9 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
         t = re.sub(rf"(?<=[{HARF}])[’']?-(?=[{HARF}])", "", t)
     t = re.sub(rf"(?<=[{HARF}])[’'](?=[{HARF}])", "", t)    # hemze ve kesme: şey’in -> şeyin, Allah’ın -> Allahın
     t = re.sub(r"[’']", "", t)
+    ayrac = {"tire": "-", "kesme": "’", "zwnj": "\u200c"}.get(a.get("harf_ayir", "yok"))
+    if ayrac:
+        t = re.sub(r"([sScCtTzZdDkKpPgG])(?=[hH])", lambda m: m.group(1) + ayrac, t)
 
     def kelime_isle(m: re.Match) -> str:
         w = m.group(0)

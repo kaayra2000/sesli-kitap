@@ -1,0 +1,90 @@
+{
+ "aciklama": "İngilizce çift harf deneyi (sh/ch/th/zh/dh/kh/ph): model ashâbına'yı 'ahşabına' okudu. Ayraç biçimleri; yeni kitap sesi (kullanıcının indirdiği kayıt, 45 sn).",
+ "cumleler": [
+  {
+   "id": "h00",
+   "metin": "Salât ve selâm efendimiz ve peygamberimiz Muhammed Mustafâ’ya, onun âline ve takvâ sahibi iyi ashâbına olsun."
+  },
+  {
+   "id": "h01",
+   "metin": "Böyle bir muhabbete mazhar olan şahs mazhar olduğu şey’in ehemmiyyetini anlar da anı öldürmemeğe, tenmiyeye çalışırsa murâd ve maksûduna suhûletle nâ’il olur."
+  },
+  {
+   "id": "h02",
+   "metin": "Böyle bir devletin kadrini derk etmeğe ve şükrünü yerine getirmeğe çalışmak eshâbı içün vecâ’ibin evcebini teşkîl etmek lâzımdır."
+  },
+  {
+   "id": "h03",
+   "metin": "Zâtî ihtiyâr ile izhâr edilen havârık sülûk ve ‘urûc zamânına yâhûd hâlet-i sekr ve ğalebe-i hâle maksûr ve mahsûrdur."
+  },
+  {
+   "id": "h04",
+   "metin": "ve ‘ubûdiyyet-i Mevlâ’yı matlab ve maksad-ı aslî ittihâz etmedikçe hayz-ı mezkûr cenâbet-i ma‘neviyyesinden halâs olamazlar, tathîr edemezler."
+  },
+  {
+   "id": "h05",
+   "metin": "E’imme-i dînin kütüb-i fıkhiyyesinde, mübeyyen ve mufassal olan me’mûrât ve menhiyyâta müte‘allık a‘mâl ve ef‘âlin [dürüstçe] tahsîl ve ta‘lîmi;"
+  },
+  {
+   "id": "h06",
+   "metin": "Mürşid-i kâmile tevessül hakîkîde anı bilmeğe ve bulmağa muvaffak oldukdan sonra tarîkate kabûl ve idhâl ile telkîn-i zikr eylemesine merbûtdur."
+  },
+  {
+   "id": "h07",
+   "metin": "Bunları vüs‘ ve tâkati derecesinde, emr ve maksad-ı Şâri‘ vech ile güzel yapmadıkça a‘mâl ve ef‘âlinde semerâtını, netâyic-i kâmilesini bulamaz."
+  },
+  {
+   "id": "h11",
+   "metin": "Sıddîk-ı Ekber, radıyallâhu Te‘âlâ ‘an zâtihi’l-athar hazretleri ba‘de’l-enbiyâ efdal-i cemî‘-i beşerdir."
+  },
+  {
+   "id": "h12",
+   "metin": "sohbet, turuk-ı vusûlün akrebi, a‘zamı, efdali, eshali oldu."
+  },
+  {
+   "id": "h17",
+   "metin": "Bu bâbda nush ve pend, rıfk ve melâmet, cebr ve tazyîk, cenk ve cidâl mü’essir olmaz."
+  },
+  {
+   "id": "h18",
+   "metin": "[Eserlerimizde bu umûra müte‘allık ma‘ârifi okuyup anlamalı mezheb-i vasat ve necât olan ehl-i Sünnet mezhebi dâ’iresi dâhilinde mu‘takıd ve ‘âmil olmalıdır.]"
+  }
+ ],
+ "varyantlar": [
+  {
+   "ad": "yok",
+   "okunus": {
+    "harf_ayir": "yok"
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "tire",
+   "okunus": {
+    "harf_ayir": "tire"
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "kesme",
+   "okunus": {
+    "harf_ayir": "kesme"
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "zwnj",
+   "okunus": {
+    "harf_ayir": "zwnj"
+   },
+   "uzatma": 1.0
+  }
+ ],
+ "ayar": {
+  "aday": 2,
+  "erken_dur": 1,
+  "kurtarma_aday": 0,
+  "vox_referans": "kitap-sesi-yeni.wav",
+  "vox_referans_metin": ""
+ }
+}

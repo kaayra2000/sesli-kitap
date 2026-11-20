@@ -6,7 +6,8 @@
   "ünsüz_benzesme": false,
   "eski_ekler": false,
   "cift_y": false,
-  "izafet_y": true
+  "izafet_y": true,
+  "harf_ayir": "zwnj"
  },
  "seslendirme": {
   "aday": 4,
@@ -17,8 +18,8 @@
   "uzatma": 1.0,
   "motor": "voxcpm",
   "bolum_kelime": 40,
-  "vox_referans": "kitap-sesi-fleurs-kisa.wav",
-  "vox_referans_metin": "Herhangi bir değişiklik veya talep, doğrudan otele değil, önce seyahat acentesine iletilmelidir. Binlerce yıl önce, Aristarkus adlı bir adam Güneş Sistemi'nin Güneş'in etrafında döndüğünü söyledi. Kruger Ulusal Parkı (KNP), Güney Afrika'nın kuzey-doğusunda yer alır ve doğuda Mozambik, kuzeyde Zimbabve sınırı boyunca uzanır ve güney sınırı Timsah Nehri'nden oluşur.",
+  "vox_referans": "kitap-sesi-yeni.wav",
+  "vox_referans_metin": "Merhaba, ben Teknopark robotuyum. İstediğin konular hakkında sana yardımcı olabilirim. Ben Teknopark'ın yenilikçi dünyasından sana seslenen dijital asistanın ve rehber robotuyum. Buradaki enerjik atmosferi, üretkenliği ve geleceği şekillendiren projeleri sana en iyi şekilde aktarabilmek için tasarlandım. İster bu ekosisteme ilk kez adım atan bir ziyaretçi ol, ister yeni bir girişim fikrinin peşinde koşan bir girişimci ya da gece gündüz, demeden çalışan bir ar-ge ekibinin parçası. Kapım ve işlemcilerim sana her zaman açık. Teknopark bünyesindeki tüm süreçler, sunulan imkanlar ve yürütülen çalışmalar hakkında merak ettiğin her detayı benimle paylaşabilirsin.",
   "vox_denoise": false,
   "kurtarma_aday": 4
  },
