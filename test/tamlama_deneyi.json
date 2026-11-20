@@ -1,11 +1,45 @@
 {
  "aciklama": "Tamlama ve uzun ünlü biçimi deneyi (VoxCPM2, kitap sesi F): şapkalı/şapkasız x tireli/birleşik izafet.",
- "kume": "test/tamlama_kumesi.json",
+ "kume": "test/tamlama_kumesi_kisa.json",
  "varyantlar": [
-  {"ad": "kaldir-birlesik-uzat", "okunus": {"sapka": "kaldir", "tire_birlestir": true}, "uzatma": 1.5},
-  {"ad": "koru-birlesik", "okunus": {"sapka": "koru", "tire_birlestir": true}, "uzatma": 1.0},
-  {"ad": "koru-tireli", "okunus": {"sapka": "koru", "tire_birlestir": false, "izafet_y": false}, "uzatma": 1.0},
-  {"ad": "kaldir-tireli-uzat", "okunus": {"sapka": "kaldir", "tire_birlestir": false, "izafet_y": false}, "uzatma": 1.5}
+  {
+   "ad": "kaldir-birlesik-uzat",
+   "okunus": {
+    "sapka": "kaldir",
+    "tire_birlestir": true
+   },
+   "uzatma": 1.5
+  },
+  {
+   "ad": "koru-birlesik",
+   "okunus": {
+    "sapka": "koru",
+    "tire_birlestir": true
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "koru-tireli",
+   "okunus": {
+    "sapka": "koru",
+    "tire_birlestir": false,
+    "izafet_y": false
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "kaldir-tireli-uzat",
+   "okunus": {
+    "sapka": "kaldir",
+    "tire_birlestir": false,
+    "izafet_y": false
+   },
+   "uzatma": 1.5
+  }
  ],
- "ayar": {"aday": 3, "erken_dur": 1, "kurtarma_aday": 0}
+ "ayar": {
+  "aday": 2,
+  "erken_dur": 1,
+  "kurtarma_aday": 0
+ }
 }
