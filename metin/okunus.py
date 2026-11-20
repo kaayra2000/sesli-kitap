@@ -23,6 +23,10 @@ AYARLAR = {
     # s+h, c+h, t+h, z+h, d+h, k+h, p+h: model İngilizce çift harf sanıyor (ashâbına -> "ahşabına", 2026-11-20).
     # "yok", "tire" (as-hâbına), "kesme" (as’hâbına) ya da "zwnj" (görünmez ayraç U+200C).
     "harf_ayir": "zwnj",
+    # Kelime sonu Arapça ünsüz kümesi (hamd, kesb, fazl, nefy, vech): model son ünsüzü yutuyor (2026-11-20).
+    # "yok", "sert" (son ötümlü ötümsüzleşir: hamt, kesp), "zwnj" (iki ünsüz arasına görünmez ayraç), "sert_zwnj", "sert_cift" (r/l/m/n sonu çiftlenir: sekrr).
+    # Deney 12: zwnj araya ünlü sokuyor (sekr -> sektir); "sert" Hamd'ı düzeltti, genel doğruluk aynı.
+    "son_kume": "sert",
     # Günümüz okunuşuna çeviren kurallar; varsayılan kapalı, yalnız hakem eşitlemesinde kullanılır:
     "ünsüz_benzesme": False,  # etdim -> ettim, sebeb -> sebep
     "eski_ekler": False,      # içün -> için, anı -> onu
@@ -73,6 +77,25 @@ def sozluk_uygula(metin: str, ciftler: list[tuple[str, str]]) -> str:
 
 def kucuk(s: str) -> str:
     return s.replace("İ", "i").replace("I", "ı").lower()
+
+
+UNLU_HARF = "aeıioöuüâîûAEIİOÖUÜÂÎÛ"
+TR_KUME = {"rt", "rk", "nk", "st", "lt", "nt", "rç", "lç", "şt", "ft", "ks", "rs", "rp", "lk", "mp", "ns", "nç", "rş", "şk"}
+
+
+def son_kume(kelime: str, bicim: str) -> str:
+    """Kelime sonundaki Türkçede olmayan ünsüz kümesini modelin okuyacağı biçime getirir."""
+    if bicim == "yok" or len(kelime) < 3 or kelime[-1] in UNLU_HARF or kelime[-2] in UNLU_HARF:
+        return kelime
+    if kucuk(kelime[-2:]) in TR_KUME:
+        return kelime
+    if "sert" in bicim:
+        kelime = kelime[:-1] + {"b": "p", "c": "ç", "d": "t", "g": "k"}.get(kelime[-1], kelime[-1])
+    if "cift" in bicim and kelime[-1] in "rlmnRLMN" and kelime[-1] != kelime[-2]:
+        kelime = kelime + kelime[-1]  # sekr -> sekrr: akıcı son ünsüz yutulmasın
+    if "zwnj" in bicim and kelime[-1] != kelime[-2]:
+        kelime = kelime[:-1] + "\u200c" + kelime[-1]
+    return kelime
 
 
 ISTISNA = {"muhammed", "seyyid", "ahmed", "mahmud", "mahmûd", "abd", "nakşibend", "gucdüvânî", "ğucdüvânî"}
@@ -152,6 +175,7 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
             w = re.sub(r"([iıîİ])yy([eaâ])", r"\1y\2", w)
         if a["ünsüz_benzesme"]:
             w = benzesme(w)
+        w = son_kume(w, a.get("son_kume", "yok"))
         if a["sapka"] == "cift":
             w = re.sub(r"[âîûÂÎÛ]", lambda m: {"â": "aa", "î": "ii", "û": "uu", "Â": "Aa", "Î": "İi", "Û": "Uu"}[m.group(0)], w)
         if a["sapka"] == "kaldir":

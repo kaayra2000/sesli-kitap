@@ -7,7 +7,8 @@
   "eski_ekler": false,
   "cift_y": false,
   "izafet_y": true,
-  "harf_ayir": "zwnj"
+  "harf_ayir": "zwnj",
+  "son_kume": "sert"
  },
  "seslendirme": {
   "aday": 4,

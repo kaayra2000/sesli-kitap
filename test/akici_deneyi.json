@@ -1,0 +1,90 @@
+{
+ "aciklama": "Akıcı sonlu küme deneyi (sekr -> sek, cehl -> ceh): son r/l/m/n çiftleme.",
+ "cumleler": [
+  {
+   "id": "l00",
+   "metin": "mukaddimâtı fazl ve tevfîk-i Hakk ile kesbe ta‘alluk eder."
+  },
+  {
+   "id": "l01",
+   "metin": "Ederse emr üzerine min ğayri ihtiyârin zuhûr eyler."
+  },
+  {
+   "id": "l02",
+   "metin": "Zâtî ihtiyâr ile izhâr edilen havârık sülûk ve ‘urûc zamânına yâhûd hâlet-i sekr ve ğalebe-i hâle maksûr ve mahsûrdur."
+  },
+  {
+   "id": "l03",
+   "metin": "Ekser memkûr ve müstedrec dûçâr-ı mekr olduğundan haberdâr değildir."
+  },
+  {
+   "id": "l04",
+   "metin": "Ehl-i inkâr ve küfr zât-ı risâletden tasdîk-ı nübüvvet ve risâlet içün bir hârika taleb ederlerdi."
+  },
+  {
+   "id": "l05",
+   "metin": "Mürşid-i kâmile tevessül hakîkîde anı bilmeğe ve bulmağa muvaffak oldukdan sonra tarîkate kabûl ve idhâl ile telkîn-i zikr eylemesine merbûtdur."
+  },
+  {
+   "id": "l06",
+   "metin": "kendi ‘azm, irâde, ihtiyâr ve istitâ‘atiyle te‘dâd edilen umûru îfâ ve ityâna muktedirdir."
+  },
+  {
+   "id": "l07",
+   "metin": "Bilâ ‘ilm ve lâ-şu‘ûr zuhûr eden a‘mâl-i hasenadan mütehassıl semerât ve netâyici;"
+  },
+  {
+   "id": "l08",
+   "metin": "Kesbe ta‘alluk eden tavr ve hareketin bir mikdârı yukarıda geçmişdir."
+  },
+  {
+   "id": "l09",
+   "metin": "Çünki ‘akl-ı me‘âşın serhadd-i intihâ-yı idrâki seyr ile’llâha kadardır."
+  },
+  {
+   "id": "l10",
+   "metin": "İlk iş ‘ayn-ı zenb ve cehl ve hatî’e olan nefsin ıslâhıdır."
+  },
+  {
+   "id": "l11",
+   "metin": "Zühd, tevekkül, tevhîd, tecerrüd, sabr, fenâ, inkıtâ‘, rızâ gibi ...."
+  },
+  {
+   "id": "lk02",
+   "metin": "terk-i kevneyn rehrevler içün seyr ile’llâhın müntehâsında sekr ve fenâ zımnında bi-tarîki’l-ahvâl husûle gelir."
+  },
+  {
+   "id": "lk04",
+   "metin": "Kurûn-ı mütetâvilede ve a‘sâr-ı mütebâ‘idede bir ferd zuhûr ederse ‘âlem içün büyük fazl ve keremdir."
+  },
+  {
+   "id": "lk06",
+   "metin": "Sebebi ise ‘ilm ve ma‘ârif, usûl ve ıstılâhlarının Kitâb ve Sünnet ahkâmına muhâlif olması, sekr ve ğalebe-i hâle müstened bulunmasıdır."
+  },
+  {
+   "id": "lk11",
+   "metin": "kendini ‘uyûb ve nekâ’isden mu‘arrâ zann eden ve bir meziyyete sâhib olduğu vehmine düşen erbâb-ı cehl ve dalâletin hâlidir."
+  }
+ ],
+ "varyantlar": [
+  {
+   "ad": "sert",
+   "okunus": {
+    "son_kume": "sert"
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "sert_cift",
+   "okunus": {
+    "son_kume": "sert_cift"
+   },
+   "uzatma": 1.0
+  }
+ ],
+ "ayar": {
+  "aday": 2,
+  "erken_dur": 1,
+  "kurtarma_aday": 0
+ }
+}

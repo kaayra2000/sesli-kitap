@@ -1,0 +1,92 @@
+{
+ "aciklama": "Kelime sonu ünsüz kümesi deneyi (hamd, kesb, fazl...): model son ünsüzü yutuyor. Yeni kitap sesi.",
+ "cumleler": [
+  {
+   "id": "k00",
+   "metin": "Hamd, yüce ve en yüce olan Allah’adır."
+  },
+  {
+   "id": "k01",
+   "metin": "Beyt-i Rahmân olmak kâbiliyyetini hâ’iz bulunan kalb mâsivâ ile memlû kaldıkça beyt-i nefs ve hevâ ve şeytândır."
+  },
+  {
+   "id": "k02",
+   "metin": "terk-i kevneyn rehrevler içün seyr ile’llâhın müntehâsında sekr ve fenâ zımnında bi-tarîki’l-ahvâl husûle gelir."
+  },
+  {
+   "id": "k03",
+   "metin": "Erbâb-ı sekr cenneti taleb etmemeği, cehennemden isti‘âze eylememeği şân-ı ‘ubûdiyyete muvâfık ve bir kemâl zann ederler."
+  },
+  {
+   "id": "k04",
+   "metin": "Kurûn-ı mütetâvilede ve a‘sâr-ı mütebâ‘idede bir ferd zuhûr ederse ‘âlem içün büyük fazl ve keremdir."
+  },
+  {
+   "id": "k05",
+   "metin": "Sakın bâlâda zikr edilen kemâlâtı ‘âmme-i mutasavvıfanın zebânzedi olan kemâlât zann etme."
+  },
+  {
+   "id": "k06",
+   "metin": "Sebebi ise ‘ilm ve ma‘ârif, usûl ve ıstılâhlarının Kitâb ve Sünnet ahkâmına muhâlif olması, sekr ve ğalebe-i hâle müstened bulunmasıdır."
+  },
+  {
+   "id": "k07",
+   "metin": "Burada mevzû‘-ı bahs olan îkân kemâlât-ı âfâkıyye ve enfüsiyyenin keşf ve şühûdunun, zuhûrât ve tecelliyâtın fevkıdır."
+  },
+  {
+   "id": "k08",
+   "metin": "Bidâyetde zikr ederken, tekellüfle mâsivâyı nefy etmek, zikr-i Mevlâ ile mâsivâyı bi’l-mücâhede nisyân eylemek lâzımdır."
+  },
+  {
+   "id": "k09",
+   "metin": "Bu maksadı imkân dâ’iresinde yerine getirdikleri hâlde emr bi’l-ma‘rûf nehy ‘ani’l-münker yapıldığına hiçbir ferd vukûf hâsıl edemez."
+  },
+  {
+   "id": "k10",
+   "metin": "Bu bâbda nush ve pend, rıfk ve melâmet, cebr ve tazyîk, cenk ve cidâl mü’essir olmaz."
+  },
+  {
+   "id": "k11",
+   "metin": "kendini ‘uyûb ve nekâ’isden mu‘arrâ zann eden ve bir meziyyete sâhib olduğu vehmine düşen erbâb-ı cehl ve dalâletin hâlidir."
+  },
+  {
+   "id": "k12",
+   "metin": "ihâta ve ma‘iyyetden her hangi bir ‘ilm ve hükm varsa, sekr-i vakt ve ğalebe-i hâlden nâşîdir."
+  }
+ ],
+ "varyantlar": [
+  {
+   "ad": "yok",
+   "okunus": {
+    "son_kume": "yok"
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "sert",
+   "okunus": {
+    "son_kume": "sert"
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "zwnj",
+   "okunus": {
+    "son_kume": "zwnj"
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "sert_zwnj",
+   "okunus": {
+    "son_kume": "sert_zwnj"
+   },
+   "uzatma": 1.0
+  }
+ ],
+ "ayar": {
+  "aday": 2,
+  "erken_dur": 1,
+  "kurtarma_aday": 0
+ }
+}
