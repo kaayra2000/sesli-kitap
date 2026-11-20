@@ -126,7 +126,8 @@ def main() -> None:
     for x in (p for p in parcalar if "uzun" not in p):
         sapkali = okunus(x["metin"], sozluk, {**ayarlar["okunus"], "sapka": "koru"})
         if len(sapkali) == len(x["okunus"]):
-            x["uzun"] = [i for i, (a, b) in enumerate(zip(x["okunus"], sapkali)) if a != b]
+            # Uzun ünlü: şapkalı okunuşta şapkalı harf (okunuş şapkalıysa da ölçülür)
+            x["uzun"] = [i for i, c in enumerate(sapkali) if c in "âîûÂÎÛ"]
     is_ = {"konu": konu, "mod": a.mod, "ayar": ayarlar["seslendirme"], "parcalar": parcalar}
     hedef = KOK / "dist" / f"is-{konu}.zip"
     hedef.parent.mkdir(exist_ok=True)
