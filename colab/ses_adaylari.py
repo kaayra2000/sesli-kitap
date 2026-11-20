@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Maskot sesi adayları: Google FLEURS Türkçe (CC BY 4.0) bütün konuşmacıları ECAPA ile kümelenir; her konuşmacı için
+Maskot sesi adayları: Google FLEURS Türkçe (CC BY 4.0) erkek konuşmacıları ECAPA ile kümelenir; her konuşmacı için
 perde (ortanca F0), perde oynaklığı, konuşma hızı ve kayıt temizliği ölçülür. Canlı, temiz ve tizliği farklı 8
 konuşmacının gerçek kayıtları (sentez yok) 25-30 sn'lik dinleme dosyaları olarak çıkar; kullanıcı dinleyip seçer.
 
@@ -52,7 +52,9 @@ for bolum in ("train", "validation", "test"):
     yol = Path(f"/tmp/fleurs-tr-{bolum}.parquet")
     if not yol.exists():
         urllib.request.urlretrieve(URL.format(bolum), yol)
-    for _, r in pd.read_parquet(yol).iterrows():
+    df = pd.read_parquet(yol)
+    df = df[df["gender"].astype(str).str.lower().isin(["0", "male"])]  # yalnız erkek sesi (kullanıcı isteği)
+    for _, r in df.iterrows():
         x, sr = sf.read(io.BytesIO(r["audio"]["bytes"]), dtype="float32")
         x = x.mean(1) if x.ndim > 1 else x
         x16 = seslendir.resample(x, sr, 16000)
@@ -105,7 +107,7 @@ for c in ozet:
 ozet.sort(key=lambda c: -c["puan"])
 secilen, kovalar = [], {}
 for c in ozet:
-    kova = "alcak" if c["f0"] < 140 else ("orta" if c["f0"] < 210 else "yuksek")
+    kova = "alcak" if c["f0"] < 110 else ("orta" if c["f0"] < 140 else "yuksek")
     if kovalar.get(kova, 0) < 3 and c["snr"] >= 25:
         secilen.append(c)
         kovalar[kova] = kovalar.get(kova, 0) + 1
