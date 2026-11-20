@@ -3,7 +3,7 @@
 Daha canlı sabit ses referansı arar (VoxCPM ortamında, Python 3.12).
 
 1. Aday üret: şu anki canlı referansın (D) sesiyle VoxCPM2'ye canlı / sıcak metinler okutulur (metin x cfg x tohum).
-2. Ele: Whisper CER <= %2, temel sese (Piper Fahrettin) ECAPA benzerliği >= BENZERLIK_ALT (tını korunur).
+2. Ele: Whisper CER <= %2, sabit sese (şu anki canlı referans) ECAPA benzerliği >= BENZERLIK_ALT (ses aynı kalır).
 3. Sırala: canlılık = perde oynaklığı (insan 90. yüzdeliğini aşmadan) + tempo değişkenliği; tonlama insan aralığında.
 4. Sına: en iyi FINALIST aday referans olarak kullanılıp test cümleleri (düz + Osmanlıca) klonlanır; asıl ölçü budur.
 
@@ -34,7 +34,7 @@ METINLER = {
 }
 CFG = (1.8, 2.2)
 TOHUM = 6
-BENZERLIK_ALT = 0.55
+BENZERLIK_ALT = 0.70
 FINALIST = 4
 
 is_ = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
@@ -57,8 +57,8 @@ def gomme(x, s):
     return e / e.norm()
 
 
-x, s = sf.read(TEMEL, dtype="float32")
-temel_e = gomme(x, s)
+x, s = sf.read(CANLI, dtype="float32")
+temel_e = gomme(x, s)  # karşılaştırma: sabit ses (canlı referans)
 
 
 def olc(y, metin):
