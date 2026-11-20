@@ -31,6 +31,7 @@ def main() -> None:
     p.add_argument("--tur", type=int, default=0)
     p.add_argument("--bas", default="b0008-c00")
     p.add_argument("--sn", type=float, default=110)
+    p.add_argument("--bitis", default="", help="ornek: bu parça kimliğinde dur (bölüm sonu)")
     p.add_argument("--kume", default="test/test_kumesi.json", help="test modunda cümle kümesi")
     p.add_argument("--ad", default="tur", help="konu adı öneki (tur, dogrulama)")
     a = p.parse_args()
@@ -97,10 +98,12 @@ def main() -> None:
         ayarlar["seslendirme"] = {**ayarlar["seslendirme"], **deney["ayar"]}
     else:
         konu = f"ornek{a.tur:02d}"
-        hepsi = hazirla(KITAP.read_text(encoding="utf-8"), ayarlar["parca_en_cok_kelime"], ayarlar["okunus"])
+        hepsi = hazirla(KITAP.read_text(encoding="utf-8"), ayarlar["parca_en_cok_kelime"], ayarlar["okunus"], birlestir=True)
         bas = next(i for i, x in enumerate(hepsi) if x["id"] >= a.bas)
         parcalar, kelime = [], 0
         for x in hepsi[bas:]:
+            if a.bitis and x["id"] >= a.bitis:
+                break
             parcalar.append(x)
             kelime += len(x["okunus"].split())
             if kelime / KELIME_DK * 60 >= a.sn:

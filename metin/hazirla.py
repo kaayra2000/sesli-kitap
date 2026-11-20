@@ -68,8 +68,19 @@ def baslik_harfi(metin: str) -> str:
     """Tamamı büyük harfli metni Türkçe kurala göre ilk harfleri büyük yazar (str.title İ'yi bozar)."""
     def kelime(w: str) -> str:
         k = w.replace("İ", "i").replace("I", "ı").lower()
-        return (k[0].replace("i", "İ").replace("ı", "I").upper() + k[1:]) if k else k
-    return re.sub(r"[^\s\-‘’]+", lambda m: kelime(m.group(0)), metin)
+        i = next((j for j, c in enumerate(k) if c.isalpha()), None)  # baştaki ‘ ’ işaretleri atlanır
+        return k if i is None else k[:i] + k[i].replace("i", "İ").replace("ı", "I").upper() + k[i + 1:]
+    kucuk_kelime = {"ve", "ile", "ki", "de", "da", "fî", "fi", "min", "an", "ala", "alâ", "bi", "li"}
+
+    def tam(w: str) -> str:
+        # İzafet ve harf-i tarif ekleri küçük kalır: Temessük-i Hakîkî, Seyyidü’l-Enbiyâ
+        bas, *ekler = w.split("-")
+        b = bas.replace("İ", "i").replace("I", "ı").lower()
+        b = b if b in kucuk_kelime else kelime(bas)
+        return "-".join([b] + [e.replace("İ", "i").replace("I", "ı").lower() if len(e) <= 3 else kelime(e)
+                               for e in ekler])
+    sonuc = re.sub(r"\S+", lambda m: tam(m.group(0)), metin)
+    return sonuc[:1].upper() + sonuc[1:]
 
 
 def bloklar(md: str):
@@ -104,7 +115,7 @@ def _bloklar(md: str):
             yield "paragraf", sayfa, " ".join(blok.split())
 
 
-def hazirla(md: str, en_cok: int = 28, ayar: dict | None = None) -> list[dict]:
+def hazirla(md: str, en_cok: int = 28, ayar: dict | None = None, birlestir: bool = False) -> list[dict]:
     notlar = dipnotlar(md)
     sozluk = sozluk_yukle()
     parcalar = []
@@ -129,6 +140,18 @@ def hazirla(md: str, en_cok: int = 28, ayar: dict | None = None) -> list[dict]:
         if metin.isupper():
             metin = baslik_harfi(metin)
         cumleler = [p for c in cumlelere_bol(metin) for p in uzunu_bol(c, en_cok)]
+        if birlestir and tur == "paragraf":
+            # Paragraf içindeki cümleler en_cok kelimeye kadar tek parçada okunur: model bağlamı görür, tonlama
+            # doğallaşır, çok kısa (1-2 sn) parça kalmaz.
+            toplu, kova = [], []
+            for c in cumleler:
+                if kova and len(" ".join(kova + [c]).split()) > en_cok:
+                    toplu.append(" ".join(kova))
+                    kova = []
+                kova.append(c)
+            if kova:
+                toplu.append(" ".join(kova))
+            cumleler = toplu
         for k, c in enumerate(cumleler):
             soz = okunus(c, sozluk, ayar)
             if not re.search(r"[A-Za-zÇĞİÖŞÜçğıöşü]", soz):
