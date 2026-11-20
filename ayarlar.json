@@ -1,6 +1,6 @@
 {
  "okunus": {
-  "sapka": "kaldir",
+  "sapka": "koru",
   "gayn": true,
   "tire_birlestir": true,
   "ünsüz_benzesme": false,
@@ -14,7 +14,7 @@
   "sicaklik": 0.5,
   "referans": "canli",
   "hakem": "large-v3",
-  "uzatma": 1.5,
+  "uzatma": 1.0,
   "motor": "voxcpm",
   "bolum_kelime": 40,
   "vox_referans": "kitap-sesi-fleurs-kisa.wav",

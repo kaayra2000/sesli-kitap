@@ -114,6 +114,10 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
     t = t.replace("*", "").replace("✱", ",").replace("…", ",")
     t = re.sub(r"\s*[—–]\s*", ", ", t)
     t = t.replace("[", "").replace("]", "")
+    # Parantez içi (dua, açıklama) ayrı bir söz öbeğidir: virgülle ayrılır, yoksa cümleye yapışıp yutuluyor.
+    t = re.sub(r"\s*\(\s*", ", ", t)
+    t = re.sub(r"\s*\)\s*(?=[,.;:!?])", "", t)
+    t = re.sub(r"\s*\)\s*", ", ", t)
     t = re.sub(r"[“”\"«»]", "", t)
     t = sozluk_uygula(t, ciftler)
     t = re.sub(r"\b(\d+)/(\d+)\b", lambda m: f"{sayi_yazi(int(m.group(1)))} {sayi_yazi(int(m.group(2)))}", t)

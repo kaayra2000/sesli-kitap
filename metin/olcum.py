@@ -21,6 +21,7 @@ def normalize(text: str) -> str:
 def esitle(metin: str) -> str:
     """Günümüz imlâsı + yazım farkları: çift ünsüz (Hakk/hak, hâssdır/hastır), izafet ünlüsü (huzurı/huzuru),
     eklerin kesme ve tireyle ayrılması (Ekber'den, daire-i)."""
+    metin = re.sub(r"\b[Hh]z\.\s*", "Hazret-i ", metin)   # Whisper "Hazret-i"yi "Hz." diye kısaltıyor
     t = normalize(okunus(metin, [], GUNUMUZ))
     t = re.sub(r"([bcçdfgğhjklmnprsştvyz])\1", r"\1", t)   # çift ünsüz: hâssdır/hastır, Hakk/hak
     t = re.sub(r"(?<=\w)[ıiuü]\b", "i", t)
