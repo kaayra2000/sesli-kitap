@@ -88,9 +88,10 @@ def main() -> None:
         for t in cumleler:
             for v in deney["varyantlar"]:
                 v = v if isinstance(v, dict) else {"ad": v, "okunus": {"sapka": v}}
-                oku = {**ayarlar["okunus"], **v["okunus"]}
+                oku = {**ayarlar["okunus"], **v.get("okunus", {})}
                 x = {"id": f"{t['id']}--{v['ad']}", "metin": t["metin"], "hedef": t["metin"], "ara": 0.5,
-                     "okunus": okunus(t["metin"], sozluk, oku), "uzatma": v.get("uzatma", 1.0)}
+                     "okunus": okunus(t["metin"], sozluk, oku), "uzatma": v.get("uzatma", 1.0),
+                     **({"vox_referans": v["vox_referans"]} if v.get("vox_referans") else {})}
                 sapkali = okunus(t["metin"], sozluk, {**oku, "sapka": "koru"})
                 if len(sapkali) == len(x["okunus"]):
                     x["uzun"] = [i for i, c in enumerate(sapkali) if c in "âîûÂÎÛ"]

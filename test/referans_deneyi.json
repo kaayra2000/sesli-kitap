@@ -1,0 +1,89 @@
+{
+ "aciklama": "Referans kesiti deneyi: yeni ses cümle sonunda perdeyi fazla düşürüyor (son kelime 4.0 yarım ton, insan 1.8). Kaydın farklı kesitleri.",
+ "cumleler": [
+  {
+   "id": "kitap-b0095-c02",
+   "metin": "Bu mevzû‘ tafsîle muhtâcdır."
+  },
+  {
+   "id": "kitap-b0221-c01",
+   "metin": "vücûd ve kemâlât-ı tâbi‘a-i vücûd hâssa-i Rabb-i Ma‘bûddur."
+  },
+  {
+   "id": "kitap-b0291-c02",
+   "metin": "Belki ‘ayn-ı îmân-ı kâmildir."
+  },
+  {
+   "id": "kitap-b0534-c01",
+   "metin": "şerî‘atin sûreti ile hakîkatî miyânında mutavassıtdır."
+  },
+  {
+   "id": "kitap-b0271-c01",
+   "metin": "Bi’l-‘aks ma‘rifet-i Hudâ’yı tevsî‘dir."
+  },
+  {
+   "id": "kitap-b0538-c05",
+   "metin": "makâm-ı sıddîkıyyet fevk-ı mertebe-i nübüvvetdir."
+  },
+  {
+   "id": "kitap-b0135-c04",
+   "metin": "belki lâ-şey’-i mahz gibi olur."
+  },
+  {
+   "id": "kitap-b0240-c16",
+   "metin": "Vâcibü’l-Vücûd ‘unvânı ona hâssdır."
+  },
+  {
+   "id": "kitap-b0164-c10",
+   "metin": "Bunu tefrîk etmek tâlib-i müsterşidin nazarından hâricdir."
+  },
+  {
+   "id": "zor-sayi",
+   "metin": "Şeyhimizden i‘tibâren 33 vâsıta ile müselsel ve muttasıldır; bu mektûb 1340 senesinde yazıldı."
+  },
+  {
+   "id": "zor-benzesme",
+   "metin": "Mektûbunuzu aldım, cevâbını yazdım; sebebi budur ki muhabbet şartdır ve kalbde yer etdi."
+  },
+  {
+   "id": "zor-hemze",
+   "metin": "Mes’ele şudur: Kur’ân-ı Kerîm’in âyetlerini te’emmül eden mü’min, şey’in hakîkatini anlar."
+  },
+  {
+   "id": "zor-ayn",
+   "metin": "Ma‘lûmunuz olsun ki ‘ilm, ‘amel ve ma‘rifet birbirinden ayrılmaz."
+  },
+  {
+   "id": "zor-izafet",
+   "metin": "Tarîka-i ‘Aliyye-i Nakşbendiyye’nin âdâb-ı zarûriyyesi, sohbet-i şeyh ve râbıta-i kalbiyyedir."
+  }
+ ],
+ "varyantlar": [
+  {
+   "ad": "a",
+   "vox_referans": "kitap-sesi-yeni.wav"
+  },
+  {
+   "ad": "b",
+   "vox_referans": "kitap-sesi-yeni-b.wav"
+  },
+  {
+   "ad": "c",
+   "vox_referans": "kitap-sesi-yeni-c.wav"
+  },
+  {
+   "ad": "tam",
+   "vox_referans": "kitap-sesi-yeni-tam.wav"
+  }
+ ],
+ "ayar": {
+  "aday": 2,
+  "erken_dur": 1,
+  "kurtarma_aday": 0,
+  "vox_referans_metinleri": {
+   "kitap-sesi-yeni-tam.wav": "Merhaba, ben Teknopark robotuyum. İstediğin konular hakkında sana yardımcı olabilirim. Ben Teknopark'ın yenilikçi dünyasından sana seslenen dijital asistanın ve rehber robotuyum. Buradaki enerjik atmosferi, üretkenliği ve geleceği şekillendiren projeleri sana en iyi şekilde aktarabilmek için tasarlandım. İster bu ekosisteme ilk kez adım atan bir ziyaretçi ol, ister yeni bir girişim fikrinin peşinde koşan bir girişimci ya da gece gündüz, demeden çalışan bir ar-ge ekibinin parçası. Kapım ve işlemcilerim sana her zaman açık. Teknopark bünyesindeki tüm süreçler, sunulan imkanlar ve yürütülen çalışmalar hakkında merak ettiğin her detayı benimle paylaşabilirsin. Kuluçka merkezlerindeki başvuru şartlarından tut da devlet desteklerine, vergi muafiyetlerinden mentorluk programlarına kadar pek çok konuda sana yol gösterebilirim. Ayrıca bina içerisindeki yönlendirmeler, etkinlik takvimlerinden, veya ortak çalışma alanlarının kullanımı gibi günlük hayatını kolaylaştıracak pratik bilgileri de anında sunabilirim. Sadece kurumsal ve teknik konularla sınırlı kalmak zorunda da değiliz. Yeni bir proje fikrini tartışmak, teknoloji dünyasındaki son trendler üzerine beyin fırtınası yapmak ya da sadece kısa bir mola verip sohbet etmek istediğinde de yanındayım.",
+   "kitap-sesi-yeni-b.wav": "Kapım ve işlemcilerim sana her zaman açık. Teknopark bünyesindeki tüm süreçler, sunulan imkanlar ve yürütülen çalışmalar hakkında merak ettiğin her detayı benimle paylaşabilirsin. Kuluçka merkezlerindeki başvuru şartlarından tut da devlet desteklerine, vergi muafiyetlerinden mentorluk programlarına kadar pek çok konuda sana yol gösterebilirim. Ayrıca bina içerisindeki yönlendirmeler, etkinlik takvimlerinden, veya ortak çalışma alanlarının kullanımı gibi günlük hayatını kolaylaştıracak pratik bilgileri de anında sunabilirim. Sadece kurumsal ve teknik konularla sınırlı kalmak zorunda da değiliz. Yeni bir proje fikrini tartışmak, teknoloji dünyasındaki son trendler üzerine beyin fırtınası yapmak ya da sadece kısa bir mola verip sohbet etmek istediğinde de yanındayım.",
+   "kitap-sesi-yeni-c.wav": "Ben Teknopark'ın yenilikçi dünyasından sana seslenen dijital asistanın ve rehber robotuyum. Buradaki enerjik atmosferi, üretkenliği ve geleceği şekillendiren projeleri sana en iyi şekilde aktarabilmek için tasarlandım. İster bu ekosisteme ilk kez adım atan bir ziyaretçi ol, ister yeni bir girişim fikrinin peşinde koşan bir girişimci ya da gece gündüz, demeden çalışan bir ar-ge ekibinin parçası. Kapım ve işlemcilerim sana her zaman açık. Teknopark bünyesindeki tüm süreçler, sunulan imkanlar ve yürütülen çalışmalar hakkında merak ettiğin her detayı benimle paylaşabilirsin. Kuluçka merkezlerindeki başvuru şartlarından tut da devlet desteklerine, vergi muafiyetlerinden mentorluk programlarına kadar pek çok konuda sana yol gösterebilirim."
+  }
+ }
+}

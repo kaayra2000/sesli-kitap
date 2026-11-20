@@ -143,32 +143,43 @@ class VoxSes:
         self.model = self  # seslendir döngüsü model.temp'e yazar
         self.temp = ayar["sicaklik"]
         self.ref = str(HERE / "referans" / ayar.get("vox_referans", "referans-canli.wav"))
-        self.ref_metin = ayar.get("vox_referans_metin", CANLI_METIN)
-        if not self.ref_metin:  # metni bilinmeyen kayıt: Whisper ile yazıya dökülür
-            from faster_whisper import WhisperModel
-            w = WhisperModel("large-v3", device=DEV, compute_type="float16" if DEV == "cuda" else "int8")
-            import soundfile as sf
-            x, xsr = sf.read(self.ref, dtype="float32")  # PyAV sürümü faster-whisper ile uyumsuz: ses numpy verilir
-            x = x.mean(1) if x.ndim > 1 else x
-            seg, _ = w.transcribe(resample(x, xsr, 16000), language="tr", beam_size=5)
-            self.ref_metin = " ".join(s.text.strip() for s in seg)
-            del w
-            log(f"referans metni (Whisper): {self.ref_metin}")
-            (cikti / "referans_metin.txt").write_text(self.ref_metin, encoding="utf-8")
+        self.cikti = cikti
+        self.ref_metin = ayar.get("vox_referans_metin", CANLI_METIN) or self.yaziya_dok(self.ref)
+        self.refler = {Path(self.ref).name: self.ref_metin, **ayar.get("vox_referans_metinleri", {})}
+
+    def yaziya_dok(self, yol: str) -> str:
+        """Metni bilinmeyen referans kaydı Whisper ile yazıya dökülür."""
+        import soundfile as sf
+        from faster_whisper import WhisperModel
+        w = WhisperModel("large-v3", device=DEV, compute_type="float16" if DEV == "cuda" else "int8")
+        x, xsr = sf.read(yol, dtype="float32")  # PyAV sürümü faster-whisper ile uyumsuz: ses numpy verilir
+        x = x.mean(1) if x.ndim > 1 else x
+        seg, _ = w.transcribe(resample(x, xsr, 16000), language="tr", beam_size=5)
+        metin = " ".join(s.text.strip() for s in seg)
+        del w
+        log(f"referans metni (Whisper) {Path(yol).name}: {metin}")
+        with open(self.cikti / "referans_metin.txt", "a", encoding="utf-8") as f:
+            f.write(f"{Path(yol).name}\t{metin}\n")
+        return metin
 
     def referans_kur(self, hakem: "Hakem") -> str:
         return self.ref + " (VoxCPM2 tam klon)"
 
-    def soyle(self, metin: str, tohum: int) -> np.ndarray:
+    def soyle(self, metin: str, tohum: int, referans: str | None = None) -> np.ndarray:
+        """referans: parçaya özel referans dosyası (referans/ altında; deneyde referans karşılaştırması)."""
         torch.manual_seed(tohum)
         np.random.seed(tohum)
+        ref = str(HERE / "referans" / referans) if referans else self.ref
+        if Path(ref).name not in self.refler:
+            self.refler[Path(ref).name] = self.yaziya_dok(ref)
+        ref_metin = self.refler[Path(ref).name]
         cfg = 2.5 if self.temp < self.ayar["sicaklik"] else 2.0
         parcalar = []
         for k, bolum in enumerate(bol(metin, self.ayar["bolum_kelime"])):
             if k:
                 parcalar.append(np.zeros(int(self.ayar["bolum_ara"] * self.sr), np.float32))
-            x = self.vox.generate(text=bolum, prompt_wav_path=self.ref, prompt_text=self.ref_metin,
-                                  reference_wav_path=self.ref, cfg_value=cfg, inference_timesteps=10,
+            x = self.vox.generate(text=bolum, prompt_wav_path=ref, prompt_text=ref_metin,
+                                  reference_wav_path=ref, cfg_value=cfg, inference_timesteps=10,
                                   **({"denoise": True} if self.denoise else {}))
             parcalar.append(kirp(np.asarray(x, dtype=np.float32), self.sr))
         return np.concatenate(parcalar)
@@ -224,7 +235,7 @@ class Ses:
         wav_yaz(yol, en_iyi[1], self.sr)
         return yol
 
-    def soyle(self, metin: str, tohum: int) -> np.ndarray:
+    def soyle(self, metin: str, tohum: int, referans: str | None = None) -> np.ndarray:
         """pocket-tts 50 jetondan uzun parçada kelime atlayabilir; uzun cümle virgülden bölünüp kısa araya birleştirilir."""
         torch.manual_seed(tohum)
         parcalar = []
@@ -437,7 +448,7 @@ def main() -> None:
         adaylar, t_ses, t_hakem = [], 0.0, 0.0
         for tohum in range(ayar["aday"]):
             t1 = time.time()
-            x = ses.soyle(parca["okunus"], tohum)
+            x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"))
             t2 = time.time()
             p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
             tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
@@ -452,7 +463,7 @@ def main() -> None:
             ses.model.temp = ayar["kurtarma_sicaklik"]
             for tohum in range(100, 100 + ayar["kurtarma_aday"]):
                 t1 = time.time()
-                x = ses.soyle(parca["okunus"], tohum)
+                x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"))
                 t2 = time.time()
                 p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
                 tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
