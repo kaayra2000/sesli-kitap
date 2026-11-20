@@ -80,10 +80,20 @@ def main() -> None:
     elif a.mod == "deney":
         # Uzun ünlü deneyi: her cümle her şapka biçimiyle; hakem metnin aslıyla (hedef) karşılaştırır.
         konu = f"deney{a.tur:02d}"
-        deney = json.loads((KOK / "test/uzatma_deneyi.json").read_text(encoding="utf-8"))
-        parcalar = [{"id": f"{t['id']}-{v}", "metin": t["metin"], "hedef": t["metin"], "ara": 0.5,
-                     "okunus": okunus(t["metin"], sozluk, {**ayarlar["okunus"], "sapka": v})}
-                    for t in deney["cumleler"] for v in deney["varyantlar"]]
+        deney = json.loads((KOK / (a.kume if a.kume.endswith("deneyi.json") else "test/uzatma_deneyi.json"))
+                           .read_text(encoding="utf-8"))
+        cumleler = deney.get("cumleler") or json.loads((KOK / deney["kume"]).read_text(encoding="utf-8"))
+        parcalar = []
+        for t in cumleler:
+            for v in deney["varyantlar"]:
+                v = v if isinstance(v, dict) else {"ad": v, "okunus": {"sapka": v}}
+                oku = {**ayarlar["okunus"], **v["okunus"]}
+                x = {"id": f"{t['id']}--{v['ad']}", "metin": t["metin"], "hedef": t["metin"], "ara": 0.5,
+                     "okunus": okunus(t["metin"], sozluk, oku), "uzatma": v.get("uzatma", 1.0)}
+                sapkali = okunus(t["metin"], sozluk, {**oku, "sapka": "koru"})
+                if len(sapkali) == len(x["okunus"]):
+                    x["uzun"] = [i for i, c in enumerate(sapkali) if c in "âîûÂÎÛ"]
+                parcalar.append(x)
         ayarlar["seslendirme"] = {**ayarlar["seslendirme"], **deney["ayar"]}
     else:
         konu = f"ornek{a.tur:02d}"
@@ -110,7 +120,7 @@ def main() -> None:
         print(f"{hedef}  ({len(is_['cumleler'])} cümle)")
         return
     # Uzun ünlü indeksleri: şapkalı okunuşla karşılaştırılır (şapka 1:1 harf, uzunluk aynı).
-    for x in parcalar:
+    for x in (p for p in parcalar if "uzun" not in p):
         sapkali = okunus(x["metin"], sozluk, {**ayarlar["okunus"], "sapka": "koru"})
         if len(sapkali) == len(x["okunus"]):
             x["uzun"] = [i for i, (a, b) in enumerate(zip(x["okunus"], sapkali)) if a != b]

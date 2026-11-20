@@ -41,3 +41,29 @@ def hata(ref: str, hyp: str, esit: bool = False) -> dict:
     rn, hn = r.replace(" ", ""), h.replace(" ", "")
     return {"cer": round(distance(rn, hn) / max(1, len(rn)), 4),   # boşluksuz: "fil hakika" = "filhakika"
             "wer": round(distance(r.split(), h.split()) / max(1, len(r.split())), 4)}
+
+
+def yerel_hata(ifade: str, hyp: str, esit: bool = True) -> float:
+    """İfadenin (ör. bir tamlama) duyulan metin içindeki en iyi eşleşmesinin karakter hatası (yarı-global hizalama:
+    duyulan metinde başlangıç ve bitiş serbest). Boşluklar yok sayılır."""
+    # İzafet ünlüsü (ı/i/u/ü) yazımı duyana göre değişir (Babı Ali / Babıali / Bab-ı Ali); dar ünlüler eşitlenir.
+    dar = str.maketrans("ıuü", "iii")
+    r = (esitle(ifade) if esit else normalize(ifade)).replace(" ", "").translate(dar)
+    h = (esitle(hyp) if esit else normalize(hyp)).replace(" ", "").translate(dar)
+    if not r:
+        return 0.0
+    onceki = [0] * (len(h) + 1)          # duyulan metnin her yerinden başlanabilir
+    for i, x in enumerate(r, 1):
+        simdi = [i] + [0] * len(h)
+        for j, y in enumerate(h, 1):
+            simdi[j] = min(onceki[j] + 1, simdi[j - 1] + 1, onceki[j - 1] + (x != y))
+        onceki = simdi
+    return round(min(onceki) / len(r), 4)
+
+
+IZAFET = r"[\wâîûÂÎÛ‘’']+-(?:[ıiuü]|yı|yi)\s+[\wâîûÂÎÛ‘’']+"
+
+
+def tamlamalar(metin: str) -> list[str]:
+    import re as _re
+    return _re.findall(IZAFET, metin)

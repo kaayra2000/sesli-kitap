@@ -17,7 +17,7 @@ def hedef_dizi(metin: str, sozluk: dict) -> tuple[list[int], list[int]]:
     """Metni CTC jetonlarına çevirir; her jetonun metindeki karakter indeksiyle birlikte. Boşluk '|' olur."""
     jeton, indeks = [], []
     onceki_bosluk = True
-    for i, c in enumerate(metin.replace("İ", "i").replace("I", "ı").lower()):
+    for i, c in enumerate(metin.replace("İ", "i").replace("I", "ı").lower().translate(str.maketrans("âîû", "aiu"))):
         if c.isspace():
             if not onceki_bosluk and "|" in sozluk:
                 jeton.append(sozluk["|"])
@@ -136,7 +136,7 @@ def uzat(x: np.ndarray, sr: int, araliklar: list[tuple[float, float]], kat: floa
 
 def uzun_kisa_orani(sureler: dict[int, tuple[float, float]], metin: str, uzun: set[int]) -> float | None:
     """Uzun ünlülerin ortalama süresi / kısa ünlülerin ortalama süresi."""
-    kucuk = metin.replace("İ", "i").replace("I", "ı").lower()
+    kucuk = metin.replace("İ", "i").replace("I", "ı").lower().translate(str.maketrans("âîû", "aiu"))
     u = [b - a for i, (a, b) in sureler.items() if i in uzun]
     k = [b - a for i, (a, b) in sureler.items() if i not in uzun and kucuk[i] in UNLU]
     return round(float(np.mean(u) / np.mean(k)), 3) if u and k else None

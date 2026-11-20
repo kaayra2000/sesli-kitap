@@ -360,7 +360,10 @@ def uzun_unlu(x, p, parca, ayar, ses, hakem):
     uzun = set(parca["uzun"])
     sure0 = uzatma.harf_sureleri(hakem.emisyon(resample(x, ses.sr, 16000)), parca["okunus"], sozluk)
     oran0 = uzatma.uzun_kisa_orani(sure0, parca["okunus"], uzun)
-    y = uzatma.uzat(x, ses.sr, [sure0[i] for i in uzun if i in sure0], ayar["uzatma"])
+    kat = parca.get("uzatma", ayar["uzatma"])
+    if kat <= 1:
+        return x, {**p, "uzatma": {"oran_once": oran0, "oran_sonra": oran0, "uygulandi": True}}
+    y = uzatma.uzat(x, ses.sr, [sure0[i] for i in uzun if i in sure0], kat)
     py = hakem.olc(y, ses.sr, parca.get("hedef", parca["okunus"]))
     sure1 = uzatma.harf_sureleri(hakem.emisyon(resample(y, ses.sr, 16000)), parca["okunus"], sozluk)
     oran1 = uzatma.uzun_kisa_orani(sure1, parca["okunus"], uzun)
@@ -448,7 +451,8 @@ def main() -> None:
             ses.model.temp = ayar["sicaklik"]
         p, tohum, x = min(adaylar, key=lambda a: anahtar(a[0], ayar))
         x = x * min(1.0, 0.9 / max(1e-6, float(np.abs(x).max())))  # tepe -1 dBFS altı (son ses ayrıca loudnorm'dan geçer)
-        if ayar["uzatma"] > 1 and parca.get("uzun") and hakem.ctc is not None:
+        # Uzun ünlü süresi her zaman ölçülür; uzatma > 1 ise seste uzatılır.
+        if parca.get("uzun") and hakem.ctc is not None:
             x, p = uzun_unlu(x, p, parca, ayar, ses, hakem)
         p = {**p, "tepe_ham": p["tepe"], "tepe": round(float(np.abs(x).max()), 3)}
         try:
