@@ -9,7 +9,7 @@
   "izafet_y": true
  },
  "seslendirme": {
-  "aday": 8,
+  "aday": 4,
   "erken_dur": 1,
   "sicaklik": 0.5,
   "referans": "canli",
@@ -19,7 +19,8 @@
   "bolum_kelime": 40,
   "vox_referans": "kitap-sesi-fleurs-kisa.wav",
   "vox_referans_metin": "Herhangi bir değişiklik veya talep, doğrudan otele değil, önce seyahat acentesine iletilmelidir. Binlerce yıl önce, Aristarkus adlı bir adam Güneş Sistemi'nin Güneş'in etrafında döndüğünü söyledi. Kruger Ulusal Parkı (KNP), Güney Afrika'nın kuzey-doğusunda yer alır ve doğuda Mozambik, kuzeyde Zimbabve sınırı boyunca uzanır ve güney sınırı Timsah Nehri'nden oluşur.",
-  "vox_denoise": false
+  "vox_denoise": false,
+  "kurtarma_aday": 4
  },
- "parca_en_cok_kelime": 28
+ "parca_en_cok_kelime": 40
 }

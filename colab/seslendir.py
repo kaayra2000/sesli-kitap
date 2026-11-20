@@ -432,8 +432,9 @@ def main() -> None:
             tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
             t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
             adaylar.append((p, tohum, x))
-            if sum(temiz(a[0], ayar) and (not prof or a[0].get("tonlama_sapma", 0) == 0)
-                   for a in adaylar) >= ayar["erken_dur"]:
+            # Erken durma: kelimeler doğru, ses artığı ve takılma yok. Tonlama seçimi belirler, durmayı engellemez
+            # (tonlama şartı cümle başına 8-16 aday ürettiriyordu).
+            if sum(temiz(a[0], ayar) for a in adaylar) >= ayar["erken_dur"]:
                 break
         en_iyi = min(adaylar, key=lambda a: anahtar(a[0], ayar))
         if yanlis(en_iyi[0], ayar) or en_iyi[0]["kuyruk"] > ayar["kuyruk_sinir"]:
