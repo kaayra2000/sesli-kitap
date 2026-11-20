@@ -122,6 +122,11 @@ for i, c in enumerate(sorted(secilen, key=lambda c: c["f0"]), 1):
         if t >= HEDEF_SN:
             break
     ses = np.concatenate(parca)
+    try:  # Arka plan gürültüsü (FLEURS stüdyo kaydı değil): spektral kapılama ile azaltılır
+        import noisereduce as nr
+        ses = nr.reduce_noise(y=ses, sr=16000, stationary=True, prop_decrease=0.85).astype(np.float32)
+    except Exception as e:  # noqa: BLE001
+        print("gürültü azaltılamadı:", e, flush=True)
     ses = ses / max(1e-6, np.abs(ses).max()) * 0.9
     ad = f"aday-{i}"
     sf.write(cikti / f"{ad}.wav", ses, 16000)

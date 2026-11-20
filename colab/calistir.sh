@@ -32,7 +32,7 @@ if [[ "$MOTOR" == "voxcpm" ]]; then
     echo "VoxCPM ortamı kuruluyor..."; rm -rf $VX; pip install -q uv 2>&1 | tail -1
     uv venv -q -p 3.12 $VX
     uv pip install -q -p $VX/bin/python torch torchaudio --index-url https://download.pytorch.org/whl/cu126 2>&1 | tail -2
-    uv pip install -q -p $VX/bin/python voxcpm faster-whisper transformers librosa soundfile huggingface_hub 2>&1 | tail -2; }
+    uv pip install -q -p $VX/bin/python voxcpm faster-whisper transformers librosa soundfile huggingface_hub modelscope 2>&1 | tail -2; }
   VXLD=$($VX/bin/python -c 'import os,glob,nvidia;print(":".join(sorted({os.path.dirname(p) for p in glob.glob(os.path.join(list(nvidia.__path__)[0],"*","lib","*.so*"))})))')
   PY_BETIK=seslendir.py
   MOD=$(python3 -c 'import json;print(json.load(open("is.json"))["mod"])')
@@ -40,7 +40,7 @@ if [[ "$MOTOR" == "voxcpm" ]]; then
   [[ "$MOD" == "gercek" ]] && PY_BETIK=gercek_ses.py
   [[ "$MOD" == "aday" ]] && PY_BETIK=ses_adaylari.py
   [[ "$MOD" == "ayar" || "$MOD" == "referans" || "$MOD" == "gercek" || "$MOD" == "aday" ]] && { [[ "$MOD" == "ayar" ]] && PY_BETIK=ayar_tarama.py;
-    $VX/bin/python -c "import speechbrain, pandas, pyarrow" 2>/dev/null || uv pip install -q -p $VX/bin/python speechbrain pandas pyarrow 2>&1 | tail -1; }
+    $VX/bin/python -c "import speechbrain, pandas, pyarrow, noisereduce" 2>/dev/null || uv pip install -q -p $VX/bin/python speechbrain pandas pyarrow noisereduce 2>&1 | tail -1; }
   env LD_LIBRARY_PATH="$VXLD:$COLAB_LD" $VX/bin/python $PY_BETIK is.json 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\("
 else
 python3 seslendir.py is.json 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\(" 

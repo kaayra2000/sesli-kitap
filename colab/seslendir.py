@@ -130,7 +130,14 @@ class VoxSes:
     def __init__(self, ayar: dict, cikti: Path):
         from voxcpm import VoxCPM
 
-        self.vox = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+        # Referans klip gürültülüyse (gerçek kayıt) VoxCPM'in ZipEnhancer temizleyicisi referansı temizler.
+        self.denoise = bool(ayar.get("vox_denoise", False))
+        try:
+            self.vox = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=self.denoise)
+        except Exception as e:  # noqa: BLE001
+            log(f"temizleyici yüklenemedi ({e}); referans temizlenmeden kullanılacak")
+            self.denoise = False
+            self.vox = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
         self.sr = self.vox.tts_model.sample_rate
         self.ayar = ayar
         self.model = self  # seslendir döngüsü model.temp'e yazar
@@ -150,7 +157,8 @@ class VoxSes:
             if k:
                 parcalar.append(np.zeros(int(self.ayar["bolum_ara"] * self.sr), np.float32))
             x = self.vox.generate(text=bolum, prompt_wav_path=self.ref, prompt_text=self.ref_metin,
-                                  reference_wav_path=self.ref, cfg_value=cfg, inference_timesteps=10)
+                                  reference_wav_path=self.ref, cfg_value=cfg, inference_timesteps=10,
+                                  **({"denoise": True} if self.denoise else {}))
             parcalar.append(kirp(np.asarray(x, dtype=np.float32), self.sr))
         return np.concatenate(parcalar)
 
