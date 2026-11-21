@@ -179,9 +179,14 @@ class VoxSes:
         ref_metin = self.refler[Path(ref).name]
         cfg = 2.5 if self.temp < self.ayar["sicaklik"] else 2.0
         parcalar = []
-        for k, bolum in enumerate(bol(metin, self.ayar["bolum_kelime"])):
+        bolumler = bol(metin, self.ayar["bolum_kelime"])
+        iki_nokta = float(self.ayar.get("iki_nokta_ara", 0) or 0)
+        if iki_nokta > 0:  # iki nokta üst üsteden sonra gerçek duraklama: ayrı üretilip sessizlikle birleştirilir
+            bolumler = [b for parca in bolumler for b in re.split(r"(?<=:)\s+", parca) if b.strip()]
+        for k, bolum in enumerate(bolumler):
             if k:
-                parcalar.append(np.zeros(int(self.ayar["bolum_ara"] * self.sr), np.float32))
+                ara = iki_nokta if iki_nokta > 0 and bolumler[k - 1].rstrip().endswith(":") else self.ayar["bolum_ara"]
+                parcalar.append(np.zeros(int(ara * self.sr), np.float32))
             ek = {"prompt_wav_path": ref, "prompt_text": ref_metin} if mod == "tam" else {}
             x = self.vox.generate(text=f"({stil}){bolum}" if stil else bolum, **ek,
                                   reference_wav_path=ref, cfg_value=cfg, inference_timesteps=10,
@@ -245,9 +250,14 @@ class Ses:
         """pocket-tts 50 jetondan uzun parçada kelime atlayabilir; uzun cümle virgülden bölünüp kısa araya birleştirilir."""
         torch.manual_seed(tohum)
         parcalar = []
-        for k, bolum in enumerate(bol(metin, self.ayar["bolum_kelime"])):
+        bolumler = bol(metin, self.ayar["bolum_kelime"])
+        iki_nokta = float(self.ayar.get("iki_nokta_ara", 0) or 0)
+        if iki_nokta > 0:  # iki nokta üst üsteden sonra gerçek duraklama: ayrı üretilip sessizlikle birleştirilir
+            bolumler = [b for parca in bolumler for b in re.split(r"(?<=:)\s+", parca) if b.strip()]
+        for k, bolum in enumerate(bolumler):
             if k:
-                parcalar.append(np.zeros(int(self.ayar["bolum_ara"] * self.sr), np.float32))
+                ara = iki_nokta if iki_nokta > 0 and bolumler[k - 1].rstrip().endswith(":") else self.ayar["bolum_ara"]
+                parcalar.append(np.zeros(int(ara * self.sr), np.float32))
             x = self.model.generate_audio(self.state, bolum).float().cpu().numpy().squeeze()
             parcalar.append(kirp(x, self.sr))
         return np.concatenate(parcalar)
@@ -382,6 +392,25 @@ def tonlama_ekle(p: dict, x: np.ndarray, sr: int, metin: str, prof: dict | None)
         log(f"tonlama ölçülemedi: {e}")
 
 
+def perde_genislet(x: np.ndarray, sr: int, kat: float) -> np.ndarray:
+    """Tonlama eğrisini konuşmacının ortanca perdesi etrafında kat oranında açar (yarım ton ölçeğinde); Praat
+    Manipulation + PSOLA ile yeniden sentezler. Sentez ses referansa göre düz (deney 19: perde aralığı 10.2 / 12.9)."""
+    import parselmouth
+    from parselmouth.praat import call
+    snd = parselmouth.Sound(x.astype(np.float64), sr)
+    man = call(snd, "To Manipulation", 0.01, 60, 400)
+    pt = call(man, "Extract pitch tier")
+    f0 = snd.to_pitch(time_step=0.01, pitch_floor=60, pitch_ceiling=400).selected_array["frequency"]
+    f0 = f0[f0 > 0]
+    if len(f0) < 20:
+        return x
+    med = float(np.median(f0))
+    call(pt, "Formula", f"{med} * (self / {med}) ^ {kat}")
+    call([pt, man], "Replace pitch tier")
+    y = call(man, "Get resynthesis (overlap-add)").values[0].astype(np.float32)
+    return y[: len(x)] if len(y) >= len(x) else np.pad(y, (0, len(x) - len(y)))
+
+
 def uzun_unlu(x, p, parca, ayar, ses, hakem):
     """Uzun ünlüleri seste uzatır; uzatılmış ses yeniden ölçülür, yanlışa düşerse uzatılmamış ses kalır."""
     sozluk = hakem.tok.get_vocab()
@@ -499,6 +528,13 @@ def main() -> None:
         # Uzun ünlü süresi her zaman ölçülür; uzatma > 1 ise seste uzatılır.
         if (parca.get("uzun") or parca.get("ayn")) and hakem.ctc is not None:
             x, p = uzun_unlu(x, p, parca, ayar, ses, hakem)
+        kat = float(parca.get("perde_kat", ayar.get("perde_kat", 1.0)) or 1.0)
+        if abs(kat - 1.0) > 1e-3:
+            try:
+                x = perde_genislet(x, ses.sr, kat)
+                p["perde_kat"] = kat
+            except Exception as e:  # noqa: BLE001
+                log(f"perde genişletilemedi: {e}")
         p = {**p, "tepe_ham": p["tepe"], "tepe": round(float(np.abs(x).max()), 3)}
         try:
             p["tonlama"] = tonlama.ozellikler(resample(x, ses.sr, 16000), p["_kelimeler"], parca["okunus"])

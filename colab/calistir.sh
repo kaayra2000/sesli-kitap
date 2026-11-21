@@ -32,7 +32,8 @@ if [[ "$MOTOR" == "voxcpm" ]]; then
     echo "VoxCPM ortamı kuruluyor..."; rm -rf $VX; pip install -q uv 2>&1 | tail -1
     uv venv -q -p 3.12 $VX
     uv pip install -q -p $VX/bin/python torch torchaudio --index-url https://download.pytorch.org/whl/cu126 2>&1 | tail -2
-    uv pip install -q -p $VX/bin/python voxcpm faster-whisper transformers librosa soundfile huggingface_hub modelscope 2>&1 | tail -2; }
+    uv pip install -q -p $VX/bin/python voxcpm faster-whisper transformers librosa soundfile huggingface_hub modelscope praat-parselmouth 2>&1 | tail -2; }
+  $VX/bin/python -c "import parselmouth" 2>/dev/null || uv pip install -q -p $VX/bin/python praat-parselmouth 2>&1 | tail -1
   VXLD=$($VX/bin/python -c 'import os,glob,nvidia;print(":".join(sorted({os.path.dirname(p) for p in glob.glob(os.path.join(list(nvidia.__path__)[0],"*","lib","*.so*"))})))')
   PY_BETIK=seslendir.py
   MOD=$(python3 -c 'import json;print(json.load(open("is.json"))["mod"])')
