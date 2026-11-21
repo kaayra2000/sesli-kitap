@@ -8,7 +8,10 @@
   "cift_y": false,
   "izafet_y": true,
   "harf_ayir": "zwnj",
-  "son_kume": "sert"
+  "son_kume": "sert",
+  "ayn": "tire",
+  "uyum_kir": "cift",
+  "ic_kume": "yok"
  },
  "seslendirme": {
   "aday": 4,
@@ -16,7 +19,7 @@
   "sicaklik": 0.5,
   "referans": "canli",
   "hakem": "large-v3",
-  "uzatma": 1.0,
+  "uzatma": 1.3,
   "motor": "voxcpm",
   "bolum_kelime": 40,
   "vox_referans": "kitap-sesi-yeni-c.wav",

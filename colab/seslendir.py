@@ -379,8 +379,11 @@ def tonlama_ekle(p: dict, x: np.ndarray, sr: int, metin: str, prof: dict | None)
 def uzun_unlu(x, p, parca, ayar, ses, hakem):
     """Uzun ünlüleri seste uzatır; uzatılmış ses yeniden ölçülür, yanlışa düşerse uzatılmamış ses kalır."""
     sozluk = hakem.tok.get_vocab()
-    uzun = set(parca["uzun"])
-    sure0 = uzatma.harf_sureleri(hakem.emisyon(resample(x, ses.sr, 16000)), parca["okunus"], sozluk)
+    uzun = set(parca.get("uzun", []))
+    em0 = hakem.emisyon(resample(x, ses.sr, 16000))
+    sure0 = uzatma.harf_sureleri(em0, parca["okunus"], sozluk)
+    if parca.get("ayn"):
+        p = {**p, "ayn_bosluk": uzatma.ara_bosluk(em0, parca["okunus"], sozluk, parca["ayn"])}
     oran0 = uzatma.uzun_kisa_orani(sure0, parca["okunus"], uzun)
     kat = parca.get("uzatma", ayar["uzatma"])
     if kat <= 1:
@@ -475,7 +478,7 @@ def main() -> None:
         p, tohum, x = min(adaylar, key=lambda a: anahtar(a[0], ayar))
         x = x * min(1.0, 0.9 / max(1e-6, float(np.abs(x).max())))  # tepe -1 dBFS altı (son ses ayrıca loudnorm'dan geçer)
         # Uzun ünlü süresi her zaman ölçülür; uzatma > 1 ise seste uzatılır.
-        if parca.get("uzun") and hakem.ctc is not None:
+        if (parca.get("uzun") or parca.get("ayn")) and hakem.ctc is not None:
             x, p = uzun_unlu(x, p, parca, ayar, ses, hakem)
         p = {**p, "tepe_ham": p["tepe"], "tepe": round(float(np.abs(x).max()), 3)}
         try:

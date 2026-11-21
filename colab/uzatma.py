@@ -140,3 +140,15 @@ def uzun_kisa_orani(sureler: dict[int, tuple[float, float]], metin: str, uzun: s
     u = [b - a for i, (a, b) in sureler.items() if i in uzun]
     k = [b - a for i, (a, b) in sureler.items() if i not in uzun and kucuk[i] in UNLU]
     return round(float(np.mean(u) / np.mean(k)), 3) if u and k else None
+
+
+def ara_bosluk(log_olas: np.ndarray, metin: str, sozluk: dict, ciftler: list) -> list[float]:
+    """Metindeki (sol, sağ) karakter çiftleri arasındaki süre (sn): sol harfin son karesi ile sağ harfin ilk karesi
+    arası. Ayn/hemze durağı ölçülür (ma‘nen: a ile n arası)."""
+    jeton, indeks = hedef_dizi(metin, sozluk)
+    if not jeton or len(jeton) > len(log_olas):
+        return []
+    ar = hizala(log_olas, jeton, sozluk.get("[PAD]", sozluk.get("<pad>", 0)))
+    son = {i: b for (a, b), i in zip(ar, indeks) if i >= 0 and b >= 0}
+    ilk = {i: a for (a, b), i in zip(ar, indeks) if i >= 0 and a >= 0}
+    return [round((ilk[s] - son[l] - 1) * KARE_SN, 3) for l, s in ciftler if l in son and s in ilk]

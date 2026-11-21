@@ -1,0 +1,107 @@
+{
+ "aciklama": "Kullanıcı geri bildirimi (2026-11-20): kalblerinden -> kallerinden, ma‘nen -> manen (durak yok), füyûzât -> füyüzat. Ayn/hemze ayracı, kelime içi küme, ünlü uyumu kırma, uzatma.",
+ "cumleler": [
+  {
+   "id": "b0014-c03",
+   "metin": "Şâh hazretleri [Bir lahza te’emmül eyleyin tâ ki hakîkat-i hâl ma‘lûmunuz olsun] buyurdukları gibi, muhiblerin bir lahza içinde muhabbetleri kalblerinden silinmiş, âsâr-ı muhabbetden bir şemme ve zerre kalmamışdır. Her biri birer hacer ve meder hâline gelmişlerdir."
+  },
+  {
+   "id": "b0015-c02",
+   "metin": "Ma‘nen bizi dâ’imâ nezdinizde berâber ve hâzır bilmeniz lâzımdır. Zîrâ kişi sevdiği ile dünyâ ve âhiretde berâberdir. Bize muhabbet edenlere sırr-ı çeşme-i feyzimizden — muhabbetin derecesiyle mütenâsib olarak — füyûzât-ı dâ’ime erişmededir buyurmuşlar."
+  },
+  {
+   "id": "b0010-c00",
+   "metin": "Hamd, yüce ve en yüce olan Allah’adır. Salât ve selâm efendimiz ve peygamberimiz Muhammed Mustafâ’ya, onun âline ve takvâ sahibi iyi ashâbına olsun."
+  },
+  {
+   "id": "b0011-c00",
+   "metin": "Ey birâder! Dînî ve dünyevî ma‘lûmunuz olsun ki: Mektûbunuzu memnûniyyetle aldım. Muhabbet menba‘ından neş’et eden hitâblarınızı [şahsımız hakkında vâki‘ iş‘ârâtı nazar-ı i‘tibâra almayarak] hüsn-i telakkî etdim."
+  },
+  {
+   "id": "b0016-c00",
+   "metin": "Kitâb-ı Mecîd’de   ve   ve   âyât-ı kerîmeleri bu hubb ve muhibbî ve bu ma‘iyyet-i hâssa-i hubbî ve mahbûbîyi nâtık ve muş‘ir bulunmaktadır."
+  },
+  {
+   "id": "b0016-c03",
+   "metin": "Hilâf-ı sünnet ve ‘âdet olan mekrumet-i sırf ve telattuf-ı mahz bi’t-tab‘ bahsden hâricdir ki vukû‘u enderiyyâtdandır."
+  },
+  {
+   "id": "b0018-c00",
+   "metin": "1 — Ma‘lûm olmak lâzımdır ki: bizim tarîkatde Hazret-i Fahr-i ‘Âlem ve Cenâb-ı Hâlık-ı ‘Âleme olan nisbet-i irtibât ve intisâb-ı hâssım, Kutbu’l-Evliyâ’i’l-Vâsılîn, Ğavsü’l-Küberâ’i’l-Muhakkıkîn, mevrid-i evsâf ve ahlâk-ı İlâhî,"
+  },
+  {
+   "id": "b0019-c01",
+   "metin": "Bu yakînin husûlüne delâlet edecek umûrun en doğrusu ve sahîhi o ferdin a‘râz-ı dünyeviyyeden mu‘arrâ ve mücerred olması, dînini celb-i makâm-ı dünyâya vesîle ittihâz etmemiş bulunması;"
+  },
+  {
+   "id": "b0021-c01",
+   "metin": "Zâtî ihtiyâr ile izhâr edilen havârık sülûk ve ‘urûc zamânına yâhûd hâlet-i sekr ve ğalebe-i hâle maksûr ve mahsûrdur."
+  },
+  {
+   "id": "b0024-c02",
+   "metin": "Anın sözleri, ‘ulûm ve ma‘ârifi kulûbda öyle bir te’sîr-i kat‘î ve yakîn-i ‘ilmî ve zarûrî husûle getirir ki, anın zevâli her hangi bir kuvvetle ğayr-ı kâbil-i tasavvur olur."
+  },
+  {
+   "id": "b0024-c03",
+   "metin": "Sûrî kerâmât ve hâriku’l-‘âde hâlât ve tasarrufât böyle bir yakîni ne izâle edebilir, ne öyle bir yakîn te’mîn eyleyebilir."
+  },
+  {
+   "id": "b0026-c02",
+   "metin": "Ma‘a hâzâ bu hâl ‘aynı zamânda kendine berâ-yı irşâd hârika izhâr edilen şahsın kâbiliyyetinin pest olduğuna, zâtî yakîn kesb edemeyecek isti‘dâda mâlik bulunduğuna delîl teşkîl eyler."
+  },
+  {
+   "id": "b0028-c02",
+   "metin": "İstidrâcın hâriku’l-‘âdeliği i‘tibârıyla kerâmetden farkı yokdur. Bunların yekdîgerinden tefrîk ve temyîzi ehl-i kemâlden mâ‘adâsı içün müşkildir. Ekser memkûr ve müstedrec dûçâr-ı mekr olduğundan haberdâr değildir."
+  },
+  {
+   "id": "b0029-c02",
+   "metin": "Bunun zuhûr ve izhârı riyâzetin devâmına menût bir emr-i zâ’il ve ğayr-ı sâbitdir. Her noktâ-i nazardan hayyiz-i i‘tibârdan sâkıtdır."
+  }
+ ],
+ "varyantlar": [
+  {
+   "ad": "temel",
+   "okunus": {}
+  },
+  {
+   "ad": "ayn-kesme",
+   "okunus": {
+    "ayn": "kesme"
+   }
+  },
+  {
+   "ad": "ayn-zwnj",
+   "okunus": {
+    "ayn": "zwnj"
+   }
+  },
+  {
+   "ad": "ayn-tire",
+   "okunus": {
+    "ayn": "tire"
+   }
+  },
+  {
+   "ad": "ic-sert",
+   "okunus": {
+    "ic_kume": "sert"
+   }
+  },
+  {
+   "ad": "uyum-cift",
+   "okunus": {
+    "uyum_kir": "cift"
+   }
+  },
+  {
+   "ad": "uzat14",
+   "okunus": {},
+   "uzatma": 1.4
+  }
+ ],
+ "ayar": {
+  "aday": 2,
+  "erken_dur": 1,
+  "kurtarma_aday": 0
+ }
+}

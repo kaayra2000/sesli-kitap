@@ -27,6 +27,17 @@ AYARLAR = {
     # "yok", "sert" (son ötümlü ötümsüzleşir: hamt, kesp), "zwnj" (iki ünsüz arasına görünmez ayraç), "sert_zwnj", "sert_cift" (r/l/m/n sonu çiftlenir: sekrr).
     # Deney 12: zwnj araya ünlü sokuyor (sekr -> sektir); "sert" Hamd'ı düzeltti, genel doğruluk aynı.
     "son_kume": "sert",
+    # Kelime içi ünsüz kümesindeki ötümlü (kalblerinden -> "kallerinden" okundu, 2026-11-20): "yok" | "sert" (kalpler).
+    # Deney 15: "sert" kalplerinden yerine "kaltlerinden" çıkardı; kapalı.
+    "ic_kume": "yok",
+    # Kelime içi ayn (ma‘nen) ve hemze (te’sîr): okuyucu kısa bir durak (gırtlak vuruşu) yapar; silinince "manen" oluyor.
+    # "yok" (silinir), "kesme" (’), "zwnj" (görünmez ayraç), "tire" (ma-nen). "isaret" yalnız ölçüm içindir.
+    # Deney 15: tire durağı 0.06 -> 0.10 sn, Whisper %1.57 -> %1.30, tonlama %68 -> %83.
+    "ayn": "tire",
+    # Ön ünlülü hecelerden sonra û (sülûk, vücûd, füyûzât): model ünlü uyumuyla ü okuyor ("sülük").
+    # "yok" | "cift" (û -> uu: sülüuuk değil sülu-uk; yalnız bu durumda).
+    # Deney 15: sülûk "sülük" -> "süluk"; doğruluk değişmedi.
+    "uyum_kir": "cift",
     # Günümüz okunuşuna çeviren kurallar; varsayılan kapalı, yalnız hakem eşitlemesinde kullanılır:
     "ünsüz_benzesme": False,  # etdim -> ettim, sebeb -> sebep
     "eski_ekler": False,      # içün -> için, anı -> onu
@@ -148,6 +159,16 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
     t = sozluk_uygula(t, ciftler)
     t = re.sub(r"\b(\d+)/(\d+)\b", lambda m: f"{sayi_yazi(int(m.group(1)))} {sayi_yazi(int(m.group(2)))}", t)
     t = re.sub(r"\b\d{1,6}\b", lambda m: sayi_yazi(int(m.group(0))), t)
+    ayrac = {"kesme": "’", "zwnj": "\u200c", "tire": "-", "isaret": "\x01"}.get(a.get("ayn", "yok"))
+    if ayrac:
+        # Yalnız kelime içi: ma‘nen, te’sîr. Özel ad eki (Allah’ın) ve harf-i tarif (fi’l-, ba‘de’t-) hariç.
+        t = re.sub(rf"(?<=[{HARF}])‘(?=[{HARF}])", "\x02", t)
+        def hemze(m: re.Match) -> str:
+            w = m.group(0)
+            if w[0].isupper():
+                return w
+            return re.sub(rf"(?<=[{HARF}])’(?=[{HARF}])(?![{HARF}]{{1,2}}-)(?!ll)", "\x02", w)
+        t = re.sub(rf"[{HARF}’\x02-]+", hemze, t)
     t = t.replace("‘", "")
     if a["eski_ekler"]:
         t = t.replace("Nakşbend", "Nakşibend")
@@ -157,6 +178,7 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
         t = re.sub(rf"(?<=[{HARF}])[’']?-(?=[{HARF}])", "", t)
     t = re.sub(rf"(?<=[{HARF}])[’'](?=[{HARF}])", "", t)    # hemze ve kesme: şey’in -> şeyin, Allah’ın -> Allahın
     t = re.sub(r"[’']", "", t)
+    t = t.replace("\x02", ayrac or "")
     ayrac = {"tire": "-", "kesme": "’", "zwnj": "\u200c"}.get(a.get("harf_ayir", "yok"))
     if ayrac:
         t = re.sub(r"([sScCtTzZdDkKpPgG])(?=[hH])", lambda m: m.group(1) + ayrac, t)
@@ -176,6 +198,11 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
         if a["ünsüz_benzesme"]:
             w = benzesme(w)
         w = son_kume(w, a.get("son_kume", "yok"))
+        if a.get("ic_kume", "yok") == "sert":
+            w = re.sub(r"(?<=[bcçdfgğhjklmnprsştvyz])([bcdg])(?=[bcçdfgğhjklmnprsştvyz])",
+                       lambda m: {"b": "p", "c": "ç", "d": "t", "g": "k"}[m.group(1)], w)
+        if a.get("uyum_kir", "yok") == "cift":
+            w = re.sub(r"([eiöüî][^aeıioöuüâîûAEIİOÖUÜÂÎÛ]{1,3})û", r"\1uu", w)
         if a["sapka"] == "cift":
             w = re.sub(r"[âîûÂÎÛ]", lambda m: {"â": "aa", "î": "ii", "û": "uu", "Â": "Aa", "Î": "İi", "Û": "Uu"}[m.group(0)], w)
         if a["sapka"] == "kaldir":
