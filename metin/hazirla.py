@@ -161,7 +161,7 @@ def hazirla(md: str, en_cok: int = 28, ayar: dict | None = None, birlestir: bool
             son = k == len(cumleler) - 1
             ara = ARALAR[tur] if son and tur == "baslik" else ARALAR["paragraf"] if son else (
                 ARALAR["cumle"] if re.search(r"[.!?:;]$", c) else ARALAR["virgul"])
-            parcalar.append({"id": f"b{n:04d}-c{k:02d}", "tur": tur, "sayfa": sayfa, "metin": c, "okunus": soz,
+            parcalar.append({"id": f"b{n:04d}-c{k:02d}", "tur": tur, "sayfa": sayfa, "metin": c, "hedef": c, "okunus": soz,
                              "ara": ara})
     return parcalar
 

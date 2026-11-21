@@ -44,7 +44,9 @@ AYARLAR = {
     "cift_y": False,          # ehemmiyyet -> ehemmiyet
 }
 GUNUMUZ = {"sapka": "kaldir", "gayn": True, "tire_birlestir": True, "izafet_y": True, "ünsüz_benzesme": True, "eski_ekler": True,
-           "cift_y": True}
+           "cift_y": True,
+           # Yalnız modele yönelik ayraç/çiftleme kuralları hakem eşitlemesinde kapalı (ma-nen, süluuk, as\u200châb)
+           "harf_ayir": "yok", "son_kume": "yok", "ic_kume": "yok", "ayn": "yok", "uyum_kir": "yok"}
 
 ARAP = r"؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿"
 HARF = "A-Za-zÇĞİÖŞÜçğıöşüÂÎÛâîû"

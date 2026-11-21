@@ -56,8 +56,9 @@ def main() -> None:
     # Whisper hatası yerelde, güncel eşitleme kuralıyla yeniden hesaplanır (Colab'deki değer "whisper_colab").
     for r in parcalar:
         r.setdefault("whisper_colab", r["whisper"])
-        r["whisper"] = hata(r["okunus"], r["duyulan"], esit=True)
-        r["ctc_esit"] = hata(r["okunus"], r.get("ctc_duyulan", ""), esit=True)
+        ref = r.get("hedef") or r.get("metin") or r["okunus"]  # kitabın asıl metni (okunuş modele yöneliktir)
+        r["whisper"] = hata(ref, r["duyulan"], esit=True)
+        r["ctc_esit"] = hata(ref, r.get("ctc_duyulan", ""), esit=True)
     oz["whisper_cer_ort"] = round(sum(r["whisper"]["cer"] for r in parcalar) / len(parcalar), 4)
     oz["whisper_wer_ort"] = round(sum(r["whisper"]["wer"] for r in parcalar) / len(parcalar), 4)
     oz["yanlis"] = sum(r["whisper"]["cer"] > CER_SINIR and r["ctc_esit"]["cer"] > CTC_SINIR for r in parcalar)

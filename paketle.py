@@ -41,7 +41,7 @@ def main() -> None:
     if a.mod == "test":
         konu = f"{a.ad}{a.tur:02d}"
         test = json.loads((KOK / a.kume).read_text(encoding="utf-8"))
-        parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
+        parcalar = [{"id": t["id"], "metin": t["metin"], "hedef": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "ara": 0.5} for t in test]
     elif a.mod in ("ayar", "referans", "gercek", "aday", "tasarim"):
         konu = f"{a.mod}{a.tur:02d}"
@@ -50,14 +50,14 @@ def main() -> None:
                                    "sisteminde planlı bakım çalışması yapılacaktır. Anlayışınız için teşekkür ederiz."},
             {"id": "osmanlica", "metin": "Ma‘lûmunuz olsun ki: Muhabbet, fi’l-hakîka Allâh’dan mevhûbdur. Hakîkat-i fenâ "
                                          "ile müşerref olan sâlik, Mevlâ-yı Müte‘âl’in rızâsına nâil olur."}]
-        parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
+        parcalar = [{"id": t["id"], "metin": t["metin"], "hedef": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "ara": 1.0} for t in metinler]
         ayarlar["seslendirme"] = {**ayarlar["seslendirme"], "aday": 2}
     elif a.mod == "metin":
         # Serbest metinler (ör. düz Türkçe örnekler): her metin tek parça, ayrı dosya olarak döner.
         konu = f"metin{a.tur:02d}"
         metinler = json.loads((KOK / a.kume).read_text(encoding="utf-8"))
-        parcalar = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
+        parcalar = [{"id": t["id"], "metin": t["metin"], "hedef": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "ara": 1.0} for t in metinler]
         a.mod = "ornek"
     elif a.mod == "yaris":
@@ -69,7 +69,7 @@ def main() -> None:
         hepsi = hazirla(KITAP.read_text(encoding="utf-8"), ayarlar["parca_en_cok_kelime"], ayarlar["okunus"])
         secim += [{"id": f"ornek-{x['id']}", "metin": x["metin"]} for x in hepsi
                   if x["id"] in ("b0011-c00", "b0011-c03", "b0012-c00", "b0013-c01", "b0013-c09", "b0014-c01")]
-        cumleler = [{"id": t["id"], "metin": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
+        cumleler = [{"id": t["id"], "metin": t["metin"], "hedef": t["metin"], "okunus": okunus(t["metin"], sozluk, ayarlar["okunus"]),
                      "okunus_sapka": okunus(t["metin"], sozluk, {**ayarlar["okunus"], "sapka": "koru"})} for t in secim]
         is_ = {"konu": konu, "mod": "yaris", "cumleler": cumleler, "referans": {
             "yol": "referans/referans-temel-ses.wav",
