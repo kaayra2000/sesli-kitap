@@ -48,6 +48,8 @@ AYARLAR = {
     "ayn_bas": "yok",
     # Cümle başında tek kelime + virgül (Hamd, yüce ...): kopuk okunuyor; True ise virgül okunuşta düşer.
     "bas_virgul_kaldir": False,
+    # İki nokta üst üsteden sonra duraklamıyor (kullanıcı, 2026-11-21): "yok" | "nokta" (okunuşta ":" -> ".").
+    "iki_nokta": "yok",
     # Günümüz okunuşuna çeviren kurallar; varsayılan kapalı, yalnız hakem eşitlemesinde kullanılır:
     "ünsüz_benzesme": False,  # etdim -> ettim, sebeb -> sebep
     "eski_ekler": False,      # içün -> için, anı -> onu
@@ -238,6 +240,8 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
         t = re.sub(rf"(?<=[aeıioöuüâîû]) (ile)(?![{HARF}])", " \u200c\\1", t)
     t = re.sub(r"(?<=[a-zçğıöşü])([A-ZÇĞİÖŞÜ])", lambda m: kucuk(m.group(1)), t)  # esSeyyid -> esseyyid
     t = t.replace("\x03", " ")
+    if a.get("iki_nokta") == "nokta":
+        t = re.sub(r":(?=\s|$)", ".", t)
     t = re.sub(r"\s+([,.;:!?])", r"\1", t)
     t = re.sub(r"([,;:])(?:\s*[,;:])+", r"\1", t)
     t = re.sub(r"\(\s*\)", "", t)
@@ -262,3 +266,25 @@ def uzun_konumlar(metin: str, ciftler: list | None = None, ayar: dict | None = N
         if 0 < k < len(aynli) - 1 and aynli[k - 1] in unlu and aynli[k + 1] in unsuz:
             uzun.add(k - 1 - n * kayma)
     return sorted(uzun)
+
+
+def mfa_kelimeler(metin: str, ciftler: list | None = None, ayar: dict | None = None) -> tuple[list[str], list[list[bool]]]:
+    """MFA hizalaması için kelimeler (şapkasız, ayraçsız, küçük harf) ve her kelimenin ünlülerinin uzun olup olmadığı
+    (şapkalı ünlü ya da sakin ayn/hemzeden önceki ünlü)."""
+    a = {**AYARLAR, **(ayar or {}), "harf_ayir": "yok", "uyum_kir": "yok", "son_kume": "yok", "ic_kume": "yok",
+         "ayn_bas": "yok", "ile_ayir": "yok"}
+    sade = okunus(metin, ciftler, {**a, "sapka": "kaldir", "ayn": "yok"})
+    isaretli = okunus(metin, ciftler, {**a, "sapka": "koru", "ayn": "isaret"})
+    unlu = "aeıioöuüâîû"
+    kelimeler, uzunlar = [], []
+    for w in re.findall(rf"[{HARF}\x01]+", isaretli):
+        k = kucuk(w)
+        bayrak = []
+        for j, c in enumerate(k):
+            if c in unlu:
+                once_ayn = j + 2 < len(k) and k[j + 1] == "\x01" and k[j + 2] not in unlu + "\x01"
+                bayrak.append(c in "âîû" or once_ayn)
+        kelimeler.append(k.replace("\x01", "").translate(str.maketrans("âîû", "aiu")))
+        uzunlar.append(bayrak)
+    assert len(kelimeler) == len(re.findall(rf"[{HARF}]+", sade)), "kelime sayısı tutmadı"
+    return kelimeler, uzunlar

@@ -165,8 +165,12 @@ class VoxSes:
     def referans_kur(self, hakem: "Hakem") -> str:
         return self.ref + " (VoxCPM2 tam klon)"
 
-    def soyle(self, metin: str, tohum: int, referans: str | None = None) -> np.ndarray:
-        """referans: parçaya özel referans dosyası (referans/ altında; deneyde referans karşılaştırması)."""
+    def soyle(self, metin: str, tohum: int, referans: str | None = None, mod: str | None = None,
+              stil: str | None = None) -> np.ndarray:
+        """referans: parçaya özel referans dosyası. mod: "tam" (referans + metni; ritim de kopyalanır) ya da "kontrollu"
+        (yalnız tını referansı; stil tarifi duyguyu/üslubu yönlendirir). stil: parantez içi üslup tarifi."""
+        mod = mod or self.ayar.get("vox_mod", "tam")
+        stil = stil if stil is not None else self.ayar.get("vox_stil", "")
         torch.manual_seed(tohum)
         np.random.seed(tohum)
         ref = str(HERE / "referans" / referans) if referans else self.ref
@@ -178,7 +182,8 @@ class VoxSes:
         for k, bolum in enumerate(bol(metin, self.ayar["bolum_kelime"])):
             if k:
                 parcalar.append(np.zeros(int(self.ayar["bolum_ara"] * self.sr), np.float32))
-            x = self.vox.generate(text=bolum, prompt_wav_path=ref, prompt_text=ref_metin,
+            ek = {"prompt_wav_path": ref, "prompt_text": ref_metin} if mod == "tam" else {}
+            x = self.vox.generate(text=f"({stil}){bolum}" if stil else bolum, **ek,
                                   reference_wav_path=ref, cfg_value=cfg, inference_timesteps=10,
                                   **({"denoise": True} if self.denoise else {}))
             parcalar.append(kirp(np.asarray(x, dtype=np.float32), self.sr))
@@ -235,7 +240,8 @@ class Ses:
         wav_yaz(yol, en_iyi[1], self.sr)
         return yol
 
-    def soyle(self, metin: str, tohum: int, referans: str | None = None) -> np.ndarray:
+    def soyle(self, metin: str, tohum: int, referans: str | None = None, mod: str | None = None,
+              stil: str | None = None) -> np.ndarray:
         """pocket-tts 50 jetondan uzun parçada kelime atlayabilir; uzun cümle virgülden bölünüp kısa araya birleştirilir."""
         torch.manual_seed(tohum)
         parcalar = []
@@ -464,7 +470,7 @@ def main() -> None:
         adaylar, t_ses, t_hakem = [], 0.0, 0.0
         for tohum in range(ayar["aday"]):
             t1 = time.time()
-            x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"))
+            x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"), parca.get("vox_mod"), parca.get("vox_stil"))
             t2 = time.time()
             p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
             tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
@@ -479,7 +485,7 @@ def main() -> None:
             ses.model.temp = ayar["kurtarma_sicaklik"]
             for tohum in range(100, 100 + ayar["kurtarma_aday"]):
                 t1 = time.time()
-                x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"))
+                x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"), parca.get("vox_mod"), parca.get("vox_stil"))
                 t2 = time.time()
                 p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
                 tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
@@ -500,6 +506,9 @@ def main() -> None:
                 p["tonlama"].update(tonlama.puan(p["tonlama"], prof))
         except Exception as e:  # noqa: BLE001
             log(f"tonlama ölçülemedi: {e}")
+        # Kelime zamanları (ifade ölçümü: vurgu, duraklama) rapora yazılır
+        p["kelime_zaman"] = [[w.word.strip(), round(float(w.start), 2), round(float(w.end), 2)]
+                             for w in p.get("_kelimeler") or []]
         p.pop("_kelimeler", None)
         for a in adaylar:
             a[0].pop("_kelimeler", None)

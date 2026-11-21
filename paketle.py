@@ -16,7 +16,7 @@ from pathlib import Path
 
 KOK = Path(__file__).resolve().parent
 sys.path.insert(0, str(KOK / "metin"))
-from okunus import uzun_konumlar, okunus, sozluk_yukle  # noqa: E402
+from okunus import mfa_kelimeler, uzun_konumlar, okunus, sozluk_yukle  # noqa: E402
 from hazirla import hazirla  # noqa: E402
 
 # Kitabın aktarımı bedri_gencer reposunda (bu reponun yanında); SESLI_KITAP_MD ile başka yol verilebilir.
@@ -91,7 +91,7 @@ def main() -> None:
                 oku = {**ayarlar["okunus"], **v.get("okunus", {})}
                 x = {"id": f"{t['id']}--{v['ad']}", "metin": t["metin"], "hedef": t["metin"], "ara": 0.5,
                      "okunus": okunus(t["metin"], sozluk, oku), "uzatma": v.get("uzatma", 1.0),
-                     **({"vox_referans": v["vox_referans"]} if v.get("vox_referans") else {})}
+                     **{k: v[k] for k in ("vox_referans", "vox_mod", "vox_stil") if k in v}}
                 # Ayn/hemze durağı ölçümü: işaretli okunuşta \x01 konumları -> (sol, sağ) harf çiftleri
                 isaretli = okunus(t["metin"], sozluk, {**oku, "ayn": "isaret"})
                 konum = [i for i, c in enumerate(isaretli) if c == "\x01"]
@@ -134,6 +134,12 @@ def main() -> None:
     for x in (p for p in parcalar if "uzun" not in p):
         if (u := uzun_konumlar(x["metin"], sozluk, ayarlar["okunus"])) is not None:
             x["uzun"] = u
+    # MFA ünlü süresi ölçümü için kelimeler ve uzun ünlü bayrakları
+    for x in parcalar:
+        try:
+            x["mfa_kelimeler"], x["mfa_uzun"] = mfa_kelimeler(x["metin"], sozluk, ayarlar["okunus"])
+        except AssertionError:
+            pass
     is_ = {"konu": konu, "mod": a.mod, "ayar": ayarlar["seslendirme"], "parcalar": parcalar}
     hedef = KOK / "dist" / f"is-{konu}.zip"
     hedef.parent.mkdir(exist_ok=True)
@@ -141,7 +147,8 @@ def main() -> None:
         z.writestr("is.json", json.dumps(is_, ensure_ascii=False, indent=1))
         for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py", "colab/tonlama.py", "colab/uzatma.py",
                   "colab/ayar_tarama.py", "colab/referans_ara.py",
-                  "colab/gercek_ses.py", "colab/ses_adaylari.py", "colab/ses_tasarimi.py"]:
+                  "colab/gercek_ses.py", "colab/ses_adaylari.py", "colab/ses_tasarimi.py", "colab/ifade_olc.py",
+                  "colab/mfa_olc.py"]:
             if (KOK / f).exists():
                 z.write(KOK / f, Path(f).name)
         for f in sorted((KOK / "referans").glob("*.wav")) + sorted((KOK / "referans").glob("*.json")):
