@@ -100,7 +100,8 @@ def main() -> None:
                         x["ayn"] = [(i - k - 1, i - k) for k, i in enumerate(konum)]
                     elif len(isaretli) == len(x["okunus"]):
                         x["ayn"] = [(i - 1, i + 1) for i in konum]
-                sapkali = okunus(t["metin"], sozluk, {**oku, "sapka": "koru"})
+                sapkali = okunus(t["metin"], sozluk, {**oku, "sapka": "koru",
+                                                      **({"uyum_kir": "isaret"} if oku.get("uyum_kir") == "cift" else {})})
                 if len(sapkali) == len(x["okunus"]):
                     x["uzun"] = [i for i, c in enumerate(sapkali) if c in "âîûÂÎÛ"]
                 parcalar.append(x)
@@ -133,7 +134,9 @@ def main() -> None:
         return
     # Uzun ünlü indeksleri: şapkalı okunuşla karşılaştırılır (şapka 1:1 harf, uzunluk aynı).
     for x in (p for p in parcalar if "uzun" not in p):
-        sapkali = okunus(x["metin"], sozluk, {**ayarlar["okunus"], "sapka": "koru"})
+        oku = ayarlar["okunus"]
+        sapkali = okunus(x["metin"], sozluk, {**oku, "sapka": "koru",
+                                              **({"uyum_kir": "isaret"} if oku.get("uyum_kir") == "cift" else {})})
         if len(sapkali) == len(x["okunus"]):
             # Uzun ünlü: şapkalı okunuşta şapkalı harf (okunuş şapkalıysa da ölçülür)
             x["uzun"] = [i for i, c in enumerate(sapkali) if c in "âîûÂÎÛ"]

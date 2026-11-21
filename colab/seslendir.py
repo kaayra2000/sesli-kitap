@@ -385,17 +385,30 @@ def uzun_unlu(x, p, parca, ayar, ses, hakem):
     if parca.get("ayn"):
         p = {**p, "ayn_bosluk": uzatma.ara_bosluk(em0, parca["okunus"], sozluk, parca["ayn"])}
     oran0 = uzatma.uzun_kisa_orani(sure0, parca["okunus"], uzun)
+    # Ünlü tablosu her zaman kaydedilir: [konum, süre sn, uzun mu, öbek sonu mu] (kelime düzeyi uzunluk raporu için)
+    tablo0 = [[t["i"], t["sure"], t["uzun"], t["obek_sonu"]] for t in uzatma.unlu_tablosu(sure0, parca["okunus"], uzun)]
+    p = {**p, "unlu_once": tablo0}
     kat = parca.get("uzatma", ayar["uzatma"])
-    if kat <= 1:
-        return x, {**p, "uzatma": {"oran_once": oran0, "oran_sonra": oran0, "uygulandi": True}}
-    y = uzatma.uzat(x, ses.sr, [sure0[i] for i in uzun if i in sure0], kat)
+    if kat == "uyarlamali":
+        y, islem = uzatma.sure_duzelt(x, ses.sr, sure0, parca["okunus"], uzun, ayar.get("hedef_uzun", 1.8),
+                                      ayar.get("sinir_kisa", 1.5))
+        if len(y) == len(x) and not islem.get("uzatilan") and not islem.get("kisaltilan"):
+            return x, {**p, "unlu_sonra": tablo0,
+                       "uzatma": {"oran_once": oran0, "oran_sonra": oran0, "uygulandi": True, "islem": islem}}
+    elif kat <= 1:
+        return x, {**p, "unlu_sonra": tablo0, "uzatma": {"oran_once": oran0, "oran_sonra": oran0, "uygulandi": True}}
+    else:
+        y, islem = uzatma.uzat(x, ses.sr, [sure0[i] for i in uzun if i in sure0], kat), {}
     py = hakem.olc(y, ses.sr, parca.get("hedef", parca["okunus"]))
     sure1 = uzatma.harf_sureleri(hakem.emisyon(resample(y, ses.sr, 16000)), parca["okunus"], sozluk)
     oran1 = uzatma.uzun_kisa_orani(sure1, parca["okunus"], uzun)
+    tablo1 = [[t["i"], t["sure"], t["uzun"], t["obek_sonu"]] for t in uzatma.unlu_tablosu(sure1, parca["okunus"], uzun)]
     if yanlis(py, ayar) and not yanlis(p, ayar):
-        return x, {**p, "uzatma": {"oran_once": oran0, "oran_sonra": oran1, "uygulandi": False}}
-    return y, {**py, "uzatma": {"oran_once": oran0, "oran_sonra": oran1, "uygulandi": True,
-                                 "cer_once": p["whisper"]["cer"]}}
+        return x, {**p, "unlu_sonra": tablo0,
+                   "uzatma": {"oran_once": oran0, "oran_sonra": oran1, "uygulandi": False, "islem": islem}}
+    return y, {**py, "unlu_once": tablo0, "unlu_sonra": tablo1,
+               "uzatma": {"oran_once": oran0, "oran_sonra": oran1, "uygulandi": True, "islem": islem,
+                          "cer_once": p["whisper"]["cer"]}}
 
 
 def tonlama_ozet(rapor: list) -> dict:

@@ -152,3 +152,71 @@ def ara_bosluk(log_olas: np.ndarray, metin: str, sozluk: dict, ciftler: list) ->
     son = {i: b for (a, b), i in zip(ar, indeks) if i >= 0 and b >= 0}
     ilk = {i: a for (a, b), i in zip(ar, indeks) if i >= 0 and a >= 0}
     return [round((ilk[s] - son[l] - 1) * KARE_SN, 3) for l, s in ciftler if l in son and s in ilk]
+
+
+def periyot_sil(x: np.ndarray, sr: int, bas: float, son: float, n: int) -> np.ndarray:
+    """Ünlünün ortasından n perde periyodu çıkarır (kısaltma); birleşimde çapraz geçiş."""
+    a, b = int(bas * sr), int(son * sr)
+    orta = (a + b) // 2
+    P = periyot(x[max(a, orta - sr // 40): min(b, orta + sr // 40)], sr)
+    if not P or n <= 0 or n * P > (b - a) * 0.6:
+        return x
+    s0 = orta - (n * P) // 2
+    s1 = s0 + n * P
+    f = max(4, P // 4)
+    sol, sag = x[:s0].copy(), x[s1:].copy()
+    if len(sol) >= f and len(sag) >= f:
+        sol[-f:] = sol[-f:] * np.linspace(1, 0, f) + sag[:f] * np.linspace(0, 1, f)
+        sag = sag[f:]
+    return np.concatenate([sol, sag]).astype(np.float32)
+
+
+def unlu_tablosu(sureler: dict, metin: str, uzun: set) -> list[dict]:
+    """Her ünlü: konum, harf, süre, uzun mu, kelime/öbek sonu mu (öbek sonu doğal olarak uzar)."""
+    kucuk = metin.replace("İ", "i").replace("I", "ı").lower().translate(str.maketrans("âîû", "aiu"))
+    tablo = []
+    for i, (a, b) in sorted(sureler.items()):
+        if kucuk[i] not in UNLU:
+            continue
+        sonra = metin[i + 1:]
+        kelime_sonu = not sonra[:1].isalpha()
+        obek_sonu = kelime_sonu and (sonra.lstrip()[:1] in ",.;:!?" or not sonra.strip())
+        tablo.append({"i": i, "harf": metin[i], "sure": round(b - a, 3), "uzun": i in uzun, "obek_sonu": obek_sonu})
+    return tablo
+
+
+def sure_duzelt(x: np.ndarray, sr: int, sureler: dict, metin: str, uzun: set, hedef_uzun: float = 1.8,
+                sinir_kisa: float = 1.5, en_cok: float = 2.2) -> tuple[np.ndarray, dict]:
+    """Uyarlamalı ünlü süresi: uzun ünlü kısa ünlü ortancasının hedef_uzun katının altındaysa o kata uzatılır; öbek
+    sonu olmayan kısa ünlü sinir_kisa katını aşıyorsa kısaltılır. Uzun ünlüler zaten uzunsa dokunulmaz.
+    Dönüş: (yeni ses, {"uzatilan": [...], "kisaltilan": [...], "kisa_ortanca": sn})."""
+    tablo = unlu_tablosu(sureler, metin, uzun)
+    kisa = [t["sure"] for t in tablo if not t["uzun"] and not t["obek_sonu"]]
+    if len(kisa) < 3:
+        return x, {}
+    m = float(np.median(kisa))
+    islem = []  # (bas, son, kat)
+    for t in tablo:
+        a, b = sureler[t["i"]]
+        if t["uzun"] and t["sure"] < hedef_uzun * m:
+            islem.append((a, b, min(en_cok, hedef_uzun * m / max(t["sure"], 1e-3)), t))
+        elif not t["uzun"] and not t["obek_sonu"] and t["sure"] > sinir_kisa * m:
+            islem.append((a, b, sinir_kisa * m / t["sure"], t))
+    rapor = {"kisa_ortanca": round(m, 3), "uzatilan": [], "kisaltilan": []}
+    # Sondan başa: önceki konumlar kaymasın
+    for a, b, kat, t in sorted(islem, key=lambda z: -z[0]):
+        if kat > 1:
+            y = uzat(x, sr, [(a, b)], kat)
+            if len(y) != len(x):
+                rapor["uzatilan"].append(t["i"])
+            x = y
+        else:
+            orta = (a + b) / 2
+            P = periyot(x[max(0, int(orta * sr) - sr // 40): int(orta * sr) + sr // 40], sr)
+            if P:
+                n = int(round((1 - kat) * (b - a) * sr / P))
+                y = periyot_sil(x, sr, a, b, n)
+                if len(y) != len(x):
+                    rapor["kisaltilan"].append(t["i"])
+                x = y
+    return x, rapor

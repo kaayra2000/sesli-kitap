@@ -10,6 +10,7 @@ Sözlük `okunus.tsv` (yazılan<TAB>okunacak, tam kelime) kurallardan önce uygu
 """
 
 import re
+import unicodedata
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -43,6 +44,10 @@ AYARLAR = {
     "ile_ayir": "yok",
     # Nakşbend -> Nakşibend. Deney 17: Whisper "Nakşbend"i doğru duyuyor ("akş" CTC hakemi hatası); kapalı.
     "naksibend": False,
+    # Kelime başı ayn, ünlüyle biten kelimeden sonra (radıya ‘anhu -> "radıyanhu" okundu): "yok" | "zwnj" | "virgul".
+    "ayn_bas": "yok",
+    # Cümle başında tek kelime + virgül (Hamd, yüce ...): kopuk okunuyor; True ise virgül okunuşta düşer.
+    "bas_virgul_kaldir": False,
     # Günümüz okunuşuna çeviren kurallar; varsayılan kapalı, yalnız hakem eşitlemesinde kullanılır:
     "ünsüz_benzesme": False,  # etdim -> ettim, sebeb -> sebep
     "eski_ekler": False,      # içün -> için, anı -> onu
@@ -51,8 +56,9 @@ AYARLAR = {
 GUNUMUZ = {"sapka": "kaldir", "gayn": True, "tire_birlestir": True, "izafet_y": True, "ünsüz_benzesme": True, "eski_ekler": True,
            "cift_y": True,
            # Yalnız modele yönelik ayraç/çiftleme kuralları hakem eşitlemesinde kapalı (ma-nen, süluuk, as\u200châb)
-           "harf_ayir": "yok", "son_kume": "yok", "ic_kume": "yok", "ayn": "yok", "uyum_kir": "yok", "ile_ayir": "yok"}
+           "harf_ayir": "yok", "son_kume": "yok", "ic_kume": "yok", "ayn": "yok", "uyum_kir": "yok", "ile_ayir": "yok", "ayn_bas": "yok"}
 
+HARF_ADI = {"a": "a", "b": "be", "c": "ce", "ç": "çe", "d": "de", "e": "e", "f": "fe", "g": "ge", "h": "he"}
 ARAP = r"؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿"
 HARF = "A-Za-zÇĞİÖŞÜçğıöşüÂÎÛâîû"
 
@@ -152,6 +158,9 @@ def eski_ek(kelime: str) -> str:
 def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict | None = None) -> str:
     a = {**AYARLAR, **(ayar or {})}
     ciftler = sozluk_yukle() if ciftler is None else ciftler
+    metin = unicodedata.normalize("NFC", metin).replace("ʻ", "‘").replace("ʿ", "‘").replace("ʾ", "’")
+    # Madde harfi (g — ...): harf adıyla okunur (model tek harfi "ç" gibi yutuyordu)
+    metin = re.sub(r"^\s*([a-hA-H])\s*[—–]\s*", lambda m: HARF_ADI[m.group(1).lower()] + ", ", metin)
     t = re.sub(r"\[\^[^\]]+\]", "", metin)                 # dipnot imleri
     t = re.sub(rf"«[^»]*[{ARAP}][^»]*»", " ", t)           # Arap harfli ibare (meali ayrıca verilir)
     t = re.sub(rf"[{ARAP}ً-ٰٟ]+", " ", t)
@@ -176,6 +185,12 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
                 return w
             return re.sub(rf"(?<=[{HARF}])’(?=[{HARF}])(?![{HARF}]{{1,2}}-)(?!ll)", "\x02", w)
         t = re.sub(rf"[{HARF}’\x02-]+", hemze, t)
+    ayn_bas = {"zwnj": " \u200c", "virgul": ", "}.get(a.get("ayn_bas", "yok"))
+    if ayn_bas:
+        # İzafet kesresinden sonra değil (muhabbet-i ‘âşıka tamlama olarak bitişik okunur)
+        t = re.sub(rf"(?<=[aeıioöuüâîû])(?<!-[ıiuü])(?<!-y[ıi]) ‘(?=[{HARF}])", ayn_bas.replace(" ", "\x03"), t)
+    if a.get("bas_virgul_kaldir"):
+        t = re.sub(rf"^(\s*[{HARF}]+),\s+", r"\1 ", t)
     t = t.replace("‘", "")
     if a["eski_ekler"] or a.get("naksibend"):
         t = t.replace("Nakşbend", "Nakşibend")
@@ -210,8 +225,8 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
                        lambda m: {"b": "p", "c": "ç", "d": "t", "g": "k"}[m.group(1)], w)
         if a.get("ic_kume", "yok") == "zwnj":
             w = re.sub(r"(?<=[bcçdfgğhjklmnprsştvyz])([bcdg])(?=[bcçdfgğhjklmnprsştvyz])", "\\1\u200c", w)
-        if a.get("uyum_kir", "yok") == "cift":
-            w = re.sub(r"([eiöüî][^aeıioöuüâîûAEIİOÖUÜÂÎÛ]{1,3})û", r"\1uu", w)
+        if a.get("uyum_kir", "yok") in ("cift", "isaret"):  # "isaret": ûû (uzun ünlü konumu için, aynı uzunluk)
+            w = re.sub(r"([eiöüî][^aeıioöuüâîûAEIİOÖUÜÂÎÛ]{1,3})û", r"\1" + ("uu" if a["uyum_kir"] == "cift" else "ûû"), w)
         if a["sapka"] == "cift":
             w = re.sub(r"[âîûÂÎÛ]", lambda m: {"â": "aa", "î": "ii", "û": "uu", "Â": "Aa", "Î": "İi", "Û": "Uu"}[m.group(0)], w)
         if a["sapka"] == "kaldir":
@@ -222,6 +237,7 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
     if a.get("ile_ayir", "yok") == "zwnj":
         t = re.sub(rf"(?<=[aeıioöuüâîû]) (ile)(?![{HARF}])", " \u200c\\1", t)
     t = re.sub(r"(?<=[a-zçğıöşü])([A-ZÇĞİÖŞÜ])", lambda m: kucuk(m.group(1)), t)  # esSeyyid -> esseyyid
+    t = t.replace("\x03", " ")
     t = re.sub(r"\s+([,.;:!?])", r"\1", t)
     t = re.sub(r"([,;:])(?:\s*[,;:])+", r"\1", t)
     t = re.sub(r"\(\s*\)", "", t)
