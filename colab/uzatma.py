@@ -82,7 +82,7 @@ def harf_sureleri(log_olas: np.ndarray, metin: str, sozluk: dict) -> dict[int, t
     return sonuc
 
 
-def periyot(x: np.ndarray, sr: int) -> int | None:
+def periyot(x: np.ndarray, sr: int, esik: float = 0.45) -> int | None:
     """Otokorelasyonla perde periyodu (örnek); ötümsüzse None."""
     if len(x) < sr // 35:
         return None
@@ -92,10 +92,10 @@ def periyot(x: np.ndarray, sr: int) -> int | None:
     if hi <= lo or r[0] <= 0:
         return None
     k = lo + int(np.argmax(r[lo:hi]))
-    return k if r[k] / r[0] > 0.45 else None
+    return k if r[k] / r[0] > esik else None
 
 
-def uzat(x: np.ndarray, sr: int, araliklar: list[tuple[float, float]], kat: float) -> np.ndarray:
+def uzat(x: np.ndarray, sr: int, araliklar: list[tuple[float, float]], kat: float, yedek_P: int | None = None) -> np.ndarray:
     """Her (başlangıç, bitiş) ünlü aralığını, ortasındaki perde periyodunu çoğaltarak kat oranında uzatır."""
     if kat <= 1 or not araliklar:
         return x
@@ -107,6 +107,9 @@ def uzat(x: np.ndarray, sr: int, araliklar: list[tuple[float, float]], kat: floa
         orta = (a + b) // 2
         merkez = x[max(a, orta - sr // 40): min(b, orta + sr // 40)]
         P = periyot(merkez, sr)
+        if not P and yedek_P:
+            # Kısa aralık: daha geniş pencere ve gevşek eşik, olmazsa parçanın ortanca periyodu
+            P = periyot(x[max(0, orta - sr // 25): orta + sr // 25], sr, 0.3) or yedek_P
         if not P:
             continue
         n = int(round((kat - 1) * (b - a) / P))
@@ -195,6 +198,11 @@ def sure_duzelt(x: np.ndarray, sr: int, sureler: dict, metin: str, uzun: set, he
     if len(kisa) < 3:
         return x, {}
     m = float(np.median(kisa))
+    # Parçanın ortanca perde periyodu (kısa aralıklarda yedek)
+    Ps = [periyot(x[int((a + b) / 2 * sr) - sr // 40: int((a + b) / 2 * sr) + sr // 40], sr)
+          for i, (a, b) in sureler.items() if i < len(metin) and metin[i].lower() in "aeıioöuüâîû"]
+    Ps = [q for q in Ps if q]
+    yedek_P = int(np.median(Ps)) if Ps else None
     islem = []  # (bas, son, kat)
     for t in tablo:
         a, b = sureler[t["i"]]
@@ -206,7 +214,7 @@ def sure_duzelt(x: np.ndarray, sr: int, sureler: dict, metin: str, uzun: set, he
     # Sondan başa: önceki konumlar kaymasın
     for a, b, kat, t in sorted(islem, key=lambda z: -z[0]):
         if kat > 1:
-            y = uzat(x, sr, [(a, b)], kat)
+            y = uzat(x, sr, [(a, b)], kat, yedek_P)
             if len(y) != len(x):
                 rapor["uzatilan"].append(t["i"])
             x = y

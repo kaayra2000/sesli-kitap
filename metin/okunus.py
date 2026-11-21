@@ -243,3 +243,22 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
     t = re.sub(r"\(\s*\)", "", t)
     t = re.sub(r"^\s*[,;:]\s*", "", t)
     return " ".join(t.split())
+
+
+def uzun_konumlar(metin: str, ciftler: list | None = None, ayar: dict | None = None) -> list[int] | None:
+    """okunus(metin, ayar) içindeki uzun ünlü konumları: şapkalı ünlüler (â î û, çiftlenmiş û dahil) ve sakin ayn/hemzeden
+    önceki ünlü (ma‘lûm -> mâlûm, ma‘nen: Türkçe okuyuşta uzar). Konumlar eşleşmezse None."""
+    a = {**AYARLAR, **(ayar or {})}
+    temel = okunus(metin, ciftler, a)
+    isaret = {"uyum_kir": "isaret"} if a.get("uyum_kir") == "cift" else {}
+    sapkali = okunus(metin, ciftler, {**a, "sapka": "koru", **isaret})
+    if len(sapkali) != len(temel):
+        return None
+    uzun = {i for i, c in enumerate(sapkali) if c in "âîûÂÎÛ"}
+    aynli = okunus(metin, ciftler, {**a, "sapka": "koru", **isaret, "ayn": "isaret"})
+    unlu, unsuz = "aeıioöuüâîûAEIİOÖUÜÂÎÛ", "bcçdfgğhjklmnprsştvyzBCÇDFGĞHJKLMNPRSŞTVYZ"
+    kayma = 0 if a.get("ayn", "yok") != "yok" else 1
+    for n, k in enumerate(i for i, c in enumerate(aynli) if c == "\x01"):
+        if 0 < k < len(aynli) - 1 and aynli[k - 1] in unlu and aynli[k + 1] in unsuz:
+            uzun.add(k - 1 - n * kayma)
+    return sorted(uzun)

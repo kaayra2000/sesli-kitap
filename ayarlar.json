@@ -11,7 +11,9 @@
   "son_kume": "sert",
   "ayn": "tire",
   "uyum_kir": "cift",
-  "ic_kume": "yok"
+  "ic_kume": "yok",
+  "ayn_bas": "zwnj",
+  "bas_virgul_kaldir": true
  },
  "seslendirme": {
   "aday": 4,
@@ -19,13 +21,15 @@
   "sicaklik": 0.5,
   "referans": "canli",
   "hakem": "large-v3",
-  "uzatma": 1.3,
+  "uzatma": "uyarlamali",
   "motor": "voxcpm",
   "bolum_kelime": 40,
   "vox_referans": "kitap-sesi-yeni-c.wav",
   "vox_referans_metin": "Ben Teknopark'ın yenilikçi dünyasından sana seslenen dijital asistanın ve rehber robotuyum. Buradaki enerjik atmosferi, üretkenliği ve geleceği şekillendiren projeleri sana en iyi şekilde aktarabilmek için tasarlandım. İster bu ekosisteme ilk kez adım atan bir ziyaretçi ol, ister yeni bir girişim fikrinin peşinde koşan bir girişimci ya da gece gündüz, demeden çalışan bir ar-ge ekibinin parçası. Kapım ve işlemcilerim sana her zaman açık. Teknopark bünyesindeki tüm süreçler, sunulan imkanlar ve yürütülen çalışmalar hakkında merak ettiğin her detayı benimle paylaşabilirsin. Kuluçka merkezlerindeki başvuru şartlarından tut da devlet desteklerine, vergi muafiyetlerinden mentorluk programlarına kadar pek çok konuda sana yol gösterebilirim.",
   "vox_denoise": false,
-  "kurtarma_aday": 4
+  "kurtarma_aday": 4,
+  "hedef_uzun": 2.0,
+  "sinir_kisa": 1.4
  },
  "parca_en_cok_kelime": 40
 }

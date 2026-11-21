@@ -16,7 +16,7 @@ from pathlib import Path
 
 KOK = Path(__file__).resolve().parent
 sys.path.insert(0, str(KOK / "metin"))
-from okunus import okunus, sozluk_yukle  # noqa: E402
+from okunus import uzun_konumlar, okunus, sozluk_yukle  # noqa: E402
 from hazirla import hazirla  # noqa: E402
 
 # Kitabın aktarımı bedri_gencer reposunda (bu reponun yanında); SESLI_KITAP_MD ile başka yol verilebilir.
@@ -100,10 +100,8 @@ def main() -> None:
                         x["ayn"] = [(i - k - 1, i - k) for k, i in enumerate(konum)]
                     elif len(isaretli) == len(x["okunus"]):
                         x["ayn"] = [(i - 1, i + 1) for i in konum]
-                sapkali = okunus(t["metin"], sozluk, {**oku, "sapka": "koru",
-                                                      **({"uyum_kir": "isaret"} if oku.get("uyum_kir") == "cift" else {})})
-                if len(sapkali) == len(x["okunus"]):
-                    x["uzun"] = [i for i, c in enumerate(sapkali) if c in "âîûÂÎÛ"]
+                if (u := uzun_konumlar(t["metin"], sozluk, oku)) is not None:
+                    x["uzun"] = u
                 parcalar.append(x)
         ayarlar["seslendirme"] = {**ayarlar["seslendirme"], **deney["ayar"]}
     else:
@@ -134,12 +132,8 @@ def main() -> None:
         return
     # Uzun ünlü indeksleri: şapkalı okunuşla karşılaştırılır (şapka 1:1 harf, uzunluk aynı).
     for x in (p for p in parcalar if "uzun" not in p):
-        oku = ayarlar["okunus"]
-        sapkali = okunus(x["metin"], sozluk, {**oku, "sapka": "koru",
-                                              **({"uyum_kir": "isaret"} if oku.get("uyum_kir") == "cift" else {})})
-        if len(sapkali) == len(x["okunus"]):
-            # Uzun ünlü: şapkalı okunuşta şapkalı harf (okunuş şapkalıysa da ölçülür)
-            x["uzun"] = [i for i, c in enumerate(sapkali) if c in "âîûÂÎÛ"]
+        if (u := uzun_konumlar(x["metin"], sozluk, ayarlar["okunus"])) is not None:
+            x["uzun"] = u
     is_ = {"konu": konu, "mod": a.mod, "ayar": ayarlar["seslendirme"], "parcalar": parcalar}
     hedef = KOK / "dist" / f"is-{konu}.zip"
     hedef.parent.mkdir(exist_ok=True)
