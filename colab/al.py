@@ -17,12 +17,12 @@ def temiz(x: str) -> str:
 
 
 *girdiler, hedef = sys.argv[1:]
-if len(girdiler) == 1 and "B64START" in (s := open(girdiler[0], encoding="utf-8").read()):
-    b = temiz(re.search(r"B64START(.+?)B64END", s, re.S).group(1))
+if len(girdiler) == 1 and not re.search(r"P\d+START[A-Za-z0-9]", s := open(girdiler[0], encoding="utf-8").read()):
+    b = temiz(re.search(r"B64START([A-Za-z0-9+/=\\n\s]+)B64END", s, re.S).group(1))
 else:
     parca = {}
     for g in girdiler:
-        m = re.search(r"P(\d+)START(.+?)P\d+END", open(g, encoding="utf-8").read(), re.S)
+        m = re.search(r"P(\d+)START([A-Za-z0-9+/=\\n]+)P\d+END", open(g, encoding="utf-8").read(), re.S)
         parca[int(m.group(1))] = temiz(m.group(2))
     b = "".join(parca[k] for k in sorted(parca))
 hedef = Path(hedef)
