@@ -61,15 +61,13 @@ if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{})
   [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("ifade_insan",False))')" == "True" ]] && \
     env LD_LIBRARY_PATH="$IFLD:$COLAB_LD" $IF/bin/python ifade_olc.py --insan cikti 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\(" || true
 fi
-# Ünlü süresi: Montreal Forced Aligner (micromamba ortamı /content/mfa)
+# Ünlü süresi: Montreal Forced Aligner. Kurulum uzun (conda); colab/mfa_kur.sh ile arka planda kurulur, hazırsa ölçülür.
 if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("mfa",True))')" == "True" ]]; then
-  MM=/content/micromamba
-  [[ -x /content/mfa/bin/mfa ]] || {
-    echo "MFA kuruluyor..."; mkdir -p $MM && curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj -C $MM bin/micromamba
-    $MM/bin/micromamba create -q -y -p /content/mfa -c conda-forge montreal-forced-aligner librosa soundfile 2>&1 | tail -2
-    env PATH=/content/mfa/bin:$PATH mfa model download acoustic turkish_mfa >/dev/null 2>&1
-    env PATH=/content/mfa/bin:$PATH mfa model download g2p turkish_mfa >/dev/null 2>&1; }
-  env -u LD_LIBRARY_PATH PATH=/content/mfa/bin:$PATH /content/mfa/bin/python mfa_olc.py . 2>&1 | tail -3 || echo "MFA ölçümü başarısız"
+  if [[ -x /content/mfa/bin/mfa ]] && grep -q "MFA HAZIR" /content/mfa_kur.log 2>/dev/null; then
+    env -u LD_LIBRARY_PATH PATH=/content/mfa/bin:$PATH /content/mfa/bin/python mfa_olc.py . 2>&1 | tail -3 || echo "MFA ölçümü başarısız"
+  else
+    echo "MFA hazır değil (arka plan kurulumu: /content/mfa_kur.log); ünlü süresi ölçülmedi"
+  fi
 fi
 # Çıktıyı küçült: seçilen cümleler Opus (tarayıcıdan alınan çıktı küçük kalsın), örnekte yalnız mp3.
 shopt -s nullglob
