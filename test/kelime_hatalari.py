@@ -28,6 +28,11 @@ def kelimeler(metin: str, kaynak: bool = False) -> list[str]:
 def yanlislar(ref: str, hyp: str) -> dict[int, str]:
     """ref kelime indeksi -> duyulan (yanlış duyulanlar). Küçük fark (1 harf, 6+ harfli kelimede) tolere edilir."""
     r, h = kelimeler(ref, True), kelimeler(hyp)
+    # "X ile" -> "Xyle" (sevdiği ile / sevdiğiyle) doğal okumadır, hata sayılmaz
+    for i in range(len(r) - 1):
+        if r[i + 1] == "ile" and r[i][-1:] in "aeıioöuü":
+            h = [f"{r[i]} ile" if x in (r[i] + "yle", r[i] + "yla") else x for x in h]
+    h = " ".join(h).split()
     sonuc = {}
     for op, a1, a2, b1, b2 in difflib.SequenceMatcher(None, r, h, autojunk=False).get_opcodes():
         if op == "equal":

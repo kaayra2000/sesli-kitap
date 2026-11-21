@@ -28,7 +28,7 @@ AYARLAR = {
     # Deney 12: zwnj araya ünlü sokuyor (sekr -> sektir); "sert" Hamd'ı düzeltti, genel doğruluk aynı.
     "son_kume": "sert",
     # Kelime içi ünsüz kümesindeki ötümlü (kalblerinden -> "kallerinden" okundu, 2026-11-20): "yok" | "sert" (kalpler).
-    # Deney 15: "sert" kalplerinden yerine "kaltlerinden" çıkardı; kapalı.
+    # Deney 15: "sert" kalplerinden yerine "kaltlerinden" çıkardı; kapalı. "zwnj": kalb\u200clerinden.
     "ic_kume": "yok",
     # Kelime içi ayn (ma‘nen) ve hemze (te’sîr): okuyucu kısa bir durak (gırtlak vuruşu) yapar; silinince "manen" oluyor.
     # "yok" (silinir), "kesme" (’), "zwnj" (görünmez ayraç), "tire" (ma-nen). "isaret" yalnız ölçüm içindir.
@@ -38,6 +38,11 @@ AYARLAR = {
     # "yok" | "cift" (û -> uu: sülüuuk değil sülu-uk; yalnız bu durumda).
     # Deney 15: sülûk "sülük" -> "süluk"; doğruluk değişmedi.
     "uyum_kir": "cift",
+    # Ünlüyle biten kelimeden sonra "ile" yapışıyor (sûreti ile -> "suretiyle", 2026-11-21): "yok" | "zwnj" (ile başına ayraç).
+    # Deney 17: zwnj yapışmayı 2/7 düzeltti ama tonlamayı bozdu (4/7 cümle); "sevdiğiyle" doğal okuma, kapalı.
+    "ile_ayir": "yok",
+    # Nakşbend -> Nakşibend. Deney 17: Whisper "Nakşbend"i doğru duyuyor ("akş" CTC hakemi hatası); kapalı.
+    "naksibend": False,
     # Günümüz okunuşuna çeviren kurallar; varsayılan kapalı, yalnız hakem eşitlemesinde kullanılır:
     "ünsüz_benzesme": False,  # etdim -> ettim, sebeb -> sebep
     "eski_ekler": False,      # içün -> için, anı -> onu
@@ -46,7 +51,7 @@ AYARLAR = {
 GUNUMUZ = {"sapka": "kaldir", "gayn": True, "tire_birlestir": True, "izafet_y": True, "ünsüz_benzesme": True, "eski_ekler": True,
            "cift_y": True,
            # Yalnız modele yönelik ayraç/çiftleme kuralları hakem eşitlemesinde kapalı (ma-nen, süluuk, as\u200châb)
-           "harf_ayir": "yok", "son_kume": "yok", "ic_kume": "yok", "ayn": "yok", "uyum_kir": "yok"}
+           "harf_ayir": "yok", "son_kume": "yok", "ic_kume": "yok", "ayn": "yok", "uyum_kir": "yok", "ile_ayir": "yok"}
 
 ARAP = r"؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿"
 HARF = "A-Za-zÇĞİÖŞÜçğıöşüÂÎÛâîû"
@@ -172,7 +177,7 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
             return re.sub(rf"(?<=[{HARF}])’(?=[{HARF}])(?![{HARF}]{{1,2}}-)(?!ll)", "\x02", w)
         t = re.sub(rf"[{HARF}’\x02-]+", hemze, t)
     t = t.replace("‘", "")
-    if a["eski_ekler"]:
+    if a["eski_ekler"] or a.get("naksibend"):
         t = t.replace("Nakşbend", "Nakşibend")
     if a["izafet_y"]:
         t = re.sub(rf"(?<=[aeıioöuüâîû])-([ıi])(?![{HARF}])", r"y\1", t)
@@ -203,6 +208,8 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
         if a.get("ic_kume", "yok") == "sert":
             w = re.sub(r"(?<=[bcçdfgğhjklmnprsştvyz])([bcdg])(?=[bcçdfgğhjklmnprsştvyz])",
                        lambda m: {"b": "p", "c": "ç", "d": "t", "g": "k"}[m.group(1)], w)
+        if a.get("ic_kume", "yok") == "zwnj":
+            w = re.sub(r"(?<=[bcçdfgğhjklmnprsştvyz])([bcdg])(?=[bcçdfgğhjklmnprsştvyz])", "\\1\u200c", w)
         if a.get("uyum_kir", "yok") == "cift":
             w = re.sub(r"([eiöüî][^aeıioöuüâîûAEIİOÖUÜÂÎÛ]{1,3})û", r"\1uu", w)
         if a["sapka"] == "cift":
@@ -212,6 +219,8 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
         return w
 
     t = re.sub(rf"[{HARF}]+", kelime_isle, t)
+    if a.get("ile_ayir", "yok") == "zwnj":
+        t = re.sub(rf"(?<=[aeıioöuüâîû]) (ile)(?![{HARF}])", " \u200c\\1", t)
     t = re.sub(r"(?<=[a-zçğıöşü])([A-ZÇĞİÖŞÜ])", lambda m: kucuk(m.group(1)), t)  # esSeyyid -> esseyyid
     t = re.sub(r"\s+([,.;:!?])", r"\1", t)
     t = re.sub(r"([,;:])(?:\s*[,;:])+", r"\1", t)

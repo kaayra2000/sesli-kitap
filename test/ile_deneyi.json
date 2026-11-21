@@ -1,0 +1,94 @@
+{
+ "aciklama": "ile yapışması (suretiyle), kelime içi küme (kalblerinden), Nakşbend (akşment).",
+ "cumleler": [
+  {
+   "id": "b0014-c02",
+   "metin": "Şâh hazretleri de derhâl emr-i İlâhî ile bunların menziline gelmişlerdir."
+  },
+  {
+   "id": "b0015-c11",
+   "metin": "Zîrâ kişi sevdiği ile dünyâ ve âhiretde berâberdir."
+  },
+  {
+   "id": "b0015-c14",
+   "metin": "Bu hakîkat ve esrârı nâtık olarak Cenâb-ı Seyyidü’l-Enbiyâ ve’l-Mürselîn, Mahbûb-ı Mutlak-ı Rabbi’l-‘Âlemîn dahi [kişi sevdiği ile berâberdir] hadîs-i şerîfini îrâd buyurmuşlardır.[^m2]"
+  },
+  {
+   "id": "b0018-c02",
+   "metin": "vâris-i tâm ve ekmel-i Muhammedî, şeyhunâ ve mürşidunâ es-Seyyid Ahmed el-Kürdî el-Hüseynî (radıya ‘anhu’l-Bârî) hazretlerinden i‘tibâren 33 vâsıta ile müselsel ve muttasıldır."
+  },
+  {
+   "id": "b0022-c02",
+   "metin": "Çünki mübtelâları Allâh’ı bırakıp mâsivâ ile meşğûl olan mahcûblar, belki istidrâc ehli olan bedbahtlardır."
+  },
+  {
+   "id": "b0029-c01",
+   "metin": "Hakla bâtıl, kerâmet-i evliyâ ile istidrâc yekdîgerine mütelebbis ve müteşâbih olduğundan bu cihetden kıymet ve i‘tibârdan sâkıtdır."
+  },
+  {
+   "id": "b0040-c03",
+   "metin": "ef‘âl ve harekâtları hakîkat-i fenâ ve bekâ ile ‘adem-i tahakkukları sebebiyle sûrete, zâhire maksûr ve mahsûr kalır."
+  },
+  {
+   "id": "b0013-c06",
+   "metin": "Bir ferdde muhabbetin mukaddimâtının husûlüne bâ‘is olan yegâne esbâb bir veliyy-i mahbûbun kalbinin ona karşı muhabbetle tahrîkidir."
+  },
+  {
+   "id": "b0088-c14",
+   "metin": "Bu himmet ve tasarruf ‘ibâdet ve ‘ubûdiyyet-i fi‘liyye hâlinde tekerrür ve temâdî etdikçe, nefs-i emmâre makhûr, kalbdeki mâsivâ hebâ’en mensûrâ olur."
+  },
+  {
+   "id": "b0169-c09",
+   "metin": "Asl ve hakîkate tâlib ve müteveccih olanların zılla teveccühleri zenbdir."
+  },
+  {
+   "id": "b0191-c04",
+   "metin": "Benim sizlerle olan mu‘âmelem takdîr ve meşî’et-i ezele merbût ve müstenddir."
+  },
+  {
+   "id": "b0197-c12",
+   "metin": "Mes’eleyi mâddî derdler ve mihnetler ve mahrûmiyyetler ve müşkilâtlar ve ibtilâların ma‘nâda refâhlar, sürûrlar, sa‘âdetler teşkîl etdiği esâsına irca‘ eyledikce iş bir ‘aks olur."
+  },
+  {
+   "id": "b0112-c06",
+   "metin": "İşte ekâbir-i Nakşbendiyye’nin tarîk-ı sülûkleri bu râh-ı mübârekdir."
+  },
+  {
+   "id": "b0169-c04",
+   "metin": "Nakşbendiyye’nin bu sülûk ve kemâl cihetinden müşâreketleride bu vaz‘iyyetdedir."
+  },
+  {
+   "id": "b0170-c10",
+   "metin": "Sâdât-ı Nakşbendiyye’nin (yâd-dâşt) kelimesiyle müşâr olan nisbet kemâlî budur."
+  }
+ ],
+ "varyantlar": [
+  {
+   "ad": "temel",
+   "okunus": {}
+  },
+  {
+   "ad": "ile-zwnj",
+   "okunus": {
+    "ile_ayir": "zwnj"
+   }
+  },
+  {
+   "ad": "ic-zwnj",
+   "okunus": {
+    "ic_kume": "zwnj"
+   }
+  },
+  {
+   "ad": "naksi",
+   "okunus": {
+    "naksibend": true
+   }
+  }
+ ],
+ "ayar": {
+  "aday": 2,
+  "erken_dur": 1,
+  "kurtarma_aday": 0
+ }
+}
