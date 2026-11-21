@@ -56,7 +56,7 @@ class Duygu:
                 super().__init__(c)
                 self.wav2vec2 = Wav2Vec2Model(c)
                 self.classifier = Bas(c)
-                self.init_weights()
+                self.post_init()
 
             def forward(self, x):
                 h = self.wav2vec2(x)[0].mean(1)
