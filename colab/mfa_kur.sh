@@ -6,6 +6,6 @@ set -u
 MM=/content/micromamba
 mkdir -p $MM && [[ -x $MM/bin/micromamba ]] || curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj -C $MM bin/micromamba
 rm -rf /content/mfa
-$MM/bin/micromamba create -y -p /content/mfa --override-channels -c conda-forge python=3.11 montreal-forced-aligner librosa soundfile
+$MM/bin/micromamba create -y -p /content/mfa --override-channels -c conda-forge python=3.11 montreal-forced-aligner librosa pysoundfile
 export PATH=/content/mfa/bin:$PATH
 mfa model download acoustic turkish_mfa && mfa model download g2p turkish_mfa && echo "MFA HAZIR"
