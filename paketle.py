@@ -103,6 +103,9 @@ def main() -> None:
                 if (u := uzun_konumlar(t["metin"], sozluk, oku)) is not None:
                     x["uzun"] = u
                 parcalar.append(x)
+        # Aynı modelin parçaları art arda: model değişimi (bellek boşaltıp yükleme) bir kez olsun
+        sira = [v.get("vox_model", "") if isinstance(v, dict) else "" for v in deney["varyantlar"]]
+        parcalar.sort(key=lambda x: sira.index(x.get("vox_model", "")) if x.get("vox_model", "") in sira else 0)
         ayarlar["seslendirme"] = {**ayarlar["seslendirme"], **deney["ayar"]}
     else:
         konu = f"ornek{a.tur:02d}"

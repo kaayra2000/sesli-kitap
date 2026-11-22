@@ -144,7 +144,7 @@ class VoxSes:
         self.temp = ayar["sicaklik"]
         self.ref = str(HERE / "referans" / ayar.get("vox_referans", "referans-canli.wav"))
         self.cikti = cikti
-        self.modeller = {}
+        self.etkin = "openbmb/VoxCPM2"
         self.ref_metin = ayar.get("vox_referans_metin", CANLI_METIN) or self.yaziya_dok(self.ref)
         self.refler = {Path(self.ref).name: self.ref_metin, **ayar.get("vox_referans_metinleri", {})}
 
@@ -167,14 +167,19 @@ class VoxSes:
         return self.ref + " (VoxCPM2 tam klon)"
 
     def model_al(self, kimlik: str):
-        """VoxCPM2 tabanı ya da ince ayarlı türevi (ör. Trendyol/Trendyol-TTS: VoxCPM2 + 20 sa Türkçe LoRA, MIT)."""
-        if kimlik == "openbmb/VoxCPM2":
+        """VoxCPM2 tabanı ya da ince ayarlı türevi (ör. Trendyol/Trendyol-TTS: VoxCPM2 + 20 sa Türkçe LoRA, MIT).
+        Bellekte tek model tutulur (T4 15 GB iki modeli sığdırmıyor): başka model istenince öncekisi boşaltılır."""
+        if kimlik == self.etkin:
             return self.vox
-        if kimlik not in self.modeller:
-            from voxcpm import VoxCPM
-            self.modeller[kimlik] = VoxCPM.from_pretrained(kimlik, load_denoiser=False)
-            log(f"model yüklendi: {kimlik}")
-        return self.modeller[kimlik]
+        import gc
+        from voxcpm import VoxCPM
+        self.vox = None
+        gc.collect()
+        torch.cuda.empty_cache()
+        self.vox = VoxCPM.from_pretrained(kimlik, load_denoiser=False)
+        self.etkin = kimlik
+        log(f"model yüklendi: {kimlik}")
+        return self.vox
 
     def soyle(self, metin: str, tohum: int, referans: str | None = None, mod: str | None = None,
               stil: str | None = None, model: str | None = None, cfg_d: float | None = None,
