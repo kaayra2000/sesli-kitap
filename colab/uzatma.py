@@ -109,18 +109,29 @@ def uzat(x: np.ndarray, sr: int, araliklar: list[tuple[float, float]], kat: floa
         P = periyot(merkez, sr)
         if not P and yedek_P:
             # Kısa aralık: daha geniş pencere ve gevşek eşik, olmazsa parçanın ortanca periyodu
-            P = periyot(x[max(0, orta - sr // 25): orta + sr // 25], sr, 0.3) or yedek_P
+            # Yedek ortanca periyot yalnız gevşek eşikle periyodiklik bulunursa (ötümsüz/karışık bölgede periyot
+            # çoğaltmak takılma sesi yapıyordu): ölçülen periyot, yedeğe yakınsa kullanılır.
+            P2 = periyot(x[max(0, orta - sr // 25): orta + sr // 25], sr, 0.3)
+            P = P2 if P2 and abs(P2 - yedek_P) < 0.25 * yedek_P else None
         if not P:
             continue
+        # Döngü başı yükselen sıfır geçişine hizalanır (birleşimde faz sıçraması olmasın)
+        z0 = orta - P // 2
+        pencere = x[max(1, z0 - P // 4): z0 + P // 4]
+        gec = np.where((pencere[:-1] <= 0) & (pencere[1:] > 0))[0]
+        if len(gec):
+            z0 = max(1, z0 - P // 4) + int(gec[np.argmin(np.abs(gec - P // 4))]) + 1
+        orta = z0 + P // 2
         n = int(round((kat - 1) * (b - a) / P))
         if n <= 0:
             continue
-        # Ortadaki tam periyodu n kez ekle; birleşimlerde 1/4 periyotluk çapraz geçiş.
+        # Ortadaki tam periyodu n kez ekle; birleşimlerde yarım periyotluk kosinüs çapraz geçiş.
         dongu = x[orta - P // 2: orta - P // 2 + P].copy()
         if len(dongu) < P:
             continue
-        f = max(4, P // 4)
-        yuk, ini = np.linspace(0, 1, f), np.linspace(1, 0, f)
+        f = max(8, P // 2)  # yarım periyot, kosinüs çapraz geçiş (çeyrek periyot takılma sesi yapıyordu)
+        yuk = 0.5 - 0.5 * np.cos(np.linspace(0, np.pi, f))
+        ini = yuk[::-1]
         ek = np.tile(dongu, n)
         sol = x[imlec:orta - P // 2].copy()
         sag = x[orta - P // 2:].copy()
@@ -166,10 +177,11 @@ def periyot_sil(x: np.ndarray, sr: int, bas: float, son: float, n: int) -> np.nd
         return x
     s0 = orta - (n * P) // 2
     s1 = s0 + n * P
-    f = max(4, P // 4)
+    f = max(8, P // 2)
+    yuk = 0.5 - 0.5 * np.cos(np.linspace(0, np.pi, f))
     sol, sag = x[:s0].copy(), x[s1:].copy()
     if len(sol) >= f and len(sag) >= f:
-        sol[-f:] = sol[-f:] * np.linspace(1, 0, f) + sag[:f] * np.linspace(0, 1, f)
+        sol[-f:] = sol[-f:] * yuk[::-1] + sag[:f] * yuk
         sag = sag[f:]
     return np.concatenate([sol, sag]).astype(np.float32)
 

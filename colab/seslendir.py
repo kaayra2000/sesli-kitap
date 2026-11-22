@@ -411,33 +411,57 @@ def perde_genislet(x: np.ndarray, sr: int, kat: float) -> np.ndarray:
     return y[: len(x)] if len(y) >= len(x) else np.pad(y, (0, len(x) - len(y)))
 
 
-def duraklama_ekle(x: np.ndarray, sr: int, kelimeler: list, virgul: float, nokta: float) -> tuple[np.ndarray, list]:
-    """Whisper'ın virgül/nokta koyduğu kelimeden sonraki sessizlik hedefin altındaysa farkı sessizlikle tamamlar
-    (deney 20: sentez 10 kelimede 0.27 duraklama, referans 0.55). Dönüş: yeni ses, kaydırılmış kelime zamanları."""
-    ekler = []  # (konum sn, eklenecek sn)
+def duraklama_ekle(x: np.ndarray, sr: int, kelimeler: list, virgul: float, nokta: float) -> tuple[np.ndarray, list, list]:
+    """Whisper'ın virgül/nokta koyduğu kelimeden sonraki sessizlik hedefin altındaysa farkı sessizlikle tamamlar.
+    Kullanıcı (2026-11-22): sınırda doğal sessizlik yokken (model kelimeleri bağlamış) ortadan dijital sessizlik
+    sokmak sesi "internet çekmiyor" gibi kesiyordu. Bu yüzden ekleme yalnız sınırın ±60 ms çevresindeki en sessiz 10 ms
+    pencereye yapılır; orası konuşma düzeyinin 35 dB altında değilse eklenmez. Kenarlara 10 ms yumuşak geçiş konur.
+    Dönüş: yeni ses, kaydırılmış kelime zamanları, ekleme konumları (yeni seste, sn)."""
+    h = int(0.01 * sr)
+    n = len(x) // h
+    e = 10 * np.log10((x[: n * h].reshape(n, h) ** 2).mean(1) + 1e-12) if n else np.zeros(0)
+    ust = float(np.percentile(e, 95)) if n else 0.0
+    ekler = []  # (örnek konumu, eklenecek sn)
     for a, b in zip(kelimeler, kelimeler[1:]):
         w = a.word.strip()
         hedef = nokta if w[-1:] in ".!?;" else virgul if w[-1:] == "," else 0
         bosluk = b.start - a.end
-        if hedef and bosluk < hedef:
-            ekler.append(((a.end + b.start) / 2, hedef - max(0.0, bosluk)))
+        if not hedef or bosluk >= hedef:
+            continue
+        orta = (a.end + b.start) / 2
+        i0, i1 = max(0, int((orta - 0.06) / 0.01)), min(n, int((orta + 0.06) / 0.01) + 1)
+        if i1 <= i0:
+            continue
+        k = i0 + int(np.argmin(e[i0:i1]))
+        if e[k] > ust - 35:
+            continue  # doğal sessizlik yok: ekleme yapılmaz
+        ekler.append((k * h + h // 2, hedef - max(0.0, bosluk)))
     if not ekler:
-        return x, kelimeler
-    parcalar, imlec = [], 0
-    for t, ek in ekler:
-        i = int(t * sr)
-        parcalar += [x[imlec:i], np.zeros(int(ek * sr), np.float32)]
+        return x, kelimeler, []
+    f = int(0.01 * sr)
+    pen = 0.5 - 0.5 * np.cos(np.linspace(0, np.pi, f))
+    parcalar, imlec, yerler, kay = [], 0, [], 0.0
+    for i, ek in ekler:
+        sol = x[imlec:i].copy()
+        if len(sol) >= f:
+            sol[-f:] *= pen[::-1]
+        parcalar += [sol, np.zeros(int(ek * sr), np.float32)]
+        yerler.append(round(i / sr + kay, 3))
+        kay += ek
         imlec = i
-    parcalar.append(x[imlec:])
+    sag = x[imlec:].copy()
+    if len(sag) >= f:
+        sag[:f] *= pen
+    parcalar.append(sag)
 
     class K:  # kaydırılmış kelime
         def __init__(self, w, s, e):
             self.word, self.start, self.end = w, s, e
     yeni = []
     for k in kelimeler:
-        kay = sum(ek for t, ek in ekler if t <= k.start)
+        kay = sum(ek for i, ek in ekler if i / sr <= k.start)
         yeni.append(K(k.word, k.start + kay, k.end + kay))
-    return np.concatenate(parcalar).astype(np.float32), yeni
+    return np.concatenate(parcalar).astype(np.float32), yeni, yerler
 
 
 def uzun_unlu(x, p, parca, ayar, ses, hakem):
@@ -567,7 +591,7 @@ def main() -> None:
         vd, nd = float(parca.get("virgul_ara", ayar.get("virgul_ara", 0)) or 0), float(ayar.get("nokta_ara", 0.35))
         if vd > 0 and p.get("_kelimeler"):
             x16_once = len(x)
-            x, p["_kelimeler"] = duraklama_ekle(x, ses.sr, p["_kelimeler"], vd, nd)
+            x, p["_kelimeler"], p["duraklama_yerleri"] = duraklama_ekle(x, ses.sr, p["_kelimeler"], vd, nd)
             p["duraklama_eklenen"] = round((len(x) - x16_once) / ses.sr, 2)
         p = {**p, "tepe_ham": p["tepe"], "tepe": round(float(np.abs(x).max()), 3)}
         try:
