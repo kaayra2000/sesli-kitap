@@ -136,8 +136,22 @@ def prozodi(x16, kelimeler):
     return sonuc
 
 
+def nisqa_puan(x16):
+    """NISQA doğallık bekçisi (MOS, gürültü, kesinti, renklenme, yükseklik); 20 sn dilim ortalaması."""
+    import torch
+    from torchmetrics.functional.audio.nisqa import non_intrusive_speech_quality_assessment as nisqa
+    d = 20 * 16000
+    par = [x16[i:i + d] for i in range(0, len(x16), d) if len(x16[i:i + d]) > 16000]
+    m = np.average([nisqa(torch.from_numpy(p), 16000).cpu().numpy() for p in par], 0, weights=[len(p) for p in par])
+    return {f"nisqa_{k}": round(float(v), 3) for k, v in zip(["mos", "gurultu", "kesinti", "renklenme", "yukseklik"], m)}
+
+
 def olc(araclar, x16, kelimeler):
     r = {**araclar["duygu"](x16), **prozodi(x16, kelimeler)}
+    try:
+        r.update(nisqa_puan(x16))
+    except Exception as e:  # noqa: BLE001
+        r["nisqa_hata"] = str(e)[:80]
     try:
         r.update(araclar["estetik"](x16))
     except Exception as e:  # noqa: BLE001
@@ -174,7 +188,7 @@ def main():
             if 4 <= len(x16) / 16000 <= 20:
                 kayit.append(olc(araclar, x16, kz(x16)))
         ref = {}
-        for f in sorted((HERE / "referans").glob("kitap-sesi-*.wav")):
+        for f in sorted((HERE / "referans").glob("kitap-sesi-*.wav")) + sorted((HERE / "referans").glob("insan-okuma-*.wav")):
             x, sr = sf.read(f, dtype="float32")
             x16 = rs16(x, sr)
             ref[f.name] = olc(araclar, x16, kz(x16))

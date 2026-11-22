@@ -30,12 +30,12 @@
   "kurtarma_aday": 4,
   "hedef_uzun": 2.3,
   "sinir_kisa": 1.4,
-  "perde_kat": 1.25,
+  "perde_kat": 1.0,
   "iki_nokta_ara": 0.45,
   "ifade": true,
   "mfa": true,
-  "mfa_duzelt": true,
-  "virgul_ara": 0.15,
+  "mfa_duzelt": false,
+  "virgul_ara": 0,
   "nokta_ara": 0.35
  },
  "parca_en_cok_kelime": 40

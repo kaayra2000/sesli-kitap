@@ -144,6 +144,7 @@ class VoxSes:
         self.temp = ayar["sicaklik"]
         self.ref = str(HERE / "referans" / ayar.get("vox_referans", "referans-canli.wav"))
         self.cikti = cikti
+        self.modeller = {}
         self.ref_metin = ayar.get("vox_referans_metin", CANLI_METIN) or self.yaziya_dok(self.ref)
         self.refler = {Path(self.ref).name: self.ref_metin, **ayar.get("vox_referans_metinleri", {})}
 
@@ -165,8 +166,19 @@ class VoxSes:
     def referans_kur(self, hakem: "Hakem") -> str:
         return self.ref + " (VoxCPM2 tam klon)"
 
+    def model_al(self, kimlik: str):
+        """VoxCPM2 tabanı ya da ince ayarlı türevi (ör. Trendyol/Trendyol-TTS: VoxCPM2 + 20 sa Türkçe LoRA, MIT)."""
+        if kimlik == "openbmb/VoxCPM2":
+            return self.vox
+        if kimlik not in self.modeller:
+            from voxcpm import VoxCPM
+            self.modeller[kimlik] = VoxCPM.from_pretrained(kimlik, load_denoiser=False)
+            log(f"model yüklendi: {kimlik}")
+        return self.modeller[kimlik]
+
     def soyle(self, metin: str, tohum: int, referans: str | None = None, mod: str | None = None,
-              stil: str | None = None) -> np.ndarray:
+              stil: str | None = None, model: str | None = None, cfg_d: float | None = None,
+              adim_d: int | None = None) -> np.ndarray:
         """referans: parçaya özel referans dosyası. mod: "tam" (referans + metni; ritim de kopyalanır) ya da "kontrollu"
         (yalnız tını referansı; stil tarifi duyguyu/üslubu yönlendirir). stil: parantez içi üslup tarifi."""
         mod = mod or self.ayar.get("vox_mod", "tam")
@@ -177,7 +189,9 @@ class VoxSes:
         if Path(ref).name not in self.refler:
             self.refler[Path(ref).name] = self.yaziya_dok(ref)
         ref_metin = self.refler[Path(ref).name]
-        cfg = 2.5 if self.temp < self.ayar["sicaklik"] else 2.0
+        cfg = 2.5 if self.temp < self.ayar["sicaklik"] else float(cfg_d or self.ayar.get("vox_cfg", 2.0))
+        adim = int(adim_d or self.ayar.get("vox_adim", 10))
+        vox = self.model_al(model or self.ayar.get("vox_model", "openbmb/VoxCPM2"))
         parcalar = []
         bolumler = bol(metin, self.ayar["bolum_kelime"])
         iki_nokta = float(self.ayar.get("iki_nokta_ara", 0) or 0)
@@ -188,8 +202,8 @@ class VoxSes:
                 ara = iki_nokta if iki_nokta > 0 and bolumler[k - 1].rstrip().endswith(":") else self.ayar["bolum_ara"]
                 parcalar.append(np.zeros(int(ara * self.sr), np.float32))
             ek = {"prompt_wav_path": ref, "prompt_text": ref_metin} if mod == "tam" else {}
-            x = self.vox.generate(text=f"({stil}){bolum}" if stil else bolum, **ek,
-                                  reference_wav_path=ref, cfg_value=cfg, inference_timesteps=10,
+            x = vox.generate(text=f"({stil}){bolum}" if stil else bolum, **ek,
+                                  reference_wav_path=ref, cfg_value=cfg, inference_timesteps=adim,
                                   **({"denoise": True} if self.denoise else {}))
             parcalar.append(kirp(np.asarray(x, dtype=np.float32), self.sr))
         return np.concatenate(parcalar)
@@ -246,7 +260,7 @@ class Ses:
         return yol
 
     def soyle(self, metin: str, tohum: int, referans: str | None = None, mod: str | None = None,
-              stil: str | None = None) -> np.ndarray:
+              stil: str | None = None, model=None, cfg_d=None, adim_d=None) -> np.ndarray:
         """pocket-tts 50 jetondan uzun parçada kelime atlayabilir; uzun cümle virgülden bölünüp kısa araya birleştirilir."""
         torch.manual_seed(tohum)
         parcalar = []
@@ -552,7 +566,8 @@ def main() -> None:
         adaylar, t_ses, t_hakem = [], 0.0, 0.0
         for tohum in range(ayar["aday"]):
             t1 = time.time()
-            x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"), parca.get("vox_mod"), parca.get("vox_stil"))
+            x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"), parca.get("vox_mod"), parca.get("vox_stil"),
+                           parca.get("vox_model"), parca.get("vox_cfg"), parca.get("vox_adim"))
             t2 = time.time()
             p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
             tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
@@ -567,7 +582,8 @@ def main() -> None:
             ses.model.temp = ayar["kurtarma_sicaklik"]
             for tohum in range(100, 100 + ayar["kurtarma_aday"]):
                 t1 = time.time()
-                x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"), parca.get("vox_mod"), parca.get("vox_stil"))
+                x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"), parca.get("vox_mod"), parca.get("vox_stil"),
+                           parca.get("vox_model"), parca.get("vox_cfg"), parca.get("vox_adim"))
                 t2 = time.time()
                 p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
                 tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)

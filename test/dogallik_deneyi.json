@@ -1,0 +1,109 @@
+{
+ "aciklama": "Doğallık deneyi (kullanıcı 2026-11-22: sonradan işlemli ses robotik). Sonradan işlem kapalı. VoxCPM2 temel / 16 adım / Trendyol-TTS (Türkçe LoRA) cfg 2.0 ve 1.5. Bekçi: NISQA; hedef: insan Mektubat okumaları (ölçüm için) ve referans.",
+ "cumleler": [
+  {
+   "id": "b0010-c00",
+   "metin": "Hamd, yüce ve en yüce olan Allah’adır. Salât ve selâm efendimiz ve peygamberimiz Muhammed Mustafâ’ya, onun âline ve takvâ sahibi iyi ashâbına olsun."
+  },
+  {
+   "id": "b0011-c00",
+   "metin": "Ey birâder! Dînî ve dünyevî ma‘lûmunuz olsun ki: Mektûbunuzu memnûniyyetle aldım. Muhabbet menba‘ından neş’et eden hitâblarınızı [şahsımız hakkında vâki‘ iş‘ârâtı nazar-ı i‘tibâra almayarak] hüsn-i telakkî etdim."
+  },
+  {
+   "id": "b0012-c00",
+   "metin": "Bize karşı rızâ-yı Bârî içün perverde etdiğiniz muhabbetin berekâtından a‘zamî derecede müstefîd ve müstefîz olmanızı Mevlâ-yı Müte‘âl’den dilerim. Burada muhabbet mes’elesinden biraz bahs etmek, bu husûsda size ba‘zı cihetden esâslı ma‘lûmât vermek lâzımdır."
+  },
+  {
+   "id": "b0013-c00",
+   "metin": "Ma‘lûmunuz olsun ki: Muhabbet, fi’l-hakîka Allâh’dan mevhûbdur. Husûl ve tahakkuku kesbî değildir. Fakat: mukaddimâtı fazl ve tevfîk-i Hakk ile kesbe ta‘alluk eder. Bu mukaddimât-ı kesbiyyeden mücerred ve mu‘arrâ olarak vehb edilen muhabbetler de, enderiyyât kabîlinden vardır."
+  },
+  {
+   "id": "b0013-c02",
+   "metin": "Tevfîk-i Hakk ile muhabbetin mukaddimât-ı kesbiyyesi vücûda gelerek tohm-ı sa‘âdet-i muhabbet o ferdin kalbine vehb ve ibdâ‘ olunur. Böyle bir muhabbete mazhar olan şahs mazhar olduğu şey’in ehemmiyyetini anlar da anı öldürmemeğe, tenmiyeye çalışırsa murâd ve maksûduna suhûletle nâ’il olur."
+  },
+  {
+   "id": "b0014-c00",
+   "metin": "Bu akvâlin sıdkına delîl çokdur. Ez-cümle Şâh-ı Nakşbend hazretlerine ifrât derecede muhabbet eden bir zümre-i makbûlân bir def‘a muhabbetin incizâbına mukâvemet edemeyerek yüzlerini zemîne sürüp [İlâhî bize Hâce Bahâ’üddîn’i yetişdir] diye tazarru‘da bulunmuşlardır."
+  },
+  {
+   "id": "b0014-c03",
+   "metin": "Şâh hazretleri [Bir lahza te’emmül eyleyin tâ ki hakîkat-i hâl ma‘lûmunuz olsun] buyurdukları gibi, muhiblerin bir lahza içinde muhabbetleri kalblerinden silinmiş, âsâr-ı muhabbetden bir şemme ve zerre kalmamışdır. Her biri birer hacer ve meder hâline gelmişlerdir."
+  },
+  {
+   "id": "b0015-c01",
+   "metin": "[Cânib-i ma‘şûkdan olmazsa muhabbet-i ‘âşıka ✱ sa‘y-i ‘âşıkı ‘âşık ma‘şûka îsâl eylemez] mazmûnunu bildirerek ba‘de-mâ izhâr-ı muhabbet içün bizi nezdinizde hâzır görmeğe lüzûm yokdur. Muhabbet mes’elesinde uzaklık ve yakınlık mevzû‘-ı bahs değildir."
+  },
+  {
+   "id": "b0015-c02",
+   "metin": "Ma‘nen bizi dâ’imâ nezdinizde berâber ve hâzır bilmeniz lâzımdır. Zîrâ kişi sevdiği ile dünyâ ve âhiretde berâberdir. Bize muhabbet edenlere sırr-ı çeşme-i feyzimizden — muhabbetin derecesiyle mütenâsib olarak — füyûzât-ı dâ’ime erişmededir buyurmuşlar."
+  },
+  {
+   "id": "b0016-c01",
+   "metin": "Tahsîl-i rızâ-yı İlâhî ve ma‘rifet-i hâssa-i Bârî içün bir veliyy-i mahbûba muhabbet, bi’l-vâsıta Mahbûb-ı Mutlak Hudâ’ya ve Zât-ı Bârî-i Te‘âlâ’ya muhabbetdir. Bu muhabbetin şirket ve inkısâm kabûl etmeyen muhabbet-i zâtiyye olması tâm istifâde içün şartdır."
+  },
+  {
+   "id": "b0015-c00",
+   "metin": "Şâh hazretleri: Gördünüz mü? Muhabbet sizden mi imiş buyurmuşlar. Muhibler: Biz yanlış biliyor ve anlıyormuşuz. Bizdeki muhabbet sizden imiş! demişler. Bunun üzerine Hazret-i Şâh:"
+  },
+  {
+   "id": "b0017-c00",
+   "metin": "Mâdâm ki:"
+  },
+  {
+   "id": "b0018-c00",
+   "metin": "1 — Ma‘lûm olmak lâzımdır ki: bizim tarîkatde Hazret-i Fahr-i ‘Âlem ve Cenâb-ı Hâlık-ı ‘Âleme olan nisbet-i irtibât ve intisâb-ı hâssım, Kutbu’l-Evliyâ’i’l-Vâsılîn, Ğavsü’l-Küberâ’i’l-Muhakkıkîn, mevrid-i evsâf ve ahlâk-ı İlâhî,"
+  },
+  {
+   "id": "b0018-c01",
+   "metin": "vâris-i tâm ve ekmel-i Muhammedî, şeyhunâ ve mürşidunâ es-Seyyid Ahmed el-Kürdî el-Hüseynî (radıya ‘anhu’l-Bârî) hazretlerinden i‘tibâren 33 vâsıta ile müselsel ve muttasıldır. Bu intisâb ve ittisâl sahîh, kat‘î ve hakîkî bir isnâd ve ittisâldir ki: fî zamâninâ misli belki nâyâbdır."
+  },
+  {
+   "id": "b0018-c05",
+   "metin": "Anın hakkında bi-fazlillâh şekâ ğayr-ı mütesavverdir. Böyle bir devletin kadrini derk etmeğe ve şükrünü yerine getirmeğe çalışmak eshâbı içün vecâ’ibin evcebini teşkîl etmek lâzımdır. Tâ ki: bu ni‘met-i ‘uzmâyı Mevlâ-yı Müte‘âl ân-be-ân tezyîd ve tekmîl buyura."
+  },
+  {
+   "id": "b0026-c00",
+   "metin": "Şu cihetde bilinmelidir ki: irşâd-ı hakîkî erbâbından kerâmât-ı kevniyyenin zuhûrunu nefy ve yâ taz‘îfi bi’l-irâde mürûr etdiği üzre mutlak değildir. Anlardan ancak berâ-yı naf‘ ve irşâd kerâmât-ı sûriyye ve kevniyye zuhûr eder, fakat bu umûrda anların ihtiyârları olmaz."
+  }
+ ],
+ "varyantlar": [
+  {
+   "ad": "temel",
+   "okunus": {},
+   "uzatma": 1.0
+  },
+  {
+   "ad": "adim16",
+   "vox_adim": 16,
+   "okunus": {},
+   "uzatma": 1.0
+  },
+  {
+   "ad": "trendyol",
+   "vox_model": "Trendyol/Trendyol-TTS",
+   "vox_adim": 16,
+   "okunus": {},
+   "uzatma": 1.0
+  },
+  {
+   "ad": "trendyol-cfg15",
+   "vox_model": "Trendyol/Trendyol-TTS",
+   "vox_adim": 16,
+   "vox_cfg": 1.5,
+   "okunus": {},
+   "uzatma": 1.0
+  }
+ ],
+ "ayar": {
+  "aday": 2,
+  "erken_dur": 1,
+  "kurtarma_aday": 0,
+  "perde_kat": 1.0,
+  "virgul_ara": 0,
+  "iki_nokta_ara": 0.45,
+  "mfa": true,
+  "mfa_duzelt": false,
+  "ifade": true,
+  "ifade_insan": true
+ }
+}

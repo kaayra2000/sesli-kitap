@@ -68,10 +68,10 @@ fi
 # İfade (duygu, tonlama, vurgu) ölçümü ayrı ortamda: /content/ifade (audiobox-aesthetics, audEERING, parselmouth)
 if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("ifade",True))')" == "True" ]]; then
   IF=/content/ifade
-  env LD_LIBRARY_PATH="$COLAB_LD" $IF/bin/python -c "import audiobox_aesthetics, parselmouth, faster_whisper, pandas" 2>/dev/null || {
+  env LD_LIBRARY_PATH="$COLAB_LD" $IF/bin/python -c "import audiobox_aesthetics, parselmouth, faster_whisper, pandas, torchmetrics, requests" 2>/dev/null || {
     echo "İfade ortamı kuruluyor..."; rm -rf $IF; uv venv -q -p 3.12 $IF
     uv pip install -q -p $IF/bin/python torch torchaudio --index-url https://download.pytorch.org/whl/cu126 2>&1 | tail -2
-    uv pip install -q -p $IF/bin/python audiobox_aesthetics transformers praat-parselmouth librosa soundfile faster-whisper pandas pyarrow 2>&1 | tail -2; }
+    uv pip install -q -p $IF/bin/python audiobox_aesthetics transformers praat-parselmouth librosa soundfile faster-whisper pandas pyarrow torchmetrics requests 2>&1 | tail -2; }
   IFLD=$($IF/bin/python -c 'import os,glob,nvidia;print(":".join(sorted({os.path.dirname(p) for p in glob.glob(os.path.join(list(nvidia.__path__)[0],"*","lib","*.so*"))})))')
   env LD_LIBRARY_PATH="$IFLD:$COLAB_LD" $IF/bin/python ifade_olc.py cikti 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\(" || echo "ifade ölçümü başarısız"
   [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("ifade_insan",False))')" == "True" ]] && \
