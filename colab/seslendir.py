@@ -411,6 +411,35 @@ def perde_genislet(x: np.ndarray, sr: int, kat: float) -> np.ndarray:
     return y[: len(x)] if len(y) >= len(x) else np.pad(y, (0, len(x) - len(y)))
 
 
+def duraklama_ekle(x: np.ndarray, sr: int, kelimeler: list, virgul: float, nokta: float) -> tuple[np.ndarray, list]:
+    """Whisper'ın virgül/nokta koyduğu kelimeden sonraki sessizlik hedefin altındaysa farkı sessizlikle tamamlar
+    (deney 20: sentez 10 kelimede 0.27 duraklama, referans 0.55). Dönüş: yeni ses, kaydırılmış kelime zamanları."""
+    ekler = []  # (konum sn, eklenecek sn)
+    for a, b in zip(kelimeler, kelimeler[1:]):
+        w = a.word.strip()
+        hedef = nokta if w[-1:] in ".!?;" else virgul if w[-1:] == "," else 0
+        bosluk = b.start - a.end
+        if hedef and bosluk < hedef:
+            ekler.append(((a.end + b.start) / 2, hedef - max(0.0, bosluk)))
+    if not ekler:
+        return x, kelimeler
+    parcalar, imlec = [], 0
+    for t, ek in ekler:
+        i = int(t * sr)
+        parcalar += [x[imlec:i], np.zeros(int(ek * sr), np.float32)]
+        imlec = i
+    parcalar.append(x[imlec:])
+
+    class K:  # kaydırılmış kelime
+        def __init__(self, w, s, e):
+            self.word, self.start, self.end = w, s, e
+    yeni = []
+    for k in kelimeler:
+        kay = sum(ek for t, ek in ekler if t <= k.start)
+        yeni.append(K(k.word, k.start + kay, k.end + kay))
+    return np.concatenate(parcalar).astype(np.float32), yeni
+
+
 def uzun_unlu(x, p, parca, ayar, ses, hakem):
     """Uzun ünlüleri seste uzatır; uzatılmış ses yeniden ölçülür, yanlışa düşerse uzatılmamış ses kalır."""
     sozluk = hakem.tok.get_vocab()
@@ -535,6 +564,11 @@ def main() -> None:
                 p["perde_kat"] = kat
             except Exception as e:  # noqa: BLE001
                 log(f"perde genişletilemedi: {e}")
+        vd, nd = float(parca.get("virgul_ara", ayar.get("virgul_ara", 0)) or 0), float(ayar.get("nokta_ara", 0.35))
+        if vd > 0 and p.get("_kelimeler"):
+            x16_once = len(x)
+            x, p["_kelimeler"] = duraklama_ekle(x, ses.sr, p["_kelimeler"], vd, nd)
+            p["duraklama_eklenen"] = round((len(x) - x16_once) / ses.sr, 2)
         p = {**p, "tepe_ham": p["tepe"], "tepe": round(float(np.abs(x).max()), 3)}
         try:
             p["tonlama"] = tonlama.ozellikler(resample(x, ses.sr, 16000), p["_kelimeler"], parca["okunus"])
