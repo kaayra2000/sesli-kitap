@@ -91,7 +91,7 @@ def main() -> None:
                 oku = {**ayarlar["okunus"], **v.get("okunus", {})}
                 x = {"id": f"{t['id']}--{v['ad']}", "metin": t["metin"], "hedef": t["metin"], "ara": 0.5,
                      "okunus": okunus(t["metin"], sozluk, oku), "uzatma": v.get("uzatma", 1.0),
-                     **{k: v[k] for k in ("vox_referans", "vox_mod", "vox_stil", "perde_kat", "virgul_ara", "vox_model", "vox_cfg", "vox_adim") if k in v}}
+                     **{k: v[k] for k in ("vox_referans", "vox_mod", "vox_stil", "perde_kat", "virgul_ara", "vox_model", "vox_cfg", "vox_adim", "virgul_bol_ara") if k in v}}
                 # Ayn/hemze durağı ölçümü: işaretli okunuşta \x01 konumları -> (sol, sağ) harf çiftleri
                 isaretli = okunus(t["metin"], sozluk, {**oku, "ayn": "isaret"})
                 konum = [i for i, c in enumerate(isaretli) if c == "\x01"]

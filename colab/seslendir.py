@@ -183,7 +183,7 @@ class VoxSes:
 
     def soyle(self, metin: str, tohum: int, referans: str | None = None, mod: str | None = None,
               stil: str | None = None, model: str | None = None, cfg_d: float | None = None,
-              adim_d: int | None = None) -> np.ndarray:
+              adim_d: int | None = None, virgul_d: float | None = None) -> np.ndarray:
         """referans: parçaya özel referans dosyası. mod: "tam" (referans + metni; ritim de kopyalanır) ya da "kontrollu"
         (yalnız tını referansı; stil tarifi duyguyu/üslubu yönlendirir). stil: parantez içi üslup tarifi."""
         mod = mod or self.ayar.get("vox_mod", "tam")
@@ -202,9 +202,26 @@ class VoxSes:
         iki_nokta = float(self.ayar.get("iki_nokta_ara", 0) or 0)
         if iki_nokta > 0:  # iki nokta üst üsteden sonra gerçek duraklama: ayrı üretilip sessizlikle birleştirilir
             bolumler = [b for parca in bolumler for b in re.split(r"(?<=:)\s+", parca) if b.strip()]
+        virgul = float(virgul_d if virgul_d is not None else self.ayar.get("virgul_bol_ara", 0) or 0)
+        if virgul > 0:
+            # İnsan okuyucu virgül/noktalı virgülde durur (Mektubat okumaları 10 kelimede ~2 durak, model ~1). Öbekler
+            # ayrı üretilip doğal sessizlikle birleşir; sesin ortası kesilmez. Her iki yanı en az 4 kelime olmalı.
+            yeni = []
+            for b in bolumler:
+                ob = [o for o in re.split(r"(?<=[,;])\s+", b) if o.strip()]
+                birlesik = []
+                for o in ob:
+                    if birlesik and (len(birlesik[-1].split()) < 4 or len(o.split()) < 4):
+                        birlesik[-1] = birlesik[-1] + " " + o
+                    else:
+                        birlesik.append(o)
+                yeni += birlesik
+            bolumler = yeni
         for k, bolum in enumerate(bolumler):
             if k:
-                ara = iki_nokta if iki_nokta > 0 and bolumler[k - 1].rstrip().endswith(":") else self.ayar["bolum_ara"]
+                onceki = bolumler[k - 1].rstrip()
+                ara = (iki_nokta if iki_nokta > 0 and onceki.endswith(":") else
+                       virgul if virgul > 0 and onceki[-1:] in ",;" else self.ayar["bolum_ara"])
                 parcalar.append(np.zeros(int(ara * self.sr), np.float32))
             ek = {"prompt_wav_path": ref, "prompt_text": ref_metin} if mod == "tam" else {}
             x = vox.generate(text=f"({stil}){bolum}" if stil else bolum, **ek,
@@ -265,7 +282,7 @@ class Ses:
         return yol
 
     def soyle(self, metin: str, tohum: int, referans: str | None = None, mod: str | None = None,
-              stil: str | None = None, model=None, cfg_d=None, adim_d=None) -> np.ndarray:
+              stil: str | None = None, model=None, cfg_d=None, adim_d=None, virgul_d=None) -> np.ndarray:
         """pocket-tts 50 jetondan uzun parçada kelime atlayabilir; uzun cümle virgülden bölünüp kısa araya birleştirilir."""
         torch.manual_seed(tohum)
         parcalar = []
@@ -572,7 +589,8 @@ def main() -> None:
         for tohum in range(ayar["aday"]):
             t1 = time.time()
             x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"), parca.get("vox_mod"), parca.get("vox_stil"),
-                           parca.get("vox_model"), parca.get("vox_cfg"), parca.get("vox_adim"))
+                           parca.get("vox_model"), parca.get("vox_cfg"), parca.get("vox_adim"),
+                           parca.get("virgul_bol_ara"))
             t2 = time.time()
             p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
             tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
@@ -588,7 +606,8 @@ def main() -> None:
             for tohum in range(100, 100 + ayar["kurtarma_aday"]):
                 t1 = time.time()
                 x = ses.soyle(parca["okunus"], tohum, parca.get("vox_referans"), parca.get("vox_mod"), parca.get("vox_stil"),
-                           parca.get("vox_model"), parca.get("vox_cfg"), parca.get("vox_adim"))
+                           parca.get("vox_model"), parca.get("vox_cfg"), parca.get("vox_adim"),
+                           parca.get("virgul_bol_ara"))
                 t2 = time.time()
                 p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
                 tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)

@@ -36,7 +36,8 @@
   "mfa": true,
   "mfa_duzelt": false,
   "virgul_ara": 0,
-  "nokta_ara": 0.35
+  "nokta_ara": 0.35,
+  "vox_adim": 16
  },
  "parca_en_cok_kelime": 40
 }
