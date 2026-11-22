@@ -21,7 +21,7 @@
   "sicaklik": 0.5,
   "referans": "canli",
   "hakem": "large-v3",
-  "uzatma": "uyarlamali",
+  "uzatma": 1.0,
   "motor": "voxcpm",
   "bolum_kelime": 40,
   "vox_referans": "kitap-sesi-yeni-c.wav",
@@ -33,7 +33,8 @@
   "perde_kat": 1.25,
   "iki_nokta_ara": 0.45,
   "ifade": true,
-  "mfa": true
+  "mfa": true,
+  "mfa_duzelt": true
  },
  "parca_en_cok_kelime": 40
 }

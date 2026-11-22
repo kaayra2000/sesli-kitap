@@ -1,5 +1,5 @@
 {
- "aciklama": "Duraklama deneyi: Whisper virgül/nokta sınırlarında sessizlik hedefe tamamlanır (virgül 0.15, nokta 0.35 sn). Perde ×1.25 ikisinde de.",
+ "aciklama": "Duraklama deneyi: Whisper virgül/nokta sınırlarında sessizlik hedefe tamamlanır (virgül 0.15, nokta 0.35 sn). Perde ×1.25 ikisinde de. Ünlü süresi MFA ile düzeltilir (CTC uyarlamalı uzatma kapalı).",
  "cumleler": [
   {
    "id": "b0010-c00",
@@ -70,13 +70,13 @@
   {
    "ad": "perde125",
    "okunus": {},
-   "uzatma": "uyarlamali"
+   "uzatma": 1.0
   },
   {
    "ad": "perde125-duraklama",
    "virgul_ara": 0.15,
    "okunus": {},
-   "uzatma": "uyarlamali"
+   "uzatma": 1.0
   }
  ],
  "ayar": {
@@ -87,6 +87,7 @@
   "ifade_insan": false,
   "mfa": true,
   "iki_nokta_ara": 0.45,
-  "perde_kat": 1.25
+  "perde_kat": 1.25,
+  "mfa_duzelt": true
  }
 }

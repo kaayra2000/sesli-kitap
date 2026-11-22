@@ -148,7 +148,7 @@ def main() -> None:
         for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py", "colab/tonlama.py", "colab/uzatma.py",
                   "colab/ayar_tarama.py", "colab/referans_ara.py",
                   "colab/gercek_ses.py", "colab/ses_adaylari.py", "colab/ses_tasarimi.py", "colab/ifade_olc.py",
-                  "colab/mfa_olc.py", "colab/mfa_kur.sh"]:
+                  "colab/mfa_olc.py", "colab/mfa_kur.sh", "colab/mfa_duzelt.py"]:
             if (KOK / f).exists():
                 z.write(KOK / f, Path(f).name)
         for f in sorted((KOK / "referans").glob("*.wav")) + sorted((KOK / "referans").glob("*.json")):

@@ -171,13 +171,19 @@ def main():
         print("İNSAN İFADE ÖLÇÜLDÜ", len(kayit))
         return
     sonuc = json.loads((cikti / "sonuc.json").read_text(encoding="utf-8"))
+    from faster_whisper import WhisperModel  # son ses (MFA düzeltmesi, perde vb. sonrası) yeniden yazıya dökülür
+    asr = WhisperModel("large-v3", device=DEV, compute_type="float16" if DEV == "cuda" else "int8")
     out = {}
     for p in sonuc["parcalar"]:
         f = cikti / "secilen" / f"{p['id']}.wav"
         if not f.exists():
             continue
         x, sr = sf.read(f, dtype="float32")
-        out[p["id"]] = olc(araclar, rs16(x, sr), p.get("kelime_zaman", []))
+        x16 = rs16(x, sr)
+        seg, _ = asr.transcribe(x16, language="tr", beam_size=5, word_timestamps=True, vad_filter=False)
+        seg = list(seg)
+        kz = [[w.word.strip(), w.start, w.end] for s_ in seg for w in (s_.words or [])]
+        out[p["id"]] = {**olc(araclar, x16, kz), "duyulan_son": "".join(s_.text for s_ in seg).strip()}
     (cikti / "ifade.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
     print("İFADE ÖLÇÜLDÜ", len(out))
 

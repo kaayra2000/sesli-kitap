@@ -54,6 +54,17 @@ python3 seslendir.py is.json 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warn
 fi
 [[ -f cikti/sonuc.json ]] || { echo "Seslendirme bitmedi." >&2; exit 1; }
 cp is.json cikti/
+# Ünlü süresi: Montreal Forced Aligner (arka planda kurulur). ayar "mfa_duzelt": ünlüleri MFA ölçüsüyle düzeltir.
+if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("mfa",True))')" == "True" ]]; then
+  for i in $(seq 1 60); do grep -q "MFA HAZIR" /content/mfa_kur.log 2>/dev/null && break; [[ -f /content/mfa_kur.log ]] || break; sleep 10; done
+  if [[ -x /content/mfa/bin/mfa ]] && grep -q "MFA HAZIR" /content/mfa_kur.log 2>/dev/null; then
+    MFA_MOD=$(python3 -c 'import json;print("duzelt" if json.load(open("is.json")).get("ayar",{}).get("mfa_duzelt",False) else "olc")')
+    # kalpy libcuda ister: yalnız Colab sürücü yolu (COLAB_LD) verilir
+    env LD_LIBRARY_PATH="$COLAB_LD" PATH=/content/mfa/bin:$PATH /content/mfa/bin/python mfa_duzelt.py . $MFA_MOD 2>&1 | tail -6 || echo "MFA başarısız"
+  else
+    echo "MFA hazır değil (/content/mfa_kur.log); ünlü süresi ölçülmedi"
+  fi
+fi
 # İfade (duygu, tonlama, vurgu) ölçümü ayrı ortamda: /content/ifade (audiobox-aesthetics, audEERING, parselmouth)
 if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("ifade",True))')" == "True" ]]; then
   IF=/content/ifade
@@ -65,15 +76,6 @@ if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{})
   env LD_LIBRARY_PATH="$IFLD:$COLAB_LD" $IF/bin/python ifade_olc.py cikti 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\(" || echo "ifade ölçümü başarısız"
   [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("ifade_insan",False))')" == "True" ]] && \
     env LD_LIBRARY_PATH="$IFLD:$COLAB_LD" $IF/bin/python ifade_olc.py --insan cikti 2>&1 | grep --line-buffered -vE "it/s\]|s/it\]|Warning|warn\(" || true
-fi
-# Ünlü süresi: Montreal Forced Aligner. Kurulum uzun (conda); colab/mfa_kur.sh ile arka planda kurulur, hazırsa ölçülür.
-if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("mfa",True))')" == "True" ]]; then
-  if [[ -x /content/mfa/bin/mfa ]] && grep -q "MFA HAZIR" /content/mfa_kur.log 2>/dev/null; then
-    # kalpy libcuda ister: yalnız Colab sürücü yolu (COLAB_LD) verilir, VoxCPM'in CUDA kütüphaneleri verilmez
-    env LD_LIBRARY_PATH="$COLAB_LD" PATH=/content/mfa/bin:$PATH /content/mfa/bin/python mfa_olc.py . 2>&1 | tail -6 || echo "MFA ölçümü başarısız"
-  else
-    echo "MFA hazır değil (arka plan kurulumu: /content/mfa_kur.log); ünlü süresi ölçülmedi"
-  fi
 fi
 # Çıktıyı küçült: seçilen cümleler Opus (tarayıcıdan alınan çıktı küçük kalsın), örnekte yalnız mp3.
 shopt -s nullglob
