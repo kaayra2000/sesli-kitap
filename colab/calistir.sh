@@ -17,6 +17,11 @@ export LD_LIBRARY_PATH
 python3 -c "import torch;print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'UYARI: GPU yok')"
 
 rm -rf cikti
+# MFA (ünlü süresi ölçümü) seslendirmeyle paralel kurulur
+if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("mfa",True))')" == "True" ]] && \
+   [[ ! -x /content/mfa/bin/mfa ]] && [[ ! -f /content/mfa_kur.log ]]; then
+  nohup bash mfa_kur.sh > /content/mfa_kur.log 2>&1 &
+fi
 if [[ "$(python3 -c 'import json;print(json.load(open("is.json"))["mod"])')" == "yaris" ]]; then
   bash yaris/yaris.sh
   for f in cikti/yaris/*/*.wav; do ffmpeg -v error -y -i "$f" -c:a libopus -b:a 48k "${f%.wav}.opus" && rm "$f"; done
