@@ -21,19 +21,25 @@ def main():
     kok = Path(sys.argv[1])
     cikti = kok / "cikti"
     is_ = json.loads((kok / "is.json").read_text(encoding="utf-8"))
-    parcalar = [p for p in is_["parcalar"] if p.get("mfa_kelimeler") and (cikti / "secilen" / f"{p['id']}.wav").exists()]
+    def ses(p):
+        return next((f for f in (cikti / "secilen" / f"{p['id']}.wav", cikti / "secilen" / f"{p['id']}.opus") if f.exists()),
+                    None)
+    parcalar = [p for p in is_["parcalar"] if p.get("mfa_kelimeler") and ses(p)]
     korpus, out = Path("/tmp/mfa_korpus"), Path("/tmp/mfa_out")
     subprocess.run(["rm", "-rf", str(korpus), str(out)])
     korpus.mkdir(parents=True)
     kelimeler = set()
     for p in parcalar:
-        x, sr = sf.read(cikti / "secilen" / f"{p['id']}.wav", dtype="float32")
         import librosa
+        x, sr = librosa.load(ses(p), sr=None, mono=True)
         sf.write(korpus / f"{p['id']}.wav", librosa.resample(x, orig_sr=sr, target_sr=16000), 16000)
         (korpus / f"{p['id']}.lab").write_text(" ".join(p["mfa_kelimeler"]), encoding="utf-8")
         kelimeler.update(p["mfa_kelimeler"])
     (Path("/tmp/mfa_kelimeler.txt")).write_text("\n".join(sorted(kelimeler)), encoding="utf-8")
-    calis = lambda *a: subprocess.run(["mfa", *a], check=True, capture_output=True, text=True)  # noqa: E731
+    def calis(*a):
+        r = subprocess.run(["mfa", *a], capture_output=True, text=True)
+        if r.returncode:
+            raise RuntimeError(f"mfa {a[0]} başarısız: " + (r.stdout + r.stderr)[-1500:])
     calis("g2p", "/tmp/mfa_kelimeler.txt", "turkish_mfa", "/tmp/mfa_sozluk.txt", "--clean")
     calis("align", str(korpus), "/tmp/mfa_sozluk.txt", "turkish_mfa", str(out), "--clean", "--single_speaker",
           "-j", "4", "--beam", "100", "--retry_beam", "400")

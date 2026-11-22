@@ -69,7 +69,8 @@ fi
 # Ünlü süresi: Montreal Forced Aligner. Kurulum uzun (conda); colab/mfa_kur.sh ile arka planda kurulur, hazırsa ölçülür.
 if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("mfa",True))')" == "True" ]]; then
   if [[ -x /content/mfa/bin/mfa ]] && grep -q "MFA HAZIR" /content/mfa_kur.log 2>/dev/null; then
-    env -u LD_LIBRARY_PATH PATH=/content/mfa/bin:$PATH /content/mfa/bin/python mfa_olc.py . 2>&1 | tail -3 || echo "MFA ölçümü başarısız"
+    # kalpy libcuda ister: yalnız Colab sürücü yolu (COLAB_LD) verilir, VoxCPM'in CUDA kütüphaneleri verilmez
+    env LD_LIBRARY_PATH="$COLAB_LD" PATH=/content/mfa/bin:$PATH /content/mfa/bin/python mfa_olc.py . 2>&1 | tail -6 || echo "MFA ölçümü başarısız"
   else
     echo "MFA hazır değil (arka plan kurulumu: /content/mfa_kur.log); ünlü süresi ölçülmedi"
   fi
