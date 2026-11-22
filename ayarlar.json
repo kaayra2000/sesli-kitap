@@ -34,7 +34,9 @@
   "iki_nokta_ara": 0.45,
   "ifade": true,
   "mfa": true,
-  "mfa_duzelt": true
+  "mfa_duzelt": true,
+  "virgul_ara": 0.15,
+  "nokta_ara": 0.35
  },
  "parca_en_cok_kelime": 40
 }

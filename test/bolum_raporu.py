@@ -30,6 +30,10 @@ def zamanlar(srt: Path) -> list[str]:
 def main() -> None:
     d = Path(sys.argv[1])
     P = json.loads((d / "sonuc.json").read_text(encoding="utf-8"))["parcalar"]
+    # Son ses (MFA düzeltmesi, perde, duraklama sonrası) yeniden yazıya döküldüyse o döküm esas alınır
+    if (d / "ifade.json").exists():
+        I = json.loads((d / "ifade.json").read_text(encoding="utf-8"))
+        P = [{**p, "duyulan": I[p["id"]]["duyulan_son"]} if I.get(p["id"], {}).get("duyulan_son") else p for p in P]
     prof = {k: v for k, v in json.loads((KOK / "referans/insan_profil.json").read_text()).items() if not k.startswith("_")}
     zaman = zamanlar(d / "altyazi.srt")
     toplam, yanlis, liste = 0, Counter(), []

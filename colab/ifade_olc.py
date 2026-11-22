@@ -99,8 +99,20 @@ def prozodi(x16, kelimeler):
     if len(db) > 20:
         sonuc["enerji_sapma"] = round(float(db[db > db.max() - 40].std()), 2)
     if len(kelimeler) >= 3:
-        aralar = [b[1] - a[2] for a, b in zip(kelimeler, kelimeler[1:])]
-        dur = [a for a in aralar if a > 0.15]
+        # Duraklama enerjiden: Whisper kelime zamanları sessizliği kelimeye katıyor (iki nokta sonrası 0.48 sn sessizliği
+        # 0.10 sn gösterdi). Ses tepe düzeyinin 40 dB altında 0.12 sn'den uzun iç bölümler sayılır.
+        sessiz = db < (np.percentile(db, 95) - 40)
+        konusma = np.where(~sessiz)[0]
+        dur = []
+        if len(konusma):
+            i, bas = konusma[0], None
+            for k in range(konusma[0], konusma[-1] + 1):
+                if sessiz[k] and bas is None:
+                    bas = k
+                elif not sessiz[k] and bas is not None:
+                    if (k - bas) * 0.01 >= 0.12:
+                        dur.append((k - bas) * 0.01)
+                    bas = None
         sonuc["duraklama_10kelime"] = round(10 * len(dur) / len(kelimeler), 2)
         sonuc["duraklama_ort"] = round(float(np.mean(dur)), 3) if dur else 0.0
         hiz = [(e - s) / max(1, len(w)) for w, s, e in kelimeler if e > s]
