@@ -1,0 +1,84 @@
+{
+ "aciklama": "Deney 24 (2026-11-23 geri bildirim, ornek12): 'Ey birâder'de â uzamıyor; 'bir zümre-i makbûlân' arasında yersiz durak; ilk cümle doğal değil. Aday seçimine tamlama içi yersiz durak cezası eklendi (tüm varyantlar). Varyantlar: temel (16 adım), â çiftleme (ön ünlüden sonra â -> aa), cfg 1.5 (VoxCPM rehberi: yüksek cfg cızırtı/artık riski).",
+ "cumleler": [
+  {
+   "id": "b0005-c00",
+   "metin": "Sülûk İçün Ma‘ârif-i ‘Aliyye"
+  },
+  {
+   "id": "b0008-c00",
+   "metin": "Rahmân ve Rahîm olan Allah’ın adıyla."
+  },
+  {
+   "id": "b0010-c00",
+   "metin": "Hamd, yüce ve en yüce olan Allah’adır. Salât ve selâm efendimiz ve peygamberimiz Muhammed Mustafâ’ya, onun âline ve takvâ sahibi iyi ashâbına olsun."
+  },
+  {
+   "id": "b0011-c00",
+   "metin": "Ey birâder! Dînî ve dünyevî ma‘lûmunuz olsun ki: Mektûbunuzu memnûniyyetle aldım. Muhabbet menba‘ından neş’et eden hitâblarınızı [şahsımız hakkında vâki‘ iş‘ârâtı nazar-ı i‘tibâra almayarak] hüsn-i telakkî etdim."
+  },
+  {
+   "id": "b0014-c00",
+   "metin": "Bu akvâlin sıdkına delîl çokdur. Ez-cümle Şâh-ı Nakşbend hazretlerine ifrât derecede muhabbet eden bir zümre-i makbûlân bir def‘a muhabbetin incizâbına mukâvemet edemeyerek yüzlerini zemîne sürüp [İlâhî bize Hâce Bahâ’üddîn’i yetişdir] diye tazarru‘da bulunmuşlardır."
+  },
+  {
+   "id": "b0016-c00",
+   "metin": "Kitâb-ı Mecîd’de   ve   ve   âyât-ı kerîmeleri bu hubb ve muhibbî ve bu ma‘iyyet-i hâssa-i hubbî ve mahbûbîyi nâtık ve muş‘ir bulunmaktadır."
+  },
+  {
+   "id": "b0018-c01",
+   "metin": "vâris-i tâm ve ekmel-i Muhammedî, şeyhunâ ve mürşidunâ es-Seyyid Ahmed el-Kürdî el-Hüseynî (radıya ‘anhu’l-Bârî) hazretlerinden i‘tibâren 33 vâsıta ile müselsel ve muttasıldır. Bu intisâb ve ittisâl sahîh, kat‘î ve hakîkî bir isnâd ve ittisâldir ki: fî zamâninâ misli belki nâyâbdır."
+  },
+  {
+   "id": "b0020-c03",
+   "metin": "Bu da ‘ademine nisbetle bir fâ’ide ise de ğayb edilecek umûra nisbetle Hakk ve hakîkate vusûle mâni‘-i kavî teşkîl etdiğinden büyük zarar ve tehlikedir."
+  },
+  {
+   "id": "b0022-c01",
+   "metin": "Çünki mübtelâları Allâh’ı bırakıp mâsivâ ile meşğûl olan mahcûblar, belki istidrâc ehli olan bedbahtlardır. Allâh’ın hâs kulları, kerâmete hayz-ı ricâl derler. Dînleri, ‘akılları noksan olan tâ’ife-i nisâ’ hayzın zuhûrunda nasıl cenâbet olurlar,"
+  },
+  {
+   "id": "b0031-c00",
+   "metin": "a — Bizim habl-i metîn-i Rabbânî, ‘urve-i vüskâ-yı İlâhî olan bir silsile-i sahîhaya merbût, telkîn, ta‘lîm, ifâde ve vazîfe ile mecâz ve mükellef olduğumuza kat‘î i‘tikâd ve yakîn kesb etmesi."
+  },
+  {
+   "id": "b0042-c00",
+   "metin": "Binâ’en ‘aleyh, Kitâbullâh ve Sünnet-i Resûlullâh’ın nâtık olduğu ahkâm-ı hakîkiyyeyi tâm anlamak ve bilmek ve muktezâsını ‘amele getirmek hakkıyla, zâten ve sıfâten fânî ve bâkî olan hulefâ-yı Hakk’ın ve veresetü’l-enbiyânın nasîbidir. Bunlara muhabbet-i hâssa ile muhibb olan ‘ibâdullâhın,"
+  }
+ ],
+ "varyantlar": [
+  {
+   "ad": "temel",
+   "vox_adim": 16,
+   "okunus": {},
+   "uzatma": 1.0
+  },
+  {
+   "ad": "a_cift",
+   "vox_adim": 16,
+   "okunus": {
+    "uyum_kir_a": "cift"
+   },
+   "uzatma": 1.0
+  },
+  {
+   "ad": "cfg15",
+   "vox_adim": 16,
+   "vox_cfg": 1.5,
+   "okunus": {},
+   "uzatma": 1.0
+  }
+ ],
+ "ayar": {
+  "aday": 4,
+  "erken_dur": 2,
+  "kurtarma_aday": 0,
+  "perde_kat": 1.0,
+  "virgul_ara": 0,
+  "iki_nokta_ara": 0.45,
+  "mfa": true,
+  "mfa_duzelt": false,
+  "ifade": true,
+  "ifade_insan": false
+ }
+}

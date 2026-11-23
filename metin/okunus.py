@@ -39,6 +39,8 @@ AYARLAR = {
     # "yok" | "cift" (û -> uu: sülüuuk değil sülu-uk; yalnız bu durumda).
     # Deney 15: sülûk "sülük" -> "süluk"; doğruluk değişmedi.
     "uyum_kir": "cift",
+    # Aynı kural â için (2026-11-23 geri bildirim: "Ey birâder"de â uzamıyor). "yok" | "cift" (birâder -> biraader).
+    "uyum_kir_a": "yok",
     # Ünlüyle biten kelimeden sonra "ile" yapışıyor (sûreti ile -> "suretiyle", 2026-11-21): "yok" | "zwnj" (ile başına ayraç).
     # Deney 17: zwnj yapışmayı 2/7 düzeltti ama tonlamayı bozdu (4/7 cümle); "sevdiğiyle" doğal okuma, kapalı.
     "ile_ayir": "yok",
@@ -58,7 +60,7 @@ AYARLAR = {
 GUNUMUZ = {"sapka": "kaldir", "gayn": True, "tire_birlestir": True, "izafet_y": True, "ünsüz_benzesme": True, "eski_ekler": True,
            "cift_y": True,
            # Yalnız modele yönelik ayraç/çiftleme kuralları hakem eşitlemesinde kapalı (ma-nen, süluuk, as\u200châb)
-           "harf_ayir": "yok", "son_kume": "yok", "ic_kume": "yok", "ayn": "yok", "uyum_kir": "yok", "ile_ayir": "yok", "ayn_bas": "yok"}
+           "harf_ayir": "yok", "son_kume": "yok", "ic_kume": "yok", "ayn": "yok", "uyum_kir": "yok", "uyum_kir_a": "yok", "ile_ayir": "yok", "ayn_bas": "yok"}
 
 HARF_ADI = {"a": "a", "b": "be", "c": "ce", "ç": "çe", "d": "de", "e": "e", "f": "fe", "g": "ge", "h": "he"}
 ARAP = r"؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿"
@@ -229,6 +231,8 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
             w = re.sub(r"(?<=[bcçdfgğhjklmnprsştvyz])([bcdg])(?=[bcçdfgğhjklmnprsştvyz])", "\\1\u200c", w)
         if a.get("uyum_kir", "yok") in ("cift", "isaret"):  # "isaret": ûû (uzun ünlü konumu için, aynı uzunluk)
             w = re.sub(r"([eiöüî][^aeıioöuüâîûAEIİOÖUÜÂÎÛ]{1,3})û", r"\1" + ("uu" if a["uyum_kir"] == "cift" else "ûû"), w)
+        if a.get("uyum_kir_a", "yok") in ("cift", "isaret"):  # aynı kural â için (birâder: â uzamıyor)
+            w = re.sub(r"([eiöüî][^aeıioöuüâîûAEIİOÖUÜÂÎÛ]{1,3})â", r"\1" + ("aa" if a["uyum_kir_a"] == "cift" else "ââ"), w)
         if a["sapka"] == "cift":
             w = re.sub(r"[âîûÂÎÛ]", lambda m: {"â": "aa", "î": "ii", "û": "uu", "Â": "Aa", "Î": "İi", "Û": "Uu"}[m.group(0)], w)
         if a["sapka"] == "kaldir":
@@ -255,6 +259,8 @@ def uzun_konumlar(metin: str, ciftler: list | None = None, ayar: dict | None = N
     a = {**AYARLAR, **(ayar or {})}
     temel = okunus(metin, ciftler, a)
     isaret = {"uyum_kir": "isaret"} if a.get("uyum_kir") == "cift" else {}
+    if a.get("uyum_kir_a") == "cift":
+        isaret["uyum_kir_a"] = "isaret"
     sapkali = okunus(metin, ciftler, {**a, "sapka": "koru", **isaret})
     if len(sapkali) != len(temel):
         return None
@@ -271,8 +277,8 @@ def uzun_konumlar(metin: str, ciftler: list | None = None, ayar: dict | None = N
 def mfa_kelimeler(metin: str, ciftler: list | None = None, ayar: dict | None = None) -> tuple[list[str], list[list[bool]]]:
     """MFA hizalaması için kelimeler (şapkasız, ayraçsız, küçük harf) ve her kelimenin ünlülerinin uzun olup olmadığı
     (şapkalı ünlü ya da sakin ayn/hemzeden önceki ünlü)."""
-    a = {**AYARLAR, **(ayar or {}), "harf_ayir": "yok", "uyum_kir": "yok", "son_kume": "yok", "ic_kume": "yok",
-         "ayn_bas": "yok", "ile_ayir": "yok"}
+    a = {**AYARLAR, **(ayar or {}), "harf_ayir": "yok", "uyum_kir": "yok", "uyum_kir_a": "yok", "son_kume": "yok",
+         "ic_kume": "yok", "ayn_bas": "yok", "ile_ayir": "yok"}
     sade = okunus(metin, ciftler, {**a, "sapka": "kaldir", "ayn": "yok"})
     isaretli = okunus(metin, ciftler, {**a, "sapka": "koru", "ayn": "isaret"})
     unlu = "aeıioöuüâîû"

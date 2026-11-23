@@ -124,7 +124,7 @@ def main() -> None:
         hedef.parent.mkdir(exist_ok=True)
         with zipfile.ZipFile(hedef, "w", zipfile.ZIP_DEFLATED) as z:
             z.writestr("is.json", json.dumps(is_, ensure_ascii=False, indent=1))
-            for f in ["colab/seslendir.py", "colab/calistir.sh", "colab/tonlama.py", "colab/uzatma.py", "metin/okunus.py",
+            for f in ["colab/seslendir.py", "colab/calistir.sh", "colab/tonlama.py", "colab/uzatma.py", "colab/ara_olc.py", "metin/okunus.py",
                       "metin/okunus.tsv", "metin/olcum.py"]:
                 z.write(KOK / f, Path(f).name)
             for f in sorted((KOK / "colab/yaris").glob("*")):
@@ -148,7 +148,7 @@ def main() -> None:
     hedef.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(hedef, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("is.json", json.dumps(is_, ensure_ascii=False, indent=1))
-        for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py", "colab/tonlama.py", "colab/uzatma.py",
+        for f in ["colab/seslendir.py", "colab/calistir.sh", "metin/okunus.py", "metin/okunus.tsv", "metin/olcum.py", "colab/tonlama.py", "colab/uzatma.py", "colab/ara_olc.py",
                   "colab/ayar_tarama.py", "colab/referans_ara.py",
                   "colab/gercek_ses.py", "colab/ses_adaylari.py", "colab/ses_tasarimi.py", "colab/ifade_olc.py",
                   "colab/mfa_olc.py", "colab/mfa_kur.sh", "colab/mfa_duzelt.py"]:

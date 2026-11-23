@@ -32,6 +32,7 @@ sys.path.insert(0, str(HERE))
 from olcum import hata, normalize  # noqa: E402
 import tonlama  # noqa: E402
 import uzatma  # noqa: E402
+from ara_olc import yersiz_aralar  # noqa: E402
 
 POCKET_REPO = "kaanhgunay/pocket-tts-tr"
 SR_OUT = 48000
@@ -343,6 +344,11 @@ class Hakem:
             sonuc["ctc_esit"] = hata(hedef, ctc_metin, esit=True)
         sonuc["mos"] = round(self.utmos(torch.from_numpy(x16).unsqueeze(0).to(DEV)).item(), 3)
         sonuc["_kelimeler"] = kelimeler
+        try:  # tamlama içi yersiz durak (zümre-i ‖ makbûlân): kullanıcı geri bildirimi, aday seçiminde cezalı
+            y = yersiz_aralar(x, sr, [(w.word, w.start, w.end) for w in kelimeler], hedef)
+            sonuc["yersiz_ara"] = [list(t) for t in y]
+        except Exception as e:  # noqa: BLE001
+            log(f"yersiz ara ölçülemedi: {e}")
         return sonuc
 
     @torch.inference_mode()
@@ -404,17 +410,18 @@ def yanlis(p: dict, ayar: dict) -> bool:
 
 def temiz(p: dict, ayar: dict) -> bool:
     return (p["whisper"]["cer"] <= 0.01 and p["kuyruk"] <= ayar["kuyruk_sinir"]
-            and p["bosluk"] <= ayar["sessizlik_sinir"])
+            and p["bosluk"] <= ayar["sessizlik_sinir"] and not p.get("yersiz_ara"))
 
 
 def anahtar(p: dict, ayar: dict) -> tuple:
-    """Yanlış kelime > kuyruk > takılma > hata kovası (%1'lik) > tonlama sapması > (Whisper + 0.5 CTC) > doğallık.
+    """Yanlış kelime > kuyruk > takılma > hata kovası (%1'lik) > tamlama içi yersiz durak > tonlama sapması >
+    (Whisper + 0.5 CTC) > doğallık.
 
     Hata kovası: hatası aynı yüzdelik dilimde olan adaylar arasında tonlaması insana yakın olan seçilir."""
     ctc = p.get("ctc_esit", p.get("ctc", {})).get("cer", 0)
     hata_top = p["whisper"]["cer"] + 0.5 * ctc
     return (yanlis(p, ayar), p["kuyruk"] > ayar["kuyruk_sinir"], p["bosluk"] > ayar["sessizlik_sinir"],
-            int(p["whisper"]["cer"] * 100), p.get("tonlama_sapma", 0), round(hata_top, 4), -p["mos"])
+            int(p["whisper"]["cer"] * 100), len(p.get("yersiz_ara", [])), p.get("tonlama_sapma", 0), round(hata_top, 4), -p["mos"])
 
 
 def tonlama_ekle(p: dict, x: np.ndarray, sr: int, metin: str, prof: dict | None) -> None:
