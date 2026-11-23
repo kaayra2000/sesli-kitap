@@ -80,5 +80,6 @@
   "mfa_duzelt": false,
   "ifade": true,
   "ifade_insan": false
- }
+ },
+ "sonuc": "2026-11-23: temel CER %0.61, yersiz durak 5 (zümre-i makbûlân dahil, 4 adayda da), aday ort 3.45; a_cift CER %1.05, yersiz 0, MFA birâder â 70 ms (temel 130) - uzatmadı; cfg15 CER %1.34, yersiz 1. Karar: â çiftleme ve cfg 1.5 alınmadı; temel kaldı. Yersiz durak cezası aday sayısını 1-2'den ~3.4'e çıkarıyor (üretim ~2x yavaş)."
 }
