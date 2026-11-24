@@ -88,6 +88,7 @@ fi
 shopt -s nullglob
 for f in cikti/secilen/*.wav cikti/tarama/*/*.wav cikti/referans/sinav/*/*.wav cikti/gercek/sinav/*/*.wav cikti/adaylar/*.wav cikti/tasarim/*.wav; do ffmpeg -v error -y -i "$f" -c:a libopus -b:a 48k "${f%.wav}.opus" && rm "$f"; done
 rm -f cikti/ornek.wav cikti/ara-sonuc.json
-(cd cikti && zip -q -r "../cikti-${konu}.zip" .)
+# cikti Drive kısayolu olabilir ("cd cikti/.." Drive'a çıkar): zip mutlak yola yazılır
+(cd cikti && zip -q -r "$OLDPWD/cikti-${konu}.zip" .)
 [[ -L cikti ]] && cp "cikti-${konu}.zip" "$KALICI/" && echo "Zip Drive'da: $KALICI/cikti-${konu}.zip"
 echo "TAMAM: cikti-${konu}.zip hazır ($(du -h "cikti-${konu}.zip" | cut -f1))"
