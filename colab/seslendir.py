@@ -591,7 +591,19 @@ def main() -> None:
     log(f"cihaz {DEV}, referans {ref}, sıcaklık {ayar['sicaklik']}, yükleme {time.time() - t0:.0f} sn")
 
     rapor, iz = [], []
+    # Kaldığı yerden devam: cikti/ Drive'daysa (calistir.sh) çalışma zamanı ölse de biten parçalar kalır.
+    eski = {}
+    if (cikti / "ara-sonuc.json").exists():
+        for r in json.loads((cikti / "ara-sonuc.json").read_text(encoding="utf-8")):
+            if (cikti / "secilen" / f"{r['id']}.wav").exists():
+                eski[r["id"]] = r
+        log(f"kaldığı yerden: {len(eski)} parça hazır")
     for i, parca in enumerate(is_["parcalar"]):
+        if parca["id"] in eski:
+            x48, _ = wav_oku(cikti / "secilen" / f"{parca['id']}.wav")
+            iz.append((parca, x48))
+            rapor.append(eski[parca["id"]])
+            continue
         adaylar, t_ses, t_hakem = [], 0.0, 0.0
         for tohum in range(ayar["aday"]):
             t1 = time.time()

@@ -16,7 +16,14 @@ LD_LIBRARY_PATH="$(python3 -c 'import os, nvidia.cublas.lib as a, nvidia.cudnn.l
 export LD_LIBRARY_PATH
 python3 -c "import torch;print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'UYARI: GPU yok')"
 
+# Drive bağlıysa (2. hücre) çıktı doğrudan Drive'a yazılır: çalışma zamanı silinse de kalır, yarım iş kaldığı yerden sürer.
+KALICI=/content/drive/MyDrive/sesli_kitap
 rm -rf cikti
+if [[ -d /content/drive/MyDrive ]]; then
+  [[ -f "$KALICI/$konu/sonuc.json" ]] && rm -rf "$KALICI/$konu"  # bitmiş işin yeniden çalıştırılması: sıfırdan
+  mkdir -p "$KALICI/$konu" && ln -s "$KALICI/$konu" cikti
+  echo "Çıktı Drive'da: $KALICI/$konu"
+fi
 # MFA (ünlü süresi ölçümü) seslendirmeyle paralel kurulur
 if [[ "$(python3 -c 'import json;print(json.load(open("is.json")).get("ayar",{}).get("mfa",True))')" == "True" ]] && \
    [[ ! -x /content/mfa/bin/mfa ]] && [[ ! -f /content/mfa_kur.log ]]; then
@@ -82,4 +89,5 @@ shopt -s nullglob
 for f in cikti/secilen/*.wav cikti/tarama/*/*.wav cikti/referans/sinav/*/*.wav cikti/gercek/sinav/*/*.wav cikti/adaylar/*.wav cikti/tasarim/*.wav; do ffmpeg -v error -y -i "$f" -c:a libopus -b:a 48k "${f%.wav}.opus" && rm "$f"; done
 rm -f cikti/ornek.wav cikti/ara-sonuc.json
 (cd cikti && zip -q -r "../cikti-${konu}.zip" .)
+[[ -L cikti ]] && cp "cikti-${konu}.zip" "$KALICI/" && echo "Zip Drive'da: $KALICI/cikti-${konu}.zip"
 echo "TAMAM: cikti-${konu}.zip hazır ($(du -h "cikti-${konu}.zip" | cut -f1))"
