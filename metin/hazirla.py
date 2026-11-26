@@ -90,8 +90,10 @@ def bloklar(md: str):
         if metin is None:
             continue
         while (tur == "paragraf" and not re.search(r"[.!?:;”»)\]]$", metin) and i + 1 < len(ham)
-               and ham[i + 1][0] == "paragraf" and ham[i + 1][2] and ham[i + 1][2][0].islower()):
-            metin = f"{metin} {ham[i + 1][2]}"
+               and ham[i + 1][0] == "paragraf" and ham[i + 1][2]
+               and (ham[i + 1][2][0].islower() or re.search(r"\w-$", metin))):
+            # Sayfa sonunda hecelenen kelime ("dola-" + "yısiyle") bitişik, değilse boşlukla birleşir
+            metin = f"{metin[:-1]}{ham[i + 1][2]}" if re.search(r"\w-$", metin) else f"{metin} {ham[i + 1][2]}"
             ham[i + 1] = (ham[i + 1][0], ham[i + 1][1], None)
             i += 1
         yield tur, sayfa, metin
@@ -104,8 +106,8 @@ def _bloklar(md: str):
         blok = blok.strip()
         if not blok:
             continue
-        if m := re.fullmatch(r"\[s\. (\d+)\]", blok):
-            sayfa = int(m.group(1))
+        if m := re.fullmatch(r"\[s\. ([^\]]+)\]", blok):  # sayfa imi: [s. 12], [s. IV], [s. kapak]
+            sayfa = int(m.group(1)) if m.group(1).isdigit() else sayfa
             continue
         if blok.startswith("|") or re.match(r"^\[\^[^\]]+\]:", blok):
             continue
@@ -115,12 +117,22 @@ def _bloklar(md: str):
             yield "paragraf", sayfa, " ".join(blok.split())
 
 
-def hazirla(md: str, en_cok: int = 28, ayar: dict | None = None, birlestir: bool = False) -> list[dict]:
+def hazirla(md: str, en_cok: int = 28, ayar: dict | None = None, birlestir: bool = False,
+            on_isle=None, baslangic: str | None = None) -> list[dict]:
+    """on_isle: kitaba özgü ön işleme (metin -> okunacak metin ya da None = atla); baslangic: bu başlıktan
+    önceki bloklar (kapak, içindekiler) okunmaz."""
     notlar = dipnotlar(md)
     sozluk = sozluk_yukle()
     parcalar = []
     onceki_arapca = False
+    basladi = baslangic is None
     for n, (tur, sayfa, metin) in enumerate(bloklar(md)):
+        if not basladi:
+            if tur != "baslik" or metin != baslangic:
+                continue
+            basladi = True
+        if on_isle is not None and (metin := on_isle(metin)) is None:
+            continue
         tamamen_arapca = re.fullmatch(rf"«[^»]*[{ARAP}][^»]*»(\s*\[\^[^\]]+\])?", metin) is not None
         if tamamen_arapca:
             onceki_arapca = True

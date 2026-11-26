@@ -35,3 +35,24 @@ ve tur tekrarlanır. Bütün ölçütler geçince kitaptan bir örnek (`paketle.
 artığı yok, cümle içinde 0.9 sn'den uzun takılma yok, kırpılma yok, UTMOS ≥ 3.3, hız 11-15.5 harf/sn.
 
 Sınır: ASR hakemleri doğru kelimeyi duyar ama vurgu ve tonlamayı ölçmez; son karar dinleyerek verilir.
+
+## Kitap metni: aktarım ve sadeleştirme
+
+Kitabın metni bu repoda, her kitap için ayrı bir klasörde tutulur:
+
+```
+kitaplar/<kitap>/
+  kitap.json              # künye, telif dayanağı, kaynak, seslendirilecek sürüm
+  kaynak/                 # orijinal baskının taraması (kamu malı)
+  aktarim/NN-<bolum>.md   # sadeleştirilmemiş aktarım (kurallar/AKTARIM.md)
+  sadelestirilmis/NN-<bolum>.md  # günümüz Türkçesi (kurallar/SADELESTIRME.md)
+  sozluk.tsv              # terim -> sadeleştirmedeki karşılığı / açıklaması
+  rapor.md                # bölüm bölüm yöntem, [?] listesi, kararlar
+  ses/                    # Opus ses + altyazı;  gorsel/  kapaklar
+```
+
+Bölüm bölüm ilerlenir: aktar, sadeleştir, gözden geçir, seslendir, yükle. Kitap bitince bölümler tek
+parça baskıya hazır metinde birleştirilir ve sesin tamamı yüklenir.
+
+Telif: yazar ve (tercümeyse) çevirmen ölümünden itibaren 70 yılın sonunda kamu malı olur; dayanak
+`kitap.json`'da kaynaklı yazılır. Modern hazırlayanın (aktaran/sadeleştiren) baskısı kaynak alınmaz.

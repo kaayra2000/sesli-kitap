@@ -19,9 +19,22 @@ sys.path.insert(0, str(KOK / "metin"))
 from okunus import mfa_kelimeler, uzun_konumlar, okunus, sozluk_yukle  # noqa: E402
 from hazirla import hazirla  # noqa: E402
 
-# Kitabın aktarımı bedri_gencer reposunda (bu reponun yanında); SESLI_KITAP_MD ile başka yol verilebilir.
-KITAP = Path(os.environ.get("SESLI_KITAP_MD", KOK.parent / "bedri_gencer/claude/Salahuddin b Siracüddin-BB-Mektuplar-SS/"
-                            "Salahuddin b Siracüddin-BB-Mektuplar-SS.md"))
+# Kitabın aktarımı bedri_gencer reposunda (bu reponun yanında); kitap bilgisi kitaplar/<kitap>/kitap.json'da.
+# SESLI_KITAP_MD ile başka bir Markdown yolu verilebilir.
+KITAP = KOK.parent / "bedri_gencer/claude/Salahuddin b Siracüddin-BB-Mektuplar-SS/Salahuddin b Siracüddin-BB-Mektuplar-SS.md"
+
+
+def kitap_yukle(ad: str) -> tuple[Path, dict]:
+    """(Markdown yolu, hazirla() ek argümanları)"""
+    bilgi = json.loads((KOK / "kitaplar" / ad / "kitap.json").read_text(encoding="utf-8"))
+    md = Path(os.environ.get("SESLI_KITAP_MD", KOK.parent / bilgi["md"]))
+    ek = {}
+    if bilgi.get("baslangic"):
+        ek["baslangic"] = bilgi["baslangic"]
+    if bilgi.get("on_isleme") == "akademik":
+        from akademik import duzelt  # noqa: E402
+        ek["on_isle"] = duzelt
+    return md, ek
 KELIME_DK = 125
 
 
@@ -34,7 +47,10 @@ def main() -> None:
     p.add_argument("--bitis", default="", help="ornek: bu parça kimliğinde dur (bölüm sonu)")
     p.add_argument("--kume", default="test/test_kumesi.json", help="test modunda cümle kümesi")
     p.add_argument("--ad", default="tur", help="konu adı öneki (tur, dogrulama)")
+    p.add_argument("--kitap", default="mektuplar", help="kitaplar/<kitap>/kitap.json")
     a = p.parse_args()
+    global KITAP
+    KITAP, kitap_ek = kitap_yukle(a.kitap)
     ayarlar = json.loads((KOK / "ayarlar.json").read_text(encoding="utf-8"))
     sozluk = sozluk_yukle()
 
@@ -109,7 +125,8 @@ def main() -> None:
         ayarlar["seslendirme"] = {**ayarlar["seslendirme"], **deney["ayar"]}
     else:
         konu = f"ornek{a.tur:02d}"
-        hepsi = hazirla(KITAP.read_text(encoding="utf-8"), ayarlar["parca_en_cok_kelime"], ayarlar["okunus"], birlestir=True)
+        hepsi = hazirla(KITAP.read_text(encoding="utf-8"), ayarlar["parca_en_cok_kelime"], ayarlar["okunus"], birlestir=True,
+                        **kitap_ek)
         bas = next(i for i, x in enumerate(hepsi) if x["id"] >= a.bas)
         parcalar, kelime = [], 0
         for x in hepsi[bas:]:
