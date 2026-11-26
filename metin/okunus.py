@@ -159,6 +159,15 @@ def eski_ek(kelime: str) -> str:
     return k
 
 
+def _yumusat(m: re.Match) -> str:
+    govde, son = m.group(1), m.group(2)
+    if sum(c in UNLU_HARF for c in govde) < 2 and not (sum(c in UNLU_HARF for c in govde) == 1 and govde[-1] in UNLU_HARF):
+        return m.group(0)  # tek heceli: Türk’e, Hak’ka
+    if son == "k":
+        return govde + ("g" if govde[-1] == "n" else "ğ") + "’"
+    return govde + {"p": "b", "ç": "c"}[son] + "’"
+
+
 def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict | None = None) -> str:
     a = {**AYARLAR, **(ayar or {})}
     ciftler = sozluk_yukle() if ciftler is None else ciftler
@@ -202,6 +211,10 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
         t = re.sub(rf"(?<=[aeıioöuüâîû])-([ıi])(?![{HARF}])", r"y\1", t)
     if a["tire_birlestir"]:
         t = re.sub(rf"(?<=[{HARF}])[’']?-(?=[{HARF}])", "", t)
+    # Kesmeyle ayrılan ünlüyle başlayan ekte söyleyişteki yumuşama (yazıda gösterilmez): Kitap’a -> Kitaba,
+    # İshak’a -> İshağa. t yumuşatılmaz: Arapça kökenli -t çoğunlukla yumuşamaz (Mektûbât’ı, hayat’ı); eski imlâda
+    # özel adlar zaten d ile yazılır (Ahmed’in). Tek heceli kelime yumuşamaz: Türk’e.
+    t = re.sub(rf"([{HARF}]+)([pçk])’(?=[{UNLU_HARF}])", _yumusat, t)
     t = re.sub(rf"(?<=[{HARF}])[’'](?=[{HARF}])", "", t)    # hemze ve kesme: şey’in -> şeyin, Allah’ın -> Allahın
     t = re.sub(r"[’']", "", t)
     t = t.replace("\x02", ayrac or "")

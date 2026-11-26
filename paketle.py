@@ -27,7 +27,8 @@ KITAP = KOK.parent / "bedri_gencer/claude/Salahuddin b Siracüddin-BB-Mektuplar-
 def kitap_yukle(ad: str) -> tuple[Path, dict]:
     """(Markdown yolu, hazirla() ek argümanları)"""
     bilgi = json.loads((KOK / "kitaplar" / ad / "kitap.json").read_text(encoding="utf-8"))
-    md = Path(os.environ.get("SESLI_KITAP_MD", KOK.parent / bilgi["md"]))
+    # Tek dosyalık kitap: "md" (bu reponun üst klasörüne göre). Bölüm bölüm kitap: SESLI_KITAP_MD ile bölüm dosyası.
+    md = Path(os.environ["SESLI_KITAP_MD"]) if "SESLI_KITAP_MD" in os.environ else KOK.parent / bilgi["md"]
     ek = {}
     if bilgi.get("baslangic"):
         ek["baslangic"] = bilgi["baslangic"]

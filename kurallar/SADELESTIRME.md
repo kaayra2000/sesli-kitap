@@ -14,12 +14,16 @@ Bu dosya yaşayan bir standarttır. Her bölümden sonra yeni karşılaşılan d
    - Bugün tuhaf gelen bilgiler (eski kozmoloji, tıp, astronomi) olduğu gibi aktarılır. Düzeltilmez, "yanlıştır" denmez.
 2. **Sıra ve yapı:**
    - Bölüm, başlık ve paragraf sırası korunur.
-   - Paragraflar aktarımla birebir eşleşir: aynı sayıda paragraf, aynı `[s. N]` imleri.
+   - Paragraflar aktarımla birebir eşleşir: aynı sayıda paragraf, aynı `[s. N]` imleri, aynı dipnot numaraları.
+   - Şiirlerin altına eklenen italik anlam paragrafları bu sayıma girmez.
 3. **Âyet ve hadîs:**
    - Arapça aslı aktarımdaki gibi, tam harekeli kalır.
-   - Meali günümüz Türkçesiyle verilir. Yaygın bir meale dayanılmaz, aktarımdaki meal sadeleştirilir.
+   - Meali günümüz Türkçesiyle, ibarenin hemen ardından metin içinde “…” olarak verilir. Dinleyici meali duyar.
+   - Dipnotta yalnız kaynak kalır (sûre:âyet, hadîs kaynağı). Kaynak yoksa "Kaynak gösterilmemiş." yazılır.
+   - Bir dipnotta Arap harfi ile “…” birlikte bulunmaz. `metin/hazirla.py` dipnottaki meali de okur, meal iki kez okunmuş olur.
+   - Yaygın bir meale dayanılmaz, aktarımdaki meal sadeleştirilir.
 4. **Tasavvuf terimleri:**
-   - Karşılığı tek kelimeyle verilemeyen terimler korunur: nefs, kalp, ruh, sır, zikir, fikir, marifet, fenâ, bekâ, seyr ü sülûk, mürşid, mürid, tevekkül, teslim, rızâ, tecellî, vahdet.
+   - Karşılığı tek kelimeyle verilemeyen terimler korunur: nefs, kalp, ruh, sır, zikir, fikir, marifet, fena, beka, seyrüsülûk, mürşit, mürit, tevekkül, teslim, rıza, tecelli, vahdet. Yazımda TDK esas alınır (2.3).
    - İlk geçtiği yerde ayraç içinde kısaca açıklanır. Ör. "fenâ (kulun kendi varlığını Hak'ta yok bilmesi)".
    - Açıklama kitabın sözlüğüne (`sozluk.tsv`) de yazılır. Sonraki geçişlerde tekrarlanmaz.
 5. **Şiir:**
@@ -39,8 +43,12 @@ Bu dosya yaşayan bir standarttır. Her bölümden sonra yeni karşılaşılan d
    - Bugün de yaşayan kelimeler ("sabır", "şükür", "hikmet", "ilim") olduğu gibi kalır. Gereksiz Öztürkçecilik yapılmaz.
 3. **İmlâ:**
    - TDK'nın güncel yazım kurallarına uyulur.
-   - Düzeltme işareti yalnız anlam ayırt ettiği yerde (kâr/kar, âlem/alem) ve özel adlarda kullanılır.
-   - Ayın ve hemze işaretleri (‘ ’) kaldırılır.
+   - Düzeltme işareti TDK'nin kullandığı yerlerde kullanılır:
+     - anlam ayıran yerlerde (âlem/alem, hâl/hal),
+     - k, g, l'den sonraki inceltmede (kâmil, mekân, lâzım),
+     - nispet î'sinde (ebedî, ilahî, zatî).
+   - Özel adlar ve sure adları TDV İslâm Ansiklopedisi'ndeki (DİA) biçimiyle, ayın ve hemze işaretleri kaldırılarak yazılır: Araf, Enam, Muhyiddin İbnü'l-Arabî.
+   - Ayın ve hemze işaretleri (‘ ’) kaldırılır. Kesme işareti olarak düz `'` değil `’` kullanılır.
 4. **Eski ekler:** "etdim, içün, olub" gibi eski ek ve yazımlar günümüz biçimine çevrilir: "ettim, için, olup".
 5. **Hitap ve kalıp sözler:** "Ey azîz!", "Ma‘lûm ola ki" gibi kalıplar günümüz karşılığıyla korunur ("Ey aziz dost!", "Bilinsin ki"). Üslubun sıcaklığı silinmez.
 6. **Tarih ve ölçüler:** Hicrî tarihin yanına ayraç içinde Milâdî karşılığı eklenir. Eski ölçüler (zirâ, fersah, dirhem) korunur, ilk geçtiği yerde yaklaşık karşılığı verilir.
@@ -73,3 +81,19 @@ Her bölüm şu döngüyle işlenir:
 | Tarih | Kitap / bölüm | Karar |
 |---|---|---|
 | 2026-11-26 | — | Standart ilk sürüm. |
+| 2026-11-26 | Mârifetnâme 01 | Her manzum bloğun (Türkçe, Farsça, Arapça) altına tek bir italik anlam paragrafı yazılır. Sayfa imiyle bölünen manzumede her parçanın anlamı kendi sayfasında verilir. Anlam paragrafları paragraf eşleşmesine sayılmaz. |
+| 2026-11-26 | Mârifetnâme 01 | Meal, metin içinde «…» ibaresinin ardından verilir. Dipnotta yalnız kaynak kalır, numara korunur. |
+| 2026-11-26 | Mârifetnâme 01 | Yazarın Türkçe hadîs tercümeleri “…” içinde doğrudan söz olur: "buyurmuşdur ki …" → "buyurmuştur: “…”". |
+| 2026-11-26 | Mârifetnâme 01 | Kalıp sözlerin karşılıkları:<br>• "Ey ‘azîz" → "Ey aziz dost!"<br>• "Ma‘lûm olsun ki" → "Bilinsin ki"<br>• (Beyt), (Kıt‘a), (Mesnevî), (Nazm) → (Beyit), (Kıta), (Mesnevi), (Nazım)<br>• Başlık altı tanıtımlar → "Bu bâb/fasıl/tür … bildirir." |
+| 2026-11-26 | Mârifetnâme 01 | Aktarımda [?] olan kelime aynen bırakılır. Raporda önerilen okuma varsa o yazılır ve ardına [?] konur. |
+| 2026-11-26 | Mârifetnâme 01 | Sahabe ve sonraki kişilere ilk geçtiği yerde ölüm tarihi verilir: (ö. hicrî/milâdî). Peygamberlere ve meleklere tarih verilmez. |
+| 2026-11-26 | Mârifetnâme 01 | Baskıdaki ✱ ayraçları korunur. |
+| 2026-11-26 | Mârifetnâme 01 | Bir terime her yerde aynı karşılık verilir, sözlük (`sozluk.tsv`) bağlayıcıdır. Örnekler:<br>• "millet" fırka anlamında "fırka" olur.<br>• "hevâ" "nefsin arzusu" olur.<br>• "rükün" namazın içindeki farzlar, "şart" namazın dışındaki farzlar için kullanılır. |
+| 2026-11-26 | Mârifetnâme 01 | Metinde fıkha aykırı görünen ya da baskı hatası olabilecek yerler değiştirilmez. Raporda not edilir. |
+| 2026-11-26 | Mârifetnâme 02 | Dipnottaki Arapça ibarenin karşılığı “…” ile değil ayraçla verilir: «…» (ölmeden önce ölünüz). Okunuşu kesin olmayan Latin harfli okuma italik ve tırnaksız yazılır. |
+| 2026-11-26 | Mârifetnâme 02 | Meali dipnotta verilmiş manzume için meal italik anlam paragrafına taşınır. Dipnotta yalnız nispet, kaynak ve baskı notu kalır. Tek mısralık bloğa da anlam paragrafı yazılır. Etiket (Mısra‘) → (Mısra). |
+| 2026-11-26 | Mârifetnâme 02 | Sayfa imini aşan doğrudan söz tırnağa alınmaz, dolaylı anlatılır. Tırnak iki blok arasında açık kalmaz. |
+| 2026-11-26 | Mârifetnâme 02 | fena, beka, huzur gibi kelimeler gündelik anlamda geçtiğinde çevrilir. Terim açıklaması yalnız tasavvufî anlamda geçtiği ilk yerde verilir. "hevâ" "hava" anlamındaysa terim sayılmaz. |
+| 2026-11-26 | Mârifetnâme 02 | Eski para ve ölçüler (dirhem, dinar) korunur, ilk geçtiği yerde ayraç içinde açıklanır. |
+| 2026-11-26 | Mârifetnâme 02 | Kişi ve yer adlarında metindeki biçim DİA'dan farklıysa DİA biçimi kullanılır: Gazâlî → Gazzâlî, Erzurûm → Erzurum. |
+| 2026-11-26 | Mârifetnâme 02 | Aktaranın notundaki maddi hata sadeleştirmede düzeltilir, raporda belirtilir. Aktarım dosyası da aynı turda düzeltilir. |

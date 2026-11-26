@@ -113,6 +113,17 @@ def _bloklar(md: str):
             continue
         if blok.startswith("#"):
             yield "baslik", sayfa, blok.lstrip("#").strip()
+        elif blok.startswith(">"):
+            # Manzume: her mısra virgülle, her beyit noktayla biter (beyitler arası "> " boş satırı)
+            beyitler = re.split(r"\n>\s*\n", blok)
+            cumleler = []
+            for b in beyitler:
+                misralar = [m.lstrip(">").strip() for m in b.split("\n") if m.lstrip(">").strip()]
+                if not misralar:
+                    continue
+                misralar = [m if re.search(r"[.!?:;,»]$|\]$", m) else m + "," for m in misralar]
+                cumleler.append(re.sub(r",$", ".", " ".join(misralar)))
+            yield "paragraf", sayfa, " ".join(cumleler)
         else:
             yield "paragraf", sayfa, " ".join(blok.split())
 
