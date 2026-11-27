@@ -6,5 +6,30 @@
  "kaynak_url": "https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9",
  "telif": "Kamu malı: Erzurumlu İbrâhim Hakkı ö. 1194/1780 (TDV İslâm Ansiklopedisi, 'Mârifetnâme'). 1330 baskısı modern hazırlayan içermez. Modern aktarım/sadeleştirmeler (Ulusoy, Yılmaz-Kılıç, Meyan, Karaörs, Aydın, Bedir) KAYNAK ALINMAZ.",
  "sayfa_farki": 15,
- "seslendirme": "sadelestirilmis"
+ "seslendirme": "sadelestirilmis",
+ "video": {
+  "kapak": {
+   "yazar": "ERZURUMLU İBRÂHİM HAKKI",
+   "ad": "MA‘RİFETNÂME",
+   "alt": "Sadeleştirilmiş Metin"
+  },
+  "baslik": "Mârifetnâme",
+  "yazarin": "Erzurumlu İbrâhim Hakkı'nın",
+  "yazar_cumle": "Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.",
+  "etiket": "#SesliKitap #Mârifetnâme #ErzurumluİbrahimHakkı #Tasavvuf",
+  "bolumler": {
+   "01": {
+    "slug": "Marifetname-01-Insan-i-Kamil-Kuran-Sunnet-Namaz",
+    "ust": "ÜÇÜNCÜ FEN · BİRİNCİ FASIL",
+    "ad": "İnsan-ı Kâmil, Kur’ân, Sünnet ve Namaz",
+    "sira": "3. Fen 1. Fasıl"
+   },
+   "02": {
+    "slug": "Marifetname-02-Dunyanin-Hakikati",
+    "ust": "ÜÇÜNCÜ FEN · İKİNCİ FASIL",
+    "ad": "Dünyanın Hakikati ve Dünya Sevgisini Bırakmak",
+    "sira": "3. Fen 2. Fasıl"
+   }
+  }
+ }
 }

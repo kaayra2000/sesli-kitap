@@ -1,4 +1,4 @@
-"""Mektuplar sesli kitabı için kapak görselleri üretir (özgün geometrik desen + başlık)."""
+"""Sesli kitap kapak görselleri üretir (özgün geometrik desen + başlık). Düzen: video/TARZ.md."""
 import math, sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -64,7 +64,10 @@ def sigdir(d, metin, ad, boy, azami):
     return font(ad, boy)
 
 
-def kapak(ust, alt, cikti):
+MEKTUPLAR = {"yazar": "SALÂHUDDÎN İBN MEVLÂNÂ SİRÂCUDDÎN", "ad": "MEKTÛBLAR", "alt": "ve Ba‘zı Mesâ’il-i Mühimme"}
+
+
+def kapak(ust, alt, cikti, kitap=MEKTUPLAR):
     img = desen()
     d = ImageDraw.Draw(img, "RGBA")
     # orta pano
@@ -76,9 +79,9 @@ def kapak(ust, alt, cikti):
         d.rectangle([cx - 9 * SS, cy - 9 * SS, cx + 9 * SS, cy + 9 * SS], fill=(9, 26, 28))
         yildiz(d, cx, cy, 13 * SS, ALTIN, 2 * SS)
 
-    ortala(d, 215 * SS, "SALÂHUDDÎN İBN MEVLÂNÂ SİRÂCUDDÎN", font("NotoSerif-Regular.ttf", 26), ALTIN, aralik=4)
-    ortala(d, 270 * SS, "MEKTÛBLAR", font("NotoSerifDisplay-Bold.ttf", 120), KREM, aralik=10)
-    ortala(d, 425 * SS, "ve Ba‘zı Mesâ’il-i Mühimme", font("NotoSerifDisplay-Italic.ttf", 44), KREM + (215,))
+    ortala(d, 215 * SS, kitap["yazar"], font("NotoSerif-Regular.ttf", 26), ALTIN, aralik=4)
+    ortala(d, 270 * SS, kitap["ad"], font("NotoSerifDisplay-Bold.ttf", 120), KREM, aralik=10)
+    ortala(d, 425 * SS, kitap["alt"], font("NotoSerifDisplay-Italic.ttf", 44), KREM + (215,))
     # ayraç
     yc = 520 * SS
     d.line([(W * SS / 2 - 300 * SS, yc), (W * SS / 2 - 30 * SS, yc)], fill=ALTIN, width=2 * SS)
