@@ -467,3 +467,55 @@ Toplam: 34 `[?]` (15 metin içi, 19 dipnot; dipnotlardaki 10’u metin içindeki
 - Âyet numaraları ve hadîs kaynakları ezberden verildi; tek tek bir mushaf ve hadîs kaynağıyla karşılaştırılmadı. Özellikle tekrarlanan âyet kalıplarında (En‘âm 6:25/İsrâ 17:46, Tevbe 9:87/Münâfikûn 63:3) yer bir kez kontrol edilmeli.
 - 48 âyetin harekeleri mushafa göre konuldu; baskıdaki lafızdan sapma tesbit edilmedi, ama her biri kelime kelime karşılaştırılmadı.
 - s. 301 başlığı (“Fasl-ı Sânî”) bir sonraki bölümün (05) planını etkilemez, ama fasıl/nev‘ sayımı yapan bir betik varsa yanılabilir.
+
+## 06 · Fenn-i Sâlis, Bâb 2, Fasıl 2 (s. 312–318)
+
+Dosya: `aktarim/06-fenn-i-salis-bab-2-fasl-2.md`. Kaynak: PDF s. 327–333 (matbu sayfa + 15).
+
+### Kapsam ve yöntem
+
+- s. 312’nin üst kısmındaki rubâ‘îler (yedinci rubâ‘înin sonu ile sekiz–onuncu rubâ‘îler) 05’e aittir, alınmadı. Aktarım s. 312’deki **Fasl-ı Sânî** başlığıyla başlar, s. 318’deki **Fasl-ı Sâlis** başlığından hemen önce, yedi beyitlik "uyuma" redifli nazmın sonunda biter.
+- Faslın takdim cümlesi ("on nev‘ ile") ve on nev‘ başlığının hepsi var (#### Nev‘-i Evvel … Nev‘-i ‘Âşir). Baskıda başlıklar satır içinde «❁ … ❁» ile verilmiş; başlık ve alt cümle önceki dosyalardaki gibi ayrıldı.
+- PDF s. 328–333 görüntüleri bu iş için 220 dpi üretildi (p-328 … p-333; p-327 hazırdı). Her sayfa yedi yatay şeride bölünüp 1,5 kat büyütülerek okundu (`scratchpad/marifet/s06-NNN-0…6.png`); şüpheli kelimeler ayrıca kırpıldı (`s06-NNN-zA/zB.png`). Her sayfa yazıldıktan sonra görüntüyle yeniden karşılaştırıldı.
+- Sayfa imleri sayfanın başladığı yere kondu: s. 314, 315, 316, 317 ve 318 imleri cümle ortasına düşüyor. s. 312/313 geçişi Arapça hadîsin içindedir («…لا ينام» / «عن رب الانام»); hadîsi bölmemek için s. 313 imi ibârenin sonuna kondu, dipnotda (16) belirtildi.
+- Manzûmeler: Türkçe nazımların hepsi (s. 312, 313 iki, 314 iki, 315 iki, 316 iki, 317, 318) baskıda iki sütundur; her satırda sağ sütun birinci, sol sütun ikinci mısra‘ olarak okundu, kâfiye ve redifle doğrulandı. Bu fasılda musammat ve Türkçe rubâ‘î yoktur.
+- s. 313’teki Bilâl-i Habeşî’ye nisbet edilen Arapça beş beyit baskıda üç sütundur (4 + 3 + 3 mısra‘). Satırlar sağdan sola (sağ, orta, sol) sırayla okununca beş beyit "-âm" kâfiyesiyle düzgün çıkıyor; bu sırayla yazıldı.
+- Nesir içinde ✱ ile dizilmiş Türkçe beyitler (s. 312 "Nidâ idüb…", s. 313 "Sâğ yanı üzre…"), Arapça şiir (s. 313 "دع النوم…") ve Farsça rubâ‘î (s. 316) blok alıntıya alındı. Arapça beyitler 02’deki biçimde («… ✱ …» bir satırda bir beyit) yazıldı.
+- Âyet, hadîs ve Arapça sözler harekeli verildi; meal ve kaynak dipnotda. Nüzûl hadîslerinin dört rivâyeti (s. 312) Müslim, Salâtü’l-müsâfirîn 168–171 ile karşılaştırıldı. Baskı farkları dipnotda: «عدوم» (Müslim’de «عديم»), «عيناى تنام وقلبى لا ينام عن رب الانام» (bilinen lafız «إن عينيّ تنامان ولا ينام قلبي»; "عن رب الانام" ilâvesi yok).
+- Kaynak ve atıflar ezberden verildi; özellikle Müsned I, 73 (sabah uykusu), Beyhakî/Taberânî ("en-nevmü ahu’l-mevt") ve Gazzâlî, İhyâ’, Kitâbü’l-Mahabbe atıfları kontrol edilmeli. Zebûr sözü, iki hadîs-i kudsî parçası, Arapça beyitler, Hz. Ebû Bekir haberi, câriye, müsâfir kâmil ve sultan kıssaları için kaynak bulunamadı.
+- Aktarılmayanlar: müteakip kelime işaretleri (s. 312 "عن", s. 314 "غفلت", s. 318 "احوج"; sonuncusu 07’ye aittir), süslü sayfa numaraları, s. 313 altındaki forma işareti «( ـ ٤٠ ـ معرفتنامه ـ )». s. 317’de sağ kenarda, altıncı satır hizasında küçük bir el yazısı işaret var; aktarılmadı.
+
+### Sayılar
+
+- Kelime: yaklaşık 4.950 (dipnotlar hariç yaklaşık 3.540). Dipnot: 38. [?]: 36 (metinde 16, dipnotlarda 20).
+
+### [?] listesi (metin)
+
+- s. 312: Hadîs-i kudsîde «فِي الْجَلَاءِ [?] الْقَلْبِ»: baskı «فى الجلاء» gibi görünüyor; dilbilgisi «فِي جَلَاءِ» ya da «فِي انْجِلَاءِ» istiyor. Öneri: "انجلاء".
+- s. 312: Nazım 7. beyit "Göstere dildâra dilinden [?] rızâ": baskı «دلندن» / «دانذن» arası; harfler net değil.
+- s. 313: "ba‘de nısfi’l-leyl" nazmı 5. beyit "‘Urûc-ı rûhî zarûra [?] gele": baskı «ضرور اکله». Okunuş kâfiyeye uyuyor (-ûra), anlamı zayıf. Öneri: "sürûra" (dizgi hatası?).
+- s. 313: "nevmü’l-beden [?] istirâhatdır": baskı «ونوم المدن». Öneri: "nevmü’l-beden" (ب/م karışması).
+- s. 313: "gice ‘ârifleriñ başı dartar [?]": baskı «باشی دارتار». "Dartmak" (çekmek) okundu; anlam kesin değil.
+- s. 314: "vakt-i seher" nazmı 4. beyit "‘Ârif-i âgâha devlet yâr [?] olur": baskı «یاز» gibi; kâfiyeye göre "yâr".
+- s. 314: Nev‘-i Hâmis başlığı "haslet-i [?] kirâm": baskı «خلصت»; dizgi hatası, öneri "haslet" (خصلت).
+- s. 314: "gicelerde" nazmı 8. beyit "Az yi [?] az uyı hayrete var": baskı «آزی آزاویی». Öneri: "az yi az uyu" (05’teki dördüncü rubâ‘î ile aynı yazım).
+- s. 315: "uyuma" nazmı 7. beyit "Hezâr kerre didim Hakka [?] gel gicelerde": baskı «حقه». Öneri: mahlas "Hakkı’ya" (حقی‌یه).
+- s. 315: "-yı şeb" nazmı 5. beyit "Dek [?] siyehdir göze şeb zulmeti": baskı «دیك سهدر». "Dek" okundu; anlam çözülemedi.
+- s. 315: "-yı şeb" nazmı 7. beyit "Bağladı şeb desti cevher kârdan [?]": baskı «باغلدی شب دستی جوهر کاردن». Okunuş ve anlam kesin değil.
+- s. 316: Farsça rubâ‘î 4. mısra‘ "Ger [?] ka‘r-ı nihâdet": baskı «کر قعر». Anlam "k’ez ka‘r-ı nihâdet" (varlığının dibinden) istiyor olabilir.
+- s. 317: "Pes kavm [?] ta‘tîl ve gafletdir ve kavm-i [?] rûhânî huzûr-ı hazretdir": baskıda iki yerde de açıkça «قوم». Önceki ve sonraki cümleler "nevm-i …" dizisi olduğundan "nevm" (نوم) dizgi hatası olabilir.
+- s. 317: "bu tekye ehline gâv-ı bâr-girân [?] olmışsın": baskı «اهلنه کاوب بارکران». Öneri: "gâv-ı bâr-girân" (ağır yük öküzü); "کاوب" başka türlü de okunabilir.
+- s. 318: "uyuma" nazmı 2. beyit "Ko hâb-ı gafleti şeb kalbe seyr it [?]": baskı «سرایت». "Seyr it" ya da "sirâyet".
+
+### [?] listesi (dipnotlar)
+
+- [?] içeren dipnotlar: 7–10, 18, 19, 20, 21, 24, 25, 26, 27, 30, 32, 33, 37, 38 (toplam 20 işaret; dn. 8 ve dn. 25’te ikişer).
+- Kaynak notları: dn. 7 (Zebûr), 8 (hadîs-i kudsî), 9 (Arapça beyit), 18 (gamları câmi‘), 19 (Bilâl beyitleri), 21 (Arapça şiir), 25 (Ebû Bekir haberi), 26 (câriye kıssası), 33 (Farsça rubâ‘î), 37 (sultan kıssası).
+- Okunuş şüpheleri dipnotda da anıldı: dn. 8 (الجلاء), 10 (dilinden), 20 (zarûra), 24 (yâr), 25 (haslet), 27 (az yi), 30 (Hakka), 32 (dek, cevher kârdan), 33 (ger), 38 (seyr it).
+
+### Notlar
+
+- s. 313 "ba‘de nısfi’l-leyl" nazmında «اکله» her beyitte "-a gele" okundu (şûra, huzûra, hûra, sürûra, nûra, zarûra, tahûra, zuhûra).
+- s. 314 Hz. Ebû Bekir haberinde «صمان» "samân" (duvar çamurundaki saman) okundu.
+- s. 315 "-yı şeb" nazmının son beytinde mahlas yerine «حق» var ("Hakk ider"); 316’daki "Bu kesîf içre" nazmında mahlas yok.
+- s. 317 nazmında «عاشق سن ایله خوابی آز» "‘âşıksen eyle hâbı az" okundu; redifteki «آز» 05’teki gibi "az" yazıldı.
