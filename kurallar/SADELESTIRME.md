@@ -56,7 +56,7 @@ Bu dosya yaşayan bir standarttır. Her bölümden sonra yeni karşılaşılan d
 ## 3. Sadeleştirenin ekleri
 
 - Açıklama gerektiren her ek, yazarın sözünden ayrılır: kısa açıklamalar `(…)` içinde, uzun olanlar `[Sadeleştiren notu]` dipnotunda.
-- Aktarımda `[?]` olan yer, sadeleştirmede de `[?]` olarak kalır. Tahminle doldurulmaz.
+- Metinde `[?]` bırakılmaz. Aktarımdaki tahmini okuma esas alınır, sadeleştirme cümlenin akışına göre yapılır (bkz. AKTARIM.md, Temel ilke).
 
 ## 4. Seslendirme
 
@@ -66,7 +66,7 @@ Bu dosya yaşayan bir standarttır. Her bölümden sonra yeni karşılaşılan d
 
 Her bölüm şu döngüyle işlenir:
 
-1. **Aktar:** Taramadan aktarım yapılır ve bölüm raporuna `[?]` listesi yazılır.
+1. **Aktar:** Taramadan aktarım yapılır ve bölüm raporuna tahmini okumalar listesi yazılır.
 2. **Sadeleştir:** Aktarımdan sadeleştirilmiş metin üretilir. Yeni terimler `sozluk.tsv`'ye eklenir.
 3. **Gözden geçir:** İki metin paragraf paragraf karşılaştırılır:
    - Atlanan ya da eklenen fikir var mı?
@@ -104,3 +104,4 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-27 | Mârifetnâme 03 | Arap harfi bulunan dipnotta anılan Türkçe kelime tırnakla değil italikle yazılır (*mümin*). |
 | 2026-11-27 | Mârifetnâme 03 | "Hevâ" nefse değil başka bir şeye bağlıysa terim sayılmaz: "aşkın hevâsı" → "aşkın arzusu". |
 | 2026-11-27 | Mârifetnâme 04 | Bağlamın açıkça gösterdiği dizgi hatası (ör. "zâhir" yerine "tâhir", "olmışdır" yerine "olmamışdır", nev‘ yerine yanlışlıkla "Fasl" başlığı) sadeleştirmede düzeltilmiş anlamıyla yazılır ve `[Sadeleştiren notu]` dipnotunda belirtilir. Aktarımda baskıdaki biçim kalır. Fıkhî ya da içerikle ilgili şüpheli yerler bu kurala girmez, değiştirilmez. |
+| 2026-11-27 | — | Kullanıcı kararı: `[?]` metinde kalmaz. Okunamayan yer bağlama en uygun okumayla doldurulur, raporun "Tahmini okumalar" listesine yazılır. Önceki "[?] aynen bırakılır" kararlarının yerine geçer. Seste `[?]` soru tonlamasına yol açıyordu. |
