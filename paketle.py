@@ -172,7 +172,10 @@ def main() -> None:
                   "colab/mfa_olc.py", "colab/mfa_kur.sh", "colab/mfa_duzelt.py"]:
             if (KOK / f).exists():
                 z.write(KOK / f, Path(f).name)
-        for f in sorted((KOK / "referans").glob("*.wav")) + sorted((KOK / "referans").glob("*.json")):
+        sesler = sorted((KOK / "referans").glob("*.wav"))
+        if a.mod == "ornek":  # kitap seslendirmesi yalnız seçili sesi kullanır; paket küçülür, Colab'e yükleme hızlanır
+            sesler = [f for f in sesler if f.name in (ayarlar["seslendirme"].get("vox_referans"), "referans-canli.wav")]
+        for f in sesler + sorted((KOK / "referans").glob("*.json")):
             z.write(f, f"referans/{f.name}")
     print(f"{hedef}  ({len(parcalar)} parça)")
 
