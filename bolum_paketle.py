@@ -42,6 +42,8 @@ def main() -> None:
         while i < len(ids) and not ids[i].endswith("-c00"):
             i += 1
         bas.append(i)
+    if len(bas) > 1 and len(ids) - bas[-1] < a.kume * 0.4:  # küçük kalan son parça bir öncekine katılır
+        bas.pop()
     tur0 = int(a.no.rstrip("abc")) * 100 + (10 * " abc".index(a.no[-1]) if a.no[-1] in "abc" else 0)
     for k, b in enumerate(bas, 1):
         bitis = ids[bas[k]] if k < len(bas) else ""
