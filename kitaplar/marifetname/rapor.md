@@ -835,3 +835,65 @@ Aktarımdaki okumalar ("03, 06 · Tahmini okumalar") esas alındı. Sadeleştirm
 - s. 316 "tahte-bend" karşılığı kontrol edilmeli.
 - s. 313 Bilâl-i Habeşî tarihi ve dn. 29 (Beyhakî / Taberânî) atfı ezberden; doğrulanmalı.
 - Nev‘-i Sâlis başlığındaki "nevm-i kirâm" "kerim kişilerin uykusu" diye verildi; başlık metni avamın gafletiyle karşıtlık kurduğu için uygun görüldü.
+
+## 07 · Fenn-i Sâlis, Bâb 2, Fasıl 3 (s. 318–325)
+
+Dosya: `aktarim/07-fenn-i-salis-bab-2-fasl-3.md`. Kaynak: PDF s. 333–340 (matbu sayfa + 15).
+
+### Kapsam ve yöntem
+
+- Aktarım s. 318’deki **Fasl-ı Sâlis** başlığıyla başlar (sayfanın üstündeki "uyuma" redifli nazmın son üç beyti 06’ya aittir), s. 325’teki **Fasl-ı Râbi‘** başlığından hemen önce, ‘Attâr’a nisbet edilen sekiz Farsça rubâ‘înin sonunda biter. Plandaki "s. 325 başındaki Farsça nazım" bu rubâ‘îlerdir; Fasl-ı Râbi‘ başlığından önce geldikleri için 07’ye alındı.
+- Faslın takdim cümlesi ("altı nev‘ ile") ve altı nev‘ başlığının hepsi var (#### Nev‘-i Evvel … Nev‘-i Sâdis). Baskıda başlıklar satır içinde «❁ … ❁» ile verilmiş; 06’daki gibi başlık ve alt cümle ayrıldı.
+- PDF s. 334–340 görüntüleri bu iş için 220 dpi üretildi (`s07tmp` önekiyle, sonra p-334 … p-340 adıyla; p-333 hazırdı). Her sayfa satır satır (yatay izdüşümle bulunan satır sınırlarıyla) 1,3–2,2 kat büyütülerek okundu; şüpheli kelimeler 3–5 kat ayrıca kırpıldı (`scratchpad/marifet/s07-*.png`). Her sayfa yazıldıktan sonra görüntüyle yeniden karşılaştırıldı.
+- Sayfa imleri sayfanın başladığı yere kondu; s. 319, 320, 321, 322, 323 ve 325 imleri cümle ortasına düşer, paragraf orada bölündü (06’daki gibi). s. 324 nazımla başlar.
+- s. 318’deki dokuz âyet baskıda (…) içinde, ✱ ile ayrılarak arka arkaya verilmiş; her biri ayrı «…» ve dipnotla yazıldı. Üç hadîs-i kudsî de ayrı ayrı alındı.
+- Türkçe hadîs dizisi (s. 318–319, "Ve buyurmuşdur ki …" ile on dokuz madde) metinde olduğu gibi bırakıldı; kaynaklar tek dipnotta (13) toplandı.
+- Manzûmeler: s. 320 (7 beyit), s. 322 (9 beyit, "dinilmez aslâ" redifli) ve s. 324 (9 beyit) Türkçe nazımları baskıda iki sütundur; her satırda sağ sütun birinci, sol sütun ikinci mısra‘ olarak okundu, kâfiye ve redifle doğrulandı. s. 321’deki dört Türkçe rubâ‘î ve s. 325’teki sekiz Farsça rubâ‘î 05’teki gibi iki satır = bir rubâ‘î (sağ, sol, sağ, sol) okundu ve rubâ‘î başına dört satır, aralarında boş `>` ile yazıldı. s. 321’deki Farsça rubâ‘î de aynı düzendedir. Bu fasılda musammat yoktur.
+- Nesir içinde ✱ ile dizilmiş Türkçe beyitler (s. 321, 322’de beş, 324’te bir), Arapça şiirler (s. 319 Zeynü’l-‘Âbidîn, s. 320) ve Farsça beyitler (s. 323 ve 324, Hâfız) blok alıntıya alındı. Arapça beyitler 02/06’daki biçimde («… ✱ …» bir satırda bir beyit) yazıldı.
+- Farsça metin Latin harfleriyle yazıldı, meal dipnotta. ‘Attâr rubâ‘îlerinin meali yorum içerir; özellikle 4. rubâ‘înin üçüncü mısra‘ı ve 5. rubâ‘înin ilk mısra‘ı («تا بر جای بجای می باش وخموش», "Tâ ber-câyî becâyî mî-bâş u hamûş") kontrol edilmeli.
+- Baskıda «خلق» (halk, insanlar) ile «حلق» (halk, boğaz) cinâsı üç yerde var (s. 321 nesir ve ikinci Türkçe rubâ‘î, s. 323 Cüneyd sözü). Latin harflerinde ikisi de "halk" yazıldı; ayrım dipnotlarda (25, 27, 43) gösterildi.
+- Kaynak ve atıflar ezberden verildi; hepsi kontrol edilmeli. Özellikle dn. 13’teki hadîs listesi (Kudâ‘î, Taberânî, Deylemî, Râfi‘î atıfları), dn. 14 (İbn Ebi’d-Dünyâ, Muvatta’ Kelâm 12), dn. 22 (İbn Mübârek / İhyâ’), dn. 24 (Dâvûd–Lokmân kıssası, İhyâ’), dn. 38 (Nehcü’l-belâga, Hikem 26) ve dn. 40, 46 (Hâfız beyitleri). Kaynağı bulunamayanlar: üç hadîs-i kudsî (s. 318), Hz. ‘Alî sözü (s. 319), Arapça şiir (s. 320), Farsça rubâ‘î (s. 321), bülbül–şâhin kıssası (s. 321–322), Cüneyd sözü (s. 323), "kelâmü’l-‘âşıkîn yutvâ" (s. 324); dipnotlarına "Kaynağı tespit edilemedi." yazıldı.
+- Aktarılmayanlar: müteakip kelime işaretleri (s. 318 "احوج", s. 320 "وناأهلی" ve öbür sayfaların altındakiler), süslü sayfa numaraları, s. 321 altındaki forma işareti «( ـ ٤١ ـ معرفتنامه ـ )», görüntülerin altındaki "TBMM KÜTÜPHANESİ" damgası.
+
+### Sayılar
+
+- Kelime: yaklaşık 6.700 (dipnotlar hariç yaklaşık 4.960). Dipnot: 48. Metinde `[?]` yoktur; tahmini okuma: 27 (aşağıda).
+
+### Tahmini okumalar
+
+| Sayfa | Baskı | Seçilen okuma | Öbür ihtimaller / gerekçe |
+|---|---|---|---|
+| 318 | «وعملو ذللى اكثردر» | "‘amel ü zelli ekserdir" | "‘amelü zelli"; harfler net değil, ‘amel ile و bitişik. |
+| 318 | «ومؤمن معتابه نصرت ايدن» | "mü’min-i mugtâba" (gıybet edilene) | غ noktası düşmüş sayıldı; "mu‘tâba" anlamsız. |
+| 318 | «منصور منامدر» | "mansûr-ı merâmdır" | Harfler "menâm"; dizi kelâm / harâm / merâm kâfiyeli ve "menâm" (uyku) anlamsız. Dizgi hatası sayıldı. |
+| 318 | «وكثرت مزاح وجدالله كشى ناره كيدر» | "ve kesret-i mizâh ve cidâlle kişi nâra gider" | «جداله» bitişik "cidâl ile"; "vechullâh / vecdullâh" cümleye uymaz. |
+| 319 | «ديواحيانا متيقظ ايدردى» | "diyü ahyânen müteyakkız iderdi" | "müteyakkız olurdı" anlamca daha düz; baskı "iderdi". |
+| 319 | «صغوب» | "sığub" (evine sığıp) | "savub" (çekilip) de olabilir; harfler صغوب. |
+| 319 | «كثرت كلامنك وعاردر» | "neng ü ‘ârdır" | «ننك» bitişik; "kelâmıñ ‘ârıdır" okunuşu cümle yapısına uymaz. |
+| 319 | «ديش طاش كبيدر» | "diş taş gibidir" | "taşgibidir" bitişik; çakmak–taş benzetmesine uyar. |
+| 320 | «بخشیدر» (nazım 5. beyit) | "yahşîdir" (iyidir) | Tek nokta görünür ("bahşîdir"); anlam "yahşî" ister. |
+| 320 | «حق اولان» (nazım 7. beyit) | "Hakk olan" | Mahlas "Hakkı olan" kastedilmiş olabilir. |
+| 320 | «بركالك» (hadîs-i kudsînin Türkçesinde) | "bir berklik" (katılık; Arapçadaki «قساوة») | Baskı «برکالك»; "berk" (sert) + lik. Okunuş zayıf. |
+| 320 | «وبلانطق ايچنده متعيندر» | "ve bilâ-nutk içinde müte‘ayyindir" | Anlam kapalı ("sözsüzlük içinde belirgindir"). |
+| 321 | «ضرر وثبورك در» | "zarar u sübûruñdur" | ثبور (helâk). |
+| 321 | «حبس لسان وبذل انساندر» | "habs-i lisân ve bezl-i ihsândır" | Baskı "insân"; kâfiye ve anlam "ihsân" ister. |
+| 321 | «بر شاهين شاهد» | "bir şâhîn şâhide" | "şâhîn-i şâha" (şâhın şâhinine) de olabilir; baskı «شاهد». |
+| 321 | «بن اويومدقجه» | "ben uyumadıkça" | "ben o yumdukça" da okunabilir. |
+| 322 | «استز چون كاى هر خاره» (nazım 4. beyit) | "İster çün güli her hâra" | Harfler "istez … gâyi"; anlamlı okuma bulunamadı, en zayıf okumadır. |
+| 322 | «سرى صدرينه ضمين امين اولاز» | "emîn olur" | Baskı «اولاز»; "olmaz" da olabilir, ama ardından gelen "kezzâb hayr görmez" karşıtlığı "olur" ister. |
+| 322 | «انجو وجواهردن كوچكدر» | "küçükdür" (baskıdaki gibi) | Anlam "büyükdür" ister; dizgi hatası olabilir, değiştirilmedi. |
+| 320, 322 | «لكن اكا هر سرى سويله», «صقين … حكمتى سويله» | "söyle" (baskıdaki gibi) | İki yerde de anlam "söyleme" ister; dn. 18 ve 35. |
+| 323 | «كنيزكارندن» | "kenîzekânından" | "kenîzkârından" da okunabilir. |
+| 323 | «خدمتكزه كيدرسه» | "giderse" (baskıdaki gibi) | Anlam "girerse" ister. |
+| 324 | «حديث عشقى سرمد سور» (nazım 3. beyit) | "sermed sever" | "sermed söz" de olabilir; mısra‘ın anlamı kapalı. |
+| 324 | «نطق باصواب نتيجهٔ صمت خطادر» | "nutk-ı bâ-savâb netîce-i samt-ı hatâdır" | Anlam: "doğru söz, hatâdan susmanın sonucudur"; dizgi eksikliği de olabilir. |
+| 324 | «صحراى جهانده قاليوب» | "kalmayub" | Baskıda م yok; "kalub" anlamca zayıf. |
+| 324 | «طالوب اوزمشلردر», «ال اوزمشلردر» | "dalub üzmişlerdir", "el üzmişlerdir" | "üzmek" eski "yüzmek" / "el üzmek" (el çekmek). |
+| 325 | «ذراعنى قصد ايلدكده» | "fasd eyledikde" | Baskı "kasd"; kan akması "fasd" (kan aldırma) ister (Mecnûn kıssası). |
+
+### Notlar
+
+- s. 318: «وقل لعبادى يقول» (âyette «يقولوا»), hadîs-i kudsîde «يسقيم» (يستقيم); dipnotlarda belirtildi.
+- s. 319: Zeynü’l-‘Âbidîn şiirinin ikinci beyti baskıda «حتى يروا قبح…»; bilinen rivâyet «يرون أقبح…». Baskı korundu, dn. 17.
+- s. 322: "dinilmez aslâ" nazmının son beyti "el-‘ilmü noktatün keśśerehe’l-câhilûn" sözüne işâret eder.
+- s. 324: Hâfız beytinde baskı «دلبرا», Dîvân’da «جان من».
