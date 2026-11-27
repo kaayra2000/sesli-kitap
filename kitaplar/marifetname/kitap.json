@@ -20,21 +20,33 @@
   "bolumler": {
    "01": {
     "slug": "Marifetname-01-Insan-i-Kamil-Kuran-Sunnet-Namaz",
-    "ust": "ÜÇÜNCÜ FEN · BİRİNCİ FASIL",
+    "ust": "ÜÇÜNCÜ FEN · BİRİNCİ BÂB · BİRİNCİ FASIL",
     "ad": "İnsan-ı Kâmil, Kur’ân, Sünnet ve Namaz",
-    "sira": "3. Fen 1. Fasıl"
+    "sira": "3. Fen 1. Bâb 1. Fasıl"
    },
    "02": {
     "slug": "Marifetname-02-Dunyanin-Hakikati",
-    "ust": "ÜÇÜNCÜ FEN · İKİNCİ FASIL",
+    "ust": "ÜÇÜNCÜ FEN · BİRİNCİ BÂB · İKİNCİ FASIL",
     "ad": "Dünyanın Hakikati ve Dünya Sevgisini Bırakmak",
-    "sira": "3. Fen 2. Fasıl"
+    "sira": "3. Fen 1. Bâb 2. Fasıl"
    },
    "03": {
     "slug": "Marifetname-03-Gonul-Irfanin-Evi",
-    "ust": "ÜÇÜNCÜ FEN · ÜÇÜNCÜ FASIL",
-    "sira": "3. Fen 3. Fasıl",
+    "ust": "ÜÇÜNCÜ FEN · BİRİNCİ BÂB · ÜÇÜNCÜ FASIL",
+    "sira": "3. Fen 1. Bâb 3. Fasıl",
     "ad": "Gönül: İrfanın Evi"
+   },
+   "04": {
+    "slug": "Marifetname-04-Kalbin-Hakikati",
+    "ust": "ÜÇÜNCÜ FEN · BİRİNCİ BÂB · DÖRDÜNCÜ FASIL",
+    "sira": "3. Fen 1. Bâb 4. Fasıl",
+    "ad": "Kalbin Hakikati"
+   },
+   "05": {
+    "slug": "Marifetname-05-Az-Yemenin-Hikmeti",
+    "ust": "ÜÇÜNCÜ FEN · İKİNCİ BÂB · BİRİNCİ FASIL",
+    "sira": "3. Fen 2. Bâb 1. Fasıl",
+    "ad": "Az Yemenin Hikmeti"
    }
   }
  },
