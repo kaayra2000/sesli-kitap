@@ -1049,3 +1049,34 @@ Dosya: `aktarim/08-fenn-i-salis-bab-2-fasl-4.md`. Kaynak: PDF s. 340–350 (matb
 - s. 326: "Ve buyurmuşdur ki" bir yerde «وبيورمشلدركه» dizilmiş; "buyurmuşdur" yazıldı.
 - s. 331: Mesnevî beytinde baskı «كيمياى نافع», nüshalarda «كيميا و نافع».
 - s. 333: «انا الله» baskıda «انى» olmadan; âyetlerde «اِنّ۪ٓي اَنَا اللّٰهُ».
+
+## 08 · Sadeleştirme
+
+Dosya: `sadelestirilmis/08-fenn-i-salis-bab-2-fasl-4.md`. Denetim betiğiyle blok eşleşmesi: aktarım 81 blok (36 nesir, 21 nazım, 11 sayfa imi, 11 başlık, 2 etiket), sadeleştirme 102 blok (81 eşlenen + 21 italik anlam paragrafı). Dipnot 55/55, ✱ 72/72, `[?]` 0. `hazirla.py` 812 parça üretti; okunuşta Arap harfi, `s. N`, dipnot imi sızıntısı yok. Kelime: yaklaşık 9.660 (nazım ve dipnotlar hariç metin yaklaşık 6.570; okunuş yaklaşık 7.610).
+
+### Uygulanan kararlar
+
+- Dizgi hataları (Karar 04/07): s. 327 *ruhsâd* → anlam paragrafında *yanak* (dn. 25), s. 330 *perîşân ola hîç* → *hiç perişan olma* (dn. 42), s. 332 dördüncü ve beşinci rubaide *Hak* → *Ey Hakkı* (dn. 50), s. 335 *düşdüz* → *düştür* (dn. 55). Hepsinde aktarımın mevcut dipnotu `[Sadeleştiren notu]` ile genişletildi, yeni numara açılmadı. Nazım blokları aktarımla birebir kaldı; düzeltme yalnız anlam paragrafında.
+- *Gâlibât-ı gâfillerdir* (s. 326) içerikle ilgili şüpheli yer sayıldı (bilinen rivayetle lafız farkı, *âkil* kesin değil), değiştirilmedi: "gafillere galip gelir". Dn. 23’te not var.
+- Dipnotta Arap harfi ile “…” çakışan yerler (dn. 23, 25, 35, 40) italik ya da ayraçla çözüldü. Âyet ve kudsî hadis mealleri metin içine alındı; dipnotlarda yalnız kaynak ve baskı notu kaldı. Farsça ve Arapça şiir mealleri (dn. 22, 32, 43, 46, 48) ve dn. 29’daki Türkçe beytin anlamı italik paragrafa taşındı.
+- Cinas (Karar 06/07): *hades* (sonradan olan / pislik) s. 327, *nâs / nâsî* (insanlar / unutkan) s. 332, *Hakkı / Hakk’ı* s. 330, *tecelli / teselli* s. 335 duyulur biçimde verildi.
+- İlk geçişte ölüm tarihi: Sâdî (ö. 691/1292; daha önce yalnız dipnotta geçiyordu), İbrâhim bin Edhem (ö. 161/778), İbnü’l-Arabî (ö. 638/1240, dipnotta). "b." kısaltması cümle bölücüyü tetiklemesin diye metinde "bin" yazıldı.
+- *Vahdet ve kesret* (s. 328) burada gündelik anlamda (yalnızlık / kalabalık) çevrildi; sözlükteki "birlik / çokluk" tasavvufî anlam içindir (Karar 02’ye uygun).
+
+### Önerilen Karar günlüğü maddeleri
+
+1. Metinde *b.* (bin) kısaltması kullanılmaz, "bin" yazılır: `hazirla.py` noktadan cümle böler (dipnotlar hariç).
+2. Sayfa imiyle bölünen manzumede (aktarımda iki ayrı blok) her parçanın altına ayrı italik anlam paragrafı yazılır (Karar 01’in uygulaması; denetim betiği iki bloğu ayrı sayar).
+3. Sözlükte bir terimin tasavvufî karşılığı varken aynı kelime gündelik anlamda geçerse (vahdet = yalnızlık) çevrilir, sözlük satırına dokunulmaz; Karar 02 vahdet/kesret için de geçerlidir.
+4. Dizgi düzeltmesi rapordaki tabloda "kastedilmiş olabilir" diye geçiyorsa (gâfil/âkil, ma‘rifet-i dünyâ/Mevlâ) içerik şüphesi sayılır, sadeleştirmede değiştirilmez; yalnız vezin, redif ya da bağlamın tek okumaya zorladığı yerler düzeltilir.
+
+### Zor yerler (gözden geçirilmeli)
+
+- s. 326 nazım: *mekr ile destânı* "hile ve masalla" diye verildi (*dest-ân*, "o eller" de olabilir); son beyit (*Fakîr-i İlâhî Hakkıdan*) zorlama bir okumaya dayanıyor.
+- s. 326 *‘avret yılandır ve anıñ ladgı bî-ziyândır*: "sokması ise zararsızdır" diye kelimesi kelimesine verildi; bağlamla çelişiyor görünür.
+- s. 326 *zümre-i nisvân hayâl-i şeytândır*: "şeytanın hayali" diye verildi; bilinen söz *hibâlü’ş-şeyṭân* (şeytanın tuzakları). Baskı hatası olabilir, içerikle ilgili olduğu için dokunulmadı.
+- s. 327 nazım 8. beyit (*Kanı telhdir*), s. 328 musammat 5. bent (*büt gider*), s. 329 nazım 6. beyit (*Göz gözler*), 9. beyit (*tûy itme*: "açıp sunma"), s. 331 nazım 5–6. beyit (*ol sûde*, *hûde*: "Hû’da olmak") anlamı kapalı okumalara dayanıyor.
+- s. 330 *selef-i sâlihîn ehl-i zamânından ahbârın tahzîr idüb*: "zamanlarının insanlarına karşı uyarıda bulunmuş" diye genel tutuldu.
+- s. 333 *ehle ve mahalle dinilür*: "ehil ve yerinde sayılır" diye yorumlandı.
+- s. 334 *mezkûrâtı zikrden ifnâ ider*: "zikredilenler (onu) zikirden fani kıldığında" verildi; Risâletü’l-envâr’daki "zikredilen seni zikirden fani kılarsa" ibaresine dayanır görünüyor, karşılaştırılmadı. *hayât-ı sebebiyye*, *nûr-ı tevâlî* okumaları da zayıf.
+- s. 332 *mûris-i ma‘rifet-i dünyâ* baskıdaki gibi "dünyayı tanımayı kazandırır" verildi.

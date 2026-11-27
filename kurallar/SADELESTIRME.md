@@ -117,3 +117,6 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-27 | Mârifetnâme 07 | Dizgi hatasının olduğu cümlede dipnot yoksa yeni numara açılmaz. Not, aynı ya da bir önceki cümlenin dipnotunun sonuna `[Sadeleştiren notu]` olarak eklenir ve yeri belirtilir. |
 | 2026-11-27 | Mârifetnâme 07 | Aynı terim başka bir ilimde başka anlamdaysa sözlüğe ayrı satır açılır: fıkıhta "ilm-i hâl", tasavvufta "hâl ilmi". |
 | 2026-11-27 | Mârifetnâme 07 | Sayfa imini aşan söz tırnaksız, iki noktadan sonra düz verilebilir. Hadis dizilerinde "Yine buyurmuştur ki …" kalıbı kullanılır. Cinas kuralı ses benzerliğine dayanan ikililere de uygulanır (cirm/cürm). |
+| 2026-11-27 | Mârifetnâme 08 | Metinde kişi adlarında "b." kısaltması yerine "bin" yazılır (seslendirmede nokta cümleyi böler). Dipnotlarda "b." kalabilir. |
+| 2026-11-27 | Mârifetnâme 08 | Sözlükte tasavvufî karşılığı olan kelime gündelik anlamda geçerse çevrilir: "vahdet ve kesret" → "yalnızlık ve kalabalık". |
+| 2026-11-27 | Mârifetnâme 08 | Yalnız vezin, redif ya da bağlamın tek okumaya zorladığı yer dizgi hatası sayılıp düzeltilir. "… kastedilmiş olabilir" türü okumalar içerik şüphesidir, değiştirilmez. |
