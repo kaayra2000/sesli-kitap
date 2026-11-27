@@ -103,3 +103,4 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-27 | Mârifetnâme 03 | Aktaranın mealinde [?] ile boş bırakılmış kelime, anlam paragrafında Latin harfli okunuşuyla ve [?] ile yazılır: serâyâ [?]. |
 | 2026-11-27 | Mârifetnâme 03 | Arap harfi bulunan dipnotta anılan Türkçe kelime tırnakla değil italikle yazılır (*mümin*). |
 | 2026-11-27 | Mârifetnâme 03 | "Hevâ" nefse değil başka bir şeye bağlıysa terim sayılmaz: "aşkın hevâsı" → "aşkın arzusu". |
+| 2026-11-27 | Mârifetnâme 04 | Bağlamın açıkça gösterdiği dizgi hatası (ör. "zâhir" yerine "tâhir", "olmışdır" yerine "olmamışdır", nev‘ yerine yanlışlıkla "Fasl" başlığı) sadeleştirmede düzeltilmiş anlamıyla yazılır ve `[Sadeleştiren notu]` dipnotunda belirtilir. Aktarımda baskıdaki biçim kalır. Fıkhî ya da içerikle ilgili şüpheli yerler bu kurala girmez, değiştirilmez. |

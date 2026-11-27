@@ -355,3 +355,115 @@ Dosya: `sadelestirilmis/03-fenn-i-salis-bab-1-fasl-3.md`. Sözlük: `sozluk.tsv`
 - Kudsî hadislerin ve âyetlerin mealleri aktaran notlarından sadeleştirildi. Türkçe manzumelerin (s. 283, 286, 287, 288, 289, 290–291) anlam paragrafları sadeleştirenin yorumudur.
 - Metinde ölüm tarihi verilecek yeni kişi yok: Hz. Ömer ve Hz. Ali’nin tarihleri 01’de verildi, Hz. Dâvûd peygamberdir.
 - Dipnotlara sadeleştirenin iki kısa eki girdi: dn. 23’te mahlas notu, dn. 44’te "savm-ı visal" açıklaması.
+
+## 05 · Fenn-i Sâlis, Bâb 2, Fasıl 1 (s. 304–312)
+
+Dosya: `aktarim/05-fenn-i-salis-bab-2-fasl-1.md`. Kaynak: PDF s. 319–327 (matbu sayfa + 15).
+
+### Kapsam ve yöntem
+
+- s. 304’ün üst yarısındaki "Ey rûh-ı pâk…" manzûmesi 04’e aittir, alınmadı. Aktarım **Bâb-ı Sânî** başlığıyla (s. 304 ortası) başlar ve s. 312’deki **Fasl-ı Sânî** başlığından hemen önce, on rubâ‘îlik bloğun sonunda biter.
+- Bâb-ı Sânî’nin takdim cümlesi, Fasl-ı Evvel’in takdim cümlesi ("sekiz nev‘ ile") ve sekiz nev‘ başlığının hepsi var (#### Nev‘-i Evvel … Nev‘-i Sâmin). Baskıda başlıklar satır içinde «❁ … ❁» ile verilmiş; başlık ve alt cümle önceki dosyalardaki gibi ayrıldı.
+- Sayfalar 220 dpi görüntüden beş şeride bölünüp büyütülerek okundu; şüpheli satırlar ayrıca kırpıldı (`scratchpad/marifet/s05-*.png`). PDF s. 321–327 görüntüleri bu iş için üretildi (p-321 … p-327).
+- Sayfa imleri sayfanın başladığı yere kondu: s. 305 imi hadîs cümlesinin, s. 307 imi Nev‘-i Râbi‘ başlığının, s. 310 imi cümlenin, s. 311 ve s. 312 imleri rubâ‘î bloklarının ortasına düşüyor.
+- Manzûmeler: s. 305 gazeli (12 beyit), s. 306’daki iki nazım (7 beyit), s. 307 ve s. 308 nazımları baskıda iki sütundur; her satırda sağ sütun birinci, sol sütun ikinci mısra‘ olarak okundu (kâfiyeden doğrulandı). s. 306 (Ramazân), s. 307 ve s. 309 (rûze) nazımları musammatdır: her sütun satırında ✱ ile ayrılmış iki mısra‘ var, bir satırın sağ ve sol sütunu dört mısra‘lık bir bend oluyor; satırlar "a ✱ a" biçiminde korunarak her bend iki satır yazıldı. s. 310–312 rubâ‘îlerinde (4 + 10) iki satır bir rubâ‘î, her satırda önce sağ, sonra sol sütun okundu.
+- Nesir içinde ✱ ile dizilmiş Farsça rubâ‘î (s. 308), Sa‘dî kıt‘ası (s. 308), Farsça beyitler (s. 309, 310 iki kez) ve Türkçe iki beyitlik nazım (s. 306) blok alıntıya alındı. s. 305 sonundaki «(ع)» etiketli tek mısra‘ "(Mısra‘)" etiketiyle verildi.
+- Âyet, kudsî hadîs ve Arapça sözler harekeli verildi. Hadîslerin çoğu baskıda yalnız Türkçe nakledilmiş; Arapça eklenmedi, aslı bilinenler dipnotda anıldı. A‘râf 7:179 baskıda «هم الخاسرون» ile bitiyor (Mushaf’da «هم الغافلون»); metinde baskıdaki gibi bırakıldı, dipnotda belirtildi.
+- Kaynak ve atıflar ezberden. "Bu lafızla kaynağı tesbit edilemedi" notları ve Gazzâlî/Irâkî atıfları İhyâ’ (Kesrü’ş-Şehveteyn) ve Irâkî tahrîci ile karşılaştırılmalı. Mesnevî beytinin cilt ve beyit numarası verilmedi.
+- s. 310’un altındaki "ترغیب" ve s. 312’nin altındaki "عن" müteakip kelime işaretleri ile süslü sayfa numaraları aktarılmadı.
+
+### Sayılar
+
+- Kelime: 6.936 (dipnotlar hariç 5.595). Dipnot: 47. [?]: 58 (metinde 22, dipnotlarda 36).
+
+### [?] listesi (metin)
+
+- s. 304: "yâ bir söz atarsa [?]": baskı «یا برسوز آرسه» gibi; harf eksik olabilir. Öneri: "atarsa".
+- s. 305: "Cû‘-ı râğıbîn fetretdir [?]": baskı «فترتدر». Dizide (hikmet, safvet, kurbet, tahâret) anlam zayıf; öneri: "fikretdir".
+- s. 306: Şeyh kıssasında «اکلا لابد من الله»: «كَلَّا» okundu.
+- s. 306: Nazım 1. beyit "pes erkek [?] ey yâr": baskı «ارکك».
+- s. 306: Nazım 3. beyit "seni yusun [?] yekbâr": baskı «یوسون». Öneri: "yudsun / yutsun".
+- s. 307: "ve nefs şetrî [?] kepekden hamîr ile": baskı «ونفس شتری کیکدن». Anlamı çözülemedi.
+- s. 307: "hıfz-ı [?] nefs ve şugl-ı kalb olan et‘ime-i nefîse": baskı «حفظ نفس». Bağlam "hazz-ı nefs" (nefsin hazzı) istiyor; dizgi hatası olabilir.
+- s. 307: Musammat 1. bend "Derd ola [?] hâkî itme câ": baskı «درد اوله». Öneri: "dürd ola" (tortu olup).
+- s. 307: Musammat 6. bend "Seyr it [?] mükedder olsa mâ": baskı «سیرایت».
+- s. 307: Musammat 9. bend "seyrângehiñdir [?] lâ-mekân": baskı «سیرانکهکدر».
+- s. 308: "menşe’-i cemî‘-i emrâz-ı kalb-i insân ki [?] anıñla dil dûzah olmışdır": baskı «انسانکه». Cümlede yüklem eksik; öneri: "insân ekldir ki".
+- s. 308: "dimâğ enhâr-ı [?] evhâm": baskı «انهار». Öneri: "enbâr" (ambar).
+- s. 308: Nazım 6. beyit "tolar çü hûr u haşem [?]": baskı «چوحوروحشم».
+- s. 309: Şeyh İsmâ‘îl’in sözünde «عفص [?] حلال»: baskı «عفص». Lügatte "mazı"; ekmek bağlamında anlamı açık değil.
+- s. 309: Rûze musammatı 2. bend "dildedir [?] ‘illiyyîn": baskı «دلدره».
+- s. 309/310: "âvâre kalub âteş [?] / lâşe-i lâ-şey [?] gibi yatub": baskı s. 309 sonu «آتش», s. 310 başı «لاشهٔ لاشی». Öneri: "at leşi gibi" ya da "âteş-i lâşe".
+- s. 310: "tezekkürle ekâmil [?] olasın": baskı «اکامل». Öneri: "kâmil".
+- s. 311: "mûris-i ma‘rifet-i şeytândır [?]": baskı «معرفت شیطاندر». Bağlam "ma‘rifet-i Sübhân" ya da "ma‘rifet-i Rahmân" bekletiyor; dizgi hatası olabilir.
+- s. 311: Rubâ‘î 3, ilk mısra‘ "Hakkı azıyı [?] ile batna hâkî [?] mîzân": baskı «حقی ازیی ایله بطنه حاقی میزان».
+- s. 311: Rubâ‘î 4, ilk mısra‘ "Hakkı yimek âzı âz uyı [?] âz söyle": baskı «حقی یمك آزی آزاوبی آز سویله». Öneri: "az ye, az uyu, az söyle".
+
+### [?] listesi (dipnotlar)
+
+- [?] içeren dipnotlar: 2, 4–9, 11–17, 21–23, 26–28, 30, 33–41, 43, 46, 47.
+- Bunların çoğu kaynak notudur (bu lafızla tesbit edilemedi ya da yalnız İhyâ’da geçer). dn. 38’de Mesnevî’nin cildi verilmedi.
+- Okunuş şüpheleri dipnotda da anıldı: dn. 8 (atarsa), 21 (kellâ), 22 (erkek, yusun), 26 (musammat), 27 (hûr u haşem), 33 (‘afs), 34 (dildedir), 47 (rubâ‘î 3–4).
+
+### Notlar
+
+- s. 304’teki kudsî hadîste baskı «اذا فطر» (bilinen lafız «اذا افطر»); baskıdaki gibi bırakıldı.
+- s. 310’daki "kesret-i eklde ‘âr ve melâmet vardır ki taleb-i şehvet ve ahz-ı fuzûlı terk ider" cümlesinde özne düşmüş görünüyor (âkil?); dokunulmadı.
+- Rubâ‘î ve musammat okuma sırası (satır satır sağ-sol) kâfiye düzeniyle doğrulandı; s. 307 nazmında satırın sağ-sol çifti "AAA + â" kâfiyesini veriyor.
+
+## 04 · Fenn-i Sâlis, Bâb 1, Fasıl 4 (s. 291–304)
+
+Dosya: `aktarim/04-fenn-i-salis-bab-1-fasl-4.md`
+
+### Kapsam
+
+- Başlangıç: s. 291, «فصل رابع» başlığı (“Ma‘rifet-i hakîkat-i dil ü cân …”). Aynı sayfada başlıktan önceki metin 03’e aittir, alınmadı.
+- Bitiş: s. 304, “Ey rûh-ı pâk cism ile dünyâda hôş mısın” manzûmesinin son beyti. Hemen ardından gelen «باب ثانى» (Bâb-ı Sânî, erkân-ı tarîk-ı ‘irfân) ve «فصل اول» alınmadı.
+- Sayfa numaraları matbudur. PDF sayfası = matbu sayfa + 15 (s. 291 = PDF 306, s. 304 = PDF 319).
+- İçerik: başlık cümlesi on dört nev‘ sayar. (1) kalbe dâir 48 âyet ve “mudga” hadîsi, “Göñül dir idi” gazeli; (2) nokta-i süveydâ ve sırr-ı istivâ; (3) kalbiñ vüs‘ati, “vesi‘anî kalbü ‘abdî”; (4) kalbiñ fazlı, “Lî hızânetün” kudsî sözü; (5) kalbin yedi tavrı (kalb, sadr, habbe, mühce, şegaf, fu’âd, süveydâ); (6) kalbin tasarrufu, sihir, göz değmesi, mu‘cize ve kerâmet, dört sütunlu murabba‘ (s. 296–297); (7) rü’yâ ve ilhâm; (8) elest meclisi, keşf, nübüvvet ve velâyet; (9) riyâzet, beş nehirli havz temsîli, Farsça rubâ‘î; (10) kalbin lezzeti; (11) kalbin kendi âlemine teveccühü; (12) rûhun âlemleri (‘amâ, melekût, misâl, mülk) — baskıda “Fasl-ı Sânî” başlıklı; (13) insanın üç sınıfı, yedi sanem; (14) rûhun tenezzül ve terakkîsi, dört rûh, rûh-ı izâfînin adları, behâ’im/sibâ‘/şeytân/melek/insân mertebeleri.
+- Kelime sayısı (dipnotlar ve sayfa imleri hâriç, Arap harfli ibâreler dâhil): yaklaşık 8.980; bunun yaklaşık 640’ı Arap harfli. 98 dipnot.
+
+### Yöntem notları
+
+- Her sayfa 220 dpi PNG’den dört yatay şerit hâlinde (1,4 kat) okundu; şerit sınırları üst üste bindirildi. Güç kelimeler 2,5–3 kat büyütülerek kırpıldı (oturum klasöründe `s04-` önekli kırpıntılar).
+- 01–02’deki düzen korundu: `###` Fasl-ı Râbi‘, `####` Nev‘-i Evvel … Râbi‘ ‘Aşer; baskıda satır içinde olan başlıklar ve nev‘ özetleri ayrı satıra alındı.
+- s. 291–292’deki 48 âyet tek paragrafta, baskıdaki `✱` ayraçlarıyla verildi; her âyete ayrı dipnot (meal ve sûre:âyet). Baskı harekesizdir; harekeler mushafa göre konuldu.
+- Türkçe nazımlar (iki sütunlu) sağ sütun birinci, sol sütun ikinci mısra‘ olarak alındı. s. 296–297’deki “Vasf idem göñül seni” murabba‘ı dört sütunludur: her satır sağdan sola bir bend sayıldı, ilk satır matla‘ bendidir.
+- Satır içindeki iki Türkçe beyit (s. 293 “Gel göñül şemsin gözet…”, s. 298 “Hikmet-i dünyâ ve mâ-fîhâ…”) blockquote’a alındı, dipnotda belirtildi.
+- Sayfa sınırına düşen nazımlarda (s. 294/295, 296/297, 299/300, 302/303) `[s. N]` imi blockquote içinde, beyitler arasına konuldu.
+- İmlâ baskıdaki gibi bırakıldı (`olmışdır`, `itmek`, `idüb`, `içün`, `degil`, `toğmak`, `tolmak`). Nûn-ı sağîr `ñ` ile gösterildi.
+- s. 301’deki başlık baskıda «فصل ثانى» (Fasl-ı Sânî) yazılıdır; giriş on dört nev‘ saydığı ve ardından “Nev‘-i Sâlis ‘Aşer” geldiği içün yerinde “Nev‘-i Sânî ‘Aşer” olmalıdır. Başlık baskıdaki gibi `#### Fasl-ı Sânî` bırakıldı, dipnotda belirtildi. Seslendirmede ve sadeleştirmede dikkat edilmeli.
+- Baskıda anlamca ters görünen iki yer düzeltilmeden bırakıldı, dipnotda belirtildi: s. 294 “sevdâ-yı mâsivâdan zâhir” (tâhir olmalı), s. 298 “‘âlem-i ervâh aslâ mestûr olmışdır” (olmamışdır olmalı).
+- Sayfa üstündeki süslü sayfa numaraları, sayfa sonu müşir kelimeler (ör. s. 292 “وتأثيرى”, s. 294 “قلب”, s. 296 “بيلمدى”, s. 302 “سويداى”), TBMM damgası aktarılmadı.
+
+### Belirsiz okumalar ([?])
+
+Metin içinde (15):
+
+| Sayfa | Yer | Not |
+|---|---|---|
+| 292 | “bir nokta-i ferdâ-safâdır [?]” | Baskıda «فردا صفادر»; “ferd-i safâ” da olabilir |
+| 293 | “ruh-ı dildârdan özge [?]” | Baskıda «اورکه»; “özge” okundu |
+| 293 | “irâ’eti [?] bu devletle sa‘âdeti beşâretdir” | Baskıda «ارائتى» |
+| 294 | “sevdâ-yı mâsivâdan zâhir [?]” | «ظاهر»; bağlamca “tâhir” |
+| 295 | “evvelki tavrında ki kalbe [?] ‘âkıl olub” | Baskıda «قلبه»; “kalbdir” beklenir (diğer tavırlarda “… ki sadrü’l-kalbdir” kalıbı) |
+| 297 | “Çekmege Hak [?] bendedir” | Baskıda «چكمكه حق بنده در»; mahlas “Hakkı” olabilir |
+| 297 | “mey-i ‘aşk ile havz [?]” | Baskıda «خوض»; “hôş” dizgi hatâsı olabilir |
+| 299 | “Ger sîne kitâbetest [?] tersî nebuved” | Farsça rubâ‘î son mısra‘ı; «كتابتست ترسی» |
+| 300 | “Kimiñ bu hâl ile âyânesin [?]” | Baskıda «آیانه» |
+| 300 | “Ve bu necilîn [?] dünyânıñ” | Baskıda «بو نجلين»; “bu nice-lîn” ya da “bu ecilden” olabilir |
+| 301 | “İntizâr odına yañılmış [?]” | Baskıda «اودینه یانلش»; “yanılmış/yanmış” |
+| 302 | “Tecrîd ü tecerrüdre [?] kâşâne-i dildir” | Baskıda «تجرید و تجردره» |
+| 302 | “göñülde ✱ kef [?] ola” | Baskıda «كف اوله»; ✱ işâreti baskıdadır |
+| 303 | “ol mahabbet bu ‘asyûte [?]” | Baskıda «بوعصيوته»; “bu ‘isyâna” anlamında |
+| 304 | “hüsn-i müdârâda [?]” | Baskıda «حسن مدا راه» |
+
+Dipnotlarda (19, kaynak veya okunuş kesin değil): s. 292 [^52] (“el-‘aklu nûrun fi’l-kalb”); s. 293 [^54] (özge), [^59] (vesi‘anî), [^60], [^61], [^62], [^63] (iki [?]: kaynak ve irâ’eti); s. 294 [^70] (zâhir), [^71] (“Lî hızânetün” kudsî sözü); s. 297 [^76] (Hakk/Hakkı), [^77] (havz); s. 299 [^85] (rubâ‘î); s. 300 [^87] (âyânesin); s. 301 [^89] (yañılmış), [^91] (tehallekû); s. 302 [^92] (tecerrüdre), [^95] (Yâ ‘Alî hadîsi); s. 304 [^98] (müdârâda).
+
+Toplam: 34 `[?]` (15 metin içi, 19 dipnot; dipnotlardaki 10’u metin içindeki bir yeri ikinci kez anar).
+
+### Bilinen sorunlar
+
+- Âyet numaraları ve hadîs kaynakları ezberden verildi; tek tek bir mushaf ve hadîs kaynağıyla karşılaştırılmadı. Özellikle tekrarlanan âyet kalıplarında (En‘âm 6:25/İsrâ 17:46, Tevbe 9:87/Münâfikûn 63:3) yer bir kez kontrol edilmeli.
+- 48 âyetin harekeleri mushafa göre konuldu; baskıdaki lafızdan sapma tesbit edilmedi, ama her biri kelime kelime karşılaştırılmadı.
+- s. 301 başlığı (“Fasl-ı Sânî”) bir sonraki bölümün (05) planını etkilemez, ama fasıl/nev‘ sayımı yapan bir betik varsa yanılabilir.
