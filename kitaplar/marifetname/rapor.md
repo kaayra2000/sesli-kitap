@@ -897,3 +897,74 @@ Dosya: `aktarim/07-fenn-i-salis-bab-2-fasl-3.md`. Kaynak: PDF s. 333–340 (matb
 - s. 319: Zeynü’l-‘Âbidîn şiirinin ikinci beyti baskıda «حتى يروا قبح…»; bilinen rivâyet «يرون أقبح…». Baskı korundu, dn. 17.
 - s. 322: "dinilmez aslâ" nazmının son beyti "el-‘ilmü noktatün keśśerehe’l-câhilûn" sözüne işâret eder.
 - s. 324: Hâfız beytinde baskı «دلبرا», Dîvân’da «جان من».
+
+## 07 · Sadeleştirme
+
+Dosya: `sadelestirilmis/07-fenn-i-salis-bab-2-fasl-3.md`. Sözlük: `sozluk.tsv` (22 yeni satır). Daha önce açıklanan terimler (uzlet, vâridât, ağyar, mâsiva, şuhut, mukarrep, üns, sâlik, ledün ilimleri, hevâ, arşın, kesret/vahdet …) yeniden açıklanmadı; *samt* sözlükteki gibi "susmak", *sükût* da "susmak" diye verildi.
+
+### Eşleşme
+
+- Aktarım 65 blok (8 sayfa imi, 7 başlık, 30 düz yazı, 18 manzum blok, 2 etiket). Sadeleştirme 83 blok: aynı 65 blok aynı sırada, artı 18 italik anlam paragrafı (her manzum bloğa bir; iki Arapça şiir, tek Farsça rubai, iki Hâfız beyti ve sekiz Farsça rubailik blok dahil). Blockquote içinde sayfa imi yok.
+- 15 Arapça «…» ibaresi ve 18 manzum blok aktarımdan betikle kopyalandı; 48 dipnot imi ve 34 ✱ korundu (`denetle.py`: tür, sıra, dipnot, ✱, Arapça birebir; "OK").
+- s. 319, 320, 321, 322, 323 ve 325 imleri cümle ortasında; sadeleştirmede de cümle aynı yerden bölündü.
+- Âyet ve kudsî hadis dipnotlarında yalnız kaynak kaldı, mealler metne “…” ile alındı. Farsça ve Arapça şiirlerin dipnottaki mealleri (17, 21, 26, 40, 46, 48) italik anlam paragrafına taşındı. Hiçbir dipnotta Arap harfi ile “…” birlikte yok (dn. 32 ve 39’daki Türkçe sözler italik yazıldı).
+- `metin/hazirla.py` ile 615 parça; okunuşta Arap harfi, sayfa imi, dipnot imi ya da [?] sızıntısı yok. Metinde ve dipnotlarda [?] yok.
+- Kelime: 6.981 (dipnotlar hariç 5.820). Aktarım: 6.700 (dipnotlar hariç 4.960).
+
+### Uygulanan kararlar ve yeni durumlar
+
+- **Dizgi hataları (04 kararı):** dört yer düzeltilmiş anlamıyla yazıldı, aktarım değişmedi:
+  - s. 320 "her sırrı söyle" → "her sırrı söyleme"; dn. 18 `[Sadeleştiren notu]` olarak yeniden yazıldı.
+  - s. 322 "hikmeti söyle ki seni tekzîb eylemesün" → "söyleme"; dn. 35 `[Sadeleştiren notu]`.
+  - s. 322 "hikmet incü ve cevâhirden küçükdür" → "büyüktür". Bu cümlede dipnot yok; yeni numara açmamak için hemen önceki cümlenin dn. 37’sine (aynı hadisin kaynağı) `[Sadeleştiren notu]` eklendi.
+  - s. 323 "hıdmetiñize giderse" → "hizmetinize girerse". Cümlede dipnot yok; aynı cümlenin sonundaki dn. 44’e `[Sadeleştiren notu]` eklendi.
+- **Cinaslar (06 kararı):** «خلق / حلق» üç yerde de iki anlam duyulacak biçimde verildi: "Söz vardır halk (insanlar) içinde söylenir, söz vardır halk (boğaz) içinde kalır"; ikinci Türkçe rubainin anlamında aynı yapı; Cüneyd sözünde "halk (boğaz) içinde olan sözü halk (insanlar) içinde söyledin". Üçüncü rubaideki tek «حلقه» "boğaza (halka)". Ayrıca hadisteki "cürm-i lisân … cürmi" "dilin cirmi (hacmi) … cürmü (suçu)", s. 321 "zeheb gibi mahzûn … mahzûn olmasun" "mahzun (hazinede saklı) … mahzun (hüzünlü)" diye korundu.
+- **Türkçe hadis dizisi (s. 318–319):** her hadis "Yine buyurmuştur: “…”" oldu. Sayfa imini aşan tek hadis ("kişi lisânın hıfz itmedikçe … lisândan / ehvec bir nesne olmaz") 02 kararı gereği dolaylı anlatıldı.
+- **Şahinin cevabı (s. 321–322)** sayfa imini aşıyor; tırnaksız, iki noktadan sonra birinci şahısla verildi (06’daki "ehlullah şöyle demiştir: …" kalıbı gibi). Bülbülün sorusu tek sayfada olduğu için “…” içinde.
+- **"seher" (s. 324):** "samt-ı lisân netîce-i seherdir … seherân olan kimesne" 06 kararına göre sehar (uykusuzluk) sayıldı: "Dilin susması uykusuzluğun sonucudur; çünkü uykusuz kalan kimsede …". Bülbül kıssasındaki "seher-gâh" tan vakti olarak "seher vakti" kaldı.
+- **"ilm-i hâl" (s. 325):** sözlükte fıkıh anlamıyla ("kişinin kendi durumu için gerekli dinî bilgi") kayıtlı. Burada tasavvufî anlamda ("‘ilm-i kulûb ancak ‘ilm-i hâldir") geçtiği için "hâl ilmi" yazıldı; sözlüğe ayrı satır açıldı.
+- **"mugtâb":** Yazar kelimeyi nesirde "gıybet eden" anlamında kullanır (s. 319, 322 "mugtâb ve nemmâm"); hadisteki "mü’min-i mugtâb" ise "gıybeti edilen mümin" diye verildi.
+- **Yeni kişiler ve tarihler:** Zeynelâbidîn (ö. 94/712), Cüneyd-i Bağdâdî (ö. 298/910), Ferîdüddin Attâr (ö. 618/1221); dipnotlarda Abdullah b. Mübârek (ö. 181/797), Hâfız-ı Şîrâzî (ö. 792/1390). Hz. Ebû Bekir, Hz. Ali ve Ebû Hüreyre önceki bölümlerde tarihlendiği için tekrarlanmadı. Lokmân’a tarih verilmedi (önceki bölümlerdeki gibi). "Ebü’l-Kâsım" "(Peygamber)" diye açıklandı; "Halîfetullah" "(Hz. Dâvûd)".
+- Etiketler: (Şi‘r) → (Şiir), (Nazm) → (Nazım), (Beyt) → (Beyit), (Rubâ‘î) → (Rubai), (Rubâ‘iyyât) → (Rubailer).
+- Sure adları: İsrâ, Furkân, Kasas, Hucurât, Necm, Kâf, Duhâ, Yûnus, Teğâbün.
+
+### Tahmini okumalar (sadeleştirme)
+
+Aktarımdaki okumalar ("07 · Tahmini okumalar") esas alındı. Sadeleştirmede anlamı kararlaştırılan zayıf yerler:
+
+| Sayfa | Aktarım | Sadeleştirmedeki karşılık |
+|---|---|---|
+| 318 | "mü’min-i mugtâba nusret iden mansûr-ı merâmdır" | "Gıybeti edilen mümine yardım eden ise muradında yardım görür" |
+| 318 | "rü’yâda ziyâde söylemek" | "Rüyayı anlatırken (görmediğini) fazladan söylemek" |
+| 319 | "Samt … kifâf-ı mü’net-i i‘tizârdır" | "özür dileme zahmetinden de kurtarır" |
+| 319 | "Kadr-i su’âl kıymet-i nevâlden zâ’iddir" | "İstemenin bedeli, alınan bağışın değerinden fazladır" |
+| 319 | "Güzel sözli ol ve göñli yüzli ol" | "gönlün yüzünle bir olsun" |
+| 320 | "Kimke sözi mülâyimdir anıñ mahabbeti lâzımdır" | "Sözü yumuşak olan mutlaka sevilir" |
+| 320 | nazım: "Fikrini fikr iden figâr oldı" | "Düşüncesini (açmayı) düşünen yaralandı" |
+| 320 | nazım: "Hakk olan halka âşikâr olmaz / Sayd idem dir iken şikâr olmaz" | "Hak olan (sır) halka açık olmaz; “Avlayayım.” diyene av olmaz" (mahlas okuması da mümkün) |
+| 320 | "samt-ı kalb i‘tirâz ve a‘râzı terk itmekdir" | "itirazı ve gelip geçici şeyleri bırakmaktır" |
+| 320 | "bilâ-nutk içinde müte‘ayyindir" | "sözsüzlük içinde belirgin olur" (anlam kapalı) |
+| 321 | "bir şâhîn şâhide" | "orada bulunan bir şahine" |
+| 322 | "Sükût ile Hakkı ki samt içre var" | "Ey Hakkı, sus; çünkü susmanın içinde …" |
+| 322 | "Netîce-i insânı helâk iden lisânıdır" | "Sonuçta insanı helak eden dilidir" |
+| 322 | "dime her bir habere tayy itme" | "söyleme; onu her habere dürüp katma" |
+| 322 | nazım: "İster çün güli her hâra dinilmez aslâ" | "gülü dilese de (bu vasıf) her dikene asla söylenmez" |
+| 322 | nazım son beyit: "Hakkı ol yârdır agyâr dinilmez aslâ" | "o nokta sevgilidir, ona asla ağyar denmez" |
+| 324 | nazım: "Hadîs-i ‘aşkı sermed sever bulursun mest nâ-revâ" | "aşk sözünü durmadan seven sarhoşu yakışıksız bulursun" |
+| 324 | "samtıñ makâmı vahyiñ envâ‘ıyla makâmıdır" | "vahyin türleriyle ilgili makamdır" |
+| 324 | "Sahrâ-yı cihânda kalmayub … dalub üzmişlerdir" | "(Bunlar) cihan sahrasında kalmayıp gönül ve can denizine dalmış, yüzmüşlerdir" (özne: aşinalar) |
+| 325 | "meğer ol muhibbe ki kendi zirâ‘ını fasd eyledikde anıñ zirâ‘ından kan revân olmışdır" | "meğer öyle bir sevene aça ki (sevgilisi) kendi kolundan kan aldırınca onun kolundan kan akmıştır" (Mecnun kıssasına işaret; ad eklenmedi) |
+
+### Karar günlüğü adayları
+
+1. **Dipnotsuz dizgi hatası:** Düzeltilen yerde aktarım dipnotu yoksa yeni numara açılmaz; aynı cümlenin ya da hemen önceki cümlenin dipnotunun sonuna `[Sadeleştiren notu] …` eklenir ve notta "sonraki cümlede / aynı cümlede" diye yer belirtilir. Dipnot numaraları aktarımla aynı kalır.
+2. **Aynı yazılan, farklı anlamlı kelime:** Bir terimin sözlükteki anlamı başka bir ilimden ise (ör. fıkıhtaki "ilm-i hâl" / tasavvuftaki "hâl ilmi"), sadeleştirmede iki biçim ayrı yazılır ve sözlüğe ayrı satır açılır.
+3. **Sayfa imini aşan söz:** 02 kararındaki "dolaylı anlatılır" birinci şahıs korunarak da uygulanabilir: tırnak açılmaz, söz iki noktadan sonra düz verilir (ör. şahinin cevabı). Hadis dizilerinde dolaylı anlatım "Yine buyurmuştur ki …" kalıbıyla yapılır.
+4. **Söz oyunu genişletmesi:** 06’daki cinas kararı yalnız aynı yazılan kelimeler için değil, ses benzerliğine dayalı ikililer (cirm/cürm, mahzun/mahzun) için de uygulanır.
+
+### Açık sorunlar
+
+- Manzume anlam paragrafları sadeleştirenin yorumudur; en belirsizleri yukarıdaki tablodaki beyitler, özellikle s. 322 "İster çün güli her hâra" ve s. 324 "sermed sever".
+- ‘Attâr rubailerinin anlamı aktaranın mealine dayanır; rapordaki 4. ve 5. rubai uyarısı geçerli.
+- Zeynelâbidîn’in ölüm yılı (94 h.; milâdî 712 ya da 713) ve öbür tarihler ezberden; DİA ile karşılaştırılmalı. Dipnotlardaki hadis atıfları (dn. 13, 14, 22, 24, 37) aktarımdaki gibi doğrulanmadı.
+- s. 325 kan aldırma sahnesi Leylâ ile Mecnûn kıssasına işaret ediyor olabilir; metin ad vermediği için sadeleştirmede ad eklenmedi.

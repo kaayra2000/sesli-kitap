@@ -114,3 +114,6 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-27 | Mârifetnâme 06 | Tan vakti anlamındaki "seher" korunur. Uyanıklık anlamındaki "sehar" (سهر) "uykusuzluk" ya da "gece uyanık kalmak" diye yazılır. |
 | 2026-11-27 | Mârifetnâme 06 | Manzumede öznesi belirsiz redifte özne anlam paragrafında ayraç içinde tamamlanır: "(âşık)". |
 | 2026-11-27 | Mârifetnâme 06 | Cinaslı sözde iki anlam da duyulacak biçimde verilir, gerekirse asıl kelime ayraçta kalır: "yok (lâ) … ancak Allah (illallah)". |
+| 2026-11-27 | Mârifetnâme 07 | Dizgi hatasının olduğu cümlede dipnot yoksa yeni numara açılmaz. Not, aynı ya da bir önceki cümlenin dipnotunun sonuna `[Sadeleştiren notu]` olarak eklenir ve yeri belirtilir. |
+| 2026-11-27 | Mârifetnâme 07 | Aynı terim başka bir ilimde başka anlamdaysa sözlüğe ayrı satır açılır: fıkıhta "ilm-i hâl", tasavvufta "hâl ilmi". |
+| 2026-11-27 | Mârifetnâme 07 | Sayfa imini aşan söz tırnaksız, iki noktadan sonra düz verilebilir. Hadis dizilerinde "Yine buyurmuştur ki …" kalıbı kullanılır. Cinas kuralı ses benzerliğine dayanan ikililere de uygulanır (cirm/cürm). |
