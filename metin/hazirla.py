@@ -119,6 +119,10 @@ def _bloklar(md: str):
             cumleler = []
             for b in beyitler:
                 misralar = [m.lstrip(">").strip() for m in b.split("\n") if m.lstrip(">").strip()]
+                for m in misralar:  # manzume içindeki sayfa imi ([s. 295]) okunmaz, sayfayı ilerletir
+                    if s := re.fullmatch(r"\[s\. (\d+)\]", m):
+                        sayfa = int(s.group(1))
+                misralar = [m for m in misralar if not re.fullmatch(r"\[s\. [^\]]+\]", m)]
                 if not misralar:
                     continue
                 misralar = [m if re.search(r"[.!?:;,»]$|\]$", m) else m + "," for m in misralar]

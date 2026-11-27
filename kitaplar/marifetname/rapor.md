@@ -519,3 +519,117 @@ Dosya: `aktarim/06-fenn-i-salis-bab-2-fasl-2.md`. Kaynak: PDF s. 327–333 (matb
 - s. 314 Hz. Ebû Bekir haberinde «صمان» "samân" (duvar çamurundaki saman) okundu.
 - s. 315 "-yı şeb" nazmının son beytinde mahlas yerine «حق» var ("Hakk ider"); 316’daki "Bu kesîf içre" nazmında mahlas yok.
 - s. 317 nazmında «عاشق سن ایله خوابی آز» "‘âşıksen eyle hâbı az" okundu; redifteki «آز» 05’teki gibi "az" yazıldı.
+
+## 04 · Sadeleştirme
+
+Dosya: `sadelestirilmis/04-fenn-i-salis-bab-1-fasl-4.md`. Sözlük: `sozluk.tsv` (32 yeni terim; "dirhem (ağırlık)" dahil).
+
+### Eşleşme
+
+- Aktarım 89 blok (14 sayfa imi, 15 başlık, 40 düz yazı paragrafı, 18 manzum blok, 6 etiket). Dört manzumede (s. 294/295, 296/297, 299/300, 302/303) sayfa imi blockquote’un içindedir (`> [s. N]`). Sadeleştirmede bu manzumeler imden ikiye bölündü: manzume parçası, anlamı, `[s. N]`, ikinci parça, anlamı. Böylece her parçanın anlamı kendi sayfasında; ayrıca `hazirla.py` blockquote içindeki imi mısra sanıp "s. 295" diye okumuyor. Bu normalleştirmeyle aktarım 97, sadeleştirme 119 blok (97 + 22 italik anlam paragrafı); türler, sayfa imleri, dipnot imleri ve ✱ (78) birebir eşleşiyor (betikle denetlendi).
+- 72 Arapça «…» ibaresi ve manzumeler aktarımdan betikle kopyalandı. s. 291/292’de sayfa imi 43. âyetin içinde; ibare aktarımdaki yerden bölündü, meal s. 292’de.
+- 98 dipnot korundu. Âyet dipnotlarında yalnız sûre:âyet kaldı, mealler metne alındı. Hiçbir dipnotta Arap harfi ile “…” birlikte yok.
+- `metin/hazirla.py` ile 925 parça; okunuşta Arap harfi, sayfa imi, dipnot imi ya da [?] sızıntısı yok.
+- Kelime: 11.611 (dipnotlar hariç 10.700). Aktarım: 10.788 (dipnotlar hariç 9.015).
+- [?] kuralı değişikliğinden (2026-11-27, kullanıcı kararı) sonra metinde ve dipnotlarda hiç [?] kalmadı. Kaynak [?]’ları "Kaynağı tespit edilemedi." oldu. Manzume satırlarında da tahmini okuma yazıldığı için 8 manzum blok şu an aktarımdan farklı; aktarım aşağıdaki listeye göre güncellenince yeniden eşleşir.
+
+### Dizgi hatası kararı uygulamaları
+
+- s. 294 "mâsivâdan zâhir" → "temiz" (tâhir); dn. 70 `[Sadeleştiren notu]`.
+- s. 298 "aslâ mestûr olmışdır" → "asla örtülü olmamıştır"; dn. 79 `[Sadeleştiren notu]`.
+- s. 301 başlık «فصل ثانى» → `#### On İkinci Tür`; dn. 90 `[Sadeleştiren notu]`.
+- Üç yerde de aktarımda zaten dipnot vardı; yeni numara açmak yerine aynı dipnot `[Sadeleştiren notu]` olarak yeniden yazıldı (dipnot numaraları aktarımla aynı kaldı).
+
+### Tahmini okumalar (sadeleştirme)
+
+| Sayfa | Baskıdaki biçim | Seçilen okuma |
+|---|---|---|
+| 292 | «فردا صفادر» (ferdâ-safâdır) | *ferd-i safâ*: "tek ve saf bir nokta" |
+| 293 | «اورکه» (manzume, 3. beyit) | *özge* (başka) |
+| 293 | «ارائتى» | *irâ’eti* (gösterişi): "sözünün gösterdiği" |
+| 295 | «قلبه» (evvelki tavrında ki kalbe) | *kalbdir* (öbür tavırların kalıbına göre) |
+| 297 | «چكمكه حق بنده در» | *Çekmege Hakkı bendedir* (mahlas) |
+| 297 | «خوض» (mey-i ‘aşk ile havz) | *hôş* (dizgi hatası sayıldı): "hoşça dolsa" |
+| 299 | «كتابتست» (Farsça rubai) | *kitâbetest* (kitaptır) |
+| 300 | «آیانه» | *âyâne* = âyîne: "aynasını" |
+| 300 | «بو نجلين» (necilîn) | *bu ecilden*: "Bu yüzden" |
+| 301 | «يانلش» | *yanmış*: "bekleyiş ateşinde yanmıştır" |
+| 302 | «تجرید و تجردره» | *Tecrîd ü tecerrüdle* |
+| 302 | «كف اوله» (gönülde ✱ kef ola) | *keff ola* (el çekip kendini tutsun): "gönülde kendini tutup durur" |
+| 303 | «بوعصيوته» (‘asyûte) | *bu ‘isyâna*: "o sevgi bu isyana dönüşmüştür" |
+| 304 | «حسن مدا راه» | *hüsn-i müdârâda*: "güzel geçinmekte" |
+
+Bu okumalar sayfa görüntüsüyle yeniden karşılaştırılmadı, bağlama göre seçildi. En zayıfları: s. 292 *ferd-i safâ*, s. 300 *âyâne* (kafiye -âne’yi korur, anlam "ayna" diye alındı), s. 300 *bu ecilden*, s. 302 *keff* ve *tecerrüdle*.
+
+### Karar günlüğü adayları
+
+1. **Blockquote içindeki sayfa imi:** Manzumenin ortasına düşen `> [s. N]` sadeleştirmede manzumeyi ikiye böler (parça, anlam, `[s. N]`, parça, anlam). Aktarımda da imin blockquote dışına alınması önerilir; şimdiki hâliyle `hazirla.py` aktarımı seslendirirken "[s. 295]" imini mısra olarak okur.
+2. **Dizgi hatası notunun yeri:** Düzeltilen yerde aktarımın dipnotu zaten varsa yeni numara açılmaz; o dipnot `[Sadeleştiren notu]` ile başlayıp hem baskıdaki biçimi hem sadeleştirmedeki karşılığı söyler. Dizgi hatası düzeltilen yerden [?] kaldırılır.
+3. **Esmâ ve unvan açıklaması:** Mukallibü’l-kulûb, sıdk gibi sözlükte olan terimler başlık altı tanıtımlarda da yeniden açıklanmaz.
+4. **İzafî ruhun adları listesi** (s. 303): Ad listeleri dinleyiciye anlaşılsın diye Türkçe karşılıklarıyla verildi (Küllî Akıl, İlk Akıl, En Yüce Kalem …); sözlükte karşılığı olanlar sözlükteki biçimle.
+5. **Dirhem iki anlamlı:** Para olarak "gümüş sikke" (01), ağırlık olarak "yaklaşık 3,2 gram". İlk ağırlık kullanımında gram karşılığı verildi (s. 298, yüz dirhem ≈ 320 gram).
+
+### Açık sorunlar
+
+- Türkçe manzumelerin anlam paragrafları sadeleştirenin yorumudur. Belirsiz kalan beyitler: s. 295 "Taşradan havf u recâ ile Hakkı zîrâ" ("korku ve ümit dışarıdadır" diye alındı), s. 297 "Kim temâşâ ki dilber bu sû peydâ görinür" ("seyret ki"), s. 301 "Ki ko zerreden ol şemse nihân râh olmış" ("zerreden o güneşe gizli bir yol vardır"), s. 303 "Ko kibri ol ko ednâdan ednâ".
+- s. 294 "anıñla tefâhur itmekle nice ‘ârife tekâzâ itmişdir" "nice arifi (bunu dile getirmeye) zorlamıştır" diye ayraçlı tamamlamayla verildi.
+- Yeni kişiler: Hallâc-ı Mansûr (ö. 309/922) manzume anlamında, Bâyezîd-i Bistâmî (ö. 234/848) dn. 87’de; tarihler ezberden, DİA ile karşılaştırılmalı.
+- s. 300 "Sübhânî mâ azame şânî" sözünün Bâyezîd’e nispeti dipnota sadeleştiren eki olarak girdi.
+
+## 05 · Sadeleştirme
+
+Dosya: `sadelestirilmis/05-fenn-i-salis-bab-2-fasl-1.md`. Sözlük: `sozluk.tsv` (13 yeni terim). 04’ten sonra yazıldı; 04’te açıklanan terimler (teslim, sekinet, mücahede, münacat …) burada yeniden açıklanmadı.
+
+### Eşleşme
+
+- Aktarım 79 blok (9 sayfa imi, 10 başlık, 30 düz yazı, 17 manzum blok, 13 etiket; "✱ Rubâ‘iyyât ✱" iki kez "✱ Rubailer ✱"). Sadeleştirme 96 blok: aynı 79 blok aynı sırada, artı 17 italik anlam paragrafı. Musammat bentleri ve rubailer için de birer anlam paragrafı yazıldı; s. 310/311 ve 311/312’deki rubai blokları sayfa imiyle bölündüğü için her parçanın anlamı kendi sayfasında.
+- 16 Arapça «…» ibaresi, 47 dipnot imi, 82 ✱ korundu (betikle denetlendi). Şeyh kıssasındaki dipnotsuz altı Arapça söz (s. 306) ardından “…” mealleriyle verildi.
+- s. 304/305’te sayfa imini aşan hadis (dn. 11) Karar günlüğüne göre tırnaksız, dolaylı anlatıldı.
+- `metin/hazirla.py` ile 685 parça; okunuşta Arap harfi, sayfa imi, dipnot imi ya da [?] sızıntısı yok.
+- Kelime: 7.608 (dipnotlar hariç 6.742). Aktarım: 6.939 (dipnotlar hariç 5.595).
+- [?] kalmadı. Manzum satırlardaki tahmini okumalar yüzünden 6 manzum blok, «كَلَّا» ve «عَفْصٌ» ibarelerinden [?] düştüğü için de 2 Arapça ibare şu an aktarımdan farklı; aktarım güncellenince eşleşir.
+
+### İstenen notlar
+
+- s. 307, Araf 7:179: Arapça aktarımdaki gibi («…الخاسرون») bırakıldı; meal basılı lafza göre "İşte onlar zarara uğrayanlardır." Dn. 25’te Mushaf’taki «هم الغافلون» ve mealin baskıya göre verildiği yazıldı.
+- s. 311 "mûris-i ma‘rifet-i şeytândır": İçerik meselesi sayıldı, değiştirilmedi. Lafza bağlı olarak "şeytanı tanımayı miras bırakır" yazıldı. Bağlam "ma‘rifet-i Sübhân / Rahmân" bekletiyor; görüntüyle bakılmalı, karar kullanıcıda.
+
+### Tahmini okumalar (sadeleştirme)
+
+| Sayfa | Baskıdaki biçim | Seçilen okuma |
+|---|---|---|
+| 304 | «یا برسوز آرسه» | *yâ bir söz atarsa* |
+| 305 | «فترتدر» (cû‘-ı râğıbîn) | *fikretdir*: "tefekkürdür" (rapordaki öneri) |
+| 306 | «اکلا» | «كَلَّا» (hayır) |
+| 306 | «ارکك» (manzume 1. beyit) | *erkek* |
+| 306 | «یوسون» (manzume 3. beyit) | *yutsun* |
+| 307 | «ونفس شتری کیکدن» | *şatrı* (yarısı): "yarısı kepek olan hamurla" |
+| 307 | «حفظ نفس» | *hazz-ı nefs*: "nefsin hazzı" |
+| 307 | «درد اوله» (musammat 1. bent) | *dürd ola* (tortu olup) |
+| 307 | «سیرایت» (6. bent) | *seyr it* (seyret) |
+| 307 | «سیرانکهکدر» (9. bent) | *seyrângehiñdir* (gezinti yerindir) |
+| 308 | «انسانکه» | *insân ekldir ki*: "kaynağı yemektir" |
+| 308 | «انهار» (dimâğ enhâr-ı evhâm) | *enbâr* (ambar) |
+| 308 | «چوحوروحشم» | *çü hûr u haşem*: "huriler ve maiyet gibi" |
+| 309 | «عفص» | *‘afs* (mazı) |
+| 309 | «دلدره» | *dildedir* |
+| 309/310 | «آتش» / «لاشهٔ لاشی» | *at leşi*: "at leşi gibi" |
+| 310 | «اکامل» | *kâmil* |
+| 311 | «حقی ازیی ایله بطنه حاقی میزان» | *Hakkı azığı ile batna hakkı mîzân*: "karnın hakkı azığıyla, ölçüyledir" |
+| 311 | «آزاوبی» | *âz uyı* (az uyu) |
+
+En zayıfları: s. 307 *şatrı*, s. 309 *‘afs*, s. 311 üçüncü rubai. Sayfa görüntüleriyle yeniden karşılaştırılmadı.
+
+### Karar günlüğü adayları
+
+1. **Dipnotsuz Arapça söz:** Kıssa içinde dipnotu olmayan kısa Arapça sözlerin meali, dipnottaki aktaran mealinden alınıp ibarenin hemen ardına “…” ile yazılır; dipnotta yalnız kaynak ve okunuş notu kalır (s. 306).
+2. **"✱ Rubâ‘iyyât ✱" ara başlığı** "✱ Rubailer ✱" olur; etiket (Rubâ‘î) → (Rubai).
+3. **Eksik özneli cümle:** Baskıda öznesi düşmüş görünen cümlede (s. 310 "‘âr ve melâmet vardır ki … terk ider") özne ayraç içinde tamamlanır: "(akıllı kimse bu yüzden)". Raporda belirtilir.
+4. **Sâlik / muhakkik / mübtedi:** "sâlik" ve "muhakkik" terim olarak korunup ilk geçtikleri yerde açıklandı; "mübtedi" terim sayılmadı, "yola yeni başlayan" diye çevrildi.
+
+### Açık sorunlar
+
+- Kişiler: Ebû Hüreyre (ö. 58/678) ve Hâlid b. Velîd (ö. 21/642) ilk geçtikleri yerde tarihli. Sâib-i Tebrîzî (dn. 44) tarihsiz bırakıldı; Sadî-i Şîrâzî (ö. 691/1292) dn. 29’da. Tarihler ezberden, DİA ile karşılaştırılmalı.
+- "batman" için kesin karşılık verilmedi ("birkaç kiloluk eski bir ağırlık ölçüsü"), çünkü döneme ve yöreye göre değişir.
+- s. 305 "teşrîh-i eşbâh" "bedenleri inceltir", s. 308 "ilim ve hikmetle dâd" "ilim ve hikmetle nasiplenir" diye verildi; kontrol edilmeli.
+- Manzume ve rubai anlam paragrafları sadeleştirenin yorumudur.

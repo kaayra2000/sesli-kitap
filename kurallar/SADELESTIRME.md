@@ -105,3 +105,9 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-27 | Mârifetnâme 03 | "Hevâ" nefse değil başka bir şeye bağlıysa terim sayılmaz: "aşkın hevâsı" → "aşkın arzusu". |
 | 2026-11-27 | Mârifetnâme 04 | Bağlamın açıkça gösterdiği dizgi hatası (ör. "zâhir" yerine "tâhir", "olmışdır" yerine "olmamışdır", nev‘ yerine yanlışlıkla "Fasl" başlığı) sadeleştirmede düzeltilmiş anlamıyla yazılır ve `[Sadeleştiren notu]` dipnotunda belirtilir. Aktarımda baskıdaki biçim kalır. Fıkhî ya da içerikle ilgili şüpheli yerler bu kurala girmez, değiştirilmez. |
 | 2026-11-27 | — | Kullanıcı kararı: `[?]` metinde kalmaz. Okunamayan yer bağlama en uygun okumayla doldurulur, raporun "Tahmini okumalar" listesine yazılır. Önceki "[?] aynen bırakılır" kararlarının yerine geçer. Seste `[?]` soru tonlamasına yol açıyordu. |
+| 2026-11-27 | Mârifetnâme 04 | Dizgi hatası için aktarımda zaten bir dipnot varsa sadeleştirmede yeni numara açılmaz, o dipnot `[Sadeleştiren notu]` olarak yeniden yazılır. |
+| 2026-11-27 | Mârifetnâme 04 | Sözlükte açıklanmış terim, tür başlığının altındaki tanıtım cümlesinde yeniden açıklanmaz. Ad listeleri (ör. izafî ruhun adları) Türkçe karşılıklarıyla verilir. |
+| 2026-11-27 | Mârifetnâme 04 | Dirhem ağırlık olarak geçtiğinde ilk yerde gram karşılığı verilir (1 dirhem ≈ 3,2 g). |
+| 2026-11-27 | Mârifetnâme 05 | Dipnotu olmayan kısa Arapça sözün meali ibarenin hemen ardına “…” içinde yazılır. |
+| 2026-11-27 | Mârifetnâme 05 | "✱ Rubâ‘iyyât ✱" → "✱ Rubailer ✱", "(Rubâ‘î)" → "(Rubai)". |
+| 2026-11-27 | Mârifetnâme 05 | Baskıda öznesi düşmüş cümlede özne ayraç içinde tamamlanır. "Sâlik" ve "muhakkik" terim olarak korunur, "mübtedi" "yola yeni başlayan" diye çevrilir. |
