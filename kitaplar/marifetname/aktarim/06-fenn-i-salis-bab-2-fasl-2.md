@@ -12,7 +12,7 @@ Erkân-ı sitte-i râh-ı ‘irfânıñ ikinci rüknü olan taklîl-i menâmıñ
 
 Taklîl-i menâmı âyât-ı Kur’âniyye ve ehâdîs-i kudsiyye ile bildirir.
 
-(Ey ‘azîz) Ma‘lûm olsun ki Hakk Te‘âlâ ‘inâyetiyle ‘ibâdını gafletden huzûruna da‘vet idüb fezâ’il-i ihyâ-yı leyli cümleye tuyurmuşdur. Nitekim kelâm-ı kadîminde buyurmuşdur: «اَلصَّابِر۪ينَ وَالصَّادِق۪ينَ وَالْقَانِت۪ينَ وَالْمُنْفِق۪ينَ وَالْمُسْتَغْفِر۪ينَ بِالْاَسْحَارِ»[^1] ✱ «وَالَّذ۪ينَ يَب۪يتُونَ لِرَبِّهِمْ سُجَّدًا وَقِيَامًا»[^2] ✱ «يَٓا اَيُّهَا الْمُزَّمِّلُ قُمِ الَّيْلَ اِلَّا قَل۪يلًا نِصْفَهُٓ اَوِ انْقُصْ مِنْهُ قَل۪يلًا اَوْ زِدْ عَلَيْهِ وَرَتِّلِ الْقُرْاٰنَ تَرْت۪يلًا»[^3] «اِنَّ رَبَّكَ يَعْلَمُ اَنَّكَ تَقُومُ اَدْنٰى مِنْ ثُلُثَيِ الَّيْلِ وَنِصْفَهُ وَثُلُثَهُ»[^4] ✱ «وَمِنَ الَّيْلِ فَاسْجُدْ لَهُ وَسَبِّحْهُ لَيْلًا طَو۪يلًا»[^5] ✱ «وَمِنَ الَّيْلِ فَتَهَجَّدْ بِه۪ نَافِلَةً لَكَ عَسٰٓى اَنْ يَبْعَثَكَ رَبُّكَ مَقَامًا مَحْمُودًا»[^6] ✱ Ve nitekim Zebûr’unda buyurmuşdur: ✱ «تَجِدُن۪ي ف۪ي سَوَادِ الَّيْلِ عَبْد۪ي ✱ قَر۪يبًا مِنْكَ فَاطْلُبْن۪ي تَجِدْن۪ي»[^7] ✱ Ve hadîs-i kudsîde buyurmuşdur: ✱ «يَا ابْنَ اٰدَمَ كَيْفَ تَطْمَعُ فِي الْجَلَاءِ [?] الْقَلْبِ مَعَ كَثْرَةِ النَّوْمِ فَاَخِّرْ نَوْمَكَ اِلَى الْقَبْرِ وَاطْلُبْ نُورَ قَلْبِكَ ف۪ي قِلَّةِ النَّوْمِ وَسَهَرِ الَّيْلِ كَذَبَ مَنِ ادَّعٰى مَحَبَّت۪ي وَاِذَا جَنَّهُ الَّيْلُ نَامَ عَنّ۪ي»[^8] Ve bir kâmil demişdir ki:
+(Ey ‘azîz) Ma‘lûm olsun ki Hakk Te‘âlâ ‘inâyetiyle ‘ibâdını gafletden huzûruna da‘vet idüb fezâ’il-i ihyâ-yı leyli cümleye tuyurmuşdur. Nitekim kelâm-ı kadîminde buyurmuşdur: «اَلصَّابِر۪ينَ وَالصَّادِق۪ينَ وَالْقَانِت۪ينَ وَالْمُنْفِق۪ينَ وَالْمُسْتَغْفِر۪ينَ بِالْاَسْحَارِ»[^1] ✱ «وَالَّذ۪ينَ يَب۪يتُونَ لِرَبِّهِمْ سُجَّدًا وَقِيَامًا»[^2] ✱ «يَٓا اَيُّهَا الْمُزَّمِّلُ قُمِ الَّيْلَ اِلَّا قَل۪يلًا نِصْفَهُٓ اَوِ انْقُصْ مِنْهُ قَل۪يلًا اَوْ زِدْ عَلَيْهِ وَرَتِّلِ الْقُرْاٰنَ تَرْت۪يلًا»[^3] «اِنَّ رَبَّكَ يَعْلَمُ اَنَّكَ تَقُومُ اَدْنٰى مِنْ ثُلُثَيِ الَّيْلِ وَنِصْفَهُ وَثُلُثَهُ»[^4] ✱ «وَمِنَ الَّيْلِ فَاسْجُدْ لَهُ وَسَبِّحْهُ لَيْلًا طَو۪يلًا»[^5] ✱ «وَمِنَ الَّيْلِ فَتَهَجَّدْ بِه۪ نَافِلَةً لَكَ عَسٰٓى اَنْ يَبْعَثَكَ رَبُّكَ مَقَامًا مَحْمُودًا»[^6] ✱ Ve nitekim Zebûr’unda buyurmuşdur: ✱ «تَجِدُن۪ي ف۪ي سَوَادِ الَّيْلِ عَبْد۪ي ✱ قَر۪يبًا مِنْكَ فَاطْلُبْن۪ي تَجِدْن۪ي»[^7] ✱ Ve hadîs-i kudsîde buyurmuşdur: ✱ «يَا ابْنَ اٰدَمَ كَيْفَ تَطْمَعُ فِي الْجَلَاءِ الْقَلْبِ مَعَ كَثْرَةِ النَّوْمِ فَاَخِّرْ نَوْمَكَ اِلَى الْقَبْرِ وَاطْلُبْ نُورَ قَلْبِكَ ف۪ي قِلَّةِ النَّوْمِ وَسَهَرِ الَّيْلِ كَذَبَ مَنِ ادَّعٰى مَحَبَّت۪ي وَاِذَا جَنَّهُ الَّيْلُ نَامَ عَنّ۪ي»[^8] Ve bir kâmil demişdir ki:
 
 (Beyt)
 
@@ -39,7 +39,7 @@ Taklîl-i menâmı âyât-ı Kur’âniyye ve ehâdîs-i kudsiyye ile bildirir.
 > Gice uyumaz baña eyler senâ
 >
 > ‘Âşık olur tâlib-i halvet ki tâ
-> Göstere dildâra dilinden [?] rızâ
+> Göstere dildâra dilinden rızâ
 >
 > Hâb-ı girân teşneye mümkin değil
 > Uyusa düşde görür ol ‘ayn-ı mâ
@@ -90,7 +90,7 @@ Ve buyurmuşdur ki sabâh açıldığı vakt uyumak rızkı mâni‘dir ve gamla
 > Zalâm ise dahi nûra gele ba‘de nısfi’l-leyl
 >
 > Burâk-ı ehl-i dil olmış çü rûşenâyî-i mâh
-> ‘Urûc-ı rûhî zarûra [?] gele ba‘de nısfi’l-leyl
+> ‘Urûc-ı rûhî zarûra gele ba‘de nısfi’l-leyl
 >
 > Bu hâk-i pâk-i zemîn pür-şarâb-ı vahdetdir
 > Anı şarâb-ı tahûra gele ba‘de nısfi’l-leyl
@@ -107,7 +107,7 @@ Taklîl-i menâmı ve gice kıyâmı ve nevm-i kirâmı ve gaflet-i ‘avâmı b
 > «دَعِ النَّوْمَ اِنَّ النَّوْمَ لِلْفَضْلِ هَادِمٌ ✱ وَلَا تَرْضَ مِنْ دُنْيَاكَ بِالْاَكْلِ وَالنَّوْمِ
 > فَكُنْ سَاهِرًا بِالَّيْلِ وَاطْلُبْ مَعَالِيًا ✱ اِذَا كُنْتَ تَرْجُو اَنْ تَسُودَ عَلَى الْقَوْمِ»[^21]
 
-✱ Ammâ nevm-i ‘ârif müşâhede ve murâkabedir ve ervâh ile mu‘ârefe ve mülâtafadır ve ahbâb ile mu‘ânaka ve muvâsaladır. Seher ‘âşıklara ni‘metdir ve nevmü’l-beden [?] istirâhatdır. Seher iki hayâtıñ biridir. Cû‘ ve seher ile göñül diridir. Seher-i ‘uyûn muhh-ı ‘ibâdetdir ve intibâh-ı seher ‘alâmet-i sa‘âdetdir. Zikrullâh ile seher-i leyl ‘ibâdet-i ebrâr ve ‘âdet-i ahrârdır. Zikrullâh ile seher-i ‘uyûn san‘at-ı müştâk ve devlet-i ‘uşşâkdır. Zikrullâh ile seher-i leyl şi‘âr-ı evliyâ ve kâr-ı asfiyâdır. Zikrullâh ile seher-i ‘uyûn nüzhet-i evliyâ ve su‘adâdır. Zikrullâh ile seher-i leyl ganîmet-i ricâl ve fursat-ı ebdâldır. Zikrullâh ile seher-i ‘uyûn rebî‘-i havâss ve ravza-i mukarrebîndir. Zikrullâh ile seher-i leyl tuhfe-i ‘ârifîn ve defîne-i kâmilîndir.
+✱ Ammâ nevm-i ‘ârif müşâhede ve murâkabedir ve ervâh ile mu‘ârefe ve mülâtafadır ve ahbâb ile mu‘ânaka ve muvâsaladır. Seher ‘âşıklara ni‘metdir ve nevmü’l-beden istirâhatdır. Seher iki hayâtıñ biridir. Cû‘ ve seher ile göñül diridir. Seher-i ‘uyûn muhh-ı ‘ibâdetdir ve intibâh-ı seher ‘alâmet-i sa‘âdetdir. Zikrullâh ile seher-i leyl ‘ibâdet-i ebrâr ve ‘âdet-i ahrârdır. Zikrullâh ile seher-i ‘uyûn san‘at-ı müştâk ve devlet-i ‘uşşâkdır. Zikrullâh ile seher-i leyl şi‘âr-ı evliyâ ve kâr-ı asfiyâdır. Zikrullâh ile seher-i ‘uyûn nüzhet-i evliyâ ve su‘adâdır. Zikrullâh ile seher-i leyl ganîmet-i ricâl ve fursat-ı ebdâldır. Zikrullâh ile seher-i ‘uyûn rebî‘-i havâss ve ravza-i mukarrebîndir. Zikrullâh ile seher-i leyl tuhfe-i ‘ârifîn ve defîne-i kâmilîndir.
 
 (Nazm)
 
@@ -136,7 +136,7 @@ Taklîl-i menâmı ve gice kıyâmı ve nevm-i kirâmı ve gaflet-i ‘avâmı b
 
 Mûcib-i taklîl-i menâm olan kıyâm-ı leyliñ fevâ’id ve fezâ’ilin bildirir.
 
-(Ey ‘azîz) Ma‘lûm olsun ki ehlullâh demişlerdir ki sermâye-i sa‘âdetimiz gicelerdir ve nâsdan ‘uzletimiz ve dost ile halvetimiz gicedir. Gice ‘âşıklarıñ derddâşıdır, gice ‘ârifleriñ sırrdâşıdır. Gice ‘âşıklarıñ derdi artar, gice ‘ârifleriñ başı dartar [?]. Gice rûz-ı fîrûz-ı kâmildir ve semâ-yı kalbine şemsi nâzildir. Her gice ol güneş tulû‘ ider, lâkin halkı bahr-ı nevm alur gider. Her seherde her murâd
+(Ey ‘azîz) Ma‘lûm olsun ki ehlullâh demişlerdir ki sermâye-i sa‘âdetimiz gicelerdir ve nâsdan ‘uzletimiz ve dost ile halvetimiz gicedir. Gice ‘âşıklarıñ derddâşıdır, gice ‘ârifleriñ sırrdâşıdır. Gice ‘âşıklarıñ derdi artar, gice ‘ârifleriñ başı dartar. Gice rûz-ı fîrûz-ı kâmildir ve semâ-yı kalbine şemsi nâzildir. Her gice ol güneş tulû‘ ider, lâkin halkı bahr-ı nevm alur gider. Her seherde her murâd
 
 [s. 314]
 
@@ -154,7 +154,7 @@ hâsıldır. Ol vakt a‘mâ gibi uyumak müşkildir. Seher vakti mübârek sâ�
 > Anı seyr eyler o kim hüşyâr olur vakt-i seher
 >
 > Murde-dil hâb içre gâfil devlet-i bîdârdan
-> ‘Ârif-i âgâha devlet yâr [?] olur vakt-i seher
+> ‘Ârif-i âgâha devlet yâr olur vakt-i seher
 >
 > Pertev-i hurşîd-i vech-i dilbere müştâk olan
 > Ehl-i hâliñ göñli pür-envâr olur vakt-i seher
@@ -173,7 +173,7 @@ hâsıldır. Ol vakt a‘mâ gibi uyumak müşkildir. Seher vakti mübârek sâ�
 
 #### Nev‘-i Hâmis
 
-Taklîl-i menâm haslet-i [?] kirâm olduğın bildirir.
+Taklîl-i menâm haslet-i kirâm olduğın bildirir.
 
 (Ey ‘azîz) Ma‘lûm olsun ki efdal-i evliyâullâh Sıddîk-ı Ekber radıyallâhu te‘âlâ ‘anh hazretleri her gice ba‘de’s-salâti’l-‘işâ bir iki sâ‘at kadar ehl-i beytiyle sohbet iderdi. Ba‘dehu ehl ve evlâdı yatdıkda kendi kalkub tecdîd-i vuzû’ iderdi ve iki rek‘at nâfile kılub seccâde üzerinde câlis olub huşû‘ ve hudû‘ ile murâkabeye giderdi. Tâ sabâha bir sâ‘at mikdârı kaldıkda mübârek başın kaldırub bir kerre âh iderdi ve ol te’evvüh ile fem-i şerîfinden bir nûr zâhir olurdı ki anıñ şu‘â‘ından beyt-i şerîfi ziyâ bulub dîvârı tîninde olan samân âşikâre ve nümâyân olurdı. Ve andan kalkub on rek‘at teheccüd ve üç rek‘at vitr namâzı kılub ehl ve evlâdın îkâz iderdi. Ba‘dehu sabâh oldukda sünnet-i subhı kılub andan câmi‘-i şerîfe giderdi.[^25] ✱ Bir kimesne bir câriye almış ve ol gice ba‘de’l-‘işâ tenhâ kalmış ve aña: Câme-i hâbı döşe kim nâ’im olayım, didikde ol câriye demişdir ki: Ey mevlâm, seniñ içün bir mevlâ var mıdır? Ağası demişdir ki: Belî, ben dahi bir ‘abdim ki benim içün bir mevlâ vardır. Pes câriyesi su’âl itmişdir ki: Ol mevlâ nâ’im olur mı? Ağası cevâb itmişdir ki: Benim mevlâm bir Hayy u Kayyûmdur, ebedâ nâ’im olmaz. Pes ol câriye ağasına ‘itâb ile demişdir ki: Yâ sen hîç hayâ itmez misin ki hergiz nâ’im olmayan Mevlâ huzûrunda yatub uyursın? Pes bu nükte anıñ kalbine te’sîr idüb kıyâm-ı leyli kendüye ‘âdet itmişdir ve ol kimesne ‘ömri oldukca firâş ve lihâfa girmeyüb taklîl-i menâm ile evliyâ mertebesine yetmişdir.[^26] Zîrâ ki evliyâ yoluna giden üç hasletle gitmişdir: Evvelâ bir nesne yimez illâ ki fâka ‘indinde ekl-i kalîl eyler. Sâniyen uyumaz illâ ki galebe ‘indinde nevm-i hafîf eyler. Sâlisen tekellüm itmez illâ ki zarûret ‘indinde muhtasar söyler. Kimiñ ki nevmi kesîrdir, anıñ cânı ‘alîl ve emri ‘asîrdir.
 
@@ -200,7 +200,7 @@ Taklîl-i menâm haslet-i [?] kirâm olduğın bildirir.
 > Dil beyt-i Hudâdır anı pâk eyle sivâdan
 > Kasrına nüzûl eyler o Sultân gicelerde
 >
-> Az yi [?] az uyı hayrete var fânî ol andan
+> Az yi az uyı hayrete var fânî ol andan
 > Bul cân bekâ ol aña mihmân gicelerde
 >
 > Allâh içün ol halka mukârin gice gündüz
@@ -236,7 +236,7 @@ gaflet mezmûmdur ve kesreti kesel ve şûmdur. Zîrâ ki nevm-i ‘avâm ta‘t
 > İşitdiñ mi ki şeb kâm alur kamu ‘uşşâk
 > Bu ‘aşk pâdişeh-i kâmkâr içün uyuma
 >
-> Hezâr kerre didim Hakka [?] gel gicelerde
+> Hezâr kerre didim Hakkı’ya gel gicelerde
 > Yoğ olduğıñ bilesin tâ o Var içün uyuma[^30]
 
 #### Nev‘-i Sâbi‘
@@ -259,13 +259,13 @@ Taklîl-i menâm cilâ-yı kulûb-ı enâm ve kuhl-i basîret-i kirâm olduğın
 > Çok dil pür-nûr ve nice cân-ı pâk
 > Oldı kamu bende-i Mevlâ-yı şeb
 >
-> Dek [?] siyehdir göze şeb zulmeti
+> Dek siyehdir göze şeb zulmeti
 > Dadmasa dil lezzet-i halvâ-yı şeb
 >
 > Gündüz olur gerçi bu sevdâ-yı kâr
 > Başka safâdır dile sevdâ-yı şeb
 >
-> Bağladı şeb desti cevher kârdan [?]
+> Bağladı şeb desti cevher-kârdan
 > Hakk ider subha dek ihyâ-yı şeb[^32]
 
 #### Nev‘-i Sâmin
@@ -281,7 +281,7 @@ bulmışdır. Evvelki fâ’ide budur ki bu ‘âlem-i şekâda olan gurbet zahm
 > Ser-geşte dilâ be-dûst ez cân râhîst
 > Ey gum-şode âşikâr u pinhân râhîst
 > Ger şeş cihetet beste şeved bâk medâr
-> Ger [?] ka‘r-ı nihâdet sûy-ı cânân râhîst[^33]
+> K’ez ka‘r-ı nihâdet sûy-ı cânân râhîst[^33]
 
 Bir kâmil züvvârı kesretinden melûl oldukda: Ey yârân, izniñizle bir sâ‘at kadar vahdete varayım, dirmiş ve yatub hırkasın başına çeküb uyurmış. Zîrâ ki basîret gözi güşâde olan kâmiliñ cismi hücû‘ ider ve rûhı kendi ‘âlemine rücû‘ ider ve huzûr-ı hazretde huşû‘ ve hudû‘ ider ve mebde’ ve me‘âdı olan ‘akl-ı külle gider.
 
@@ -339,7 +339,7 @@ Hakîkat-i menâm ne olduğın ve nüfûs-ı ‘avâm berzahda kaldığın ve er
 
 [s. 317]
 
-nefsiyle mukayyed ise kendi kemâli kesbine teveccühden mu‘attal olur ve ‘âlem-i berzahda habs olub hayâlât-ı ru’yâ ve adgâs-ı ahlâm ile kalur. Ve eğer nâ’imiñ göñli mücerred ise berzahdan geçüb ‘âlemine içeri gidüb huzûr idüb aslâ nâ’im olmaz. Ve nevm-i beden böyle kalbi hergiz mu‘attal kılmaz ve bu teveccüh ve terakkîden bir nefes hâlî kalmaz. Pes kavm [?] ta‘tîl ve gafletdir ve kavm-i [?] rûhânî huzûr-ı hazretdir. Nevm-i câhil mevt-i hâzırdır ve nevm-i ‘ârif güşâd-ı hâtırdır. Nevm-i ‘avâm idbâr ve garâmdır ve nevm-i havâss teveccüh-i tâmmdır ve nevm-i nâkıs tazyî‘-i evkâtdır ve nevm-i kâmil lübb-i tâ‘atdır. Bir kâmil ehl-i dil bir tekyede on gün müsâfir kalub her gün on âdem ta‘âmın yiyüb tûl-ı leyl uyuyub tûl-ı nehâr söyler imiş. Pes mürîdân anıñ bu vefret-i eklinden ve sıklet-i nevminden ve kesret-i kelâmından nefret idüb tekye şeyhine şekvâ eyledikde ol şeyh ol müsâfire demişdir ki: Erkân-ı tarîk-ı evliyâ-yı kirâm taklîl-i ta‘âm ve taklîl-i menâm ve taklîl-i kelâm iken sen misl-i ‘avâm kesret-i ta‘âm ve kesret-i menâm ve kesret-i kelâm ile mübtelâ olub kalmışsın ve bu tekye ehline gâv-ı bâr-girân [?] olmışsın. Pes ol kâmil müsâfir bu sözden vâfir ta‘accüb idüb ol şeyhiñ cevâbın virüb demişdir ki: Eğer bizden teşekkî iden mürîdân ehl-i ‘irfân olsalardı bedel-i teşekkî bizden teşekkür iderlerdi. Zîrâ ki biz ta‘âm ekl itmeyüb nûr ekl ideriz ve nâ’im olmayub huzûra gideriz ve mâ-lâ-ya‘nî söylemeyüb hikmet söyleriz. Pes ol şeyh insâf ve kusûruna i‘tirâf idüb ol kâmili ol tekyede mukîm idüb kendi aña mürîd ve nedîm olmışdır ve anıñ işâretiyle nice eyyâm cû‘ ve seher ve samta müdâvemet kılmışdır tâ kim ol dahi ol nûr-ı hikmet ve huzûrı bulmışdır. Ammâ bu kemâle vâsıl olmayan ‘âşık kesret-i ekl ve nevm ile hâ’ib ve hâsir kalmışdır.
+nefsiyle mukayyed ise kendi kemâli kesbine teveccühden mu‘attal olur ve ‘âlem-i berzahda habs olub hayâlât-ı ru’yâ ve adgâs-ı ahlâm ile kalur. Ve eğer nâ’imiñ göñli mücerred ise berzahdan geçüb ‘âlemine içeri gidüb huzûr idüb aslâ nâ’im olmaz. Ve nevm-i beden böyle kalbi hergiz mu‘attal kılmaz ve bu teveccüh ve terakkîden bir nefes hâlî kalmaz. Pes nevm ta‘tîl ve gafletdir ve nevm-i rûhânî huzûr-ı hazretdir. Nevm-i câhil mevt-i hâzırdır ve nevm-i ‘ârif güşâd-ı hâtırdır. Nevm-i ‘avâm idbâr ve garâmdır ve nevm-i havâss teveccüh-i tâmmdır ve nevm-i nâkıs tazyî‘-i evkâtdır ve nevm-i kâmil lübb-i tâ‘atdır. Bir kâmil ehl-i dil bir tekyede on gün müsâfir kalub her gün on âdem ta‘âmın yiyüb tûl-ı leyl uyuyub tûl-ı nehâr söyler imiş. Pes mürîdân anıñ bu vefret-i eklinden ve sıklet-i nevminden ve kesret-i kelâmından nefret idüb tekye şeyhine şekvâ eyledikde ol şeyh ol müsâfire demişdir ki: Erkân-ı tarîk-ı evliyâ-yı kirâm taklîl-i ta‘âm ve taklîl-i menâm ve taklîl-i kelâm iken sen misl-i ‘avâm kesret-i ta‘âm ve kesret-i menâm ve kesret-i kelâm ile mübtelâ olub kalmışsın ve bu tekye ehline gâv-ı bâr-girân olmışsın. Pes ol kâmil müsâfir bu sözden vâfir ta‘accüb idüb ol şeyhiñ cevâbın virüb demişdir ki: Eğer bizden teşekkî iden mürîdân ehl-i ‘irfân olsalardı bedel-i teşekkî bizden teşekkür iderlerdi. Zîrâ ki biz ta‘âm ekl itmeyüb nûr ekl ideriz ve nâ’im olmayub huzûra gideriz ve mâ-lâ-ya‘nî söylemeyüb hikmet söyleriz. Pes ol şeyh insâf ve kusûruna i‘tirâf idüb ol kâmili ol tekyede mukîm idüb kendi aña mürîd ve nedîm olmışdır ve anıñ işâretiyle nice eyyâm cû‘ ve seher ve samta müdâvemet kılmışdır tâ kim ol dahi ol nûr-ı hikmet ve huzûrı bulmışdır. Ammâ bu kemâle vâsıl olmayan ‘âşık kesret-i ekl ve nevm ile hâ’ib ve hâsir kalmışdır.
 
 (Nazm)
 
@@ -379,7 +379,7 @@ hâb ve râhatin fedâ kılmışdır tâ kim üns ve huzûr ile bahre-mend olmı
 > Sakın ey yâr-ı mihmândâr uyuma
 > Gelür dil beytine dildâr uyuma
 >
-> Ko hâb-ı gafleti şeb kalbe seyr it [?]
+> Ko hâb-ı gafleti şeb kalbe seyr it
 > Nice zâhir olur esrâr uyuma
 >
 > Dilerseñ Hayy u Kayyûmuñ rızâsın
@@ -403,10 +403,10 @@ hâb ve râhatin fedâ kılmışdır tâ kim üns ve huzûr ile bahre-mend olmı
 [^4]: [Aktaran notu] “Rabbin bilir ki sen gecenin üçte ikisine yakın bir kısmını, yarısını ve üçte birini kıyâmla geçirirsin.” (Müzzemmil, 73:20).
 [^5]: [Aktaran notu] “Gecenin bir kısmında O’na secde et ve uzun gece O’nu tesbîh et.” (İnsân, 76:26).
 [^6]: [Aktaran notu] “Gecenin bir kısmında da sana mahsûs bir nâfile olarak onunla teheccüd kıl; umulur ki Rabbin seni Makâm-ı Mahmûd’a gönderir.” (İsrâ, 17:79).
-[^7]: [Aktaran notu] “Kulum, beni gecenin karanlığında sana yakın bulursun; beni ara, bulursun.” Zebûr’a nisbet edilen söz; kaynağı tesbit edilemedi [?].
-[^8]: [Aktaran notu] “Ey Âdemoğlu! Çok uyku ile kalbin cilâsına nasıl tama‘ edersin? Uykunu kabre ertele; kalbinin nûrunu az uykuda ve gece uyanıklığında ara. Beni sevdiğini iddi‘â edip gece karanlığı onu bürüyünce benden (gâfil) uyuyan yalan söylemişdir.” İlk kısmı 05. bölümdeki (s. 304) hadîs-i kudsîye benzer. Son cümle Gazzâlî, İhyâ’, Kitâbü’l-Mahabbe’de Hz. Dâvûd’a vahy olunan söz olarak geçer; bu bütünüyle kaynağı tesbit edilemedi [?]. Baskıda «فى الجلاء» gibi görünen kelime “انجلاء” (incilâ’) da olabilir [?].
-[^9]: [Aktaran notu] “Seven kimseye şaşılır, nasıl uyur? Her uyku sevene harâmdır.” Kaynağı tesbit edilemedi [?].
-[^10]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı ikinci satırın sağ kenarındadır; ilk satırda Arapça beyit vardır. Yazarın mahlası (Hakkı) son beytdedir. Altıncı beytde Hz. Dâvûd’a vahy olunan, yukarıdaki hadîs-i kudsînin son cümlesine işâret vardır. İkinci beytde «کونشندن» “güneşinden”, yedinci beytde «خلوت کهٔ تا» “halvet ki tâ” okunmuşdur. Yedinci beytin ikinci mısra‘ında «دلندن» (“dilinden”) okunuşu kesin değildir [?].
+[^7]: [Aktaran notu] “Kulum, beni gecenin karanlığında sana yakın bulursun; beni ara, bulursun.” Zebûr’a nisbet edilen söz; kaynağı tesbit edilemedi.
+[^8]: [Aktaran notu] “Ey Âdemoğlu! Çok uyku ile kalbin cilâsına nasıl tama‘ edersin? Uykunu kabre ertele; kalbinin nûrunu az uykuda ve gece uyanıklığında ara. Beni sevdiğini iddi‘â edip gece karanlığı onu bürüyünce benden (gâfil) uyuyan yalan söylemişdir.” İlk kısmı 05. bölümdeki (s. 304) hadîs-i kudsîye benzer. Son cümle Gazzâlî, İhyâ’, Kitâbü’l-Mahabbe’de Hz. Dâvûd’a vahy olunan söz olarak geçer; bu bütünüyle kaynağı tesbit edilemedi. Baskıda «فى الجلاء» yazılıdır; “kalbin cilâsı” ma‘nâsıyla alınmışdır. Dilbilgisi «جَلَاءِ الْقَلْبِ» ya da «انْجِلَاءِ الْقَلْبِ» gerektirir.
+[^9]: [Aktaran notu] “Seven kimseye şaşılır, nasıl uyur? Her uyku sevene harâmdır.” Kaynağı tesbit edilemedi.
+[^10]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı ikinci satırın sağ kenarındadır; ilk satırda Arapça beyit vardır. Yazarın mahlası (Hakkı) son beytdedir. Altıncı beytde Hz. Dâvûd’a vahy olunan, yukarıdaki hadîs-i kudsînin son cümlesine işâret vardır. İkinci beytde «کونشندن» “güneşinden”, yedinci beytde «خلوت کهٔ تا» “halvet ki tâ” okunmuşdur. Yedinci beytin ikinci mısra‘ında «دلندن» “dilinden” okunmuşdur; baskıda harfler net değildir.
 [^11]: [Aktaran notu] “Kim bana du‘â eder ki ona icâbet edeyim, kim benden ister ki ona vereyim, kim benden mağfiret diler ki onu bağışlayayım?” Buhârî, Teheccüd 14, Da‘avât 14, Tevhîd 35; Müslim, Salâtü’l-müsâfirîn 168 (Ebû Hüreyre rivâyeti). Bu rivâyetlerde vakit “gecenin son üçte biri”dir. Baskıda hadîs «(…)» içindedir.
 [^12]: [Aktaran notu] “Melik benim, Melik benim! Kim bana du‘â eder ki ona icâbet edeyim? Kim benden ister ki ona vereyim? Kim benden mağfiret diler ki onu bağışlayayım?” Müslim, Salâtü’l-müsâfirîn 169 (Ebû Hüreyre rivâyeti; “gecenin ilk üçte biri geçince … fecir aydınlanıncaya kadar”).
 [^13]: [Aktaran notu] “Yok mu bir isteyen, ona verilsin? Yok mu bir du‘â eden, du‘âsı kabûl olunsun? Yok mu bir mağfiret dileyen, bağışlansın?” Müslim, Salâtü’l-müsâfirîn 170 (Ebû Hüreyre rivâyeti; “gecenin yarısı geçince … sabah ağarıncaya kadar”).
@@ -414,24 +414,24 @@ hâb ve râhatin fedâ kılmışdır tâ kim üns ve huzûr ile bahre-mend olmı
 [^15]: [Aktaran notu] Baskıda nesir içinde «(بیت)» ile verilmişdir; mısra‘lar ✱ ile ayrılır. Beytin sonunda kapanış ayracı vardır, açılışı yokdur.
 [^16]: [Aktaran notu] “Gözlerim uyur, kalbim âlemlerin Rabbinden (gâfil olarak) uyumaz.” Hadîsin bilinen lafzı «اِنَّ عَيْنَيَّ تَنَامَانِ وَلَا يَنَامُ قَلْب۪ي»dir: Buhârî, Teheccüd 16, Menâkıb 24; Müslim, Salâtü’l-müsâfirîn 125 (Hz. ‘Âişe rivâyeti). Baskıda «عيناى تنام وقلبى لا ينام» yazılıdır; «عن رب الانام» ilâvesi bilinen lafızda yokdur. İbâre s. 312 sonundan s. 313 başına geçer («عن رب الانام» s. 313’ün ilk satırındadır); bütünlüğü bozmamak için sayfa imi ibârenin sonuna konmuşdur.
 [^17]: [Aktaran notu] Baskıda nesir içinde «(بیت)» ile verilmişdir; mısra‘lar ✱ ile ayrılır. Peygamber’in sağ yanına yatması: Buhârî, Da‘avât 6–9 (Berâ’ b. ‘Âzib rivâyeti).
-[^18]: [Aktaran notu] İlk kısmına yakın: Ahmed b. Hanbel, Müsned, I, 73 (Hz. ‘Osmân rivâyeti): «اَلصُّبْحَةُ تَمْنَعُ الرِّزْقَ» (sabah uykusu rızka mâni‘dir). “Gamları câmi‘dir” kısmı bu lafızla tesbit edilemedi [?].
-[^19]: [Aktaran notu] “Uyanın, uyanın ey uyuyanlar! Fecir karanlığın ordularını bozguna uğratdı. Ey uyuyan, uykundan uyan! Gecen bozgunda acele etdi. Ey uykusu kendisini kaplayan! Sen uyursun, Rabbin ise uyumaz. Rabbin seni kapısına çağırır; O’ndan cezâsız bir af dile. Efendimiz Mustafâ’ya salât et; hidâyet eden Ahmed’imize selâm olsun.” Hz. Bilâl’e nisbeti tesbit edilemedi [?]. Baskıda üç sütun hâlindedir (sağ sütunda dört, ortada ve solda üçer mısra‘); satırlar sağdan sola okununca beyitler “-âm” kâfiyesiyle düzgün çıkar.
-[^20]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı Arapça beyitlerin sol sütunundadır. Yazarın mahlası (Hakkı) son beytdedir. Redif “gele ba‘de nısfi’l-leyl” (gece yarısından sonra gele), kâfiye “-ûra”dır; «اکله» buna göre “-a gele” okunmuşdur. Beşinci beytde «ضرور اکله» “zarûra gele” okunuşu ve ma‘nâsı kesin değildir [?]. Aynı beytde «چور وشنایی» dizgide ayrılmış “çü rûşenâyî” okunmuşdur.
-[^21]: [Aktaran notu] “Uykuyu bırak, çünki uyku fazîleti yıkar; dünyândan yemek ve uyku ile yetinme. Kavmin üzerine efendi olmayı umarsan, gece uyanık dur ve yücelikleri ara.” Kaynağı tesbit edilemedi [?]. Baskıda nesir içinde «(شعر)» ile, mısra‘lar ✱ ile ayrılarak dizilmişdir.
+[^18]: [Aktaran notu] İlk kısmına yakın: Ahmed b. Hanbel, Müsned, I, 73 (Hz. ‘Osmân rivâyeti): «اَلصُّبْحَةُ تَمْنَعُ الرِّزْقَ» (sabah uykusu rızka mâni‘dir). “Gamları câmi‘dir” kısmı bu lafızla tesbit edilemedi.
+[^19]: [Aktaran notu] “Uyanın, uyanın ey uyuyanlar! Fecir karanlığın ordularını bozguna uğratdı. Ey uyuyan, uykundan uyan! Gecen bozgunda acele etdi. Ey uykusu kendisini kaplayan! Sen uyursun, Rabbin ise uyumaz. Rabbin seni kapısına çağırır; O’ndan cezâsız bir af dile. Efendimiz Mustafâ’ya salât et; hidâyet eden Ahmed’imize selâm olsun.” Hz. Bilâl’e nisbeti tesbit edilemedi. Baskıda üç sütun hâlindedir (sağ sütunda dört, ortada ve solda üçer mısra‘); satırlar sağdan sola okununca beyitler “-âm” kâfiyesiyle düzgün çıkar.
+[^20]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı Arapça beyitlerin sol sütunundadır. Yazarın mahlası (Hakkı) son beytdedir. Redif “gele ba‘de nısfi’l-leyl” (gece yarısından sonra gele), kâfiye “-ûra”dır; «اکله» buna göre “-a gele” okunmuşdur. Beşinci beytde «ضرور اکله» “zarûra gele” (zarûrî olarak gele) okunmuşdur; “sürûra” ve “zuhûra” aynı nazmda başka beyitlerde kâfiye olduğundan seçilmemişdir. Aynı beytde «چور وشنایی» dizgide ayrılmış “çü rûşenâyî” okunmuşdur.
+[^21]: [Aktaran notu] “Uykuyu bırak, çünki uyku fazîleti yıkar; dünyândan yemek ve uyku ile yetinme. Kavmin üzerine efendi olmayı umarsan, gece uyanık dur ve yücelikleri ara.” Kaynağı tesbit edilemedi. Baskıda nesir içinde «(شعر)» ile, mısra‘lar ✱ ile ayrılarak dizilmişdir.
 [^22]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. Yazarın mahlası (Hakkı) son beytdedir. Üçüncü beytde kelime-i tevhîde (lâ … illâllâh) cinâs vardır.
 [^23]: [Aktaran notu] “Allâhım, bize kolaylaşdır.”
-[^24]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. Yazarın mahlası (Hakkı) son beytdedir. Altıncı beytde «هَلْ مِنْ سَٓائِلٍ» “yok mu bir isteyen?” sözüyle nüzûl hadîsine (bk. 13. dipnot) işâret vardır. Birinci beytde «طولی» “tolı” (dolu) okunmuşdur. Dördüncü beytde kâfiye kelimesi baskıda «یاز» gibi görünür; kâfiyeye göre “yâr” okunmuşdur [?].
-[^25]: [Aktaran notu] Hz. Ebû Bekir’e dâir bu haberin kaynağı tesbit edilemedi [?]. Başlıkda baskıda «خلصت» yazılıdır; “haslet” (خصلت) okunmuşdur [?]. «صمان» “samân” (duvar çamurundaki saman) okunmuşdur.
-[^26]: [Aktaran notu] Bu kıssanın kaynağı tesbit edilemedi [?].
-[^27]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı ilk satırın sağ kenarındadır. Yazarın mahlası (Hakkı) son beytdedir. Beşinci beytde «سورسن» “seversin” okunmuşdur. Sekizinci beytin başı baskıda «آزی آزاویی» şeklindedir; “az yi az uyı” okunmuşdur, kesin değildir [?] (krş. 05. bölüm, s. 311, dördüncü rubâ‘î).
+[^24]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. Yazarın mahlası (Hakkı) son beytdedir. Altıncı beytde «هَلْ مِنْ سَٓائِلٍ» “yok mu bir isteyen?” sözüyle nüzûl hadîsine (bk. 13. dipnot) işâret vardır. Birinci beytde «طولی» “tolı” (dolu) okunmuşdur. Dördüncü beytde kâfiye kelimesi baskıda «یاز» gibi görünür; kâfiyeye göre “yâr” okunmuşdur.
+[^25]: [Aktaran notu] Hz. Ebû Bekir’e dâir bu haberin kaynağı tesbit edilemedi. Başlıkda baskıda «خلصت» yazılıdır; “haslet” (خصلت) okunmuşdur. «صمان» “samân” (duvar çamurundaki saman) okunmuşdur.
+[^26]: [Aktaran notu] Bu kıssanın kaynağı tesbit edilemedi.
+[^27]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı ilk satırın sağ kenarındadır. Yazarın mahlası (Hakkı) son beytdedir. Beşinci beytde «سورسن» “seversin” okunmuşdur. Sekizinci beytin başı baskıda «آزی آزاویی» şeklindedir; “az yi az uyı” okunmuşdur (krş. 05. bölüm, s. 311, dördüncü rubâ‘î).
 [^28]: [Aktaran notu] “O’dur ki sizi geceleyin (uyku ile) vefât etdirir.” (En‘âm, 6:60).
 [^29]: [Aktaran notu] Uykunun ölümün kardeşi olduğu ve cennet ehlinin uyumadığı: Beyhakî, Şu‘abü’l-îmân; Taberânî, el-Mu‘cemü’l-evsat (Câbir rivâyeti): «اَلنَّوْمُ اَخُو الْمَوْتِ وَلَا يَمُوتُ اَهْلُ الْجَنَّةِ».
-[^30]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. Dördüncü beytde «افکار» “efgâr” (yaralı) okunmuşdur. Beşinci beytde Hz. Dâvûd’a vahy olunan söze (bk. 8. dipnot) işâret vardır. Yedinci beytde baskıda «حقه» yazılıdır; “Hakka” okunmuşdur. Yazarın mahlası (Hakkı) olması muhtemeldir [?].
+[^30]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. Dördüncü beytde «افکار» “efgâr” (yaralı) okunmuşdur. Beşinci beytde Hz. Dâvûd’a vahy olunan söze (bk. 8. dipnot) işâret vardır. Yedinci beytde baskıda «حقه» yazılıdır; vezin ve mahlas geleneği gereği “Hakkı’ya” (yazarın kendine hitâbı) okunmuşdur.
 [^31]: [Aktaran notu] “Uykunuzu bir dinlenme kıldık.” (Nebe’, 78:9).
-[^32]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. İkinci beytde «تتق» “tutuk” (perde, gerdek perdesi) okunmuşdur. Kesin olmayan okumalar: beşinci beytin başı «دیك» (“dek”) ve yedinci beytin ilk mısra‘ı «باغلدی شب دستی جوهر کاردن» [?]. Son beytdeki «حق» yazarın mahlası (Hakkı) yerine kullanılmış olabilir.
-[^33]: [Aktaran notu] Farsça rubâ‘î; baskıda nesir içinde, mısra‘lar ✱ ile ayrılarak dizilmişdir. Kaynağı tesbit edilemedi [?]. Meâli: “Ey şaşkın göñül, candan Dost’a bir yol vardır; ey yolunu yitiren, açık ve gizli bir yol vardır. Altı yönün kapansa da korkma; varlığının dibinden Cânân’a bir yol vardır.” Son mısra‘ın başı baskıda «کر» yazılıdır; ma‘nâ “k’ez” (ki ez, “-den”) gerektiriyor olabilir [?].
+[^32]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. İkinci beytde «تتق» “tutuk” (perde, gerdek perdesi) okunmuşdur. Beşinci beytin başı «دیك» “dek” (ancak, yalnız) okunmuşdur. Yedinci beytin ilk mısra‘ı «باغلدی شب دستی جوهر کاردن» “Bağladı şeb desti cevher-kârdan” (gece eli cevher işinden bağladı) okunmuşdur; ma‘nâsı kapalıdır. Son beytdeki «حق» yazarın mahlası (Hakkı) yerine kullanılmış olabilir.
+[^33]: [Aktaran notu] Farsça rubâ‘î; baskıda nesir içinde, mısra‘lar ✱ ile ayrılarak dizilmişdir. Kaynağı tesbit edilemedi. Meâli: “Ey şaşkın göñül, candan Dost’a bir yol vardır; ey yolunu yitiren, açık ve gizli bir yol vardır. Altı yönün kapansa da korkma; varlığının dibinden Cânân’a bir yol vardır.” Son mısra‘ın başı baskıda «کر» yazılıdır; ma‘nâ gereği noktası düşmüş «کز» sayılıp “k’ez” (ki ez, “-den”) okunmuşdur.
 [^34]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. Altıncı beytde «جماله» ve «خیاله» “cemâlle”, “hayâlle” okunmuşdur. Bu nazımda mahlas yokdur.
 [^35]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı ilk satırın sağ kenarındadır. Yazarın mahlası (Hakkı) son beytdedir.
 [^36]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. Yazarın mahlası (Hakkı) son beytdedir. Birinci beytde «عاشق سن ایله خوابی آز» “‘âşıksen eyle hâbı az”, dördüncü beytde «بردخی» “bir dahi”, altıncı beytde «سوزلرك» “sözleriñ” okunmuşdur. Altıncı beytde “ahu’l-mevt” (ölümün kardeşi) sözüne işâret vardır (bk. 29. dipnot).
-[^37]: [Aktaran notu] Bu kıssanın kaynağı tesbit edilemedi [?]. «جوز وموز» “cevz ve mevz” (ceviz ve muz) çocuk oyuncağı anlamındadır; metin de bunu “mel‘abe-i sıbyân” diye açıklar.
-[^38]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı ilk satırın sağ kenarındadır. Yazarın mahlası (Hakkı) son beytdedir. İkinci beytde baskıda «سرایت» yazılıdır; “seyr it” okunmuşdur, “sirâyet” de olabilir [?].
+[^37]: [Aktaran notu] Bu kıssanın kaynağı tesbit edilemedi. «جوز وموز» “cevz ve mevz” (ceviz ve muz) çocuk oyuncağı anlamındadır; metin de bunu “mel‘abe-i sıbyân” diye açıklar.
+[^38]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: her satırda sağ sütun birinci, sol sütun ikinci mısra‘. “(Nazm)” başlığı ilk satırın sağ kenarındadır. Yazarın mahlası (Hakkı) son beytdedir. İkinci beytde baskıda «سرایت» yazılıdır; “seyr it” okunmuşdur; “sirâyet” okunuşu vezne uymaz.
