@@ -157,7 +157,7 @@ def hazirla(md: str, en_cok: int = 28, ayar: dict | None = None, birlestir: bool
             metin = metin.strip("“”.") + "."
         onceki_arapca = tamamen_arapca
         metin = mealleri_koy(metin, notlar)
-        metin = metin.replace("**", "")
+        metin = re.sub(r"\s{2,}", " ", metin.replace("*", "")).strip()  # italik/kalın imi, meal yerine konunca kalan boşluk
         if "FİHRİST" in metin:
             continue
         if metin.isupper():
