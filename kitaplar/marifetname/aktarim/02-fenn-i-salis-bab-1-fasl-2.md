@@ -115,7 +115,7 @@ hazret-i Habîb-i Ekrem sallallâhu te‘âlâ ‘aleyhi ve sellem ümmetine re�
 > Nişân-ı eblehî înest hâsıl
 > Buved bâ în denî bisyâr mâ’il
 >
-> Be-küllî dil ber-âz dünyâ-y birâder [?]
+> Be-küllî dil ber-âz dünyâ-y birâder
 > Çü âhir mî-şeved vîrân u ebter
 >
 > Ez-în dünyâ be-gayr ez mihnet ü gam
@@ -352,7 +352,7 @@ Hubb-ı dünyâ mâni‘-i huzûr-ı Mevlâ olduğun ve andan envâ‘-ı zühd 
 > Çü men dil be-bâkî nihâdem temâm
 > Ez-ân hâtırem hûb u hurrem buved[^100]
 
-Pes imdi muhakkak bildiñ ki zâhiriñ taleb-i dünyâ ile ve bâtınıñ irâdetiyle meşgûl iken seniñ içün ne ‘ibâdet müyesser olur ve ne huzûr. Ve eger dünyâyı terk edüb zâhir ve bâtınıñla andan fâriğ oldıñsa seniñ içün hem ‘ibâdet müyesserdir ve hem huzûr. ✱ Ammâ zühdüñ hadd ve hakîkati dünyâdan i‘râzdır ki anın zıddı rağbetdir. Ve zühd iki gûnedir ki biri ‘abdiñ makdûrı ve biri gayr-i makdûrıdır. ✱ Ammâ zühd-i makdûr üç nesnedir: biri terk-i taleb-i mefkûd-ı dünyâdır ve biri tefrîk-i metâ‘-ı mecmû‘-ı dünyâdır ve biri terk-i irâdet ve ihtiyâr-ı dünyâdır. Ve ammâ zühd-i gayr-i makdûr zâhidiñ kalbinde bürûdet-i dünyâdır. Ve zühd-i makdûr ise mukaddemât-ı zühd-i gayr-i makdûrdur. Zîrâ ki ‘abd ol zühd-i makdûr ile ‘âmil olub elinde bulunmayan dünyâlığı taleb etmese ve elinde olan dünyâlığı tefrîk eylese ve âfât-ı dünyâyı bilüb anı kalbiyle murâd ve ihtiyâr etmese, bu eşyânın kalbinde Allâh içün bürûdet-i dünyâyı hâsıl edüb ol zühd-i gayr-i makdûra mâlik olur ki zühd-i hakîkî bu ma‘nâdır. Ve as‘ab-ı umûr-ı selâse-i mezbûre kalb ile on [?] nefret bürûdet-i dünyâdır ve andan i‘râz ve ikrâh ve ibâdır. Zîrâ ki nice zâhid vardır ki zâhiriyle dünyâdan zâhid ve bârid ve hâribdir ve bâtınıyla aña muhib ve mürîd ve râgıbdır. Pes ol zâhid meşakkat-i şedîde içinde nefsiyle muhâribdir. Ammâ ol nesne ki bürûdet-i dünyâya bâ‘isdir, zikr-i âfât-ı mühlikât-ı dünyâdır ki ‘uyûbından bâ‘isdir. Nitekim bir ‘ârif dimişdir ki: Dünyâyı anıñ içün terk eyledim ki ‘anâsı çok ve ganâsı kalîl ve fenâsı serî‘ ve şürekâsı hasîsdir. Ve bir kâmil bunı işidüb dimişdir ki: Bu kelâmdan râyiha-i rağbet fâyihadır. Zîrâ ki bir kimsenin firâkından şekvâ eden visâline tâlibdir ve bir nesneyi mekârih-i şürekâsı içün terk eden munfarid bulsa aña mâ’il ve râgıbdır. Belki kavl-i şâmil bu kelâmdır ki dünyâ ‘adüvv-i Mevlâ iken kalbiñ anıñ mahabbetine mülâzımdır. Muhib ise habîbiñ ‘adüvvüne ‘adâvet etmek lâzımdır. (Nazm)
+Pes imdi muhakkak bildiñ ki zâhiriñ taleb-i dünyâ ile ve bâtınıñ irâdetiyle meşgûl iken seniñ içün ne ‘ibâdet müyesser olur ve ne huzûr. Ve eger dünyâyı terk edüb zâhir ve bâtınıñla andan fâriğ oldıñsa seniñ içün hem ‘ibâdet müyesserdir ve hem huzûr. ✱ Ammâ zühdüñ hadd ve hakîkati dünyâdan i‘râzdır ki anın zıddı rağbetdir. Ve zühd iki gûnedir ki biri ‘abdiñ makdûrı ve biri gayr-i makdûrıdır. ✱ Ammâ zühd-i makdûr üç nesnedir: biri terk-i taleb-i mefkûd-ı dünyâdır ve biri tefrîk-i metâ‘-ı mecmû‘-ı dünyâdır ve biri terk-i irâdet ve ihtiyâr-ı dünyâdır. Ve ammâ zühd-i gayr-i makdûr zâhidiñ kalbinde bürûdet-i dünyâdır. Ve zühd-i makdûr ise mukaddemât-ı zühd-i gayr-i makdûrdur. Zîrâ ki ‘abd ol zühd-i makdûr ile ‘âmil olub elinde bulunmayan dünyâlığı taleb etmese ve elinde olan dünyâlığı tefrîk eylese ve âfât-ı dünyâyı bilüb anı kalbiyle murâd ve ihtiyâr etmese, bu eşyânın kalbinde Allâh içün bürûdet-i dünyâyı hâsıl edüb ol zühd-i gayr-i makdûra mâlik olur ki zühd-i hakîkî bu ma‘nâdır. Ve as‘ab-ı umûr-ı selâse-i mezbûre kalb ile ondan nefret bürûdet-i dünyâdır ve andan i‘râz ve ikrâh ve ibâdır. Zîrâ ki nice zâhid vardır ki zâhiriyle dünyâdan zâhid ve bârid ve hâribdir ve bâtınıyla aña muhib ve mürîd ve râgıbdır. Pes ol zâhid meşakkat-i şedîde içinde nefsiyle muhâribdir. Ammâ ol nesne ki bürûdet-i dünyâya bâ‘isdir, zikr-i âfât-ı mühlikât-ı dünyâdır ki ‘uyûbından bâ‘isdir. Nitekim bir ‘ârif dimişdir ki: Dünyâyı anıñ içün terk eyledim ki ‘anâsı çok ve ganâsı kalîl ve fenâsı serî‘ ve şürekâsı hasîsdir. Ve bir kâmil bunı işidüb dimişdir ki: Bu kelâmdan râyiha-i rağbet fâyihadır. Zîrâ ki bir kimsenin firâkından şekvâ eden visâline tâlibdir ve bir nesneyi mekârih-i şürekâsı içün terk eden munfarid bulsa aña mâ’il ve râgıbdır. Belki kavl-i şâmil bu kelâmdır ki dünyâ ‘adüvv-i Mevlâ iken kalbiñ anıñ mahabbetine mülâzımdır. Muhib ise habîbiñ ‘adüvvüne ‘adâvet etmek lâzımdır. (Nazm)
 
 > Terk-i în şürb er begûyî yek dü rûz
 > Der-keşî ender şarâb-ı huld pûz
@@ -367,7 +367,7 @@ Pes imdi muhakkak bildiñ ki zâhiriñ taleb-i dünyâ ile ve bâtınıñ irâde
 
 Ve bir kâmil dimişdir ki dünyâ aslında bir cîfe-i habîse-i kabîha misâlidir. Görmez misin ki âhiri kazer ve fesâd ve izmihlâldir. Lâkin zâhir-i cîfe-i dünyâ envâ‘-ı tîb ve zîverle ve sîm ve zer ve cevherle müzeyyen olduğundan zâhiriyle gâfiller mağrûr ve kâmiller andan zühd ile dûr olmuşdur. Hâlbuki dünyânın harâmından zühd etmek farz-ı ‘ayndır ve halâlinden zühd etmek nafl ve zînetdir. Zîrâ ki dünyânın harâmı nâr ve halâli meyte misâlidir; ancak zarûret ‘indinde hâcet mikdârı tenâvüli halâldir. Meselâ bir kimse şurûtıyla bir halvâ tabh eylese, ba‘dehû anın içine bir mikdâr semm-i kâtil tarh eylese ve anın bu tarhını bir racül görse ve âhir racül görmese, ba‘dehû ol kimse ol şekerli halvâyı bir münakkaş tabak ile ol iki racülüñ öñine koysa, ol semmi gören racül ol halvâdan zâhid olur ve anı ekl etmek hâtırına gelmez, belki ol halvâyı âteş menzilesinde bulur. Pes anın zâhir ve zînetine nazarla mağrûr olmaz, zîrâ ki anın âfetini bilür. Ve ammâ ol halvâda ol semmi görmeyen racül anın münakkaş zarfıyla ve lezzet ve halâvetiyle mağrûr olub hırsla mesrûr olur ve zâhid olan refîkına dahl ve ta‘accüb eder. Ol halvâdan ahz ve tenâvül eder ve helâk olur gider. Pes bir halvâ ehl-i âhiretle ehl-i dünyânın harâm dünyâ ile olan ahvâline misâldir. Ve ammâ halâl-i dünyâ egerçi semm-i kâtilden ba‘îd olmuşdur, lâkin bir halvâdır ki bezâk ve muhât emsâli ikrâh olunacak nesnelerle tolmışdır ve zâhiri tîb ve halâvetle zînet bulmuşdur. Pes ol racül ki anda ol kâzûrâtı müşâhid olur, ol andan ikrâh edüb zâhid olur. Ol halvâdan tenâvül eylemez, meğer ki şiddet-i hâcet ‘indinde gâyet muztar kalur; ol zamân bi’z-zarûre andan hâcet mikdârı alur. Ve ol racül ki ol halvâda olan mekârihden gâfildir, anın zâhiriyle mağrûr ve aña mâ’ildir ve andan zâhid olan racüle ta‘rîz ve ta‘accüb edüb ol halvâyı hırs ile ekler. Ve bu misâl ehl-i basîret ve ehl-i gafletiñ halâl dünyâ ile olan ahvâline şâmildir. Ve bu iki racül tab‘ ve hılkatde berâber iken anıñ içün ahvâli muhtelifdir ki biri ‘ilm ve basîretle münkeşifdir ve birisi cehl ve ‘amâ ile muttasıfdır. Pes eger ol râgıb ol zâhidiñ bildiğini bilse ol dahi anın gibi zâhid olurdı ve eger ol zâhid ol râgıb gibi câhil olsa ol dahi anın gibi râgıb olurdı. Pes bundan zâhir olan budur ki fark ve temyîz ancak basâ’irledir, tabâyi‘le değildir. Ve bu bir asl-ı müfîd kelâm-ı sedîddir. (Nazm)
 
-> Yüzüñ tut bu dirig [?] âyînesinden seyr kıl anı
+> Yüzüñ tut bu dirig âyînesinden seyr kıl anı
 > Ki bu sûretke sen tutdıñ ne ma‘nâdır anıñ şânı
 >
 > Çü sensin ahsen-i takvîm ve harfiñ ebced-i Âdem
@@ -423,7 +423,7 @@ Dünyâ ve ehl-i dünyâ ve nefs ve hevâ mü’mine a‘dâ ve mâni‘-i tâ�
 
 [s. 279]
 
-edüb dûr olmak ehemm-i umûrdur. Hâlbuki tâ‘at ve huzûr-ı Hakdan munkatı‘ olanlar yâ dünyâ ile veyâ halk ile veyâ nefs ile fütûr bulduklar mücerreb ve meşhûrdur. Ammâ dünyâ, saña lâzımdır ki andan zühd edüb hazer üzre olasın. Zîrâ ki emr üçden hâlî değildir: Yâ sen basîret ve fıtnat ehlindensin, pes bu saña kifâyet eder ki tahkîkan dünyâ seniñ sadîk ve habîbiñ olan Rabbiñiñ ‘adüvv-i mebgûzıdır ve seniñ kadr ve kıymetiñ olan mukılliñ [?] hılâf ve nakîzidir. Yâhûd sen ‘ibâdetde himmet ehlindensiñ, pes saña kifâyet eder ki tahkîkan dünyânın şûm olduğundandır ki anı tefekkür ve irâdet seni huzû‘ ve ‘ibâdetden men‘ eyler. Var kıyâs eyle ki vücûd-ı nefs-i dünyâ nice men‘ ve kat‘ ile saña n’eyler. Veyâ sen cehl ve gaflet ehlindensin, ne basîretiñ var ki Hak ile olasın ve ne himmetiñ var ki aña ‘ibâdet kılasın tâ kim huzûr-ı ünsi bulasın. Pes saña kifâyet eder ki tahkîkan dünyâ bâkî kalmaz; yâ sen andan mufârakat idersin veyâ ol senden mufârakat ider. Eger sen anıñla kalsañ ol seniñle kalmaz. Dünyâ böyle iken anı taleb etmekde ve ‘ömr-i ‘azîzi anıñla telef etmekde ne fâ’ide vardır? (Kıt‘a)
+edüb dûr olmak ehemm-i umûrdur. Hâlbuki tâ‘at ve huzûr-ı Hakdan munkatı‘ olanlar yâ dünyâ ile veyâ halk ile veyâ nefs ile fütûr bulduklar mücerreb ve meşhûrdur. Ammâ dünyâ, saña lâzımdır ki andan zühd edüb hazer üzre olasın. Zîrâ ki emr üçden hâlî değildir: Yâ sen basîret ve fıtnat ehlindensin, pes bu saña kifâyet eder ki tahkîkan dünyâ seniñ sadîk ve habîbiñ olan Rabbiñiñ ‘adüvv-i mebgûzıdır ve seniñ kadr ve kıymetiñ olan ‘aklıñ hılâf ve nakîzidir. Yâhûd sen ‘ibâdetde himmet ehlindensiñ, pes saña kifâyet eder ki tahkîkan dünyânın şûm olduğundandır ki anı tefekkür ve irâdet seni huzû‘ ve ‘ibâdetden men‘ eyler. Var kıyâs eyle ki vücûd-ı nefs-i dünyâ nice men‘ ve kat‘ ile saña n’eyler. Veyâ sen cehl ve gaflet ehlindensin, ne basîretiñ var ki Hak ile olasın ve ne himmetiñ var ki aña ‘ibâdet kılasın tâ kim huzûr-ı ünsi bulasın. Pes saña kifâyet eder ki tahkîkan dünyâ bâkî kalmaz; yâ sen andan mufârakat idersin veyâ ol senden mufârakat ider. Eger sen anıñla kalsañ ol seniñle kalmaz. Dünyâ böyle iken anı taleb etmekde ve ‘ömr-i ‘azîzi anıñla telef etmekde ne fâ’ide vardır? (Kıt‘a)
 
 > «ذَرِ الدُّنْيَا تُسَاقُ اِلَيْكَ سَوْقًا ✱ اَلَيْسَ مَص۪يرُ ذٰلِكَ اِلَى الزَّوَالِ
 > وَمَا دُنْيَاكَ اِلَّا مِثْلُ ظِلٍّ ✱ اَظَلَّكَ ثُمَّ اٰذَنَ بِارْتِحَالِ»[^103]
@@ -439,7 +439,7 @@ edüb dûr olmak ehemm-i umûrdur. Hâlbuki tâ‘at ve huzûr-ı Hakdan munkat�
 > V’eger muvâfık-ı tab‘-ı tû bâşed ahlâkaş
 > Mezâk-ı merg dehed şerbet-i cüdâyî-i û[^105]
 
-✱ Ve ammâ nefs, andan i‘râz idüb hazer üzre olmak içün saña bu kifâyet ider ki anın denâ’et-i himmetini ve rezâlet-i hâletini ve irâdetini ve sû’-i niyyetini müşâhede idersin ki şehvet hâlinde mecnûn-ı hâ’imdir ve gazab hâlinde sibâ‘-ı behâ’imdir ve musîbet hâlinde tıfl-ı bî-‘avndır ve ni‘met hâlinde misl-i Fir‘avndır. Ve eger câ’i‘ kalsa cez‘ eyler ve eger şeb‘ân olsa lagv söyler. El-hâsıl eger ‘akl ile nâzır olursañ yakîn üzre bilürsin ki dünyâ bir alçak nesnedir ki anın ehli anı ârzû ve zahmetle cem‘ ve hıssetle hıfz ider; lâkin yine hasretle koyub giderler. Çün tahkîk idersin ki dünyânın hergiz bekâsı yokdur ve anın nef‘inden şugl-ı kalb ve zahmet iden gibi zararı çokdur. Pes fuzûl-ı dünyâdan zâhid olursıñ ve andan ancak ‘ibâdetde kuvvet bulacak mikdârı alursıñ ve küdûrât ile muhtalit olan ni‘metler ve zînetlerinden i‘râz ve ibâ idersiñ ve aña kâmil ve rağbetden fâriğ olub kalb-i selîm ile huzûr-ı Hakka gidersiñ. Ve çün bilürsin ki tahkîkan halkıñ aslâ vefâsı yokdur ve mü’netleri saña ma‘ûnetlerinden çokdur, pes anlardan ‘uzlet idüb hayrlarıyla intifâ‘ ve şerlerinden ictinâb eylersin ve nâs ile mu‘âmele-i târ [?] idüb teveccüh ve tâ‘atle huzûr-ı Hakkı bulursın ki halkı dahi n’eylersin. Hemîşe anın ‘ibâdetiyle mütena‘‘im ve kitâbıyla müste’nis ve dergâhına mülâzım olursın. Pes «مَنْ كَانَ لِلّٰهِ كَانَ اللّٰهُ لَهُ»[^106] fahvâsınca ol dahi seniñ mu‘îniñ olduğun bilürsin ve halkdan ırağ olduğuñ kadar Hakka yakîn olursın ve sa‘âdet-i dâreyn ile kurretü ‘aynî bulursın. Ve çün bilürsin ki tahkîkan nefs-i emmâre bir mekkâre-i pür-şerdir ve ol ‘akl-ı kâmile ‘âsî ve ehl-i âhirete ‘adüvv-i ekberdir, pes taklîl-i ta‘âm ve taklîl-i menâm ve taklîl-i kelâm ve ‘uzlet-i enâm ile anı mutî‘ ve râm idersin ve anın ‘adâvet ve şerrinden halâs bulub kemâl-i ‘ubûdiyyetle muttasıf olub huzûr-ı Mevlâya gidersin. Nitekim Ebû Tâlib-i Mekkî rahmetullâhi te‘âlâ dimişdir ki: Ebdâl olanlar ebdâl olmadılar illâ ki cû‘ ve seher ve samt ve ‘uzlet ile oldılar.[^107] Ve bir kâmil dimişdir ki: Sermâye-i sa‘âdetimiz cû‘dur ki cû‘dur
+✱ Ve ammâ nefs, andan i‘râz idüb hazer üzre olmak içün saña bu kifâyet ider ki anın denâ’et-i himmetini ve rezâlet-i hâletini ve irâdetini ve sû’-i niyyetini müşâhede idersin ki şehvet hâlinde mecnûn-ı hâ’imdir ve gazab hâlinde sibâ‘-ı behâ’imdir ve musîbet hâlinde tıfl-ı bî-‘avndır ve ni‘met hâlinde misl-i Fir‘avndır. Ve eger câ’i‘ kalsa cez‘ eyler ve eger şeb‘ân olsa lagv söyler. El-hâsıl eger ‘akl ile nâzır olursañ yakîn üzre bilürsin ki dünyâ bir alçak nesnedir ki anın ehli anı ârzû ve zahmetle cem‘ ve hıssetle hıfz ider; lâkin yine hasretle koyub giderler. Çün tahkîk idersin ki dünyânın hergiz bekâsı yokdur ve anın nef‘inden şugl-ı kalb ve zahmet iden gibi zararı çokdur. Pes fuzûl-ı dünyâdan zâhid olursıñ ve andan ancak ‘ibâdetde kuvvet bulacak mikdârı alursıñ ve küdûrât ile muhtalit olan ni‘metler ve zînetlerinden i‘râz ve ibâ idersiñ ve aña kâmil ve rağbetden fâriğ olub kalb-i selîm ile huzûr-ı Hakka gidersiñ. Ve çün bilürsin ki tahkîkan halkıñ aslâ vefâsı yokdur ve mü’netleri saña ma‘ûnetlerinden çokdur, pes anlardan ‘uzlet idüb hayrlarıyla intifâ‘ ve şerlerinden ictinâb eylersin ve nâs ile mu‘âmele-i nâdir idüb teveccüh ve tâ‘atle huzûr-ı Hakkı bulursın ki halkı dahi n’eylersin. Hemîşe anın ‘ibâdetiyle mütena‘‘im ve kitâbıyla müste’nis ve dergâhına mülâzım olursın. Pes «مَنْ كَانَ لِلّٰهِ كَانَ اللّٰهُ لَهُ»[^106] fahvâsınca ol dahi seniñ mu‘îniñ olduğun bilürsin ve halkdan ırağ olduğuñ kadar Hakka yakîn olursın ve sa‘âdet-i dâreyn ile kurretü ‘aynî bulursın. Ve çün bilürsin ki tahkîkan nefs-i emmâre bir mekkâre-i pür-şerdir ve ol ‘akl-ı kâmile ‘âsî ve ehl-i âhirete ‘adüvv-i ekberdir, pes taklîl-i ta‘âm ve taklîl-i menâm ve taklîl-i kelâm ve ‘uzlet-i enâm ile anı mutî‘ ve râm idersin ve anın ‘adâvet ve şerrinden halâs bulub kemâl-i ‘ubûdiyyetle muttasıf olub huzûr-ı Mevlâya gidersin. Nitekim Ebû Tâlib-i Mekkî rahmetullâhi te‘âlâ dimişdir ki: Ebdâl olanlar ebdâl olmadılar illâ ki cû‘ ve seher ve samt ve ‘uzlet ile oldılar.[^107] Ve bir kâmil dimişdir ki: Sermâye-i sa‘âdetimiz cû‘dur ki cû‘dur
 
 [s. 280]
 
@@ -499,7 +499,7 @@ ya‘nî bizim içün hâsıl olan tevekkül ve râhat ve tefvîz ve ferâgat ve
 > Âyîneci mükedder ider bir yüzin anıñ
 > Kim ol kederdir âyîneye mâye-i cilâ
 >
-> Dârî-i [?] Hak bir ânda niçün virmez âdeme
+> Bârî-i Hak bir ânda niçün virmez âdeme
 > Ger vehm olunsa buhl aña ol fikrdir hatâ
 >
 > Leyl ü nehâr cem‘ olamaz bir zamânda kim
@@ -512,7 +512,7 @@ ya‘nî bizim içün hâsıl olan tevekkül ve râhat ve tefvîz ve ferâgat ve
 
 Dünyâdan ve ehlinden i‘râz ve ibâ itmeyi ve nefsini koyub göñülden içeri Mevlâya rücû‘ idüb gitmeyi bildirir.
 
-(Ey ‘azîz) Ma‘lûm olsun ki ehlullâh dimişlerdir ki kimse ki dünyâdan zühd ve i‘râz idüb Mevlâsına teveccüh ve rağbet ider, Hakk Te‘âlâ aña ‘inâyet idüb ma‘rifet ve mahabbeti i‘tâ ve ihsân ider ve huzûr ve ünsiyle anı hurrem ve şâd ider ve andan râzî olub mekânın ravza-i rıdvân ider. Ve kimse ki Mevlâsını unudub zikr ve fikrden i‘râz idüb dünyâya ve ehl-i dünyâya temâmen meyl ve mahabbet ider ve nefsine tâbi‘ olub hevâsınca gider, Hakk Te‘âlâ andan i‘râz idüb ‘inâyetini selb ider ve nefsine ısmarlayub aña kahr ve gazab ider ve dünyâda nasîbin ancak lakab [?] ider ve ‘ukbâda anı cehennem nârına hatab ider. Nitekim tevâtür-i tefâsîr ile hikâyet olunmuşdur ki hazret-i Mûsâ ‘aleyhi’s-selâmıñ zamânında beldemiz Erzurûm-ı rif‘at-lüzûmuñ cânib-i cenûbunda Büyük İrli [?] Şefve nâmıyla meşhûr-ı ‘âlem olan cebel-i a‘zamıñ zirve-i a‘lâsında inzivâ kılan ekâbir-i evliyâdan Bel‘am bin Bâ‘ûr ismiyle şöhret bulan makâmât-ı evliyâdan evliye bir mertebeye nâ’il olmuşdı ki nazar eyledikde rü’yet-i ‘arşa kuvvet bulmuşıdı. Ve anın zellesi ancak bu olmuşdur ki dünyâya ve ehl-i dünyâya meyl idüb hazret-i Mûsâ ‘aleyhi’s-selâma ‘isyân ile muhâlif gitmişdir. Pes Hakk Te‘âlâ aña kahr idüb ma‘rifetini andan selb itmişdir ve huzûrundan tard idüb misâl-i kelb itmişdir. Nitekim Hakk Te‘âlâ Furkân-ı mübîninde aña «فَمَثَلُهُ كَمَثَلِ الْكَلْبِ»[^109] diyüb ebedü’l-âbâd anı bahr-i dalâlete öyle düşürmüşdür ki ibtidâ-yı emrinde meclis ve va‘zında on iki biñ devât
+(Ey ‘azîz) Ma‘lûm olsun ki ehlullâh dimişlerdir ki kimse ki dünyâdan zühd ve i‘râz idüb Mevlâsına teveccüh ve rağbet ider, Hakk Te‘âlâ aña ‘inâyet idüb ma‘rifet ve mahabbeti i‘tâ ve ihsân ider ve huzûr ve ünsiyle anı hurrem ve şâd ider ve andan râzî olub mekânın ravza-i rıdvân ider. Ve kimse ki Mevlâsını unudub zikr ve fikrden i‘râz idüb dünyâya ve ehl-i dünyâya temâmen meyl ve mahabbet ider ve nefsine tâbi‘ olub hevâsınca gider, Hakk Te‘âlâ andan i‘râz idüb ‘inâyetini selb ider ve nefsine ısmarlayub aña kahr ve gazab ider ve dünyâda nasîbin ancak lakab ider ve ‘ukbâda anı cehennem nârına hatab ider. Nitekim tevâtür-i tefâsîr ile hikâyet olunmuşdur ki hazret-i Mûsâ ‘aleyhi’s-selâmıñ zamânında beldemiz Erzurûm-ı rif‘at-lüzûmuñ cânib-i cenûbunda Büyük İrli Şefve nâmıyla meşhûr-ı ‘âlem olan cebel-i a‘zamıñ zirve-i a‘lâsında inzivâ kılan ekâbir-i evliyâdan Bel‘am bin Bâ‘ûr ismiyle şöhret bulan makâmât-ı evliyâdan evliye bir mertebeye nâ’il olmuşdı ki nazar eyledikde rü’yet-i ‘arşa kuvvet bulmuşıdı. Ve anın zellesi ancak bu olmuşdur ki dünyâya ve ehl-i dünyâya meyl idüb hazret-i Mûsâ ‘aleyhi’s-selâma ‘isyân ile muhâlif gitmişdir. Pes Hakk Te‘âlâ aña kahr idüb ma‘rifetini andan selb itmişdir ve huzûrundan tard idüb misâl-i kelb itmişdir. Nitekim Hakk Te‘âlâ Furkân-ı mübîninde aña «فَمَثَلُهُ كَمَثَلِ الْكَلْبِ»[^109] diyüb ebedü’l-âbâd anı bahr-i dalâlete öyle düşürmüşdür ki ibtidâ-yı emrinde meclis ve va‘zında on iki biñ devât
 
 [s. 281]
 
@@ -535,7 +535,7 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 > Per aç şevkıyla pervâz ile cân eflâki evcinde
 > Çü ‘Ankâsın seniñçün evc-i eflâk âşiyân olmış
 >
-> Tende [?] iki kuvvet var idrâki ve tahrîki
+> Tende iki kuvvet var idrâki ve tahrîki
 > Biri a‘zâda kudretdir biri ‘ilm-i cenân olmış
 >
 > Cenâh aç bu iki kuvvetle pervâz ile sen sende
@@ -551,7 +551,7 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 > O yolda bu felekler çün gubâr-ı kârbân olmış
 >
 > Cihân-ı ‘aşka dâhil olsañ andan bu iki ‘âlem
-> Görinür sanki bir sahrâda bir seng [?] nişân olmış
+> Görinür sanki bir sahrâda bir seng nişân olmış
 >
 > Hutût-ı şeş-cihet andan görinür nokta-i mevhûm
 > Kürât-ı nüh-felek merkez gibi ender miyân olmış
@@ -587,10 +587,10 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 > Vücûdından geçen ol ‘âleme perrân revân olmış
 >
 > Bir ayak cisme bas ol bir kademde cân zuhûr eyler
-> Anıñla dilde sâkin ol ki cism ehli zevân [?] olmış
+> Anıñla dilde sâkin ol ki cism ehli revân olmış
 >
 > Ger olsa ‘aşk-ı rûhânî nedir lezzât-ı cismânî
-> Ki ‘âşık vecd ü hâl isterti [?] bâr-ı girân olmış
+> Ki ‘âşık vecd ü hâl ister teni bâr-ı girân olmış
 
 [s. 282]
 
@@ -636,7 +636,7 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 > Namâz olmış anıñçün mü’miniñ mi‘râcı her sâ‘at
 > Ki re’si arza vaz‘ itmek ‘urûc-ı âsmân olmış
 >
-> Namâz u rûze-i ‘ârif ki hıfz-ı Hakdır ol sâ’ime [?]
+> Namâz u rûze-i ‘ârif ki hıfz-ı Hakdır ol sâ’ime
 > Salâtı hırz-ı cân olmış sıyâmı hıfz-ı nân olmış
 >
 > Rızâ-yı Hak içündür dâ’imâ ef‘âl ü akvâli
@@ -649,12 +649,12 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 > Ki ol ‘aşkı ‘ayân itmiş bu eşyâyı beyân olmış
 >
 > Ölüm ‘aşk ile yegdir zinde olmakdan bu ‘akl ile
-> Ki ‘aşkıñ şânı ‘irfândır bu ‘akl andan zamân [?] olmış
+> Ki ‘aşkıñ şânı ‘irfândır bu ‘akl andan zebân olmış
 >
 > Eger ‘irfân u burhânıñ dilersen farkın andan bil
 > Ki ‘ârif dostı bulmış o ‘âkıl nâme-hân olmış
 >
-> Gözüñ bend ile tâm kıl dibden [?] bir göz açılsun
+> Gözüñ bend ile tâm kıl dibden bir göz açılsun
 > Lisânıñ bağla ile bak kim her ser-mû bir lisân olmış
 >
 > Behiştiñ var iken dûzahdasın giryân u bilmezsin
@@ -667,7 +667,7 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 > Gözüñ yum kendiñe bak kim cenânıñ çün cinân olmış
 >
 > Gözüm tâ kî bu hâristân-ı sûretden gül istersin
-> Göñüldür gülşen-i ma‘nî ki ol perkâr-hân [?] olmış
+> Göñüldür gülşen-i ma‘nî ki ol bir kâr-hân olmış
 >
 > Ümîd-i zevkla telh itme kâmıñ koy bu lezzâtı
 > Göñül bezminde zevk it kim safâsı râygân olmış
@@ -767,7 +767,7 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 [^25]: [Aktaran notu] “Fakat siz dünyâ hayâtını tercîh ediyorsunuz. Hâlbuki âhiret daha hayırlı ve daha kalıcıdır.” (A‘lâ, 87:16–17).
 [^26]: [Aktaran notu] “Muhakkak ki âhiret senin içün dünyâdan daha hayırlıdır. Rabbin sana verecek, sen de hoşnûd olacaksın.” (Duhâ, 93:4–5). Baskıda «والاخرة خير لك من الاولى» yazılıdır. Âyetin aslında «وَلَلْاٰخِرَةُ» geçer.
 [^27]: [Aktaran notu] “Çokluk yarışı sizi oyaladı, ta ki kabirlere varıncaya kadar. Hayır! Yakında bileceksiniz. Yine hayır! Yakında bileceksiniz.” (Tekâsür, 102:1–4).
-[^28]: [Aktaran notu] Kudsî hadîs olarak nakledilen “Yâ ibne Âdem” sözleri: “Ey Âdemoğlu! Ömrünü dünyâyı aramakla tüketdin, cenneti ne zaman arayacaksın? Dünyâ içün hüzünlü sabahlayan, bana kızgın sabahlamış gibidir. Ey Âdemoğlu! Dünyânın zevâline yakînen inanıp da ona nasıl gönül bağladığına; âhirete, onun bekâsına ve ni‘metlerine yakînen inanıp da ondan nasıl uzak durabildiğine şaşarım. Ey Âdemoğlu! Dünyâya tapdınız ve benimle buluşmayı unutdunuz. Sizin hâliniz, dışı güzel, içi çirkin olan alçılanmış kabirler gibidir. Ey Âdemoğlu! Dünyâ, yurdu olmayanın yurdu, malı olmayanın malıdır. Onu aklı olmayan toplar, yakîni olmayan onunla sevinir, tevekkülü olmayan ona hırs gösterir, ma‘rifeti olmayan onun şehvetlerine rağbet eder. Kim geçici bir ni‘meti, kesilecek bir hayâtı ve fânî bir şehveti alırsa nefsine zulmetmiş, Rabbini unutmuş ve dünyâ hayâtı onu aldatmışdır. Ey Âdemoğlu! Kalblerinizi dünyâ sevgisiyle öldürmeyin; zîrâ onun zevâli yakındır. Benim zâtımdan başka her şey helâk olacakdır. Dünyâya rağbet etdiğiniz gibi bana rağbet etseydiniz sizi iki cihânda bahtiyâr ederdim. Ey Âdemoğlu! Benim sevgimi istiyorsan dünyâ sevgisini kalbinden çıkar. Ben sevgimle dünyâ sevgisini bir kalbde aslâ bir araya getirmem; zîrâ su ile ateş bir kabda aslâ birleşmediği gibi iki zıd da birleşmez. Ey Âdemoğlu! Dünyâ sevgisiyle berâber benim sevgimi nasıl umarsın? Benim sevgimi ve rızâmı dünyâyı terkde ara. İbâdetime vakit ayır ki kalbini zenginlikle, elini rızıkla, bedenini râhatla doldurayım. Ey Âdemoğlu! Dünyâyı tanıyıp onu terk eden kurtuldu; âhireti tanıyıp onun içün çalışan vâsıl oldu. Ey Âdemoğlu! Dünyâ fânî, ni‘meti zâil, hayâtı kesik iken ona nasıl rağbet etdiniz? Benim katımda itâ‘at edenler içün sekiz kapılı cennetler vardır. Kim benim rızâmı ve ikrâm yurdumu isterse dünyâyı terk etsin ve aza kanâ‘at etsin. Ey Âdemoğlu! Dünyâdan el çek ki kalbini sevgimle doldurayım. Ey Âdemoğlu! Helâl sana damla damla, harâm sel gibi gelir. Seli bırakıp damlaya yönelirsen vaktin sâfî olur ve kalbin benimle olur. Ey Âdemoğlu! Dünyâdan kaçırdığına üzülme, ondan sana verilene sevinme; zîrâ o bugün senin, yarın başkasınındır. Dünyâyı bırak, âhireti iste. Ben sâlih kullarım içün hiçbir gözün görmediği, hiçbir kulağın işitmediği ve hiçbir beşerin kalbine gelmeyen şeyler hazırladım.” Bu derleme şeklinde muteber hadîs kitablarında bulunmaz. “İbâdetime vakit ayır…” kısmının benzeri Tirmizî, Kıyâmet 30 ve İbn Mâce, Zühd 2’de; son cümle Buhârî, Bed’ü’l-Halk 8 ve Müslim, Cennet 2’dedir. Diğer kısımların kaynağı tesbit edilemedi [?].
+[^28]: [Aktaran notu] Kudsî hadîs olarak nakledilen “Yâ ibne Âdem” sözleri: “Ey Âdemoğlu! Ömrünü dünyâyı aramakla tüketdin, cenneti ne zaman arayacaksın? Dünyâ içün hüzünlü sabahlayan, bana kızgın sabahlamış gibidir. Ey Âdemoğlu! Dünyânın zevâline yakînen inanıp da ona nasıl gönül bağladığına; âhirete, onun bekâsına ve ni‘metlerine yakînen inanıp da ondan nasıl uzak durabildiğine şaşarım. Ey Âdemoğlu! Dünyâya tapdınız ve benimle buluşmayı unutdunuz. Sizin hâliniz, dışı güzel, içi çirkin olan alçılanmış kabirler gibidir. Ey Âdemoğlu! Dünyâ, yurdu olmayanın yurdu, malı olmayanın malıdır. Onu aklı olmayan toplar, yakîni olmayan onunla sevinir, tevekkülü olmayan ona hırs gösterir, ma‘rifeti olmayan onun şehvetlerine rağbet eder. Kim geçici bir ni‘meti, kesilecek bir hayâtı ve fânî bir şehveti alırsa nefsine zulmetmiş, Rabbini unutmuş ve dünyâ hayâtı onu aldatmışdır. Ey Âdemoğlu! Kalblerinizi dünyâ sevgisiyle öldürmeyin; zîrâ onun zevâli yakındır. Benim zâtımdan başka her şey helâk olacakdır. Dünyâya rağbet etdiğiniz gibi bana rağbet etseydiniz sizi iki cihânda bahtiyâr ederdim. Ey Âdemoğlu! Benim sevgimi istiyorsan dünyâ sevgisini kalbinden çıkar. Ben sevgimle dünyâ sevgisini bir kalbde aslâ bir araya getirmem; zîrâ su ile ateş bir kabda aslâ birleşmediği gibi iki zıd da birleşmez. Ey Âdemoğlu! Dünyâ sevgisiyle berâber benim sevgimi nasıl umarsın? Benim sevgimi ve rızâmı dünyâyı terkde ara. İbâdetime vakit ayır ki kalbini zenginlikle, elini rızıkla, bedenini râhatla doldurayım. Ey Âdemoğlu! Dünyâyı tanıyıp onu terk eden kurtuldu; âhireti tanıyıp onun içün çalışan vâsıl oldu. Ey Âdemoğlu! Dünyâ fânî, ni‘meti zâil, hayâtı kesik iken ona nasıl rağbet etdiniz? Benim katımda itâ‘at edenler içün sekiz kapılı cennetler vardır. Kim benim rızâmı ve ikrâm yurdumu isterse dünyâyı terk etsin ve aza kanâ‘at etsin. Ey Âdemoğlu! Dünyâdan el çek ki kalbini sevgimle doldurayım. Ey Âdemoğlu! Helâl sana damla damla, harâm sel gibi gelir. Seli bırakıp damlaya yönelirsen vaktin sâfî olur ve kalbin benimle olur. Ey Âdemoğlu! Dünyâdan kaçırdığına üzülme, ondan sana verilene sevinme; zîrâ o bugün senin, yarın başkasınındır. Dünyâyı bırak, âhireti iste. Ben sâlih kullarım içün hiçbir gözün görmediği, hiçbir kulağın işitmediği ve hiçbir beşerin kalbine gelmeyen şeyler hazırladım.” Bu derleme şeklinde muteber hadîs kitablarında bulunmaz. “İbâdetime vakit ayır…” kısmının benzeri Tirmizî, Kıyâmet 30 ve İbn Mâce, Zühd 2’de; son cümle Buhârî, Bed’ü’l-Halk 8 ve Müslim, Cennet 2’dedir. Diğer kısımların kaynağı tesbit edilemedi.
 [^29]: [Aktaran notu] “Ey gecenin başında sevinçle uyuyan! Hâdiseler çoğu zaman seher vaktinde kapıyı çalar. Gece ile gündüzün gelip gitmesi, ni‘met içinde yaşayan nice nesilleri yok etdi.”
 [^30]: [Aktaran notu] “Dünyâdan soyun; zîrâ sen dünyâya çıplak geldin. Dünyâdan teklen; zîrâ dünyâdan yapayalnız çıkacaksın.”
 [^31]: [Aktaran notu] “Fakr cevherdir, fakrdan başkası arazdır. Fakr şifâdır, fakrdan başkası hastalıkdır. Âlemin hepsi aldatma ve gururdur; âlemden maksad ve sır ise fakrdır.”
@@ -779,21 +779,21 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 [^37]: [Aktaran notu] “Cebbâr’ın aramızdaki taksîmine râzı olduk: ilim bizim, mal düşmanlarımızındır. Zîrâ mal yakında yok olur, Allah’ın (verdiği) ilim ise bâkî kalır, zâil olmaz.” Hz. Ali’ye nisbet edilir.
 [^38]: [Aktaran notu] “Yeryüzünün melikleri tebaa sahibidir; biz ise yaratıkları Yaratan’a kulluk etdik. Onlar ipek ve ham ipekle övünürlerse, biz yamalı hırka ve abâlarla övündük. Onlar yarış atlarına binerlerse, biz otlakda bir gün yalın ayak yürüdük. Onlar yüksek köşklere konarlarsa, biz mescidlere ve zâviyelere konduk. Onlar helvâ ve kızartmalar yerken, biz arpa ekmeğinden bir kuta râzı olduk.”
 [^39]: [Aktaran notu] “Dünyâ azdan da azdır; âşıkı da zelîlden de zelîldir. Büyüsüyle bir kavmi sağır ve kör eder; onlar da delîlsiz şaşkın kalırlar.”
-[^40]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi [?].
+[^40]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi.
 [^41]: [Aktaran notu] Buhârî, Rikâk 3; Tirmizî, Zühd 25 (İbn Ömer rivâyeti).
-[^42]: [Aktaran notu] “Dünyâ sevgisi her hatânın başıdır.” Beyhakî, Şu‘abü’l-Îmân (Hasan-ı Basrî’den mürsel) [?].
-[^43]: [Aktaran notu] Benzeri İbn Ebi’d-Dünyâ, Zemmü’d-Dünyâ’da nakledilir [?].
+[^42]: [Aktaran notu] “Dünyâ sevgisi her hatânın başıdır.” Beyhakî, Şu‘abü’l-Îmân (Hasan-ı Basrî’den mürsel).
+[^43]: [Aktaran notu] Benzeri İbn Ebi’d-Dünyâ, Zemmü’d-Dünyâ’da nakledilir.
 [^44]: [Aktaran notu] Tirmizî, Kıyâmet 30 (Enes rivâyeti); İbn Mâce, Zühd 2 (Zeyd b. Sâbit rivâyeti).
-[^45]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi [?].
-[^46]: [Aktaran notu] Bezzâr ve Deylemî’de Enes rivâyetiyle benzeri geçer [?].
-[^47]: [Aktaran notu] “Dünyâya zühd kalbi ve bedeni râhatlatır.” Taberânî, el-Mu‘cemü’l-Evsat; Kudâ‘î, Müsnedü’ş-Şihâb [?].
-[^48]: [Aktaran notu] Beyhakî, Şu‘abü’l-Îmân (Dahhâk’dan mürsel) [?].
+[^45]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi.
+[^46]: [Aktaran notu] Bezzâr ve Deylemî’de Enes rivâyetiyle benzeri geçer.
+[^47]: [Aktaran notu] “Dünyâya zühd kalbi ve bedeni râhatlatır.” Taberânî, el-Mu‘cemü’l-Evsat; Kudâ‘î, Müsnedü’ş-Şihâb.
+[^48]: [Aktaran notu] Beyhakî, Şu‘abü’l-Îmân (Dahhâk’dan mürsel).
 [^49]: [Aktaran notu] Müslim, Zühd 1; Tirmizî, Zühd 16 (Ebû Hüreyre rivâyeti).
-[^50]: [Aktaran notu] “Dünyâ bir sâ‘atdir, onu tâ‘at kıl.” Sûfî eserlerinde hadîs olarak geçer; muteber hadîs kitablarında bulunmaz [?].
-[^51]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi [?].
-[^52]: [Aktaran notu] “Ebedî yurdu tasdîk edip de aldanış yurdu içün çalışana şaşılır.” İbn Ebi’d-Dünyâ, Zemmü’d-Dünyâ [?].
-[^53]: [Aktaran notu] İlk kısmı: Müslim, Zikir 99; Tirmizî, Fiten 26 (Ebû Sa‘îd el-Hudrî rivâyeti). Benî İsrâîl’e dâir kısım bu lafızla tesbit edilemedi [?].
-[^54]: [Aktaran notu] Beyhakî, Şu‘abü’l-Îmân (Câbir rivâyeti) [?].
+[^50]: [Aktaran notu] “Dünyâ bir sâ‘atdir, onu tâ‘at kıl.” Sûfî eserlerinde hadîs olarak geçer; muteber hadîs kitablarında bulunmaz.
+[^51]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi.
+[^52]: [Aktaran notu] “Ebedî yurdu tasdîk edip de aldanış yurdu içün çalışana şaşılır.” İbn Ebi’d-Dünyâ, Zemmü’d-Dünyâ.
+[^53]: [Aktaran notu] İlk kısmı: Müslim, Zikir 99; Tirmizî, Fiten 26 (Ebû Sa‘îd el-Hudrî rivâyeti). Benî İsrâîl’e dâir kısım bu lafızla tesbit edilemedi.
+[^54]: [Aktaran notu] Beyhakî, Şu‘abü’l-Îmân (Câbir rivâyeti).
 [^55]: [Aktaran notu] Hâkim, el-Müstedrek, IV, 309; Ebû Nu‘aym, Hilyetü’l-Evliyâ, I, 30; Beyhakî, Şu‘abü’l-Îmân (Zeyd b. Erkam rivâyeti).
 [^56]: [Aktaran notu] Müslim, Zühd 2 (Câbir rivâyeti).
 [^57]: [Aktaran notu] Buhârî, Cihâd 70, Rikâk 10 (Ebû Hüreyre rivâyeti). Hamîsa: nakışlı yünlü örtü.
@@ -807,21 +807,21 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 [^65]: [Aktaran notu] Tirmizî, Zühd 43 (Ka‘b b. Mâlik rivâyeti).
 [^66]: [Aktaran notu] İbn Mâce, Zühd 1 (Sehl b. Sa‘d rivâyeti).
 [^67]: [Aktaran notu] Tirmizî, Zühd 35 (Ebû Ümâme rivâyeti).
-[^68]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi [?].
-[^69]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi [?].
+[^68]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi.
+[^69]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi.
 [^70]: [Aktaran notu] “İnsanlar uykudadır, ölünce uyanırlar.” Hz. Ali’ye nisbet edilen söz olarak meşhurdur; muteber hadîs kitablarında merfû‘ olarak bulunmaz.
 [^71]: [Aktaran notu] Tirmizî, Zühd 44; İbn Mâce, Zühd 3 (İbn Mes‘ûd rivâyeti).
-[^72]: [Aktaran notu] “Dünyâ bir köprüdür; onu geçin, onu imâr etmeyin.” Hz. Îsâ’ya nisbet edilen söz olarak bilinir; hadîs olarak kaynağı tesbit edilemedi [?].
-[^73]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi [?].
+[^72]: [Aktaran notu] “Dünyâ bir köprüdür; onu geçin, onu imâr etmeyin.” Hz. Îsâ’ya nisbet edilen söz olarak bilinir; hadîs olarak kaynağı tesbit edilemedi.
+[^73]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi.
 [^74]: [Aktaran notu] “Denizin dalgası üzerine ev yapan kimdir? Yazıklar olsun size! Dünyâyı karar yeri edinmeyin.” Hz. Îsâ’ya nisbet edilen söz.
-[^75]: [Aktaran notu] Farsça mesnevî. Meâli: “Bütün hatâların başı dünyâ sevgisidir; her bilgili onu dost tutmaz. Bu düşmana hiç dostluk yakışmaz, ona hiç gönül bağlamak yakışmadığı gibi. Bu cihân baştan başa derd ve kederdir; her derdi yüz dağ kadardır. Ebedî olanın dostu olan, bu cihânın azâbına lâyıkdır. Peygamberlerin yüzük kaşı olan Muhammed, ne (dünyâyı) imâr etdi ne de imâr etmeyi emretdi. Bu cihân baştan başa su üzerindedir; su üzerinde ise bu bir kabarcıkdır. Su üzerine binâ yapmak yakışmaz; yaparsan elbette suya gark olur. Eğer sen er ve basîret sahibi isen sakın dünyâyı imâr etme. Bu alçak dünyâya çok meyletmek ahmaklığın alâmetidir. Ey birâder, gönlünü dünyâdan tamâmen çek; zîrâ sonunda yıkılır ve harâb olur. Bu dünyâdan Âdemoğluna mihnet ve gamdan başka nasîb yokdur. Sakın gönülden dünyâya meyletme; ondan çabuk geçmek, ayak basıp yer tutmakdan iyidir. Dünyâ âhiret yolunda bir köprüdür; bu sözü cüz’ ve küll bakımından söyleyeyim: Mecâz o cüz’dür ve dünyânın ta kendisidir; hakîkat o küll’dür ve sırf âhiretdir. Ey birâder, bilginin kemâli şudur: Bu köprüden hızlı ve çabuk geç.” Baskıda üç sütun hâlinde, satır satır sağdan sola okunacak düzende dizilmişdir. Onuncu beytin ilk mısra‘ı baskıda «بكلى دل براز دنياى برادر» şeklindedir; “dil ber-âr ez dünyâ ey birâder” anlamında okunmuşdur [?].
+[^75]: [Aktaran notu] Farsça mesnevî. Meâli: “Bütün hatâların başı dünyâ sevgisidir; her bilgili onu dost tutmaz. Bu düşmana hiç dostluk yakışmaz, ona hiç gönül bağlamak yakışmadığı gibi. Bu cihân baştan başa derd ve kederdir; her derdi yüz dağ kadardır. Ebedî olanın dostu olan, bu cihânın azâbına lâyıkdır. Peygamberlerin yüzük kaşı olan Muhammed, ne (dünyâyı) imâr etdi ne de imâr etmeyi emretdi. Bu cihân baştan başa su üzerindedir; su üzerinde ise bu bir kabarcıkdır. Su üzerine binâ yapmak yakışmaz; yaparsan elbette suya gark olur. Eğer sen er ve basîret sahibi isen sakın dünyâyı imâr etme. Bu alçak dünyâya çok meyletmek ahmaklığın alâmetidir. Ey birâder, gönlünü dünyâdan tamâmen çek; zîrâ sonunda yıkılır ve harâb olur. Bu dünyâdan Âdemoğluna mihnet ve gamdan başka nasîb yokdur. Sakın gönülden dünyâya meyletme; ondan çabuk geçmek, ayak basıp yer tutmakdan iyidir. Dünyâ âhiret yolunda bir köprüdür; bu sözü cüz’ ve küll bakımından söyleyeyim: Mecâz o cüz’dür ve dünyânın ta kendisidir; hakîkat o küll’dür ve sırf âhiretdir. Ey birâder, bilginin kemâli şudur: Bu köprüden hızlı ve çabuk geç.” Baskıda üç sütun hâlinde, satır satır sağdan sola okunacak düzende dizilmişdir. Onuncu beytin ilk mısra‘ı baskıda «بكلى دل براز دنياى برادر» şeklindedir; “dil ber-âr ez dünyâ ey birâder” anlamında okunmuşdur.
 [^76]: [Aktaran notu] Farsça. “Hamama ayak basan herkesin gamlı gönlüne neşeden bir kapı açılmasının sırrı nedir? Onun sırrı şudur: Orada dünyâ esbâbından, bir tas ile bir peştamaldan başka hiçbir şey yokdur; o da başkasınındır.”
 [^77]: [Aktaran notu] Farsça. “Dünyâ nedir? Eski ve harâb bir toprak yığını; bir gussa yeri, bir mihnet diyârı, bir melâmet hânesi.”
 [^78]: [Aktaran notu] Farsça. “Ey kanâ‘at, beni zengin kıl; zîrâ senin ötende hiçbir ni‘met yokdur.” Sa‘dî, Gülistân, III. bâb.
 [^79]: [Aktaran notu] Mevlânâ, Mesnevî, III. cild (cenîn temsîli). Meâli: “Ana rahminde cenîne biri, ‘Dışarıda pek düzenli bir âlem var; eni boyu geniş, yeşil bir yeryüzü; içinde yüzlerce ni‘met ve nice yiyici; dağlar, denizler, ovalar; bostanlar, bağlar, ekinler; pek yüksek ve ışıklı bir gök; güneş, ay ve yıldızlar; güneyden, kuzeyden ve batıdan esen rüzgârlarla bağlar düğünler, şenlikler yapar; onun acâyibi vasfa sığmaz. Sen bu karanlıkda ne imtihân içindesin? Bu dar dört çivi arasında, hapis, pislik ve zahmet içinde kan içiyorsun’ deseydi, o kendi hâlinin hükmüyle bu haberi inkâr eder, ondan yüz çevirip kâfir olurdu. Tıpkı bu âlemin avâmı gibi: Ebdâl onlara o âlemden haber verip ‘Bu cihân pek karanlık ve dar bir kuyudur; dışarıda kokusuz ve renksiz bir âlem vardır’ derler. Onların sözü hiç kimsenin kulağına girmedi; zîrâ bu tama‘ derin ve kalın bir perde oldu. Nasıl ki o cenînin kan tama‘ı, onu bu cihândan alçak yerde perdeledi; senin de bu cihânın hoşluğuna tama‘ın, o ebedî hoşluğa perde oldu. Doğrular gibi tama‘dan bîzâr ol ki eşikden içeri ayak basasın; cân gözün aydınlanıp Hakk’ı görür ve şirk karanlığından kurtulup dîn nûru olur.” Baskıda üç sütun hâlinde, satır satır sağdan sola okunacak düzende dizilmişdir; ilk beyit ile ikinci beytin ilk mısra‘ı s. 273’ün sonundadır.
 [^80]: [Aktaran notu] Tirmizî, Zühd 14; İbn Mâce, Zühd 3 (Ebû Hüreyre rivâyeti): “Dünyâ ve içindekiler mel‘ûndur; ancak Allah’ı zikir, ona yakın olanlar, âlim ve müte‘allim müstesnâ.” Metindeki ifâde hadîsin şerh yollu nakli olmalıdır.
 [^81]: [Aktaran notu] Nesâî, İşretü’n-Nisâ 1; Ahmed b. Hanbel, Müsned, III, 128 (Enes rivâyeti).
-[^82]: [Aktaran notu] “Karınlarınızın yarısıyla yiyip için…” Bu lafızla kaynağı tesbit edilemedi [?]. Az yemeğe dâir benzeri: Tirmizî, Zühd 47; İbn Mâce, Et‘ıme 50.
+[^82]: [Aktaran notu] “Karınlarınızın yarısıyla yiyip için…” Bu lafızla kaynağı tesbit edilemedi. Az yemeğe dâir benzeri: Tirmizî, Zühd 47; İbn Mâce, Et‘ıme 50.
 [^83]: [Aktaran notu] “Seni Mevlâ’ndan alıkoyan her şey senin dünyândır.” Sûfî eserlerinde meşhur bir sözdür.
 [^84]: [Aktaran notu] Mevlânâ, Mesnevî, I. cild. Meâli: “Dünyâ nedir? Allah’dan gâfil olmakdır; kumaş, gümüş, evlâd ve kadın değildir. Ağzı kapalı testi, gönlü hava ile dolu olduğundan engin suyun içinde su üstünde yürüdü. Dervişlik havası bâtında olunca, (insan) cihân suyunun üstünde sâkin durur.”
 [^85]: [Aktaran notu] “Bilin ki dünyâ hayâtı bir oyun, bir eğlence, bir süs, aranızda bir övünme ve mal ve evlâdda bir çoğalma yarışıdır.” (Hadîd, 57:20).
@@ -837,17 +837,17 @@ ve kalem ile müte‘allimler anın ilhâmât-ı rabbâniyyesiyle ‘ulûm-ı le
 [^95]: [Aktaran notu] Farsça. Mevlânâ, Mesnevî, II. cild. Meâli: “Halkın toprağına ev kurma; kendi işini yap, yabancının işini yapma. Yabancı kimdir? Senin toprakdan bedenindir ki senin gamın onun içündür. Sen bedeni yağlı ve tatlı şeylerle besledikçe kendi cevherini semiz göremezsin.”
 [^96]: [Aktaran notu] “Güç ve kuvvet ancak yüce ve azîm olan Allah iledir. Allâhım! Beni ve kardeşlerimi bizi senin cenâbından koparan şeylerden kurtar; bizi sapmayan ve saptırmayan, doğru yolu gösteren ve doğru yolda olanlardan kıl. Allâhım, Peygamber Muhammed’e, âline ve ashâbının hepsine salât eyle.”
 [^97]: [Aktaran notu] Ebû Nu‘aym, Hilyetü’l-Evliyâ, I, 209; Gazâlî, İhyâ’, Kitâbü Âdâbi’l-Kesb.
-[^98]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi [?].
+[^98]: [Aktaran notu] Bu lafızla kaynağı tesbit edilemedi.
 [^99]: [Aktaran notu] Ahmed b. Hanbel, Müsned, IV, 412; Hâkim, el-Müstedrek, IV, 308 (Ebû Mûsâ el-Eş‘arî rivâyeti).
 [^100]: [Aktaran notu] Farsça. “Biri gönlünü cândan fânî olana bağlarsa, ona bir zevâl erişince gam olur. Ben gönlümü tamâmen bâkî olana bağladığım içün gönlüm hoş ve şendir.” Baskıda ilk mısra‘daki kelime «نفالى» şeklinde dizilmişdir; “be-fânî” okunmuşdur.
 [^101]: [Aktaran notu] Farsça. Mevlânâ, Mesnevî. Meâli: “Bir iki gün bu içkiyi terk et dersen, ağzını cennet şarâbına daldırırsın. Bir iki gün ne ki? Dünyâ bir sâ‘atdir; onu terk eden râhatdadır. Bu leşi köpeklere bırak; vehim şîşesini kırıp parçala.” İkinci beytin son kelimesi (“râhatîst”) baskıda s. 278’in başındadır; sayfa imi okunurluk içün beytden sonraya konmuşdur.
-[^102]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: sağ sütun birinci, sol sütun ikinci mısra‘. On dördüncü beyitde “İki kişiyi aşan her sır yayılır” anlamındaki Arapça darb-ı mesele («كُلُّ سِرٍّ جَاوَزَ الْاِثْنَيْنِ شَاعَ») işâret vardır. Birinci beyitdeki «بودیرك» kelimesi “dirig” okunmuşdur; okunuşu kesin değildir [?].
+[^102]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir: sağ sütun birinci, sol sütun ikinci mısra‘. On dördüncü beyitde “İki kişiyi aşan her sır yayılır” anlamındaki Arapça darb-ı mesele («كُلُّ سِرٍّ جَاوَزَ الْاِثْنَيْنِ شَاعَ») işâret vardır. Birinci beyitdeki «بودیرك» kelimesi “dirig” (diri, hayât) okunmuşdur; “dîrek” de okunabilir.
 [^103]: [Aktaran notu] “Dünyâyı bırak, (diyelim ki) sana sürülüp getirilsin; onun âkıbeti zevâl değil mi? Dünyân ancak bir gölge gibidir; seni gölgeledi, sonra göç haberini verdi.” Meşhur rivâyeti «هَبِ الدُّنْيَا تُسَاقُ اِلَيْكَ عَفْوًا» şeklindedir; baskıdaki lafız korunmuşdur.
 [^104]: [Aktaran notu] “Nerede olursanız olun, O sizinle berâberdir.” (Hadîd, 57:4).
 [^105]: [Aktaran notu] Farsça. “Bu mahrûmiyyet konağında kimseye bağlanma. Zîrâ gönlünü dostluğuna bağladığın herkes, huyları tabî‘atine aykırı ise, onun riyâkâr sohbeti rûha azâbdır; ahlâkı tabî‘atine uygun ise, ayrılığının şerbeti ölüm tadı verir.”
-[^106]: [Aktaran notu] “Kim Allah içün olursa Allah da onun içün olur.” Sûfî eserlerinde hadîs olarak geçer; muteber hadîs kitablarında bu lafızla bulunmaz [?].
+[^106]: [Aktaran notu] “Kim Allah içün olursa Allah da onun içün olur.” Sûfî eserlerinde hadîs olarak geçer; muteber hadîs kitablarında bu lafızla bulunmaz.
 [^107]: [Aktaran notu] Ebû Tâlib el-Mekkî, Kûtü’l-Kulûb. Aynı söz Gazâlî, İhyâ’, Kitâbü Kesri’ş-Şehveteyn’de de nakledilir.
-[^108]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir. Onuncu beyitde «مُوتُوا قَبْلَ اَنْ تَمُوتُوا» (“Ölmeden önce ölünüz”) sözüne, on birinci beyitde Eflâtûn’a nisbet edilen «مُتْ بِالْاِرَادَةِ تَحْيَ بِالطَّب۪يعَةِ» (“İrâde ile öl ki tabî‘at ile diri olasın”) sözüne işâret vardır. On dokuzuncu beytin ilk kelimesi baskıda «دارئى» şeklindedir; okunuşu kesin değildir [?].
-[^109]: [Aktaran notu] “Onun durumu köpeğin durumu gibidir.” (A‘râf, 7:176). Bel‘am b. Bâ‘ûrâ kıssası müfessirlerce A‘râf, 7:175–176 âyetlerine bağlanır. Metindeki dağ adı baskıda «بیوك ایرلی شفوه» şeklindedir; okunuşu kesin değildir [?].
+[^108]: [Aktaran notu] Türkçe nazım baskıda iki sütun hâlindedir. Onuncu beyitde «مُوتُوا قَبْلَ اَنْ تَمُوتُوا» (“Ölmeden önce ölünüz”) sözüne, on birinci beyitde Eflâtûn’a nisbet edilen «مُتْ بِالْاِرَادَةِ تَحْيَ بِالطَّب۪يعَةِ» (“İrâde ile öl ki tabî‘at ile diri olasın”) sözüne işâret vardır. On dokuzuncu beytin ilk kelimesi baskıda «دارئى» şeklindedir; «بارئى» (Bârî) olarak okunmuşdur.
+[^109]: [Aktaran notu] “Onun durumu köpeğin durumu gibidir.” (A‘râf, 7:176). Bel‘am b. Bâ‘ûrâ kıssası müfessirlerce A‘râf, 7:175–176 âyetlerine bağlanır. Metindeki dağ adı baskıda «بیوك ایرلی شفوه» şeklindedir; “Büyük İrli Şefve” okunmuşdur, “Eğerli” (Erzurum’un güneyindeki Eğerli Dağı) de olabilir.
 [^110]: [Aktaran notu] “Ayrıldığın her şeyin bir bedeli vardır; Allah’dan ayrılırsan O’nun bedeli yokdur.”
 [^111]: [Aktaran notu] s. 281’de başlayan “olmış” redifli manzûmenin son beytidir. Yazar burada şeyhi Tillolu İsmâ‘îl Fakîrullâh’ı (ö. 1734) anar ve kendi adını (İbrâhîm Hakkı) mahlas olarak verir. Baskı “Gavs-ı ‘Alevî” demektedir.

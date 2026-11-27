@@ -633,3 +633,108 @@ En zayıfları: s. 307 *şatrı*, s. 309 *‘afs*, s. 311 üçüncü rubai. Sayf
 - "batman" için kesin karşılık verilmedi ("birkaç kiloluk eski bir ağırlık ölçüsü"), çünkü döneme ve yöreye göre değişir.
 - s. 305 "teşrîh-i eşbâh" "bedenleri inceltir", s. 308 "ilim ve hikmetle dâd" "ilim ve hikmetle nasiplenir" diye verildi; kontrol edilmeli.
 - Manzume ve rubai anlam paragrafları sadeleştirenin yorumudur.
+
+## 01–02 · Tahmini okumalar
+
+2026-11-27 kullanıcı kararı gereği 01 ve 02’deki bütün `[?]` işaretleri kaldırıldı (aktarım + sadeleştirme). Belirsiz yerler görüntü (220 dpi) yeniden incelenerek bağlama en uygun okumayla dolduruldu. Sadeleştirmede aynı okuma esas alındı. Blok sayısı, dipnot numaraları ve `[s. N]` imleri değişmedi (betikle denetlendi).
+
+### 01 · metin
+
+| Sayfa | Baskı / eski metin | Seçilen okuma | Gerekçe |
+|---|---|---|---|
+| 257 | «بالاوتر» bâlâter [?] | bâlâter | Görüntüde açık okunuyor: Farsça "daha yüksek". |
+| 259 | «طاپلقدن» tapılmakdan [?] | tapılmakdan | Harfler "tapılık/tapılmak"; anlam: kendisine ibadet edilmekten. |
+| 263 | «تخليق» tahlîk [?] | tahlîk (sad.: "tahlîk (yaratma, tekvin)") | Sekiz zâtî sıfatın tekvîn sıfatı. Tahlîk/tekvîn aynı anlamda. Vezin bozulmuyor. |
+| 264 | «قنی» kanı [?] | kanı (sad.: "nice, pek çok") | Eski "kanı/hanı". Bağlamda "nice" anlamı. |
+| 265 | «بولاره» bulara [?] | bulara (sad.: bunlara) | Eski Anadolu Türkçesinde "bunlara". |
+| 266 | «اولکوفی» el-Kûfî [?] | el-Kûfî | Ebû Hanîfe’nin bilinen nisbesi. |
+| 266 | «باشنه قبليو» kaplayub [?] | kaplayu (sad.: başının tamamını kaplayarak) | Baskıda ب yok. Başın tamamını meshetmek (istî‘âb) sünneti. |
+| 266 | «باغم» bâğım [?] | balgam | «بلغم» dizgisi. Hanefîde balgam kusmak abdesti bozmaz. Şart kusmak cümlesine bağlandı. |
+| 266 | «دوشجكلين» düşecekli [?] | düşecekleyin (sad.: düşecek gibi) | "-leyin" (gibi) ekiyle anlam tamam: dayanak çekilse düşecek gibi uyumak. |
+| 267 | «قريجقده» kırçıkda [?] | karıcıkda (sad.: yaşlı bir kadın olsa da) | Harflere en yakın anlamlı okuma. "Kocamış kadın olsa da saçı avrettir." Öbür ihtimal: kızcağız. |
+| 268 | «درت اللی اولوب» dört elli olub [?] | dört elli olub (sad.: dört ayak gibi, ellerine dayanarak) | Görüntüde açık. Özürsüz ellere dayanarak kalkmak mekruh. |
+| 268 | «سيومدن» siyimden [?] | süyümden (sad.: başparmakla işaret parmağı arası açıklıktan) | Ağızlardaki süyem/süyüm (karıştan kısa ölçü). |
+| 268 | «كلمكدر» kelmekdir [?] | gelmekdir (sad.: eğilmek, salınmak) | Baskıda elif yok, "eğilmek" değil "gelmek". Anlam: sağa sola salınmak. |
+| 268 | «آيتلمق» aytlamak [?] | arıtlamak | ر düşmüş. Özürsüz boğaz temizlemek (tenahnuh) müfsittir. |
+| 268 | «طواردیمقدر» tavardımakdır [?] | tavardımakdır (sad.: kımıldatmak) | Baskıdaki biçim tutuldu. "tavranmak" (kımıldamak) ailesinden sayıldı. "depretmek" harflere uymuyor. |
+
+### 01 · dipnotlar
+
+- [^4], [^9], [^14], [^37], [^38], [^69], [^83]: `[?]` silindi. Not zaten belirsizliği sözle söylüyor ya da kaynak bilinen kaynak.
+- [^76]: "Bezzâr, Müsned (İbn Ömer rivâyeti) olabilir; doğrulanamadı."
+
+### 02 · metin
+
+| Sayfa | Baskı / eski metin | Seçilen okuma | Gerekçe |
+|---|---|---|---|
+| 272 | «بكلى دل براز دنياى برادر» | Be-küllî dil ber-âz dünyâ-y birâder (baskıdaki biçim) | "dil ber-âr ez dünyâ" anlamında. Dipnot 75’te belirtilmiş. Sadeleştirmede "gönlünü dünyadan tamamen çek". |
+| 277 | «اون» on [?] | ondan (sad.: kalple ondan nefret etmek) | «اوندن» kısalmış. Cümle "kalb ile ondan nefret ve bürûdet-i dünyâ" diye tamam. |
+| 278 | «بودیرك» dirig [?] | dirig (sad.: "bu hayat aynasına") | Eski "dirig/tirig" = diri, hayat. Öbür ihtimal: dîrek. |
+| 279 | «مقلك» mukılliñ [?] | ‘aklıñ (sad.: aklının) | "Kadr ve kıymetiñ olan ‘aklıñ hılâfı" bağlama en uygun. Harf farkı var (م/ع). Öbür ihtimal: mukıllik (yoksulluk). |
+| 279 | «معاملهٔ نار» târ [?] | mu‘âmele-i nâdir (sad.: insanlarla seyrek muamele) | «نادر»dan د düşmüş. Uzlet bağlamı. |
+| 280 | «دارئى» Dârî [?] | Bârî-i Hak (sad.: Yaratıcı (Bârî) Hak) | «بارئى» noktası. Yaratıcı anlamı mısraya uyuyor. |
+| 280 | «لقب» lakab [?] | lakab (sad.: "bir ad (lakap)") | Harfler açık. Dünyadaki nasibi boş bir ad ve şöhret. Öbür ihtimal: la‘b (oyun). |
+| 280 | «بیوك ارلی شفوه» Büyük İrli [?] Şefve | Büyük İrli Şefve | Baskıdaki biçim. Erzurum’un güneyindeki Eğerli Dağı olabilir (dipnot 109). |
+| 281 | «تنده» Tende [?] | Tende | "Tende iki kuvvet var" (idrâk, tahrîk) anlamca tamam. |
+| 281 | «سنك» seng [?] | seng (sad.: "bir işaret taşı") | "seng-i nişân": yol taşı. Öbür ihtimal: siñek. |
+| 281 | «زوان» zevân [?] | revân (sad.: göçüp gitmiş) | ز/ر noktası. Kafiye -ân. "Cism ehli revân olmış" anlamlı. |
+| 281 | «استرتى» isterti [?] | ister teni (sad.: "âşığa teni ağır bir yük") | ن düşmüş sayıldı. Ruhani aşk/cisim karşıtlığına uyuyor. |
+| 282 | «اول صائمه» ol sâ’ime [?] | ol sâ’ime (sad.: o oruç tutan için) | "sâ’im" + yönelme eki. |
+| 282 | «زمان» zamân [?] | zebân (sad.: bir dil) | م/ب. Kafiye ve anlam: akıl, aşkın dili. |
+| 282 | «دیبدن» dibden [?] | dibden (sad.: içten) | Gözü kapayınca içten bir göz açılması. |
+| 282 | «برکار خان» perkâr-hân [?] | bir kâr-hân (sad.: bir kârhane, işlik) | «بر» = bir. Kafiye -ân. Öbür ihtimal: pergâr. |
+
+### 02 · dipnotlar
+
+- [^28], [^40], [^42], [^43], [^45]–[^48], [^50]–[^54], [^68], [^69], [^72], [^73], [^75], [^82], [^98], [^106]: `[?]` silindi. Notlar ya "kaynağı tesbit edilemedi" der ya da bilinen kaynağı verir.
+- [^102]: "dirig" (diri, hayât) okundu; "dîrek" de okunabilir.
+- [^108]: «دارئى», «بارئى» (Bârî) olarak okundu.
+- [^109]: "Büyük İrli Şefve" okundu, "Eğerli" (Eğerli Dağı) de olabilir.
+
+## 03, 06 · Tahmini okumalar
+
+Kullanıcı kararı (2026-11-27) gereği 03 (aktarım ve sadeleştirme) ve 06 (aktarım) metinlerindeki bütün `[?]` işaretleri kaldırıldı. Okunuşu kesin olmayan yerlere bağlama en uygun okuma yazıldı. Kaynağı bulunamayan sözlerin dipnotlarında "tesbit edilemedi [?]" ibaresi işaretsiz "tesbit edilemedi" (sadeleştirmede "tespit edilemedi") oldu. Sayı: aktarım 03'te 47, sadeleştirilmiş 03'te 53, aktarım 06'da 36 işaret kaldırıldı. Blok sayısı, sayfa imleri, dipnot numaraları ve ✱ sayısı değişmedi (betikle denetlendi).
+
+### 03 (s. 283–291)
+
+| Sayfa | Baskı / eski metin | Seçilen okuma | Gerekçe |
+|---|---|---|---|
+| 283 | «استه سنده او دوستكى سن ها», "o dost ki sen hâ [?]" | "İste sende o dost ki sen hâ"; sadeleştirmede "O dostu kendinde ara, haydi sen" | Harfler net. "hâ" ünlem (haydi, işte) sayıldı; dn. 23'e yazıldı. |
+| 284 | Kudsî hadîs «فذت لمن» | «فَاَنْتَ لِمَنْ» | Ardından gelen «فانت مع من» ile koşut. |
+| 284 | Kasîde 9. beyit «سرايا» | «سَرَايَا» korundu; anlamı "seçkin bağışlar" | Görüntüde «سرایا» açık; vezne uyar (vâfir, ‘asb'lı). Seriyye (seçkin, değerli şey) çoğulu sayıldı. «عطايا» (bağışlar) dizgisi de düşünülebilir. |
+| 284 | Kasîde 17. beyit «انا اللهفان» | Baskı biçimi «اَنَا» korundu; anlam «اِذَا» ("kederli seslenince") ile verildi | Mısra‘ın anlamı şart edatı ister; dn. 40'ta belirtildi. |
+| 285 | Kasîde 29. beyit «فلا ينجيك» | «فَلَا يُنْج۪يكَ» | Vezne ve anlama uygun; harekede başka ihtimal zayıf. |
+| 285 | Kasîde 36. beyit «تعززنی» | Metinde «تَعَزَّزْن۪ي» korundu; anlam "Benimle izzet bul" («تَعَزَّزْ ب۪ي») | ن / ب nokta kayması; «تعزز بي» vezne (u - - -) ve anlama uyar. dn. 40'ta belirtildi. |
+| 286 | «ظاهر», "Göñül zâhir [?] ‘akl-ı me‘âdîdir" | "zâhiren"; sadeleştirmede "görünüşte" | Rapordaki öneri; cümle akışı zarf ister. |
+| 286 | «بياور بيكانه‌لك» | "bî-yâver bîgânelik etmek"; sadeleştirmede "(sevgiliden ayrı) yardımcısız yabancılık etmek (ne gerek)" | Harfler «بیاور»; vezin (mefâîlün) "bi-yâ-ver" ile uyar. "Biyâ (gel)" okunuşu da mümkün. İkinci kelime kâfiye (-ânelik) gereği "bîgânelik". En zayıf okumalardan biri. |
+| 286 | «ذائبدر» | "zâ’ibdir" (eriyendir) | Hâ’ib / zâ’ib / tayyib ses dizisi. |
+| 287 | «اونى سن», "onı sen [?]" | "anı san"; sadeleştirmede "onu ya sûra üfleyiş ya da vaat edilen kıyamet san" | «سن» "san" (sanmak emri) okununca cümle tamamlanır; dn. 66'ya yazıldı. |
+| 287 | Farsça «جار حق» | "câr-ı Hak" (Hakk’ın komşusu) | Baskıdaki harf korundu, vezne uyar. «جای حق» (Hakk’ın yeri) dizgisi ihtimali dn. 69'da anıldı. |
+| 288 | «بر پردهٔ بر نقش» | "perde-i pür-nakş" | İkinci «بر» "pür"; vezin (fâilâtün) ve anlam. |
+| 290 | «قالمشدر», "ibtidâ’en kalmışdır [?]" | "kalmışdır"; sadeleştirmede "başlangıçtan beri (diri) kalmıştır" | Baskı biçimi; önceki "hayy ve bâkî" ile "kalmak" (bâkî kalmak) anlamı uyar. "kalkmışdır" de düşünülebilir. |
+| 290 | «اى يم خدا» | "ey yemm-i Hudâ" (Hudâ denizi) | Harfler ve vezin uyar. |
+| dn. 62 | "benzeri geçer [?]" | "benzerinin geçtiği bildirilir, doğrulanamamışdır" | Şüphe sözle ifade edildi. |
+| dn. 79 | "bulunmaz [?]" | "bulunmaz" | Bilinen kaynaklara göre. |
+| dn. 25, 26, 28–31, 36–40, 46, 53, 57, 61, 64, 73, 74, 76 | "tesbit edilemedi [?]" | "tesbit edilemedi" | Kaynak bulunamadı kuralı. |
+
+### 06 (s. 312–318)
+
+| Sayfa | Baskı / eski metin | Seçilen okuma | Gerekçe |
+|---|---|---|---|
+| 312 | «فى الجلاء القلب» | «فِي الْجَلَاءِ الْقَلْبِ» (baskı biçimi), "kalbin cilâsı" | Görüntüde harf-i tarif açık. Dilbilgisi «جلاء القلب» ya da «انجلاء القلب» ister; dn. 8'de belirtildi. |
+| 312 | «دلندن» / «دانذن», "dilinden [?]" | "dilinden" | Vezin (remel) ve anlam ("gönülden rıza göstere"). |
+| 313 | «ضرور اکله» | "zarûra gele" | Kâfiye -ûra. "sürûra" ve "zuhûra" aynı nazmda başka beyitlerde kâfiye olduğu için seçilmedi. |
+| 313 | «ونوم المدن» | "nevmü’l-beden" | ب / م karışması; bağlam beden uykusu. |
+| 313 | «باشی دارتار» | "başı dartar" | "derdi artar / başı dartar" seci‘; "dartmak" (çekmek). Anlamı kapalı. |
+| 314 | «یاز» | "yâr" | Kâfiye. |
+| 314 | Başlık «خلصت» | "haslet-i kirâm" | Dizgi; «خصلت». |
+| 314 | «آزی آزاویی» | "Az yi az uyı" | 05'teki rubâ‘î ile aynı ifade. |
+| 315 | «حقه», "Hakka [?]" | "Hakkı’ya" | Vezin (müctess) bir hece daha ister; mahlas son beyitte; anlam yazarın kendine hitâbı. dn. 30'da baskı biçimi belirtildi. |
+| 315 | «دیك سهدر» | "Dek siyehdir" (ancak, yalnız) | Harfler ve vezin (müfte‘ilün) uyar. "Tek" ihtimali de var. |
+| 315 | «باغلدی شب دستی جوهر کاردن» | "Bağladı şeb desti cevher-kârdan" (gece eli cevher işinden bağladı) | Harfler korundu; anlam kapalı. En zayıf okumalardan biri. |
+| 316 | Farsça «کر قعر» | "K’ez ka‘r-ı nihâdet" | «کز» noktası düşmüş sayıldı; anlam "varlığının dibinden" ister; dn. 33. |
+| 317 | «قوم» (iki kez) | "Pes nevm … ve nevm-i rûhânî" | Önceki ve sonraki cümleler "nevm-i …" dizisi; "kavm" anlamsız. Aktarımda baskıdan ayrılan tek yer (sesli okumada anlamsızlığı önlemek için). |
+| 317 | «کاوب بارکران» | "gâv-ı bâr-girân" (ağır yük öküzü) | Bağlam: mürîdlere yük olmak. |
+| 318 | «سرایت» | "seyr it" | Vezin (hezec, feûlün) "seyr it"i ister, "sirâyet" vezne uymaz; dn. 38. |
+| dn. 7, 8, 9, 18, 19, 21, 25, 26, 33, 37 | "tesbit edilemedi [?]" | "tesbit edilemedi" | Kaynak bulunamadı kuralı. |
+| dn. 10, 20, 24, 25, 27, 30, 32, 33, 38 | okunuş şüphesi [?] | seçilen okuma dipnotta sözle yazıldı | Yukarıdaki satırlar. |
