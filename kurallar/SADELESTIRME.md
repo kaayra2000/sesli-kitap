@@ -97,3 +97,9 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-26 | Mârifetnâme 02 | Eski para ve ölçüler (dirhem, dinar) korunur, ilk geçtiği yerde ayraç içinde açıklanır. |
 | 2026-11-26 | Mârifetnâme 02 | Kişi ve yer adlarında metindeki biçim DİA'dan farklıysa DİA biçimi kullanılır: Gazâlî → Gazzâlî, Erzurûm → Erzurum. |
 | 2026-11-26 | Mârifetnâme 02 | Aktaranın notundaki maddi hata sadeleştirmede düzeltilir, raporda belirtilir. Aktarım dosyası da aynı turda düzeltilir. |
+| 2026-11-27 | Mârifetnâme 03 | Baskıda ayraç içindeki Arapça ibare sadeleştirmede ayraçsız yazılır: `«…»[^n] “meal”`. Aktarımda baskıdaki ayraç korunur. |
+| 2026-11-27 | Mârifetnâme 03 | Sayfa imi bir Arapça ibarenin içine düşerse ibare aktarımdaki yerden bölünür. Meal ibarenin bittiği sayfada verilir. |
+| 2026-11-27 | Mârifetnâme 03 | Esmâ-i hüsnâ (Vehhâb, Samed, Kahhâr …) korunur, ilk geçtiği yerde ayraç içinde anlamı verilir. TDK sözlüğünde olan TDK yazımıyla (Rahman, Cebbar), olmayan DİA biçimiyle (Deyyân) yazılır. |
+| 2026-11-27 | Mârifetnâme 03 | Aktaranın mealinde [?] ile boş bırakılmış kelime, anlam paragrafında Latin harfli okunuşuyla ve [?] ile yazılır: serâyâ [?]. |
+| 2026-11-27 | Mârifetnâme 03 | Arap harfi bulunan dipnotta anılan Türkçe kelime tırnakla değil italikle yazılır (*mümin*). |
+| 2026-11-27 | Mârifetnâme 03 | "Hevâ" nefse değil başka bir şeye bağlıysa terim sayılmaz: "aşkın hevâsı" → "aşkın arzusu". |

@@ -264,3 +264,94 @@ Dosya: `sadelestirilmis/02-fenn-i-salis-bab-1-fasl-2.md`. Sözlük: `sozluk.tsv`
 - s. 282: "zamân [?]" kelimesi rapordaki öneriyle anlam paragrafında "bir dil (zebân [?])" diye verildi. s. 272 Farsça mesnevideki "ber-âz [?]" de önerilen okumayla anlamlandırıldı ("gönlünü dünyadan tamamen çek [?]").
 - Türkçe manzumelerin (s. 275, 276–277, 278, 280, 281–283) anlam paragrafları yazılırken dipnotta meal yoktu. Bunlar sadeleştirenin anlamlandırmasıdır; kapalı mısralar lafza yakın bırakıldı, [?] kelimeler aynen alındı (dirig, Dârî, Tende, seng, zevân, isterti, sâ’ime, dibden, perkâr-hân).
 - Ölüm tarihleri (Gazzâlî, Ebû Tâlib el-Mekkî, Ebü’d-Derdâ, Ebû Nüvâs, İsmâil Fakîrullah) ezberden verildi, DİA ile karşılaştırılmalı. Ebû Bekir, Hz. Ömer, Hz. Ali ve Mevlânâ’nın tarihleri 01’de verildiği için tekrarlanmadı.
+
+## 03 · Fenn-i Sâlis, Bâb 1, Fasıl 3 (s. 283–291)
+
+Dosya: `aktarim/03-fenn-i-salis-bab-1-fasl-3.md`. Kaynak: PDF s. 298–306 (matbu sayfa + 15).
+
+### Kapsam ve yöntem
+
+- Fasl-ı Sâlis s. 283’ün ortasında, 02’nin son manzûmesinden hemen sonra başlar; s. 291’in üst yarısındaki "Ey ‘aşk-ı pâk" manzûmesiyle biter. Ardından gelen **Fasl-ı Râbi‘** başlığında (s. 291) durulmuşdur. Fasıl 9 sayfa olduğu için bölünmedi.
+- Yedi nev‘ başlığının yedisi de var (#### Nev‘-i Evvel … Nev‘-i Sâbi‘). Fasıl başındaki takdim cümlesi "yedi nev‘ ile" der.
+- Her sayfa 220 dpi görüntüden yedi şeride bölünüp büyütülerek okundu, şüpheli satırlar ayrıca kırpıldı (`scratchpad/marifet/m3-*.png`).
+- Sayfa imleri sayfanın başladığı yere kondu. s. 284 imi kudsî hadîsin, s. 285 imi Arapça kasîdenin, s. 289 imi cümlenin, s. 291 imi manzûmenin ortasına düşüyor.
+- s. 284–285’deki Arapça kasîde ("فَاطْلُبْن۪ي تَجِدْن۪ي" redifli, 40 beyit) üç sütunda, satır satır sağdan sola okunacak düzende dizilmiş. Meali tek dipnotta (40) verildi. s. 289’daki Türkçe mesnevî ("‘Akl kim kârı halka hîlesidir", 11 beyit) de üç sütunlu; okuma sırası kafiyeden doğrulandı.
+- s. 286–287’deki Nev‘-i Râbi‘ ve Hâmis nesir içinde ✱ ile ayrılmış kıt‘a ve beyitler içeriyor. Baskıda (Kıt‘a), (Beyt), (Nazm) etiketi olanlar blok alıntıya alındı. Etiketsiz kısa beyitler ("Ey göñül her ne dilerseñ…", "Hızr-veş âb-ı hayâtı…") baskıda ✱ ile ayrıldığı için yine beyit olarak dizildi.
+- Âyetler, kudsî hadîsler ve "Rabbimi nûr-ı mutlak bulmışım" türü hadîsler: baskıda Arapça olanlar harekeli verildi. Nev‘-i Sâlis’teki hadîsler baskıda yalnız Türkçe tercüme edilmiş; Arapça metin eklenmedi, aslı bilinenler dipnotta Arapçasıyla anıldı.
+- Kaynak ve ölüm tarihleri ezberden. Özellikle kudsî hadîs ve sûfî sözlerinin "tesbit edilemedi" notları DİA, Keşfü’l-Hafâ ve el-Mevzû‘ât ile karşılaştırılmalı.
+- s. 289’un altındaki forma imi "( ـ ٣٧ ـ معرفتنامه ـ )" ve sayfa başlarındaki süslü sayfa numaraları aktarılmadı.
+
+### Sayılar
+
+- Kelime: 8.363 (dipnotlar hariç 5.724). Dipnot: 80. [?]: 47 (metinde 15, dipnotlarda 32).
+
+### [?] listesi (metin)
+
+- s. 283: Manzûmenin ilk mısra‘ı «استه سنده او دوستكى سن ها» "İste sende o dost ki sen hâ [?]". Okunuş belli ama anlamı kapalı. "sen hâ" belki "sende hâ" ya da "sen-hâ" olabilir.
+- s. 284: Kudsî hadîste «فذت لمن». «فَاَنْتَ لِمَنْ» okundu. Hemen ardından gelen «فانت مع من» bunu destekliyor.
+- s. 284: Kasîde 9. beyit «اَنَا الْوَهَّابُ يَا عَبْد۪ي سَرَايَا»: «سرايا» kelimesi anlaşılmıyor. Mısra vezne de uymuyor; dizgide kelime düşmüş olabilir.
+- s. 284: Kasîde 17. beyit «اَنَا اللَّهْفَانُ نَادَان۪ي»: anlam «اِذَا اللَّهْفَانُ» gerektiriyor; baskı «انا».
+- s. 285: Kasîde 29. beyit «فَلَا يُنْج۪يكَ»: harekesi tahmin.
+- s. 285: Kasîde 36. beyit «تعزز نى». «تَعَزَّزْن۪ي» diye yazıldı, anlamı belirsiz.
+- s. 286: "Göñül zâhir [?] ‘akl-ı me‘âdîdir": baskı «ظاهر». Öneri: "zâhiren".
+- s. 286: Kıt‘a "Cemâliyle olur gülşen biyâver [?] bîgânelik [?] etmek": baskı «بياور بيكانه‌لك». Öneri: "bî-yâver" ya da "biyâ (gel), ver"; "bîgânelik".
+- s. 286: "zâ’ibdir [?] ol göñül ki ‘ukbâ iledir": baskı «ذائبدر». Hâ’ib / zâ’ib / tayyib dizisinde ses benzeşmesi için seçilmiş olmalı. Anlam "eriyen".
+- s. 287: "Yâ nefh-i sûr onı sen [?]": baskı «اونى سن». Öneri: "anı sen".
+- s. 287: Farsça beyit "Ki cânet câr-ı Hak [?] dildâr dildâr": baskı «جار حق». Öneri: "câr-ı Hak" (Hakk’ın komşusu) ya da «جای حق» (câ-yı Hak).
+- s. 288: Manzûme 4. beyit "Cismdir bir perde-i pür [?] nakş": baskıda iki kez «بر». İkincisi "pür" okundu.
+- s. 290: "anıñla ibtidâ’en kalmışdır [?]": baskı «قالمشدر». Bağlamda "kâl olmışdır" ya da "kalkmışdır" da düşünülebilir.
+- s. 290: Manzûme ilk beyit "ey yemm-i [?] Hudâ": baskı «اى يم خدا».
+
+### [?] listesi (dipnotlar)
+
+- Kaynağı tesbit edilemeyen ya da sûfî eserlerine dayanan rivâyetler: dn. 25, 26, 28, 29, 30, 31, 36, 37, 38, 39, 46, 53, 57 (ikinci kısım), 61, 62, 64, 73, 74, 76 (genişletilmiş lafız), 79. Kasîdenin (dn. 40) nisbeti bulunamadı.
+- dn. 23, 40, 66, 69, 72, 80: yukarıdaki okunuş şüpheleri.
+
+### Notlar
+
+- s. 284 kudsî hadîsinde «وفي اللب روحا» (dizide «وفي القلب» beklenir) ve «ولا تألمت بحزن وتلذذت» (beklenen «ولا تلذذت») baskıdaki gibi bırakıldı, dipnotta belirtildi.
+- s. 285’teki "Mü’min mir’ât-ı Mü’min-i Müheymin’dir" ifadesinde yazar, Ebû Dâvûd hadîsindeki ikinci "mü’min"i Allah’ın ismi olarak yorumlamış (dn. 51).
+
+## 03 · Sadeleştirme
+
+Dosya: `sadelestirilmis/03-fenn-i-salis-bab-1-fasl-3.md`. Sözlük: `sozluk.tsv` (45 yeni terim, toplam 252).
+
+### Eşleşme
+
+- Aktarım 77 blok: 9 sayfa imi, 8 başlık, 26 düz yazı paragrafı, 20 manzum blok, 14 etiket ((Beyit), (Kıta), (Nazım)).
+- Sadeleştirme 97 blok: aynı 77 blok aynı sırada, artı 20 italik anlam paragrafı. Her manzum bloğun hemen altında bir anlam paragrafı var. Sayfa imiyle bölünen kaside (s. 284/285, beytin ortasından) ve son nazım (s. 290/291) için her parçanın anlamı kendi sayfasında.
+- s. 284 imi 26. dipnotun Arapça ibaresinin içinde; ibare aktarımdaki yerden bölündü, meal s. 284’teki paragrafta. s. 288, 289 ve 290 imleri cümle ortasında; cümleler aynı yerden bölündü (s. 290: "seninle sevgi ve inayet | gösteririm"). s. 289/290’daki akıl hadisi sayfa imini aştığı için tırnaksız, iki nokta ile verildi.
+- 46 Arapça «…» ibaresi (manzumeler dahil) ve 20 manzum blok aktarımdan betikle kopyalandı, birebir aynı. 80 dipnot numarası ve 46 ✱ korundu. Metindeki 15 [?] yerinde; anlam paragraflarına 11 [?] daha girdi. Dipnotlardaki [?] 32’den 27’ye indi: 5’i meal ile birlikte anlam paragraflarına taşındı (dn. 40’ta 4, dn. 69’da 1). Hiçbir dipnotta Arap harfi ile “…” birlikte yok (betikle denetlendi).
+- Kelime sayısı: 9.068 (dipnotlar hariç 7.887). Aktarım: 8.363 (dipnotlar hariç 5.724).
+
+### Karar günlüğü adayları
+
+1. **Ayraç içindeki Arapça ibare:** Baskıda ayraç içinde verilen âyet ve hadis ibarelerinde («…»)[^n] ayraç kaldırılır: «…»[^n] “meal”. `metin/hazirla.py` ibare ile dipnot imini bitişik arar; ayraç kalırsa okunuşta boş bir ayraç kalır (dn. 55, 67, 77, 78).
+2. **Sayfa imi Arapça ibarenin içinde:** İbare aktarımdaki yerden bölünür, meal ibarenin bittiği sayfadaki paragrafa yazılır (02’de uygulanmıştı, günlükte yoktu).
+3. **Allah’ın isimleri:** Esmâ-i hüsnâdan bir isim metinde isim olarak geçerse korunur, ilk geçtiği yerde ayraç içinde anlamı verilir ve sözlüğe yazılır: Vehhâb (karşılıksız bağışlayan), Samed, Kahhâr, Hallâk, Tevvâb, Settâr, Gaffâr, Rezzâk, Mennân, Ferd, Hayy, Vedûd, Hannân. Yazım sorusu açık: 01–02’de *Cebbar*, *Rahman* düzeltme işaretsiz, *Deyyân* işaretli. Önerim: TDK sözlüğünde olanlar TDK yazımıyla, olmayanlar DİA biçimiyle; karar verilirse bu bölümdeki isimler ona göre düzeltilmeli.
+4. **Anlam paragrafında okunamayan kelime:** Aktaran mealinde "… [?]" diye boş bırakılan Arapça ya da Farsça kelime, anlam paragrafında Latin harfli okunuşu ve [?] ile yazılır (serâyâ [?], Teazzeznî [?], câr-ı Hak [?]).
+5. **Arap harfli dipnotta Türkçe kelime:** Arap harfi bulunan dipnotta Türkçe bir kelime ya da okuma anılacaksa tırnak değil italik kullanılır (dn. 51 *mümin*, dn. 66 *pestiñle*). Arap harfi bulunmayan dipnotta “…” serbesttir (dn. 33, 42, 54, 60).
+6. **Hevâ’nın nefse bağlı olmadığı yer:** "‘Aşkıñ hevâsı" (s. 286 kıtası) nefsin arzusu değildir; "aşkın arzusu" diye verildi. Kural: hevâ nefse değil başka bir şeye bağlanıyorsa terim sayılmaz, bağlamına göre "arzu" ya da "hava" olur.
+7. **Aktaran notundaki maddi hatalar (aktarım dosyası düzeltilmeli; bu turda başka dosyaya dokunulmadı):**
+   - Dipnot 80: Arapça mısra ("İz kad bedâ cemâlüke…") dördüncü değil, **beşinci** beytin ikinci mısraıdır. Sadeleştirmede düzeltildi.
+   - [Düzeltildi] Aktarım raporu (Kapsam ve yöntem) kasideyi 39 beyit sayıyordu; betikle sayım 40 beyit veriyor (s. 284’te 25 tam beyit ve 26. beytin ilk mısraı, s. 285’te 26. beytin ikinci mısraı ve 14 beyit). Dn. 40’taki beyit numaraları (9, 17, 29, 36) doğrudur.
+
+### Anlamı belirlemesi güç yerler
+
+- s. 283: İlk manzumenin ilk mısraı ("o dost ki sen hâ [?]") anlam paragrafında lafza yakın bırakıldı.
+- s. 285: "Mü’min mir’ât-ı Mü’min-i Müheymin’dir" yazarın yorumuna göre verildi: "Mümin, Mümin (güven veren) ve Müheymin olan Allah’ın aynasıdır."
+- s. 285: Kalbe danışma hadisinde "Zîrâ ki hayr vardır, kalb anıñla mutma’in olur" lafza yakın verildi: "Çünkü öyle bir hayır vardır ki kalp onunla huzur bulur". "Hayr odur ki" kastedilmiş olabilir. Son cümledeki "anı" şer olarak anlaşıldı ("İnsanlar sana o işin yapılabileceğine fetva verseler bile onu yapma").
+- s. 286: "gülistân-ı vahdeti nûş" ("vahdet gül bahçesini içmek") lafza yakın bırakıldı. Görüntüde "gül-âb" (gülsuyu) olup olmadığına bakılmalı.
+- s. 286: Kıtadaki "biyâver [?] bîgânelik [?] etmek" anlam paragrafında da çözülemedi: "biyâver [?] yabancılık [?] etmek".
+- s. 286: "zâ’ibdir [?]" rapordaki öneriyle "(eriyendir)" açıklamasıyla verildi. "zâhir [?]" önerilen okumayla "zahiren [?]" yazıldı.
+- s. 287: "Çünki göñül beyt-i Hudâdır, göñline gelen Hudâdan cüdâdır" cümlesi lafzen çelişkili görünüyor. "gönlüne (Allah’tan başka) gelen Allah’tan ayrıdır" diye ayraçlı bir açıklamayla verildi. Kontrol edilmeli.
+- s. 287: "Serây-ı lî ma‘a’llâhî" anlam paragrafında 43. dipnottaki "Lî maallah vaktün" sözüne bağlandı: "“Benim Allah ile bir vaktim var.” sözünün sarayı".
+- s. 289: "gayb-ı bâyende tercümândır" "gerektiği gibi gaybın tercümanıdır" diye verildi. Kelime "pâyende" (kalıcı) ise "kalıcı gaybın tercümanı" olur; görüntüyle kontrol edilmeli.
+- s. 289: Mesnevinin dördüncü beytindeki "Heb ‘atâ-yı ‘Utârid oldı Zühal" lafza yakın bırakıldı: "hep Utarid’in bağışı oldu, Zühal". "oldı" bir bağlacın dizgi hatası olabilir.
+- s. 289: "‘Akl eş‘âr dîninde ‘âr eyler" "Akıl şiirler dininden utanır" diye verildi.
+- s. 290: "anıñla ibtidâ’en kalmışdır [?]" lafza yakın verildi: "Onunla başlangıçta kalmıştır [?]".
+- s. 290: "âbâ ve ümmehât" yerleşik anlamıyla (âbâ-yı ulviyye, ümmehât-ı süfliyye) "babalar ve analar (gökler ve unsurlar)" diye açıklandı.
+- s. 291: "Cân-ı cihânsın ân ile" ifadesindeki "ân" 02’deki "hüsn ü ân" gibi "alımlılık" anlamında alındı.
+- Kudsî hadislerin ve âyetlerin mealleri aktaran notlarından sadeleştirildi. Türkçe manzumelerin (s. 283, 286, 287, 288, 289, 290–291) anlam paragrafları sadeleştirenin yorumudur.
+- Metinde ölüm tarihi verilecek yeni kişi yok: Hz. Ömer ve Hz. Ali’nin tarihleri 01’de verildi, Hz. Dâvûd peygamberdir.
+- Dipnotlara sadeleştirenin iki kısa eki girdi: dn. 23’te mahlas notu, dn. 44’te "savm-ı visal" açıklaması.
