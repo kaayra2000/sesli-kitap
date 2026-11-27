@@ -180,6 +180,10 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
     t = t.replace("*", "").replace("✱", ",").replace("…", ",")
     t = re.sub(r"\s*[—–]\s*", ", ", t)
     t = t.replace("[", "").replace("]", "")
+    # Kısaltmalar: (ö. 13/634) -> ölümü on üç, altı yüz otuz dört; Hz. -> Hazreti
+    t = re.sub(r"(?<![\wÇĞİÖŞÜçğıöşü])ö\.\s*(?=\d)", "ölümü ", t)
+    t = re.sub(r"(?<![\wÇĞİÖŞÜçğıöşü])Hz\.\s*", "Hazreti ", t)
+    t = re.sub(r"\b(\d+)/(\d+)\b", lambda m: f"{m.group(1)}, {m.group(2)}", t) if "ölümü" in t else t
     # Parantez içi (dua, açıklama) ayrı bir söz öbeğidir: virgülle ayrılır, yoksa cümleye yapışıp yutuluyor.
     t = re.sub(r"\s*\(\s*", ", ", t)
     t = re.sub(r"\s*\)\s*(?=[,.;:!?])", "", t)
