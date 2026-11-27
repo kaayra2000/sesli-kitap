@@ -738,3 +738,47 @@ Kullanıcı kararı (2026-11-27) gereği 03 (aktarım ve sadeleştirme) ve 06 (a
 | 318 | «سرایت» | "seyr it" | Vezin (hezec, feûlün) "seyr it"i ister, "sirâyet" vezne uymaz; dn. 38. |
 | dn. 7, 8, 9, 18, 19, 21, 25, 26, 33, 37 | "tesbit edilemedi [?]" | "tesbit edilemedi" | Kaynak bulunamadı kuralı. |
 | dn. 10, 20, 24, 25, 27, 30, 32, 33, 38 | okunuş şüphesi [?] | seçilen okuma dipnotta sözle yazıldı | Yukarıdaki satırlar. |
+
+## 04–05 · Aktarım tahmini okumaları
+
+[?] kuralı (2026-11-27, kullanıcı kararı) aktarıma uygulandı: `aktarim/04-…md` (33 [?]) ve `aktarim/05-…md` (52 [?]) içinde [?] kalmadı. Okumalar sadeleştirmedeki seçimlere göre yazıldı. Sadeleştirmenin zayıf saydığı yerlere sayfa görüntüsüyle (PDF s. = matbu + 15) yeniden bakıldı; hiçbirinde görüntü daha iyi bir okumayı açıkça göstermedi, bu yüzden hepsi sadeleştirme tablosundan alındı. Kaynak [?]’ları dipnotda "Kaynağı tespit edilemedi." oldu; öbür şüpheler dipnotda sözle ("… olabilir", "okunuşu kesin değildir") anlatıldı. Blockquote içindeki dört sayfa imi (s. 295, 297, 300, 303) manzumeyi bölen ayrı bloka alındı. Betikle denetlendi: blok dizisi, sayfa imleri, dipnot imleri, ✱, Arapça ibareler ve manzum bloklar sadeleştirmeyle (italik anlam paragrafları çıkarılınca) birebir eşleşiyor.
+
+| Bölüm | Sayfa | Baskıdaki biçim | Aktarımda yazılan | Kaynak |
+|---|---|---|---|---|
+| 04 | 292 | «فردا صفادر» | nokta-i ferd-i safâdır | tablo (görüntüye bakıldı, daha iyisi yok) |
+| 04 | 293 | «اورکه» (nazım) | özge | tablo |
+| 04 | 293 | «ارائتى» | irâ’eti | tablo |
+| 04 | 294 | «ظاهر» | zâhir (dizgi hatası kararı: baskıdaki biçim, dn. 70) | karar |
+| 04 | 295 | «قلبه» | kalbdir | tablo |
+| 04 | 297 | «چكمكه حق بنده در» | Çekmege Hakkı bendedir | tablo |
+| 04 | 297 | «خوض» | hôş (dizgi hatası sayıldı; dn. 77’de "havz" da anıldı) | tablo |
+| 04 | 299 | «كتابتست ترسی» | kitâbetest tersî | tablo |
+| 04 | 300 | «آیانه» | âyânesin | tablo (görüntüye bakıldı; «آیانه» açık, "âşiyâne" dizgi hatası ihtimali dışında daha iyisi yok) |
+| 04 | 300 | «بو نجلين» | bu ecilden | tablo (görüntüye bakıldı, daha iyisi yok) |
+| 04 | 301 | «يانلش» | yanmış | tablo |
+| 04 | 302 | «تجرید و تجردره» | Tecrîd ü tecerrüdle | tablo (görüntüye bakıldı; «ره» açık; dn. 92’ye "tecerrüdde" ihtimali eklendi) |
+| 04 | 302 | «كف اوله» | keff ola | tablo (görüntüye bakıldı, daha iyisi yok) |
+| 04 | 303 | «بوعصيوته» | bu ‘isyâna | tablo |
+| 04 | 304 | «حسن مدا راه» | hüsn-i müdârâda | tablo |
+| 05 | 304 | «یا برسوز آرسه» | yâ bir söz atarsa | tablo |
+| 05 | 305 | «فترتدر» | fikretdir | tablo |
+| 05 | 306 | «اکلا» | «كَلَّا» | tablo |
+| 05 | 306 | «ارکك» (nazım) | erkek | tablo |
+| 05 | 306 | «یوسون» (nazım) | yutsun | tablo |
+| 05 | 307 | «ونفس شتری کیکدن» | nefs şatrı kepekden | tablo (görüntüye bakıldı, daha iyisi yok) |
+| 05 | 307 | «حفظ نفس» | hazz-ı nefs | tablo |
+| 05 | 307 | «درد اوله» (musammat) | Dürd ola | tablo |
+| 05 | 307 | «سیرایت» (musammat) | Seyr it | tablo |
+| 05 | 307 | «سیرانکهکدر» (musammat) | seyrângehiñdir | tablo |
+| 05 | 308 | «انسانکه» | insân ekldir ki | tablo |
+| 05 | 308 | «انهار» | enbâr-ı evhâm | tablo |
+| 05 | 308 | «چوحوروحشم» (nazım) | çü hûr u haşem | tablo |
+| 05 | 309 | «عفص» | «عَفْصٌ» (‘afs, dn. 33) | tablo (görüntüye bakıldı; «عفص» açık, daha iyisi yok) |
+| 05 | 309 | «دلدره» (musammat) | dildedir | tablo |
+| 05 | 309/310 | «آتش» / «لاشهٔ لاشی» | at / lâşesi gibi (sayfa imi arada) | tablo (görüntüye bakıldı; s. 309 sonu «آتش» açık) |
+| 05 | 310 | «اکامل» | kâmil | tablo |
+| 05 | 311 | «معرفت شیطاندر» | ma‘rifet-i şeytândır (baskıdaki gibi) | tablo (görüntüye bakıldı; baskı açık) |
+| 05 | 311 | «حقی ازیی ایله بطنه حاقی میزان» | Hakkı azığı ile batna hakkı mîzân | tablo (görüntüye bakıldı, daha iyisi yok) |
+| 05 | 311 | «آزاوبی» | âz uyı | tablo |
+
+Sadeleştirme için öneri (karar kullanıcıda): s. 302 «تجرید و تجردره» için "tecerrüdde" (ر/د karışması, tek nokta farkı) "tecerrüdle"den (iki harf farkı) daha yakın görünüyor ve anlamca da uygun ("gönül evi tecrîd ve tecerrüdde"). Seçilirse aktarımda ve sadeleştirmede manzum satır birlikte değişmeli.
