@@ -39,7 +39,7 @@ def aciklamalar(kitap):
             baslik = f"{v['baslik']} | {b['ad']} | Sesli Kitap"
         assert len(baslik) <= 100, baslik
         acik = (f"{v['yazarin']} «{v['baslik']}» adlı eserinden {b['sira']}: {b['ad']}.\n\n"
-                f"{v['yazar_cumle']}\n\n⚠️ {YZ}\n\nYayımlanan bölümler:\n{liste}\n\n{v['etiket']}")
+                f"{v['yazar_cumle']}\n\n⚠️ {YZ}\n\nHazırlanan bölümler (oynatma listesinde kitap sırasıyla):\n{liste}\n\n{v['etiket']}")
         out.append((b["slug"], baslik, acik))
     md = "\n\n---\n\n".join(f"## {d}\n\n**Başlık:** {b}\n\n**Açıklama:**\n\n{a}" for d, b, a in out)
     (KOK / "kitaplar" / kitap / "yukleme-bilgileri.md").write_text(md + "\n", encoding="utf-8")
@@ -53,7 +53,7 @@ def main():
     klasor = KOK / "kitaplar" / kitap
     (klasor / "ses").mkdir(exist_ok=True)
     (klasor / "gorsel").mkdir(exist_ok=True)
-    yerel = Path.home() / "Downloads" / f"{kitap}-video"
+    yerel = KOK / "dist" / f"{kitap}-video"  # git dışı; tarayıcı yüklemesi repo içinden yapılabiliyor
     yerel.mkdir(parents=True, exist_ok=True)
     ad = b["slug"]
 
