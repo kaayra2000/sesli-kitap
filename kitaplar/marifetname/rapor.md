@@ -1080,3 +1080,75 @@ Dosya: `sadelestirilmis/08-fenn-i-salis-bab-2-fasl-4.md`. Denetim betiğiyle blo
 - s. 333 *ehle ve mahalle dinilür*: "ehil ve yerinde sayılır" diye yorumlandı.
 - s. 334 *mezkûrâtı zikrden ifnâ ider*: "zikredilenler (onu) zikirden fani kıldığında" verildi; Risâletü’l-envâr’daki "zikredilen seni zikirden fani kılarsa" ibaresine dayanır görünüyor, karşılaştırılmadı. *hayât-ı sebebiyye*, *nûr-ı tevâlî* okumaları da zayıf.
 - s. 332 *mûris-i ma‘rifet-i dünyâ* baskıdaki gibi "dünyayı tanımayı kazandırır" verildi.
+
+## 09 · Fenn-i Sâlis, Bâb 2, Fasıl 5 (s. 335–347)
+
+Dosya: `aktarim/09-fenn-i-salis-bab-2-fasl-5.md`. Kaynak: PDF s. 350–362 (matbu sayfa + 15).
+
+### Kapsam ve yöntem
+
+- Aktarım s. 335’in alt yarısındaki **Fasl-ı Hâmis** başlığıyla başlar (üstteki rubâ‘iyyât 08’de kaldı), s. 347’deki **Fasl-ı Sâdis** başlığından hemen önce, “Ne haddi var bu hâkiñ” nazmının sonunda biter.
+- Takdim cümlesi (“tokuz nev‘ ile”) ve dokuz nev‘ başlığının hepsi var (#### Nev‘-i Evvel … Nev‘-i Tâsi‘): s. 335, 336, 337, 338, 339, 341, 342, 343, 345. Baskıda başlıklar satır içinde «❁ … ❁» ile verilmiş; 08’deki gibi başlık ve alt cümle ayrıldı.
+- PDF s. 351–362 görüntüleri bu iş için 220 dpi üretildi (`s09tmp` önekiyle, sonra p-351 … p-362; p-350 hazırdı). Sayfalar 1,3 kat büyütülmüş örtüşen şeritlerle (`scratchpad/marifet/s09-NNN-sK.png`), şüpheli yerler 1,6–2,2 kat ayrı kırpıntılarla (`s09-NNN-<harf>.png`) okundu; her sayfa yazıldıktan sonra görüntüyle yeniden karşılaştırıldı.
+- Sayfa imleri sayfanın başladığı yere kondu; s. 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347 imleri cümle ortasına düşer, paragraf orada bölündü. Hiçbir im manzûme içine düşmez.
+- s. 335–336’daki yirmi bir âyet baskıda (…) içinde, ✱ ile ayrılarak verilmiş; her biri ayrı «…» ve dipnotla yazıldı. Ardından gelen on bir hadîs-i kudsî de ayrı ayrı alındı (son beşi arasında baskıda ✱ yok). s. 340’ta «فاذكرونى ✱ توفيقيله اذكركم» âyeti baskıdaki gibi “tevfîkıyla” ile bölünmüş bırakıldı.
+- Türkçe hadîs dizisi (s. 336–337, “Ve buyurmuşdur ki …”) metinde olduğu gibi bırakıldı; kaynaklar tek dipnotta toplandı.
+- Manzûmeler: s. 337 (7 beyit), 338 (7), 341 (9), 342 (9), 343 (9), 347 (7) Türkçe nazımları iki sütundur; her satırda sağ sütun birinci, sol sütun ikinci mısra‘. **s. 339 (9 beyit) ve s. 345 (7 beyit) gazelleri üç sütunludur**: mısra‘lar satır satır sağ, orta, sol sütun sırasıyla okundu (birinci satırın sağ+orta sütunu matla‘, sol sütunu ikinci beytin ilk mısra‘ı …); kâfiye (-ân, -âr) bu sırayı doğruluyor. s. 336’daki iki Arapça kıt‘a iki sütundur; 08’deki biçimde («… ✱ …» bir satırda bir beyit) yazıldı. s. 339 ve 345’teki Arapça beyitler, nesir içindeki Farsça beyit/rubâ‘î/kıt‘alar (s. 340, 341, 342, 343, 344) ve Türkçe beyit (s. 345) blok alıntıya alındı; Farsça Latin harfleriyle, meal dipnotta.
+- Dizgi hataları baskıdaki gibi bırakılıp dipnotta anıldı: s. 336 hadîs-i kudsîde «اتخذ خلقى من لايغير» (muhtemelen «خليلى … لا يفتر»), s. 337/338 “lâzımdır” iki kez dizilmiş (bir kez yazıldı, dipnotta belirtildi), s. 341 «ذكر سرى ذاكر انسى» (ذكر olmalı), s. 342 fazla “ve” («وانك وبو اعراضى»), s. 343 «پس كنت» (hadîsde «فكنت»).
+- Kaynak ve atıflar ezberden verildi; hepsi kontrol edilmeli. Özellikle Türkçe hadîs dizisi dipnotu (Müslim, Tirmizî, İbn Mâce, Mâlik, Taberânî, Beyhakî, Ebû Ya‘lâ, İbn Hibbân atıfları), hadîs-i kudsîlere verilen Taberânî ve Ebû Nu‘aym atıfları, “Lâ ilâhe illallâh hısnî” (Silsiletü’z-zeheb), Tirmizî Îmân 18 (nûr serpme hadîsi), Tirmizî Emsâl 3 (Hz. Yahyâ’nın beş kelimesi). Kaynağı bulunamayanlar: hadîs-i kudsîlerin çoğu (s. 336, 346), Arapça kıt‘alar (s. 336, 339), gölge oyunu beyitleri (s. 345; şâiri belirsiz), Farsça beyit/rubâ‘î/kıt‘alar (s. 340–344), Cüneyd kıssası (s. 344), “Yâ Dâvûd tahhir lî beyten” (s. 345), iki duâ (s. 341, 347); dipnotlarına “Kaynağı tespit edilemedi.” yazıldı.
+- Aktarılmayanlar: müteakip kelime işaretleri, süslü sayfa numaraları, forma işaretleri «( ـ ٤٣ ـ معرفتنامه ـ )» (s. 337) ve «( ـ ٤٤ ـ معرفتنامه ـ )» (s. 345), görüntülerin altındaki “TBMM KÜTÜPHANESİ” damgası.
+
+### Sayılar
+
+- Kelime: yaklaşık 10.990 (dipnotlar hariç yaklaşık 8.220). Dipnot: 84. Metinde `[?]` yoktur; tahmini okuma: 40 (aşağıda).
+
+### Tahmini okumalar
+
+| Sayfa | Baskı | Seçilen okuma | Öbür ihtimaller / gerekçe |
+|---|---|---|---|
+| 336 | «انما اتخذ خلقى من لايغير عن ذكرى» | baskıdaki gibi «خَلْق۪ي … لَا يَغ۪يرُ» | «خَل۪يل۪ي … لَا يَفْتُرُ» kastedilmiş olmalı; dizgi hatası sayıldı. |
+| 336 | «من اشغله ذكرى» | «اَشْغَلَهُ» (baskıdaki gibi) | Bilinen rivâyette «شَغَلَهُ». |
+| 337 | «جميع درده دمندن دوا» (nazım 3. beyit) | "deminden" | "dimden"; vezin "deminden"i destekler. |
+| 337 | «بو خار چون وچرادن» | "hâr-ı çûn ü çerâ" | Ma‘nâ "nasıl-niçin dikeni". |
+| 338 | «لا اچوب دهن» (nazım 2. beyit) | "lâ açub dehen" | Baskı net; ma‘nâ "lâ ağzını açıp". |
+| 338 | «ذره‌لركدر» | "zerreleriñdir" | "zerrelerkdir"; ك nûn-ı sağîr sayıldı. |
+| 338 | «حدم نه بن كيمم كسل طاعتم ندر» | "kesel" | "kesil"; vezin ve ma‘nâ zayıf. |
+| 338 | «لقيمات حرامدن» | "lukaymât-ı harâmdan" | "lokmât". |
+| 338 | «انلر انى احاطه ايدوب» | "anlar anı ihâta idüb" | Harf dizimi sıkışık. |
+| 339 | «جذبهٔ ير شمديسه» | "cezbe irişmedise" | Harfler bitişik dizilmiş. |
+| 339 | «عبار امثالى» | "gubâr emsâli" | Nokta düşmüş; "‘ayyâr" ma‘nâya uymaz. |
+| 339 | «اولدك»، «ايلدك» (gazel) | "olduñ", "eyledüñ" | "oldık", "eyledik". |
+| 339 | gazelin okunma sırası | üç sütun, satır satır sağ-orta-sol | Kâfiye -ân sırayı doğruluyor. |
+| 340 | «ارى آوازى» | "arı âvâzı" | "eri"; arı vızıltısı benzetmesi bağlama uygun. |
+| 341 | «مورانه» | "mûrâna" (karıncalara) | "mûrâna"/"mürâne"; kabir bağlamı. |
+| 341 | «لحدندركه» | "Lahd nedir ki" | "lahdinden ki"; vezin ve ma‘nâ. |
+| 341 | «كهيجه» | "Gehîce" (bâzan) | "Gehî ce"; karşı satırda «كهى». |
+| 341 | «حق پرهوا» | "Hakka pür-hevâ" | "Hakk-ı pür-hevâ"; ma‘nâ "Hakk’a özlem dolu". |
+| 341 | «منتقض» | "muntakız" (sarsılmış) | "münkabız". |
+| 342 | «رهزن ديشدن نه غم» | "rehzen düşden ne gam" | "rehzen dişinden"; "düş" = baskın. |
+| 342 | «عشقى خار» | "‘aşkı hâr" (yiyen) | "‘aşkı hâr" (diken); ‘aşkı gûş/pûş/nûş dizisi "yiyen"i destekler. |
+| 342 | «كرحسن» | "gerçe sen" | "ger hüsn", "ger hasen". |
+| 342 | «مشغول ومكبول» | "mekbûl" (bağlı) | "makbûl", "meknûl". |
+| 342 | «لوح مدركه سندن» | "levh-i medrekesinden" | Harfler sıkışık. |
+| 343 | «سرومدن صغشمم» | "Sürûrumdan sığışmam" | Baskı net değil. |
+| 343 | «ياديمزسم» | "yâ dimezsem" | "yâd itmezsem". |
+| 343 | «سماخى پرده‌سى» | "simâhı perdesi" (kulak zarı) | "samâhı". |
+| 343 | «بر سجاده قدر بر كسوب» | "bir seccâde kadar yer kesüb" | «بر» "yer" okundu; "bir kesüb" anlamsız. |
+| 344 | «ياتميوب كمند ايله حوايه كتمليدر» | "yatmayub kemend ile havâya gitmelidir" | "kemend ile hevâya"; ma‘nâ kapalı, en zayıf okumalardandır. |
+| 344 | Cüneyd’in son sözü «چونكه مراد الديكز قنده ديلرسكز كيدكز … تابع اولنى بو حضوره يتديكز» | "murâd aldıñız, kande dilerseñiz gidiñiz … tâbi‘ olanı bu huzûra yetdiñiz" | Cümle sınırları belirsiz. |
+| 345 | «سرى وحدانيت فعاله» | "sırr-ı vahdâniyyet-i Fa‘‘âle" | "fi‘âle", "fa‘‘âliyyete"; en zayıf okumalardandır. |
+| 345 | «كيمكه آنكه تحصندن تخلف» | "Kimke anıñ tahassundan" | "ânike". |
+| 345 | «درکنار ایله اورته دن كندك» (gazel 4. beyit) | "Der-kenâr eyle ortadan gendiñ" | "gitdiñ"; "kendiñ(i)". |
+| 345 | «حق ذكر ايله حق ليل ونهار» | "Hakkı zikr eyle Hakkı" | Baskıda ikinci kelime «حق»; vezin "Hakkı" ister. |
+| 346 | «مغبرسن» | "mugberrsin" (tozlanmışsın) | "mu‘teberrsin"; harfler net değil. |
+| 346 | «اول واليدر» | "evvel ve elyeddir" | "evvel ve ebeddir" (ابد) kastedilmiş olabilir; en zayıf okumalardandır. |
+| 346 | «عالم فضلادن» / «عالم عدلده» | "‘âlim-i fuzalâdan" / "‘âlem-i ‘adlde" | İkisi de "‘âlem-i fazl / ‘âlem-i ‘adl" karşıtlığı olabilir (s. 347’de açıkça "‘âlem-i ‘adl", "‘âlem-i fazl" geçer). |
+| 346 | «اجيلور» | "ahlolur" | "açılur". |
+| 347 | «نجه ميت مى توحيد اولور» (nazım 4. beyit) | "Nice meyyit mi tevhîd olur" | "Nice mümkin mi"; ma‘nâ ve vezin kapalı, en zayıf okuma. |
+| 347 | «نيه بكزر نم» / «قرآنه ويراندن» | "Niye beñzer nem" / "Kur’âna vir andan" | "Neye beñzer nem"; "virdinden". |
+
+### Notlar
+
+- s. 335–336 âyetlerinin baskıdaki imlâsı Kur’ân’la uyumlu; Kehf 18:24’te baskı «يهدينى».
+- s. 339’daki “Nev‘-i Hâmis” başlığı sayfanın sonunda; s. 340 “dimişlerdir” ile açılır.
+- s. 337 sonundaki «لازمدر» s. 338’in ilk kelimesiyle tekrarlanır (müteakip kelime metne karışmış).
