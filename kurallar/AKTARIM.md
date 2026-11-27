@@ -9,6 +9,7 @@ Aktarımın amacı, metni değiştirmeden okunabilir kılmaktır. Kelime, cümle
 - Metin özetlenmez, sadeleştirilmez, günümüz Türkçesine çevrilmez. Kelimesi kelimesine aktarılır.
 - Paragraf yapısı, başlıklar ve dipnotlar korunur.
 - Sayfa başları `[s. N]` ile işaretlenir. N, matbu sayfa numarasıdır. PDF sayfasından farklıysa raporda belirtilir.
+- Sayfa başı bir manzumenin içine düşerse `[s. N]` imi iki blok alıntı arasında ayrı satıra konur, `>` satırının içine yazılmaz. Mısra ortasına düşerse im o beytin sonuna alınır ve dipnotta belirtilir.
 - Okunuşu kesin olmayan yer boş bırakılmaz: görüntü yeniden incelenir, cümlenin akışına ve bağlama en uygun okuma yazılır. Metinde `[?]` bırakılmaz. Tahmini okuma, baskıdaki yazılışı ve varsa öbür ihtimallerle birlikte bölüm raporundaki **Tahmini okumalar** listesine sayfa numarasıyla eklenir (2026-11-27, kullanıcı kararı).
 - Kaynağı bulunamayan âyet dışı söz için dipnota "Kaynağı tespit edilemedi." yazılır.
 - Aktaranın her eki (açıklama, kaynak, tamamlanan harf) `[Aktaran notu]` dipnotu ya da `[köşeli ayraç]` ile ayrılır. Yazarın sözüyle karışmaz.

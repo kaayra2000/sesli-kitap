@@ -968,3 +968,84 @@ Aktarımdaki okumalar ("07 · Tahmini okumalar") esas alındı. Sadeleştirmede 
 - ‘Attâr rubailerinin anlamı aktaranın mealine dayanır; rapordaki 4. ve 5. rubai uyarısı geçerli.
 - Zeynelâbidîn’in ölüm yılı (94 h.; milâdî 712 ya da 713) ve öbür tarihler ezberden; DİA ile karşılaştırılmalı. Dipnotlardaki hadis atıfları (dn. 13, 14, 22, 24, 37) aktarımdaki gibi doğrulanmadı.
 - s. 325 kan aldırma sahnesi Leylâ ile Mecnûn kıssasına işaret ediyor olabilir; metin ad vermediği için sadeleştirmede ad eklenmedi.
+
+## 08 · Fenn-i Sâlis, Bâb 2, Fasıl 4 (s. 325–335)
+
+Dosya: `aktarim/08-fenn-i-salis-bab-2-fasl-4.md`. Kaynak: PDF s. 340–350 (matbu sayfa + 15).
+
+### Kapsam ve yöntem
+
+- Aktarım s. 325’in alt yarısındaki **Fasl-ı Râbi‘** başlığıyla başlar (‘Attâr rubâ‘îleri 07’de kaldı), s. 335’teki **Fasl-ı Hâmis** başlığından hemen önce, ikinci rubâ‘iyyâtın sonunda biter.
+- Faslın takdim cümlesi ("on nev‘ ile") ve on nev‘ başlığının hepsi var (#### Nev‘-i Evvel … Nev‘-i ‘Âşir). Baskıda başlıklar satır içinde «❁ … ❁» ile verilmiş; 06–07’deki gibi başlık ve alt cümle ayrıldı.
+- PDF s. 341–350 görüntüleri bu iş için 220 dpi üretildi (`s08tmp` önekiyle, sonra p-341 … p-350 adıyla; p-340 hazırdı). Her sayfa 1,3 kat büyütülmüş, örtüşen yatay şeritlerle (`scratchpad/marifet/s08-NNN-sK.png`) okundu; şüpheli kelimeler 2–3 kat ayrıca kırpıldı (`s08-NNN-<harf>.png`). Her sayfa yazıldıktan sonra görüntüyle yeniden karşılaştırıldı.
+- Sayfa imleri sayfanın başladığı yere kondu. s. 329, 331, 333, 334 ve 335 imleri cümle ortasına düşer, paragraf orada bölündü. s. 328 nazmın ortasında başlar; im iki blok alıntı arasına kondu. s. 330 bir beytin ilk mısra‘ının ortasında başlar ("… merdümden / mekânıñ halvet it"); mısra‘ bölünmesin diye im beytin sonrasına kondu (dn. 37).
+- s. 325’teki on altı âyet baskıda (…) içinde, ✱ ile ayrılarak arka arkaya verilmiş; her biri ayrı «…» ve dipnotla yazıldı. Müzzemmil 8–10 baskıda ✱ olmadan bitişik olduğu için tek «…» yapıldı. Beş hadîs-i kudsî de ayrı ayrı alındı (son ikisi arasında baskıda ✱ yok).
+- Türkçe hadîs dizisi (s. 326, "Ve buyurmuşdur ki …") metinde olduğu gibi bırakıldı; kaynaklar tek dipnotta (23) toplandı.
+- Manzûmeler: s. 326 (5 beyit), s. 327–328 (15 ve 9 beyit), s. 329 (9 beyit, "-ûy itme"), s. 330 (7 beyit), s. 331 (7 beyit) Türkçe nazımları iki sütundur; her satırda sağ sütun birinci, sol sütun ikinci mısra‘ olarak okundu, kâfiye ve redifle doğrulandı. s. 328’deki "İtme yılandan firâr" nazmı musammatdır: 05’teki gibi her satır "a ✱ a", sağ+sol sütun bir bend. s. 332 ve s. 335’teki Türkçe rubâ‘iyyât (8 + 8) 05/07’deki gibi iki satır = bir rubâ‘î (sağ, sol, sağ, sol) okundu; kâfiye düzeni sırayı doğruluyor. s. 330 nazmının ilk iki satırında mısra‘ ortasında ✱ var; korundu.
+- Nesir içinde ✱ ile dizilmiş Türkçe beyitler (s. 328’de üç, s. 329/330’da bir, s. 331’de bir), Türkçe kıt‘a (s. 331), Arapça şiir (s. 326, iki sütun) ve kıt‘a (s. 331), Farsça beyit/kıt‘alar (s. 329 Sa‘dî beyti, s. 330 Sa‘dî kıt‘ası, s. 331 Mesnevî’den üç beyit) blok alıntıya alındı. Arapça şiir 02/06/07’deki biçimde («… ✱ …» bir satırda bir beyit) yazıldı. Farsça metin Latin harfleriyle, meal dipnotta.
+- s. 327’deki "✱ Sev seni seveni, sorma seni sormayanı ✱" baskıda «سوسنى سونى صورمه‌سنى صوريمه‌نى» diye karışık dizilmiş; kelimeler ma‘nâya göre sıralanarak okundu (tabloda).
+- Dizgi hataları baskıdaki gibi bırakıldı, dipnotta anıldı: s. 327 «رخساد» "ruhsâd" (ruhsâr), s. 330 "perîşân ola hîç" (olma), s. 335 "düşdüz" (düşdür); s. 326 "gâlibât-ı gâfillerdir" (‘âkil olabilir), s. 332 dördüncü ve beşinci rubâ‘îde "Hak" (vezin "Hakkı" ister).
+- Nev‘-i ‘Âşir’deki (s. 332–335) halvet şartları ve keşf mertebeleri İbnü’l-‘Arabî’nin Risâletü’l-envâr’ına dayanır görünüyor (dn. 53, 54); karşılaştırılmadı.
+- Kaynak ve atıflar ezberden verildi; hepsi kontrol edilmeli. Özellikle dn. 18 (Taberânî), 23 (hadîs listesi: Kudâ‘î, Deylemî, İbn ‘Asâkir, Beyhakî atıfları), 32 ve 43 (Sa‘dî, Gülistân’daki yerleri), 38 (Ebû Dâvûd, Melâhim 17), 39–40 (İhyâ’, Âdâbü’l-‘uzle), 48 (Mesnevî IV), 53–54 (Risâletü’l-envâr). Kaynağı bulunamayanlar: beş hadîs-i kudsî (s. 325), Arapça şiir (s. 326) ve kıt‘a (s. 331), İbrâhîm b. Edhem’in iki sözü (s. 327, 329), kâmilin cevâbı (s. 329), okçular kıssası (s. 329), ‘ârifin kapı cevâbı (s. 330), Hz. Mûsâ haberi (s. 331); dipnotlarına "Kaynağı tespit edilemedi." yazıldı.
+- Aktarılmayanlar: müteakip kelime işaretleri (s. 326 "نظم", s. 328 "شيخ", s. 330 "ايدوب", s. 332 "خلوت", s. 334 "وبولنديغى"), süslü sayfa numaraları, s. 329 altındaki forma işareti «( ـ ٤٢ ـ معرفتنامه ـ )», görüntülerin altındaki "TBMM KÜTÜPHANESİ" damgası.
+
+### Sayılar
+
+- Kelime: yaklaşık 8.840 (dipnotlar hariç yaklaşık 6.950). Dipnot: 55. Metinde `[?]` yoktur; tahmini okuma: 45 (aşağıda).
+
+### Tahmini okumalar
+
+| Sayfa | Baskı | Seçilen okuma | Öbür ihtimaller / gerekçe |
+|---|---|---|---|
+| 326 | «وابدوا …راتى» (Arapça şiir, 2. beyit) | «وَاَبْدَوْا عَثْرَت۪ي» | Kelime silik; «عَوْرَت۪ي», «زَلَّت۪ي». Vezin ve -tî kâfiyesi «عثرتي»yi destekler. |
+| 326 | «مغلوبات جاهل وغالبا غافللردر» | "mağlûbât-ı câhil ve gâlibât-ı gâfillerdir" | Bilinen rivâyete göre "gâlibât-ı ‘âkil" beklenir; «غ» noktası açık, baskıdaki gibi. |
+| 326 | «سيب غبغبى سير ايله ايوا اتمه» | "îvâ itme" | "eyvâ", "ayvâ" (ayva) da okunabilir; anlam "barınak edinme". |
+| 326 | «لدغى بى زياندر» | "ladgı bî-ziyândır" | "bî-zebân"; ma‘nâ kapalı ("sokması acısızdır"?). |
+| 326 | «فقير اللهى حقيدن عيان سيران ايدن عارف» | "Fakîr-i İlâhî Hakkıdan ‘ıyân seyrân iden ‘ârif" | "Hakkîden", "Fakîrâ Lâhî"; mahlas satırı, vezin zorlanıyor. |
+| 327 | «قنى تلخدر جست وجوينده عيشك» | "Kanı telhdir cüst ü cûyında ‘ayşıñ" | "Kanî" (nerede); ma‘nâ kapalı. |
+| 327 | «انى بيلمدكمى كه تاكه كوررسن» | "Anı bilmediñ mi ki tâ ki görürsin" | «ك» nûn-ı sağîr sayıldı. |
+| 327 | «اغيار اى رايحه‌سى قالميه‌سنده» | "Ağyâr ey râyihası kalmaya sende" | "Ağyârıñ", "ağyâr anı"; «اى» harfleri net değil. |
+| 327 | «انس حقى بولان ناس ايله ايشلمز» | "nâs ile işlemez" | "eşilmez"; anlam "insanlarla iş tutmaz". |
+| 327 | «حمقندن» | "humkından" | "hamâkatinden" de kastedilmiş olabilir. |
+| 327 | «سوسنى سونى صورمه‌سنى صوريمه‌نى» | "Sev seni seveni, sorma seni sormayanı" | Kelimeler karışık dizilmiş; ma‘nâya göre sıralandı. |
+| 327 | «پاك اولسه حدثدن» (nazım 4. beyit) | "Pâk olsa" | Baskıda «اولسو» gibi görünüyor. |
+| 327 | «ال يقدى» | "el yudı" (elini yıkadı, el çekti) | "yıkadı". |
+| 328 | «واحد قهار تمزمى» | "Vâhid ü Kahhâr yetmez mi" | İlk harf noktası seçilmiyor; "temiz mi" anlamsız. |
+| 328 | «بت كيدر هر طرف» (musammat 5. bend) | "büt gider her taraf" | "büt gibidir"; ma‘nâ kapalı. |
+| 328 | «بواش اودوستى نصير» (musammat 6. bend) | "bulmış o Dostı nasîr" | Baskıda «بولمش»ın ل/م’si düşmüş görünüyor. |
+| 328 | «اكابرن اغنام واباعر امثالى» | "agnâm ve ebâ‘ir" | "ebâ‘ir" (develer) okunuşu metinle uyumlu; harf kopuk. |
+| 329 | «سزدرسزكه» (beş kez) | "siz dirsiz ki" | Karşılığı "ben dirim ki" olduğu için; "sizdir siz ki" değil. |
+| 329 | «اكا مداومت هرمدر» | "müdâvemet heremdir" (ihtiyarlıkdır) | "harem"; ma‘nâ "devamı insanı yıpratır". |
+| 329 | «هرماده خرى بوى اتمه» (nazım 1. beyit) | "her mâde-harı bûy itme" | "her mâdeye harî"; kâfiye -ûy ve "dişi eşek" ma‘nâsı. |
+| 329 | «قلبه كل ترك بهار وچمن وجوى اتمه» | "Kalbe gel terk-i bahâr ve çemen ü cûy itme" | "çemen-cûy itme"; ma‘nâ kapalı. |
+| 329 | «نقدكى كيچكين ايدوب» | "geçgin" (geçer akçe) | "geçkin". |
+| 329 | «كوز كوزلر نامنى غفلتله قمر روى اتمه» | "Göz gözler nâmını …" | "Göz güzeller nâmını", "Gör güzeller"; en zayıf okumalardandır. |
+| 329 | «رقص وهيا هوى اتمه» | "raks u heyâhûy itme" | "hây u hûy", "hayâ-hûy". |
+| 329 | «هر بخبره طوى اتمه» | "tûy itme" | 07’de "tayy" okunmuşdu; burada kâfiye -ûy gereği "tûy". |
+| 330 | «اهل زماننده احبارن تحذير ايدوب» | "ehl-i zamânından ahbârın tahzîr idüb" | "ahyârın", "ihtirâzın"; ma‘nâ kapalı. |
+| 330 | «پريشان اوله هيچ» (nazım 1. beyit) | "perîşân ola hîç" (baskıdaki gibi) | Redif ve vezin "olma hîç" ister. |
+| 331 | «سكوت ايله معامله قيلوب محزون اولور» | "mahzûn olur" (baskıdaki gibi) | Karşıdaki "memnûn olur" ile uyumlu; "olmaz" da beklenebilir. |
+| 331 | «ماسوا ايله قلمسون وقلبلنن طشره» | "mâsivâ ile kalmasun ve kalbinden taşra" | «قلبلنن» harfleri fazla; "kalbleriñden". |
+| 331 | «قهرنك بردمن چوسال ايلر» (Türkçe kıt‘a) | "Kahrınıñ bir demin çü sâl eyler" | "pây-mâl", "gûşmâl"; en zayıf okumalardandır. |
+| 331 | «جيفدر لوث حدثلرله» (nazım 2. beyit) | "Hayfdır" (yazık ki) | Baskıda nokta «ج» gibi; "Cîfedir". |
+| 331 | «يانوب كاى كل اولدم» | "küllî kül oldum" | "gâhî kül"; 07’deki «كاى»ya benzer belirsizlik. |
+| 331 | «دم عشق ايله اول سوده اولم» | "ol sûde olam" | "fersûde", "âsûde"; ma‘nâ kapalı. |
+| 331 | «بن وسن ديميوب هوده اولم» | "hûde olam" | "Hû-de", "bîhûde". |
+| 332 | «عزلتك بر خاصه‌سى دخى … مورث معرفت دنيادر» | "mûris-i ma‘rifet-i dünyâdır" (baskıdaki gibi) | "ma‘rifet-i Mevlâ" kastedilmiş olabilir. |
+| 332 | «صحبتلرى غفلتيله اولدر قاسى» (rubâ‘î 1) | "oldur kâsî" | "olur kâsî". |
+| 333 | «اهله ومحله دينلور» | "ehle ve mahalle dinilür" | "ehline ve mahalline"; ma‘nâ kapalı. |
+| 333 | «غير حيوان اولان غداى دسمدن» | "gıdâ-yı desemden" | "desem" (yağlı); ma‘nâ kapalı. |
+| 333 | «حيطان ظلمان» | "hîtân-ı zulmân" | "zulmânî". |
+| 334 | «انلردن صونى ايچسون» | "suyı içsün" | "sonı". |
+| 334 | «حيات سبيه‌نك سريانى» | "hayât-ı sebebiyyeniñ" | "seyyibe", "sâriye"; harfler «سبيه». |
+| 334 | «نور طواليله تركيب كلامك» | "nûr-ı tevâlî ile" | "tavâli‘ ile". |
+| 335 | «حق وار اولى‌در بو ناس» (rubâ‘î 1) | "Hak var evlâdır" | "Hakk vâr-ı evvelîdir"; en zayıf okumalardandır. |
+| 335 | «جفايه كندك دوشدر» (son rubâ‘î) | "gitdiñ" | Karşı satırda «كتدك»; "kandıñ" da olabilir. |
+| 335 | «تسليم ايله سير قيل بهشته خوش بيت» | "hoş yit" (yetiş) | "hoş bit", "beyt"; kâfiye -it. |
+
+### Notlar
+
+- s. 325: âyetlerin baskıdaki imlâsı Kur’ân’la uyumlu; Teğâbün 64:14’te baskı «ان من» (âyette «اِنَّ مِنْ») aynı.
+- s. 326: "Ve buyurmuşdur ki" bir yerde «وبيورمشلدركه» dizilmiş; "buyurmuşdur" yazıldı.
+- s. 331: Mesnevî beytinde baskı «كيمياى نافع», nüshalarda «كيميا و نافع».
+- s. 333: «انا الله» baskıda «انى» olmadan; âyetlerde «اِنّ۪ٓي اَنَا اللّٰهُ».
