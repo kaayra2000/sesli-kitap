@@ -120,3 +120,6 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-27 | Mârifetnâme 08 | Metinde kişi adlarında "b." kısaltması yerine "bin" yazılır (seslendirmede nokta cümleyi böler). Dipnotlarda "b." kalabilir. |
 | 2026-11-27 | Mârifetnâme 08 | Sözlükte tasavvufî karşılığı olan kelime gündelik anlamda geçerse çevrilir: "vahdet ve kesret" → "yalnızlık ve kalabalık". |
 | 2026-11-27 | Mârifetnâme 08 | Yalnız vezin, redif ya da bağlamın tek okumaya zorladığı yer dizgi hatası sayılıp düzeltilir. "… kastedilmiş olabilir" türü okumalar içerik şüphesidir, değiştirilmez. |
+| 2026-11-27 | Mârifetnâme 09 | Zikir cümlesi olarak geçen kısa Arapça (lâ ilâhe illallah, Allah, Hû) metinde Latin harfle yazılır, ilk geçişte anlamı ayraç içinde verilir. |
+| 2026-11-27 | Mârifetnâme 09 | "Zikir, zâkir ve Mezkûr" → "zikir, zikreden ve Zikredilen"; Allah kastedildiğinde büyük harf. |
+| 2026-11-27 | Mârifetnâme 09 | Aktarımdaki zayıf okuma dinleyiciye anlamsız geliyorsa ve bağlam bir okumayı açıkça istiyorsa sadeleştirmede o okuma yazılır, dipnotta belirtilir (ör. "evvel ve elyeddir" → "ilk ve ebedîdir"). Kullanıcı kararı: metin akışa göre doldurulur. |

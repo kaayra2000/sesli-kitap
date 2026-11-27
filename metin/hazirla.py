@@ -109,6 +109,15 @@ def _bloklar(md: str):
         if m := re.fullmatch(r"\[s\. ([^\]]+)\]", blok):  # sayfa imi: [s. 12], [s. IV], [s. kapak]
             sayfa = int(m.group(1)) if m.group(1).isdigit() else sayfa
             continue
+        satirlar = blok.split("\n")  # paragrafa boş satırsız bitişik sayfa imi okunmaz, sayfayı ilerletir
+        if len(satirlar) > 1 and not blok.startswith(">"):
+            for x in [y for y in satirlar if re.fullmatch(r"\s*\[s\. [^\]]+\]\s*", y)]:
+                if (s := re.search(r"\d+", x)):
+                    sayfa = int(s.group(0))
+                satirlar.remove(x)
+            blok = "\n".join(satirlar).strip()
+            if not blok:
+                continue
         if blok.startswith("|") or re.match(r"^\[\^[^\]]+\]:", blok):
             continue
         if blok.startswith("#"):

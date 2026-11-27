@@ -1152,3 +1152,40 @@ Dosya: `aktarim/09-fenn-i-salis-bab-2-fasl-5.md`. Kaynak: PDF s. 350–362 (matb
 - s. 335–336 âyetlerinin baskıdaki imlâsı Kur’ân’la uyumlu; Kehf 18:24’te baskı «يهدينى».
 - s. 339’daki “Nev‘-i Hâmis” başlığı sayfanın sonunda; s. 340 “dimişlerdir” ile açılır.
 - s. 337 sonundaki «لازمدر» s. 338’in ilk kelimesiyle tekrarlanır (müteakip kelime metne karışmış).
+
+## 09 · Sadeleştirme
+
+Dosya: `sadelestirilmis/09-fenn-i-salis-bab-2-fasl-5.md`. Denetim betiğiyle blok eşleşmesi: aktarım 84 blok; s. 339 imi aktarımda paragrafın son satırına bitişik olduğu için betik onu ayırarak 85 sayar (37 nesir, 18 nazım, 13 sayfa imi, 10 başlık, 7 etiket). Sadeleştirme 103 blok (85 eşlenen + 18 italik anlam paragrafı). Dipnot 84/84, ✱ 84/84, `[?]` 0, Arapça ibareler blok blok aynı. `hazirla.py` 850 parça üretti; okunuşta Arap harfi, `s. N`, dipnot imi sızıntısı yok. Kelime: yaklaşık 10.130 (dipnotlar hariç 8.710; nazım ve italik anlam paragrafları da hariç nesir yaklaşık 6.710; okunuş yaklaşık 8.660).
+
+### Uygulanan kararlar
+
+- Arapça ibareler ve nazım blokları aktarımdan betikle birebir aktarıldı. Âyet, kudsî hadis ve dua mealleri metin içine alındı; dipnotlarda yalnız kaynak ve baskı notu kaldı. Arapça ve Farsça şiir mealleri (dn. 34, 35, 44, 47, 49, 57, 62, 67, 69) italik paragrafa taşındı. Dn. 43’teki «اَنَا وَلَا غَيْر۪ي» meali metne alındı.
+- Baskıda ayraç içindeki âyet parçaları (s. 336, «وَلَذِكْرُ اللّٰهِ اَكْبَرُ», «فَاذْكُرُون۪ٓي اَذْكُرْكُمْ») Karar 03 gereği ayraçsız yazıldı; hadis içinde oldukları için mealleri ‘…’ ile verildi.
+- Dipnotu olmayan kısa Arapça sözlere (s. 340 «اَذْكُرْكُمْ», s. 341 «لَٓا اِلٰهَ اِلَّا اللّٰهُ», «اَللّٰهُ», «هُوَ») Karar 05 gereği hemen ardından “…” meal yazıldı; «هُوَ» için “O” (Hû).
+- Türkçe hadis dizisi (s. 336–337) "Yine buyurmuştur: “…”" kalıbıyla verildi (Karar 07). s. 337 imini aşan hadis tırnaksız, "Yine buyurmuştur ki …" ile dolaylı anlatıldı (Karar 02).
+- Dizgi hataları (Karar 04/07/08), aktarımın mevcut dipnotu `[Sadeleştiren notu]` olarak yeniden yazılarak: s. 341 *zikr-i sırrî zâkir-i ünsî* → "sır zikri üns zikri olur" (dn. 52; sıralama ve ardından gelen *zikr-i ünsî dahi* tek okumaya zorluyor); s. 342 fazla *ve* (*ve anıñ ve bu i‘râzı*) → "onun bu yüz çevirmesi" (dn. 55).
+- Düzeltilmeyenler (içerik şüphesi ya da tek okumaya zorlamayan yer): s. 336 «خلقى … لايغير» meal baskıdaki lafza göre "Yarattıklarımdan ancak beni anmaktan dönmeyeni (kendime) edinirim" verildi, «خليلى … لا يفتر» ihtimali dn. 29’da; s. 343 «پس كنت» aktarımda zaten «فَكُنْتُ» harekelenmiş, dn. 58’de not kaldı; s. 337/338 iki kez dizilmiş *lâzımdır* aktarımdaki gibi bir kez, dn. 38’de not; s. 345–346 *‘âlim-i fuzalâdan* "faziletlilerin âlimlerinden" (dn. 78’de *‘âlem-i fazl* ihtimali); s. 346 *evvel ve elyeddir* aktarım okumasıyla "evveldir (ilktir) ve elyeddir" (dn. 77’de *ebed* ihtimali).
+- Cinas (Karar 06/07): "kalp ile kalbi Çeviren (Mukallib)" s. 339; nazımlarda *lâ / illâ* (s. 338), *Hakkı / Hakk’ı* (s. 345 "ey Hakkı, gece gündüz Hakk’ı zikret"), *kû / hû* (s. 343 kıta) duyulur biçimde verildi.
+- Terimler: *zikr-i müdâm* "sürekli zikir", *zâkir* "zikreden", *Mezkûr* "Zikredilen" (ilk geçişte ayraçla), *kelime-i tayyibe* "güzel söz", *kelime-i tevhid* "kelime-i tevhit" (Cüneyd kıssasında ilk geçişte "lâ ilâhe illallah sözü"), *istiğrak* tür tanıtımında açıklandı. Sözlükte açıklanmış terimler (heymân "şaşkın sevgi", nevme "uyuklama", vird, riyazet, Mele-i A‘lâ, Mukallibü’l-kulûb, esfel-i sâfilîn, ulûm-ı ledünniyye, müsemma) yeniden açıklanmadı. Sözlüğe 44 satır eklendi.
+- s. 344–345 *vahdet ve kesret ve halvet ve sohbet müsâvî olur* 08’deki gibi gündelik anlamda "yalnızlık ile kalabalık" (Karar 08); hemen önceki *kesretde / vahdetde* ile s. 345 beytindeki *kesret / vahdet* tasavvufî anlamda "çokluk / birlik".
+- Cüneyd-i Bağdâdî’ye 07’de tarih verildiği için tarih verilmedi. Hz. Yahyâ ve Hz. Dâvûd peygamber oldukları için tarihsiz.
+- Öznesi düşmüş yerlerde özne ayraçla tamamlandı (Karar 05): s. 341 "Sonra (zikreden) o huzurdan …", s. 343 "Öyleyse (zikreden) dil zikriyle …" (baskıda *Pes zikr lisâniyle*), s. 339 eksik yüklem "… saf meskenler (görür)".
+
+### Önerilen Karar günlüğü maddeleri
+
+1. Aktarımda sayfa imi paragrafın son satırına boş satırsız bitişikse (`… olub\n[s. 339]`), `hazirla.py` imi paragrafın parçası sayıp "s. üç yüz otuz dokuz" diye okur. Sadeleştirmede im her zaman ayrı blok olur; aktarımdaki bitişik im de ayrılmalıdır (09 aktarımı s. 338/339, satır 99–100; aktarım dosyasına dokunulmadı).
+2. Zikir cümlesi olarak geçen kısa Arapça (lâ ilâhe illallah, Allah, Hû) metin içinde de Latin harfle yazılır ("lâ ilâhe illallah", "Hû"); ilk geçişte anlamı ayraçla verilir, sonra tekrarlanmaz. Dinleyici zikrin kendisini duymalıdır.
+3. *zâkir* / *Mezkûr* çifti "zikreden / Zikredilen" diye verilir; Allah’ı kastettiğinde büyük harfle. Üçlü *zikir, zâkir ve Mezkûr* "zikir, zikreden ve Zikredilen" olur.
+4. Rapordaki tahmini okuma "en zayıf" diye işaretliyse ve aklın yatkın olduğu düzeltme vezin, redif ya da bağlamla zorunlu değilse (s. 346 *elyed / ebed*) sadeleştirmede aktarım okuması kelime olarak korunur, anlamı dipnotta tartışılır.
+
+### Zor yerler (gözden geçirilmeli)
+
+- s. 339 *bu envâr-ı etvârı birer birer kaldırısa … nûr-ı kadîm-i ilâhîden mahcûb olur*: *kaldırısa* "kaldırsa da" diye verildi (ardından gelen "kuşatıcı nur Muhammedî nurdur" cümlesine göre); "kaldırmazsa" okunursa anlam değişir.
+- s. 339 *mesâkin-i sâfî ve ‘unsur-ı âbîsi üzerine* cümlesinde yüklem eksik; "(görür)" ile tamamlandı.
+- s. 344 *kemend ile havâya gitmelidir*: "kement ile havaya gitmelidir" diye kelimesi kelimesine bırakıldı; anlam kapalı (dn. 65).
+- s. 344 Cüneyd’in son sözü *tâbi‘ olanı bu huzûra yetdiñiz*: hemen ardındaki yazar açıklamasına (*böyle irşâd idiñiz*) dayanarak "Size uyanları da bu huzura eriştirin" diye emir kipiyle verildi.
+- s. 346 *evvel ve elyeddir*: dinleyici için anlamsız kalıyor; *ebed* okuması kabul edilirse "ilk ve ebedîdir" yazılabilir (Karar gerekli).
+- s. 346 *‘âlem-i kabza*: açıklanmadan "kabza âlemi" bırakıldı (anlamı metinden kesin çıkmıyor).
+- s. 347 nazım 2. ve 4. beyit (*Niye beñzer nem*, *Nice meyyit mi tevhîd olur … Hudâvend ‘atâ söyler*) anlam paragrafında yorumla verildi: "Rızkını Allah verirken halka “efendi bağışladı” diyen o himmeti düşük kimse ölü gibi nasıl tevhit eder?"
+- s. 342 nazım 7. beyit (*‘Akl bürhânı gibi gerçe sen ‘aşk olsa ‘ıyân*) ve s. 345 gazel 3–4. beyit (*Kıl anı bir bahâne ile bîrûn*, *Sen saña hoş sarıl*) anlamı kapalı; kelimesi kelimesine verildi.
+- s. 340 *berk-ı hâtıf* "göz kamaştıran şimşek", s. 343 *nûr-ı fâ’iz* "taşan nur", s. 346 *mugberrsin* "tozlanmışsın" okumalara dayanıyor.
