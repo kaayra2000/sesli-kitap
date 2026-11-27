@@ -782,3 +782,56 @@ Kullanıcı kararı (2026-11-27) gereği 03 (aktarım ve sadeleştirme) ve 06 (a
 | 05 | 311 | «آزاوبی» | âz uyı | tablo |
 
 Sadeleştirme için öneri (karar kullanıcıda): s. 302 «تجرید و تجردره» için "tecerrüdde" (ر/د karışması, tek nokta farkı) "tecerrüdle"den (iki harf farkı) daha yakın görünüyor ve anlamca da uygun ("gönül evi tecrîd ve tecerrüdde"). Seçilirse aktarımda ve sadeleştirmede manzum satır birlikte değişmeli.
+
+## 06 · Sadeleştirme
+
+Dosya: `sadelestirilmis/06-fenn-i-salis-bab-2-fasl-2.md`. Sözlük: `sozluk.tsv` (19 yeni terim). 05’ten sonra yazıldı; 05’te ve öncesinde açıklanan terimler (Kayyum, Hayy, murakabe, müşahede, mücahede, berzah, melekût, ebdal, mukarrep, sâlik, muhakkik, mebde ve mead, akl-ı evvel, akl-ı küll …) yeniden açıklanmadı.
+
+### Eşleşme
+
+- Aktarım 79 blok (7 sayfa imi, 11 başlık, 30 düz yazı, 17 manzum blok, 14 etiket). Sadeleştirme 96 blok: aynı 79 blok aynı sırada, artı 17 italik anlam paragrafı (her manzum bloğa bir; Arapça beyitler, Bilâl’e nispet edilen beş beyit ve Farsça rubai dahil). Bu fasılda blockquote içinde sayfa imi yok.
+- 16 Arapça «…» ibaresi ve 17 manzum blok aktarımdan betikle kopyalandı; 38 dipnot imi, 34 ✱ korundu (`denetle.py` ile denetlendi: tür, sıra, dipnot, ✱, Arapça birebir).
+- s. 314, 315, 316, 317, 318 imleri cümle ortasında; sadeleştirmede de cümle aynı yerden bölündü (s. 315: "Gaflet / uykusu kınanmıştır").
+- Âyet ve hadis dipnotlarında yalnız kaynak kaldı, mealler metne “…” ile alındı. Arap harfi olan dipnotlarda Türkçe okumalar italik, anlamlar ayraç içinde; hiçbir dipnotta Arap harfi ile “…” birlikte yok.
+- `metin/hazirla.py` ile 523 parça; okunuşta Arap harfi, sayfa imi, dipnot imi ya da [?] sızıntısı yok. Metinde ve dipnotlarda [?] yok.
+- Kelime: 6.162 (dipnotlar hariç 5.192). Aktarım: 5.238 (dipnotlar hariç 3.845).
+
+### Uygulanan kararlar ve yeni durumlar
+
+- **Seher / sehar:** Metin iki kelimeyi aynı yazar: "seher vakti" (سحر, tan öncesi) korundu; sehar (سهر, uyanıklık; sözlükte *cû‘ / seher / samt*) "uykusuzluk" ya da cümleye göre "gece uyanık kalmak", "gözleri uykusuz bırakmak" diye verildi. Onuncu türün başlığı ("Seheriñ aksâmı") ve "seher-i ‘ayn / seher-i kalb" de sehar sayıldı: "gözün uykusuzluğu / kalbin uykusuzluğu".
+- "buyurmuşdur ki sabâh açıldığı vakt uyumak …" (dn. 18) Karar günlüğüne göre doğrudan söz oldu. Nüzul hadislerinin girişindeki "buyurmuşdur ki … dir ki: «…»" dolaylı anlatım olarak kaldı, çünkü tırnak içine Allah’ın sözü olan Arapça ibare giriyor.
+- Kıssalarda (câriye, müsafir kâmil, sultan) konuşmalar “…” ile doğrudan söz yapıldı; hiçbiri sayfa imini aşmıyor.
+- Câriye kıssasındaki "mevlâ" cinası (efendi / Allah) "Efendim … bir efendin … Efendim … Mevla" diye korundu.
+- Yeni kişi: Bilâl-i Habeşî (ö. 20/641). Tarih ezberden; DİA ile karşılaştırılmalı (ölüm yılı 17–21 arası rivayet edilir).
+- Sure adları: Furkân, Nebe (hemze kaldırıldı), İnsân, Müzzemmil önceki dosyalardaki biçimle.
+
+### Tahmini okumalar (sadeleştirme)
+
+Aktarımdaki okumalar ("03, 06 · Tahmini okumalar") esas alındı. Sadeleştirmede anlamı kararlaştırılan zayıf yerler:
+
+| Sayfa | Aktarım | Sadeleştirmedeki karşılık |
+|---|---|---|
+| 313 | "gice ‘ârifleriñ başı dartar" | "gece ariflerin başı çekilir" (dartmak = çekmek; anlam kapalı) |
+| 313 | "‘Urûc-ı rûhî zarûra gele" | "ruhani yükseliş kaçınılmaz olarak gelsin" |
+| 313 | "Anı şarâb-ı tahûra gele" | "onu temiz şaraba (dönüştürmeye) gelsin" |
+| 313 | "Cihânı ‘aşk ile şûra gele" | "(âşık) cihanı aşkla coşturmaya gelsin" (özne tamamlandı) |
+| 314 | "Ol vakt a‘mâ gibi uyumak müşkildir" | "O vakit kör gibi uyumak olacak iş değildir" |
+| 315 | "Dek siyehdir göze şeb zulmeti" | "gecenin karanlığı göze ancak siyahtır" |
+| 315 | "Bağladı şeb desti cevher-kârdan / Hakk ider subha dek ihyâ-yı şeb" | "Gece eli cevher işinden bağladı; Hak sabaha kadar geceyi ihya eder" (anlam kapalı; "Hakk" mahlas olabilir) |
+| 316 | "beden-i insân bir tahte-bend misâlidir" | "insanın bedeni bir tahta bukağı gibidir" (tahte-bend: tahtaya bağlama, bukağı; "tahta perde, bölme" anlamı da var) |
+| 317 | "gâv-ı bâr-girân olmışsın" | "ağır yük taşıtan bir öküz olmuşsun" |
+| 317 | "nevm-i ‘avâm idbâr ve garâmdır" | "talihsizlik ve beladır" |
+| 318 | "Ko hâb-ı gafleti şeb kalbe seyr it" | "kalbe doğru seyret" |
+
+### Karar günlüğü adayları
+
+1. **Seher / sehar ayrımı:** "seher" tan vakti anlamında (seher vakti, vakt-i seher) korunur; uyanıklık (sehar) anlamında "uykusuzluk" ya da cümleye göre "gece uyanık kalmak" yazılır. Sözlükteki *cû‘ / seher / samt* satırı bu ayrımı gösterecek biçimde okunur.
+2. **Manzume anlamında öznesiz redif:** Rediften dolayı öznesi belirsiz kalan mısrada (s. 313 "… gele ba‘de nısfi’l-leyl") özne anlam paragrafında ayraç içinde tamamlanır: "(âşık)". 05’teki "eksik özneli cümle" kararının manzumeye uygulanması.
+3. **Cinaslı kelime:** Anlamı cinasa dayanan söz (câriye kıssasında "mevlâ", nazımda "lâ … illâllâh") iki anlamı da duyulacak biçimde verilir; gerekirse ayraç içinde asıl kelime yazılır: "yok (lâ)", "illallah (ancak Allah)".
+
+### Açık sorunlar
+
+- Manzume anlam paragrafları sadeleştirenin yorumudur. En belirsizleri yukarıdaki tablodaki beyitler ve s. 315 "-yı şeb" nazmının ilk beyti ("bu gavgâ-yı şeb" "gecenin bu kavgası" diye alındı; "gece gürültüsü" de olabilir).
+- s. 316 "tahte-bend" karşılığı kontrol edilmeli.
+- s. 313 Bilâl-i Habeşî tarihi ve dn. 29 (Beyhakî / Taberânî) atfı ezberden; doğrulanmalı.
+- Nev‘-i Sâlis başlığındaki "nevm-i kirâm" "kerim kişilerin uykusu" diye verildi; başlık metni avamın gafletiyle karşıtlık kurduğu için uygun görüldü.

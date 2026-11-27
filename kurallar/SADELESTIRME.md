@@ -111,3 +111,6 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-27 | Mârifetnâme 05 | Dipnotu olmayan kısa Arapça sözün meali ibarenin hemen ardına “…” içinde yazılır. |
 | 2026-11-27 | Mârifetnâme 05 | "✱ Rubâ‘iyyât ✱" → "✱ Rubailer ✱", "(Rubâ‘î)" → "(Rubai)". |
 | 2026-11-27 | Mârifetnâme 05 | Baskıda öznesi düşmüş cümlede özne ayraç içinde tamamlanır. "Sâlik" ve "muhakkik" terim olarak korunur, "mübtedi" "yola yeni başlayan" diye çevrilir. |
+| 2026-11-27 | Mârifetnâme 06 | Tan vakti anlamındaki "seher" korunur. Uyanıklık anlamındaki "sehar" (سهر) "uykusuzluk" ya da "gece uyanık kalmak" diye yazılır. |
+| 2026-11-27 | Mârifetnâme 06 | Manzumede öznesi belirsiz redifte özne anlam paragrafında ayraç içinde tamamlanır: "(âşık)". |
+| 2026-11-27 | Mârifetnâme 06 | Cinaslı sözde iki anlam da duyulacak biçimde verilir, gerekirse asıl kelime ayraçta kalır: "yok (lâ) … ancak Allah (illallah)". |
