@@ -26,6 +26,13 @@ from pathlib import Path
 
 import numpy as np
 import torch
+try:  # VoxCPM torch.compile: değişken uzunluklu girdilerde yeniden derleme sınırı aşılmasın
+    import torch._dynamo
+    torch._dynamo.config.cache_size_limit = 256
+    if hasattr(torch._dynamo.config, "recompile_limit"):
+        torch._dynamo.config.recompile_limit = 256
+except Exception:  # noqa: BLE001
+    pass
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -225,9 +232,16 @@ class VoxSes:
                        virgul if virgul > 0 and onceki[-1:] in ",;" else self.ayar["bolum_ara"])
                 parcalar.append(np.zeros(int(ara * self.sr), np.float32))
             ek = {"prompt_wav_path": ref, "prompt_text": ref_metin} if mod == "tam" else {}
-            x = vox.generate(text=f"({stil}){bolum}" if stil else bolum, **ek,
-                                  reference_wav_path=ref, cfg_value=cfg, inference_timesteps=adim,
-                                  **({"denoise": True} if self.denoise else {}))
+            arg = dict(text=f"({stil}){bolum}" if stil else bolum, **ek, reference_wav_path=ref, cfg_value=cfg,
+                       inference_timesteps=adim, **({"denoise": True} if self.denoise else {}))
+            try:
+                x = vox.generate(**arg)
+            except Exception as e:  # noqa: BLE001  torch derleyicisi yeniden derleme sınırı (FailOnRecompileLimitHit)
+                if "Recompile" not in type(e).__name__ and "recompile" not in str(e).lower():
+                    raise
+                log(f"derleyici sınırı, sıfırlanıp yeniden deneniyor: {type(e).__name__}")
+                torch._dynamo.reset()
+                x = vox.generate(**arg)
             parcalar.append(kirp(np.asarray(x, dtype=np.float32), self.sr))
         return np.concatenate(parcalar)
 
