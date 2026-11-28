@@ -78,3 +78,15 @@ Durağan kapak ile ses birleştirilir (`video/uret.py`):
 - Ses: AAC 192k, 48 kHz.
 - Video ses uzunluğunda kesilir (`-t`).
 - Tam kitapta bölümler arasında 3 sn sessizlik bulunur.
+
+## Videoyu yeniden üretmek
+
+YouTube'daki video kaybolursa repodan aynısı üretilir:
+
+```
+python3 video/bolum.py marifetname 05
+```
+
+Bu komut `kitaplar/<kitap>/ses/<slug>.opus` ve `.srt` dosyalarını, `kitap.json`'daki başlık bilgisini ve kapağı kullanır. Çıktı `dist/<kitap>-video/` klasörüne yazılır: mp4, küçük resim ve altyazı. Başlık ve açıklama `kitaplar/<kitap>/yukleme-bilgileri.md` dosyasındadır.
+
+Parça parça seslendirilip henüz birleştirilmemiş bölümlerin parçaları `ses/parca/ornekNNN.opus` ve `.srt` olarak durur. NNN, bölüm numarası ile parça sırasıdır. Bunlar `video/parcalari_birlestir.py` ile birleştirilir.

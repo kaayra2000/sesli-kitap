@@ -2,6 +2,8 @@
 yerel klasöre, başlık/açıklama kitabın yukleme-bilgileri.md dosyasına.
 
 Kullanım: python3 video/bolum.py <kitap> <no> <ornek.mp3> <altyazi.srt>
+          python3 video/bolum.py <kitap> <no>     # yalnız repodaki ses/<slug>.opus ve .srt'den videoyu yeniden üretir
+                                                  # (YouTube'daki video kaybolursa)
 Bölüm bilgisi kitaplar/<kitap>/kitap.json içindeki "video" alanından okunur:
   "video": {"kapak": {"yazar", "ad", "alt"}, "baslik": "Mârifetnâme", "yazarin": "Erzurumlu İbrâhim Hakkı'nın", "yazar_cumle": "...",
             "etiket": "#SesliKitap ...", "bolumler": {"01": {"slug", "ust", "sira", "ad"}}}
@@ -47,19 +49,23 @@ def aciklamalar(kitap):
 
 
 def main():
-    kitap, no, mp3, srt = sys.argv[1], sys.argv[2], Path(sys.argv[3]), Path(sys.argv[4])
+    kitap, no = sys.argv[1], sys.argv[2]
     v = ayar(kitap)["video"]
     b = v["bolumler"][no]
     klasor = KOK / "kitaplar" / kitap
+    opus, srt_repo = klasor / "ses" / f"{b['slug']}.opus", klasor / "ses" / f"{b['slug']}.srt"
+    mp3, srt = (Path(sys.argv[3]), Path(sys.argv[4])) if len(sys.argv) > 4 else (opus, srt_repo)
     (klasor / "ses").mkdir(exist_ok=True)
     (klasor / "gorsel").mkdir(exist_ok=True)
     yerel = KOK / "dist" / f"{kitap}-video"  # git dışı; tarayıcı yüklemesi repo içinden yapılabiliyor
     yerel.mkdir(parents=True, exist_ok=True)
     ad = b["slug"]
 
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(mp3), "-ac", "1", "-c:a", "libopus", "-b:a", "32k",
-                    "-application", "audio", str(klasor / "ses" / f"{ad}.opus")], check=True)
-    shutil.copy(srt, klasor / "ses" / f"{ad}.srt")
+    if mp3.resolve() != opus.resolve():  # yeni ses: repoya Opus olarak girer
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(mp3), "-ac", "1", "-c:a", "libopus", "-b:a", "32k",
+                        "-application", "audio", str(opus)], check=True)
+    if srt.resolve() != srt_repo.resolve():
+        shutil.copy(srt, srt_repo)
     shutil.copy(srt, yerel / f"{ad}.srt")
     resim = klasor / "gorsel" / f"{ad}-kapak.jpg"
     kapak(b["ust"], b["ad"], resim, v["kapak"])
