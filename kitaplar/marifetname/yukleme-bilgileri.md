@@ -8,6 +8,8 @@ Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 1. Bâb
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
 
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
+
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 
 Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
@@ -34,6 +36,8 @@ Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
 Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 1. Bâb 2. Fasıl: Dünyanın Hakikati ve Dünya Sevgisini Bırakmak.
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
+
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
 
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 
@@ -62,6 +66,8 @@ Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 1. Bâb
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
 
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
+
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 
 Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
@@ -88,6 +94,8 @@ Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
 Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 1. Bâb 4. Fasıl: Kalbin Hakikati.
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
+
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
 
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 
@@ -116,6 +124,8 @@ Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 2. Bâb
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
 
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
+
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 
 Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
@@ -142,6 +152,8 @@ Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
 Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 2. Bâb 2. Fasıl: Az Uyumak ve Gece Kalkmak.
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
+
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
 
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 
@@ -170,6 +182,8 @@ Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 2. Bâb
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
 
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
+
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 
 Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
@@ -197,6 +211,8 @@ Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 2. Bâb
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
 
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
+
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 
 Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
@@ -223,6 +239,8 @@ Hazırlanan bölümler (oynatma listesinde kitap sırasıyla):
 Erzurumlu İbrâhim Hakkı'nın «Mârifetnâme» adlı eserinden 3. Fen 2. Bâb 5. Fasıl: Daimî Zikir.
 
 Erzurumlu İbrâhim Hakkı (ö. 1194/1780), Tillolu İsmâil Fakîrullah'ın müridi bir Osmanlı mutasavvıfı ve âlimidir. Mârifetnâme'de kâinat, insan ve gönül bilgisini bir arada anlatır. Bu seslendirme, eserin 1330 (1912) İstanbul baskısından aktarılıp sadeleştirilen metne dayanır.
+
+📖 Kaynak ve hazırlık: Metin, eserin 1330 (1912) yılında İstanbul'da Ahmed Kâmil Efendi Matbaası'nda Osmanlı harfleriyle basılan nüshasından hazırlanmıştır. Taranmış nüsha TBMM Kütüphanesi Açık Erişim'dedir: https://acikerisim.tbmm.gov.tr/items/37ceaca9-2499-4d5b-a0df-be6a757513c9 . Sayfalar yapay zekâ yardımıyla doğrudan bu baskıdan Latin harflerine aktarılmış, ardından anlam korunarak bugünkü Türkçeye sadeleştirilmiştir. Hiçbir modern yayının aktarımı veya sadeleştirmesi kullanılmamıştır. Okunması belirsiz kelimeler bağlama göre okunmuş ve listelenmiştir. Aktarım, sadeleştirilmiş metin, sözlük ve belirsiz okumalar listesi: https://github.com/kaayra2000/sesli-kitap/tree/main/kitaplar/marifetname
 
 ⚠️ Bu seslendirme yapay zekâ ile üretilmiştir. Ses, bir metinden konuşma sentezi modeliyle (VoxCPM2) oluşturulmuştur, gerçek bir kişinin okuması değildir. Osmanlı Türkçesi ve Arapça kökenli bazı kelimelerin okunuşunda hatalar olabilir. Türkçe altyazı mevcuttur.
 

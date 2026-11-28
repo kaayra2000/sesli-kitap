@@ -41,7 +41,8 @@ def aciklamalar(kitap):
             baslik = f"{v['baslik']} | {b['ad']} | Sesli Kitap"
         assert len(baslik) <= 100, baslik
         acik = (f"{v['yazarin']} «{v['baslik']}» adlı eserinden {b['sira']}: {b['ad']}.\n\n"
-                f"{v['yazar_cumle']}\n\n⚠️ {YZ}\n\nHazırlanan bölümler (oynatma listesinde kitap sırasıyla):\n{liste}\n\n{v['etiket']}")
+                f"{v['yazar_cumle']}\n\n" + (f"📖 Kaynak ve hazırlık: {v['kaynak_cumle']}\n\n" if v.get("kaynak_cumle") else "")
+                + f"⚠️ {YZ}\n\nHazırlanan bölümler (oynatma listesinde kitap sırasıyla):\n{liste}\n\n{v['etiket']}")
         out.append((b["slug"], baslik, acik))
     md = "\n\n---\n\n".join(f"## {d}\n\n**Başlık:** {b}\n\n**Açıklama:**\n\n{a}" for d, b, a in out)
     (KOK / "kitaplar" / kitap / "yukleme-bilgileri.md").write_text(md + "\n", encoding="utf-8")
