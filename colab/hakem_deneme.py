@@ -127,13 +127,21 @@ def qwen():
     except ImportError:
         pip("git+https://github.com/huggingface/transformers", "qwen-omni-utils", "accelerate")
     import transformers
+    ek = {}
+    bellek = torch.cuda.get_device_properties(0).total_memory / 2**30 if torch.cuda.is_available() else 0
+    if os.environ.get("QWEN_4BIT") == "1" or bellek < 30:  # T4/L4'e sığsın: 4-bit (bitsandbytes NF4)
+        pip("bitsandbytes")
+        ek["quantization_config"] = transformers.BitsAndBytesConfig(
+            load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=torch.float16)
+        print(f"4-bit yükleniyor (GPU {bellek:.0f} GB)", flush=True)
     if "Qwen3" in ad:
         model = transformers.Qwen3OmniMoeForConditionalGeneration.from_pretrained(ad, dtype=torch.bfloat16,
-                                                                                    device_map="auto")
+                                                                                    device_map="auto", **ek)
         proc = transformers.Qwen3OmniMoeProcessor.from_pretrained(ad)
     else:
         model = transformers.Qwen2_5OmniForConditionalGeneration.from_pretrained(ad, dtype=torch.bfloat16,
-                                                                                   device_map="auto")
+                                                                                   device_map="auto",
+                                                                                   enable_audio_output=False, **ek)
         proc = transformers.Qwen2_5OmniProcessor.from_pretrained(ad)
     thinker = model.thinker
     rakam = [proc.tokenizer.encode(str(i), add_special_tokens=False)[0] for i in range(1, 6)]
