@@ -123,3 +123,4 @@ Her bölüm şu döngüyle işlenir:
 | 2026-11-27 | Mârifetnâme 09 | Zikir cümlesi olarak geçen kısa Arapça (lâ ilâhe illallah, Allah, Hû) metinde Latin harfle yazılır, ilk geçişte anlamı ayraç içinde verilir. |
 | 2026-11-27 | Mârifetnâme 09 | "Zikir, zâkir ve Mezkûr" → "zikir, zikreden ve Zikredilen"; Allah kastedildiğinde büyük harf. |
 | 2026-11-27 | Mârifetnâme 09 | Aktarımdaki zayıf okuma dinleyiciye anlamsız geliyorsa ve bağlam bir okumayı açıkça istiyorsa sadeleştirmede o okuma yazılır, dipnotta belirtilir (ör. "evvel ve elyeddir" → "ilk ve ebedîdir"). Kullanıcı kararı: metin akışa göre doldurulur. |
+| 2026-11-28 | Mârifetnâme (genel) | Şiirlerin aslı (Osmanlıca, Farsça, Arapça vezinli mısralar) seslendirmede okunmaya devam eder, ardından Türkçe anlamı okunur. Kulak testinde aslıyla okunan şiirler nesirden düşük puan aldı (2,82 / 3,66) ve yanlış uzatmaların hepsi şiirdeydi; kullanıcı kararı: kusur kalsın, asıl okunsun. |
