@@ -18,7 +18,7 @@
  "seslendirme": {
   "aday": 4,
   "erken_dur": 1,
-  "mos_sinir": 3.3,
+  "pq_sinir": 0,
   "uzama_sinir": 0,
   "sicaklik": 0.5,
   "referans": "canli",

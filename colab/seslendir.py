@@ -319,6 +319,13 @@ class Hakem:
             except Exception as e:  # noqa: BLE001
                 log(f"CTC {ad} yüklenemedi: {e}")
         self.utmos = torch.jit.load(hf_hub_download("balacoon/utmos", "utmos.jit"), map_location=DEV).eval()
+        self.pq = None
+        try:  # Audiobox Aesthetics PQ: 2026-11-28 kulak testinde kullanıcı puanıyla uyum 0.41 (UTMOS 0.16)
+            from audiobox_aesthetics.infer import initialize_predictor
+            self.pq = initialize_predictor()
+            log("doğallık hakemi: Audiobox Aesthetics PQ")
+        except Exception as e:  # noqa: BLE001
+            log(f"Audiobox yüklenemedi, UTMOS kullanılır: {e}")
 
     @torch.inference_mode()
     def olc(self, x: np.ndarray, sr: int, hedef: str) -> dict:
@@ -343,6 +350,12 @@ class Hakem:
             sonuc["ctc"] = hata(hedef, ctc_metin)
             sonuc["ctc_esit"] = hata(hedef, ctc_metin, esit=True)
         sonuc["mos"] = round(self.utmos(torch.from_numpy(x16).unsqueeze(0).to(DEV)).item(), 3)
+        if self.pq is not None:
+            try:
+                r = self.pq.forward([{"path": torch.from_numpy(x16).unsqueeze(0), "sample_rate": 16000}])[0]
+                sonuc["pq"] = round(float(r["PQ"]), 3)
+            except Exception as e:  # noqa: BLE001
+                log(f"PQ ölçülemedi: {e}")
         sonuc["_kelimeler"] = kelimeler
         try:  # tamlama içi yersiz durak (zümre-i ‖ makbûlân): kullanıcı geri bildirimi, aday seçiminde cezalı
             y = yersiz_aralar(x, sr, [(w.word, w.start, w.end) for w in kelimeler], hedef)
@@ -411,7 +424,7 @@ def yanlis(p: dict, ayar: dict) -> bool:
 def temiz(p: dict, ayar: dict) -> bool:
     return (p["whisper"]["cer"] <= 0.01 and p["kuyruk"] <= ayar["kuyruk_sinir"]
             and p["bosluk"] <= ayar["sessizlik_sinir"] and not p.get("yersiz_ara")
-            and p.get("mos", 5) >= ayar.get("mos_sinir", 0) and not p.get("yanlis_uzama"))
+            and p.get("pq", p.get("mos", 10)) >= ayar.get("pq_sinir", 0) and not p.get("yanlis_uzama"))
 
 
 def anahtar(p: dict, ayar: dict) -> tuple:
@@ -422,7 +435,7 @@ def anahtar(p: dict, ayar: dict) -> tuple:
     ctc = p.get("ctc_esit", p.get("ctc", {})).get("cer", 0)
     hata_top = p["whisper"]["cer"] + 0.5 * ctc
     return (yanlis(p, ayar), p["kuyruk"] > ayar["kuyruk_sinir"], p["bosluk"] > ayar["sessizlik_sinir"],
-            int(p["whisper"]["cer"] * 100), len(p.get("yersiz_ara", [])) + len(p.get("yanlis_uzama", [])), p.get("tonlama_sapma", 0), round(hata_top, 4), -p["mos"])
+            int(p["whisper"]["cer"] * 100), len(p.get("yersiz_ara", [])) + len(p.get("yanlis_uzama", [])), p.get("tonlama_sapma", 0), round(hata_top, 4), -p.get("pq", p["mos"]))
 
 
 def tonlama_ekle(p: dict, x: np.ndarray, sr: int, metin: str, prof: dict | None) -> None:

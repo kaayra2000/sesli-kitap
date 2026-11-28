@@ -57,11 +57,11 @@ def utmos_v2():
     for k, f in zip(sesler, dosyalar):
         tmp = f"/tmp/{k}.wav"
         sf.write(tmp, sesler[k], 16000)
-        puan[k]["utmos_v2"] = float(m.predict(input_path=tmp))
+        puan[k]["utmos_v2"] = float(m.predict(input_path=tmp, device=DEV))
 
 
 def dnsmos():
-    pip("speechmos")
+    pip("speechmos", "onnxruntime")
     from speechmos import dnsmos as d
     for k, x in sesler.items():
         r = d.run(x / max(1e-6, np.abs(x).max()), sr=16000)
@@ -119,6 +119,8 @@ def squim():
 
 for ad, fn in [("UTMOS v1 (şimdiki)", utmos_v1), ("UTMOSv2", utmos_v2), ("DNSMOS", dnsmos), ("NISQA", nisqa),
                ("Distill-MOS", distill_mos), ("Audiobox Aesthetics", audiobox), ("SCOREQ", scoreq), ("SQUIM", squim)]:
+    if len(sys.argv) > 3 and fn.__name__ not in sys.argv[3].split(","):  # yalnız seçilen araçlar
+        continue
     calistir(ad, fn)
 
 sutun = sorted({s for p in puan.values() for s in p})

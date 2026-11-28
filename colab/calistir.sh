@@ -46,6 +46,8 @@ if [[ "$MOTOR" == "voxcpm" ]]; then
     uv pip install -q -p $VX/bin/python torch torchaudio --index-url https://download.pytorch.org/whl/cu126 2>&1 | tail -2
     uv pip install -q -p $VX/bin/python voxcpm faster-whisper transformers librosa soundfile huggingface_hub modelscope praat-parselmouth 2>&1 | tail -2; }
   $VX/bin/python -c "import parselmouth" 2>/dev/null || uv pip install -q -p $VX/bin/python praat-parselmouth 2>&1 | tail -1
+  # Doğallık hakemi: Meta Audiobox Aesthetics PQ (kulak testinde kullanıcıyla en uyumlu ölçüm). torch'a dokunmasın diye --no-deps
+  $VX/bin/python -c "import audiobox_aesthetics" 2>/dev/null || { uv pip install -q -p $VX/bin/python --no-deps audiobox_aesthetics; uv pip install -q -p $VX/bin/python submitit "rich>=13.9.4" "safetensors>=0.5.3" tqdm; } 2>&1 | tail -1
   VXLD=$($VX/bin/python -c 'import os,glob,nvidia;print(":".join(sorted({os.path.dirname(p) for p in glob.glob(os.path.join(list(nvidia.__path__)[0],"*","lib","*.so*"))})))')
   PY_BETIK=seslendir.py
   MOD=$(python3 -c 'import json;print(json.load(open("is.json"))["mod"])')
