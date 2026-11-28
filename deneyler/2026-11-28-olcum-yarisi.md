@@ -22,7 +22,10 @@ Amaç: aday seçiminde kullanılan otomatik ölçümlerin hangisinin kullanıcı
 
 | Ölçüm | Uyum | Not |
 |---|---|---|
-| Whisper doğruluğu + Audiobox PQ | 0,53 | Seçilen birleşim |
+| Whisper + Audiobox PQ + Qwen2.5-Omni 7B doğallık | 0,68 | En iyi birleşim |
+| Qwen2.5-Omni 7B (4-bit) doğallık sorusu | 0,62 (nesirde 0,46) | En iyi tek hakem; kör. Tek soru, cevap rakamlarının olasılık ağırlıklı ortalaması |
+| Qwen2.5-Omni 7B tonlama sorusu | 0,50 (nesirde 0,22) | |
+| Whisper doğruluğu + Audiobox PQ | 0,53 | Şu an aday seçiminde |
 | Claude'un spektrogram incelemesi | 0,53 (nesirde 0,40) | Kör değil: Claude kullanıcı puanlarını daha önce görmüştü |
 | Whisper doğruluğu | 0,44 | |
 | Audiobox Aesthetics PQ | 0,41 | En iyi tek doğallık aracı |
@@ -60,5 +63,6 @@ Düşük puanlı cümlelerde (08, 11, 12, 38) perde eğrisi baştan sona ~100 Hz
 
 - `2026-11-28-olcum-araclari.csv`: her klip için bütün ölçüm araçlarının puanı
 - `2026-11-28-kucuk-hakemler.csv`: fonem ve durak hakemleri
+- `2026-11-28-qwen7b.csv`: Qwen2.5-Omni 7B'nin beş soruya olasılık ağırlıklı puanları (uzatma, durak ve okuma sorularında uyum zayıf: 0,10, 0,28, 0,26)
 - `2026-11-28-claude-spektrogram-puanlari.json`: Claude'un spektrogramdan verdiği puanlar
 - Betikler: `colab/olcum_yarisi.py`, `colab/hakem_deneme.py`, `colab/spektrogram.py`, `video/olcum_karsilastir.py`
