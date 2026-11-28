@@ -411,7 +411,7 @@ def yanlis(p: dict, ayar: dict) -> bool:
 def temiz(p: dict, ayar: dict) -> bool:
     return (p["whisper"]["cer"] <= 0.01 and p["kuyruk"] <= ayar["kuyruk_sinir"]
             and p["bosluk"] <= ayar["sessizlik_sinir"] and not p.get("yersiz_ara")
-            and p.get("mos", 5) >= ayar.get("mos_sinir", 0))
+            and p.get("mos", 5) >= ayar.get("mos_sinir", 0) and not p.get("yanlis_uzama"))
 
 
 def anahtar(p: dict, ayar: dict) -> tuple:
@@ -422,7 +422,7 @@ def anahtar(p: dict, ayar: dict) -> tuple:
     ctc = p.get("ctc_esit", p.get("ctc", {})).get("cer", 0)
     hata_top = p["whisper"]["cer"] + 0.5 * ctc
     return (yanlis(p, ayar), p["kuyruk"] > ayar["kuyruk_sinir"], p["bosluk"] > ayar["sessizlik_sinir"],
-            int(p["whisper"]["cer"] * 100), len(p.get("yersiz_ara", [])), p.get("tonlama_sapma", 0), round(hata_top, 4), -p["mos"])
+            int(p["whisper"]["cer"] * 100), len(p.get("yersiz_ara", [])) + len(p.get("yanlis_uzama", [])), p.get("tonlama_sapma", 0), round(hata_top, 4), -p["mos"])
 
 
 def tonlama_ekle(p: dict, x: np.ndarray, sr: int, metin: str, prof: dict | None) -> None:
@@ -506,6 +506,36 @@ def duraklama_ekle(x: np.ndarray, sr: int, kelimeler: list, virgul: float, nokta
         kay = sum(ek for i, ek in ekler if i / sr <= k.start)
         yeni.append(K(k.word, k.start + kay, k.end + kay))
     return np.concatenate(parcalar).astype(np.float32), yeni, yerler
+
+
+def yanlis_uzama(x: np.ndarray, sr: int, parca: dict, ayar: dict, hakem) -> list:
+    """Kısa olması gereken ünlünün aşırı uzatıldığı yerler: [konum, kelime, kısa ünlü ortancasına oranı].
+
+    Kullanıcı geri bildirimi (2026-11-28): model yanlış heceleri uzatıyor. Uzun sayılanlar: şapkalı okunuş (uzun),
+    kitabın aktarımında şapkalı yazılan kelimeler (uzun_izin). Duraktan (,.;:!?) önceki kelime doğal uzadığı için sayılmaz."""
+    sinir = ayar.get("uzama_sinir", 0)
+    if not sinir or hakem.ctc is None:
+        return []
+    metin = parca["okunus"]
+    uzun = set(parca.get("uzun", [])) | set(parca.get("uzun_izin", []))
+    sure = uzatma.harf_sureleri(hakem.emisyon(resample(x, sr, 16000)), metin, hakem.tok.get_vocab())
+    tablo = uzatma.unlu_tablosu(sure, metin, uzun)
+    kisa = [t["sure"] for t in tablo if not t["uzun"] and not t["obek_sonu"]]
+    if len(kisa) < 5:
+        return []
+    m = float(np.median(kisa))
+    sonuc = []
+    for t in tablo:
+        i = t["i"]
+        if t["uzun"] or t["obek_sonu"] or metin[i] in "âîûÂÎÛ" or t["sure"] <= sinir * m:
+            continue
+        b = metin.find(" ", i)
+        b = len(metin) if b < 0 else b
+        kelime = metin[metin.rfind(" ", 0, i) + 1:b]
+        if kelime[-1:] in ",.;:!?»”\")":
+            continue
+        sonuc.append([i, kelime, round(t["sure"] / m, 2)])
+    return sonuc
 
 
 def uzun_unlu(x, p, parca, ayar, ses, hakem):
@@ -614,6 +644,10 @@ def main() -> None:
             t2 = time.time()
             p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
             tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
+            try:
+                p["yanlis_uzama"] = yanlis_uzama(x, ses.sr, parca, ayar, hakem)
+            except Exception as e:  # noqa: BLE001
+                log(f"uzama ölçülemedi: {e}")
             t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
             adaylar.append((p, tohum, x))
             # Erken durma: kelimeler doğru, ses artığı ve takılma yok. Tonlama seçimi belirler, durmayı engellemez
@@ -631,6 +665,10 @@ def main() -> None:
                 t2 = time.time()
                 p = hakem.olc(x, ses.sr, parca.get("hedef", parca["okunus"]))
                 tonlama_ekle(p, x, ses.sr, parca["okunus"], prof)
+                try:
+                    p["yanlis_uzama"] = yanlis_uzama(x, ses.sr, parca, ayar, hakem)
+                except Exception as e:  # noqa: BLE001
+                    log(f"uzama ölçülemedi: {e}")
                 t_ses, t_hakem = t_ses + t2 - t1, t_hakem + time.time() - t2
                 adaylar.append((p, tohum, x))
                 if temiz(p, ayar):

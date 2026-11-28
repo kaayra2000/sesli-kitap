@@ -39,6 +39,37 @@ def kitap_yukle(ad: str) -> tuple[Path, dict]:
 KELIME_DK = 125
 
 
+SAPKA = str.maketrans("âîûÂÎÛ", "aiuAIU")
+
+
+def uzun_sozlugu(kitap_kok: Path) -> dict[str, set[int]]:
+    """Kitabın Markdown dosyalarındaki şapkalı kelimeler: şapkasız küçük harf yazımı -> uzun ünlü konumları."""
+    import re
+    sozluk: dict[str, set[int]] = {}
+    for f in kitap_kok.glob("*/*.md"):
+        for w in re.findall(r"[\wâîûÂÎÛ’‘'-]+", f.read_text(encoding="utf-8")):
+            if not re.search("[âîûÂÎÛ]", w):
+                continue
+            w = re.sub(r"[’‘'-]", "", w).lower()
+            if len(w) >= 3:
+                sozluk.setdefault(w.translate(SAPKA), set()).update(i for i, c in enumerate(w) if c in "âîû")
+    return sozluk
+
+
+def uzun_izin(okunus_metni: str, sozluk: dict[str, set[int]]) -> list[int]:
+    """Okunuştaki her kelimenin en uzun sözlük önekiyle eşleşen uzun ünlü konumları (okunuş indeksleri)."""
+    import re
+    izin = []
+    for m in re.finditer(r"\w+", okunus_metni):
+        w = m.group().lower().translate(SAPKA)
+        izin += [m.start() + i for i, c in enumerate(m.group()) if c in "âîûÂÎÛ"]
+        for n in range(len(w), 2, -1):
+            if w[:n] in sozluk:
+                izin += [m.start() + i for i in sozluk[w[:n]] if i < len(w)]
+                break
+    return sorted(set(izin))
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("mod", choices=["test", "ornek", "deney", "insan", "yaris", "metin", "ayar", "referans", "gercek", "aday", "tasarim"])
@@ -161,6 +192,11 @@ def main() -> None:
             x["mfa_kelimeler"], x["mfa_uzun"] = mfa_kelimeler(x["metin"], sozluk, ayarlar["okunus"])
         except AssertionError:
             pass
+    # Yanlış uzatma ölçümünde uzun sayılacak ünlüler: kitabın aktarımında şapkalı yazılan kelimeler
+    # (sadeleştirilmiş metinde şapkası düşen vefâ, rızâ, bâkî, gâfil gibi kelimeler doğru olarak uzun okunur)
+    sozluk_uzun = uzun_sozlugu(KITAP.parent.parent)
+    for x in parcalar:
+        x["uzun_izin"] = uzun_izin(x["okunus"], sozluk_uzun)
     is_ = {"konu": konu, "mod": a.mod, "ayar": ayarlar["seslendirme"], "parcalar": parcalar}
     hedef = KOK / "dist" / f"is-{konu}.zip"
     hedef.parent.mkdir(exist_ok=True)
