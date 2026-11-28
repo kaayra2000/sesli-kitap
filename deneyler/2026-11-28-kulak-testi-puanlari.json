@@ -1,0 +1,362 @@
+[
+ {
+  "no": 1,
+  "kaynak": "ornek203",
+  "id": "b0119-c00",
+  "metin": "✱ Nefse gelince, ondan yüz çevirip sakınmak için şu sana yeter: Onun himmetinin alçaklığını, hâlinin bayağılığını, isteğini ve niyetinin kötülüğünü görürsün.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 2,
+  "kaynak": "ornek201",
+  "id": "b0042-c02",
+  "metin": "“Dünyayı sevmek ve istemek her günahın ve hatanın başıdır.”[^42] Yine buyurmuştur: “Bir mümine dünyadan fazladan bir şey ulaşırsa Allah katındaki dereceleri mutlaka eksilir, olduğu gibi kalmaz.”[^43] Yine buyurmuştur:",
+  "kullanici_puan": 5,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": true
+ },
+ {
+  "no": 3,
+  "kaynak": "ornek202",
+  "id": "b0096-c00",
+  "metin": "Kim ki varlıkdan fakat bu ‘âlemi bilmiş hemân, ‘Aşk bahrinden aña ancak görünmiş bir kenâr. Tumturâk-ı nüh felek şehr-i ‘azîm-i ‘aşk ile, Hayme-i sahrâdır ol bu pây-ı taht-ı şehriyâr.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 4,
+  "kaynak": "ornek202",
+  "id": "b0064-c00",
+  "metin": "Ey kanâ‘at tüvângerem gerdân, Ki verâ-yı tû hîç ni‘met nîst[^78]",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 5,
+  "kaynak": "ornek203",
+  "id": "b0109-c03",
+  "metin": "Cihândır mezbele sîm ve zerdir seng-i istincâ, Aña dest-i tama‘ urmaz o kim pâk oldı dâmânı. Tama‘ çün âteş-i külhan diler zebl-i zer ü sîmi, Anı cem‘ eyleyen ehl-i tama‘ hôr oldı külhânî.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": true,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 6,
+  "kaynak": "ornek202",
+  "id": "b0076-c07",
+  "metin": "Çünkü bütün insanlar ibadet için yaratılmıştır. İbadetin sırrı ise mâsivadan boşalmış kalb-i selim (temiz, sağlam kalp) ile Mabud’un celalini ve cemalini anmak ve düşünmek olarak bilinmiştir.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 7,
+  "kaynak": "ornek202",
+  "id": "b0069-c04",
+  "metin": "Çeşm-i cânet rûşen-i Hak-bîn şeved, Bî-zalâm-ı şirk nûr-ı dîn şeved[^79]",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 8,
+  "kaynak": "ornek202",
+  "id": "b0061-c00",
+  "metin": "Bu dünyâ bir kühen kârbân-sarâdır, Ki bunda nice mühimmât kondı göçdi.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": true,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 9,
+  "kaynak": "ornek202",
+  "id": "b0062-c00",
+  "metin": "Bu dünya eski bir kervansaraydır; burada nice yükler konup göçtü.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 10,
+  "kaynak": "ornek203",
+  "id": "b0116-c04",
+  "metin": "İnsanlarla hâlin bu olduğuna göre, bu kadar az kalan ve hiç vefası olmayan insanlarla ömrünün vakitlerini harcaman ve sonunda dönüp gideceğin o Mevla’ya yönelip ibadet etmemen büyük bir aldanış değil midir?",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 11,
+  "kaynak": "ornek203",
+  "id": "b0109-c07",
+  "metin": "Şüyû‘-ı küll-i sırr câveze’l-isneyn zâhirdir, İki lebden nihân tut el-amân sırr-ı dil ü cânı. Peşîmân olmış râz-ı derûn ketm iden hergiz, Velî ifşâ-yı râzıñ çoğ olur hakkı peşîmânı[^102]",
+  "kullanici_puan": 2,
+  "kullanici_uzatma": true,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 12,
+  "kaynak": "ornek203",
+  "id": "b0106-c00",
+  "metin": "Ber segân bigüzâr în murdâr-râ, Hurd beşken şîşe-i pindâr-râ[^101]",
+  "kullanici_puan": 2,
+  "kullanici_uzatma": true,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 13,
+  "kaynak": "ornek301",
+  "id": "b0013-c08",
+  "metin": "Bir şeye “Ol!” deyince onu olduran benden başkasını bilir misin? Beni ara, bulursun. Adı benim adım gibi olanı bilir misin?",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 14,
+  "kaynak": "ornek203",
+  "id": "b0121-c07",
+  "metin": "Bârî-i Hak bir ânda niçün virmez âdeme, Ger vehm olunsa buhl aña ol fikrdir hatâ. Leyl ü nehâr cem‘ olamaz bir zamânda kim, Cem‘-i zalâm ve nûr değil mümkin ve revâ.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": true,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 15,
+  "kaynak": "ornek301",
+  "id": "b0029-c00",
+  "metin": "Hâb-ı gafletle bağlamış halkıñ basîret çeşmini, Yohsa ol hûrşîd dâ’im dilde toğmış bî-sehâb.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 16,
+  "kaynak": "ornek201",
+  "id": "b0017-c00",
+  "metin": "Dünya ancak geçip giden bir gölge, ya da bir gece kalıp göçen bir misafir, ya da uyuyanın gördüğü bir rüya gibidir; uyku gidince o da yok olur.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 17,
+  "kaynak": "ornek203",
+  "id": "b0130-c00",
+  "metin": "Ayrıldığın her şeyin bir karşılığı vardır; Allah’tan ayrılırsan O’nun karşılığı yoktur.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 18,
+  "kaynak": "ornek301",
+  "id": "b0018-c10",
+  "metin": "“Şefkatli bir anne çocuğunu yetiştirirken ne kadar merhametliyse, âlemlerin Rabbi kullarına ondan da daha merhametlidir.”[^60] Yine buyurmuştur: “Kalbinde gayb hazinesi bulunmayan hiçbir mümin yoktur.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 19,
+  "kaynak": "ornek301",
+  "id": "b0011-c09",
+  "metin": "sen ise benden gafil olarak benden kaçıyorsun.” ✱ “Ey Âdemoğlu! Kardeşlerin günahlarının kokusunu duysalardı seninle oturmazlardı. Ben ise ayıpları örten ve cezalandırmakta acele etmeyenim.” ✱ “Ey Âdemoğlu!",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 20,
+  "kaynak": "ornek202",
+  "id": "b0065-c00",
+  "metin": "Ey kanaat, beni zengin kıl; çünkü senin ötende hiçbir nimet yoktur.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 21,
+  "kaynak": "ornek203",
+  "id": "b0119-c03",
+  "metin": "Ondan ancak ibadette güç bulacak kadarını alırsın; bulanıklıklarla karışık nimetlerinden ve süslerinden yüz çevirip uzak durursun. Ona rağbet etmekten tamamen kurtulup kalb-i selim ile Hakk’ın huzuruna gidersin.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 22,
+  "kaynak": "ornek203",
+  "id": "b0116-c03",
+  "metin": "Orada seninle hiç kimse kalmaz, yalnız Hak Teâlâ kalır. O, “Nerede olursanız olun, O sizinle beraberdir.” buyurmuştur; hiç ayrılmaz.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 23,
+  "kaynak": "ornek201",
+  "id": "b0004-c10",
+  "metin": "âhiretten ise tamamen gafildirler.” ✱ “Rabbinize yönelin ve O’na teslim olun.” ✱ “Kullarından tövbeyi kabul eden,",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 24,
+  "kaynak": "ornek301",
+  "id": "b0011-c15",
+  "metin": "Sen benim olursan ben de senin olurum; ne kadar benim olursan o kadar senin olurum.”",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 25,
+  "kaynak": "ornek201",
+  "id": "b0023-c00",
+  "metin": "Nefs dünya için ağlar; oysa selametin dünyadakini terk etmekte olduğunu bilir. Ölümden sonra kişinin oturacağı yurt, ancak ölümden önce kendi yaptığı yurttur.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 26,
+  "kaynak": "ornek202",
+  "id": "b0097-c02",
+  "metin": "Bu dünya bela yurdudur, o dünya sevinç yurdu; bu dünya ne kötü bir yoldaştır, o dünya ne güzel bir duraktır. Dünyanın zahmeti kadardır sana âhiretin nimeti; gurbetin cefası kadar yurt ve diyar lezzet verir.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 27,
+  "kaynak": "ornek301",
+  "id": "b0011-c12",
+  "metin": "Söylediğin her söz, baktığın her bakış, işittiğin her ses, kokladığın her koku, tuttuğun her şey, attığın her adım, düşündüğün her düşünce, hüzünle çektiğin her acı ve sevinçle tattığın her lezzette ben seninle beraberim.",
+  "kullanici_puan": 5,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 28,
+  "kaynak": "ornek201",
+  "id": "b0044-c04",
+  "metin": "Mecâz ân cüz’îst ü ‘ayn-ı dünyâst, Hakîkat ân külest ü mahz-ı ‘ukbâst. Kemâl-i dâniş înest ey birâder, Ez-în pül tîz-tend ü zûd begzer[^75]",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": true,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 29,
+  "kaynak": "ornek202",
+  "id": "b0073-c14",
+  "metin": "“Seni Mevla’ndan alıkoyan her şey senin dünyandır.” (Mesnevi)",
+  "kullanici_puan": 5,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 30,
+  "kaynak": "ornek201",
+  "id": "b0004-c04",
+  "metin": "ve eğlenceden başka bir şey değildir. Âhiret yurdu ise sakınanlar için elbette daha hayırlıdır. Hâlâ akıl erdirmeyecek misiniz?” ✱ “Bilin ki mallarınız ve çocuklarınız bir imtihandır. Büyük mükâfat ise Allah katındadır.” ✱ “De ki:",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 31,
+  "kaynak": "ornek202",
+  "id": "b0054-c00",
+  "metin": "Dünya işinde cahil, din işinde akıllı ol. Bedeninle dünyada ol, kalbinle âhireti bul. Kesin inancı sağlam olan kişi bakiyi bırakıp faniyi almaz; bakiyi bulan da faniyle kalmaz. (Kıta)",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 32,
+  "kaynak": "ornek202",
+  "id": "b0053-c00",
+  "metin": "Dünyayı gönülden ayırırsan, Allah’ı huzur ve zevkle anarsın.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 33,
+  "kaynak": "ornek201",
+  "id": "b0014-c00",
+  "metin": "Fakr (yoksulluk; kendini Allah’a muhtaç bilme) cevherdir, ondan başkası arazdır. Fakr şifadır, ondan başkası hastalıktır. Âlemin hepsi aldatma ve gururdur; âlemden maksat ve sır ise fakrdır.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": true
+ },
+ {
+  "no": 34,
+  "kaynak": "ornek202",
+  "id": "b0100-c04",
+  "metin": "Bunun üzerine ticaretten yüz çevirip ibadete yöneldim.”[^97] ✱ Hz. Ömer radıyallahu teâlâ anh de şöyle buyurmuştur: “Eğer ibadetle ticaretin benden başkası için bir arada olması mümkün olsaydı, benim için bir araya gelirdi.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 35,
+  "kaynak": "ornek203",
+  "id": "b0125-c04",
+  "metin": "Velilerin makamlarından öyle yüksek bir dereceye ermişti ki baktığında Arş’ı görebilecek güce kavuşmuştu. Onun tek kusuru, dünyaya ve dünya ehline meyledip Hz. Mûsâ aleyhisselama isyan ederek ona karşı çıkması olmuştur.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 36,
+  "kaynak": "ornek301",
+  "id": "b0018-c07",
+  "metin": "Kalbin sana fetva verdiyse, yani o işe karşı içinde bir istek ve yöneliş olduysa o işi yap. Çünkü öyle bir hayır vardır ki kalp onunla huzur bulur; şer ise kalbin karşısında tereddütte kaldığı şeydir.",
+  "kullanici_puan": 4,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 37,
+  "kaynak": "ornek201",
+  "id": "b0038-c00",
+  "metin": "Dünya azdan da azdır; âşığı da zelilden de zelildir. Büyüsüyle bir topluluğu sağır ve kör eder; onlar da yol gösterensiz, şaşkın kalırlar.",
+  "kullanici_puan": 2,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 38,
+  "kaynak": "ornek301",
+  "id": "b0030-c00",
+  "metin": "Gaflet uykusu halkın basiret gözünü bağlamıştır; yoksa o güneş gönülde daima bulutsuz doğmuştur.",
+  "kullanici_puan": 2,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 39,
+  "kaynak": "ornek202",
+  "id": "b0073-c06",
+  "metin": "Peşin lezzeti çok olup ölümden sonra hiçbir meyvesi olmayan şeyler ise günahlar ve kötülükler gibi şeyler ile ihtiyaçtan fazla olan mubahlara benzeyen şeylerdir. Bu ikinci kısım, lanetlenmiş ve kötülenmiş olan sırf dünyadır.",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ },
+ {
+  "no": 40,
+  "kaynak": "ornek301",
+  "id": "b0036-c02",
+  "metin": "Terennümiñ ki anıñçün cihân olur pür-zevk, Ki nefh eder nefahâtıñ Hudâ-yı Hayy u Vedûd. Cihânı tutdı çü enfâs-ı tayyibiñ ey dil, Bu bahr-ı zevka talub Hakkı oldı hoş nâ-bûd[^66]",
+  "kullanici_puan": 3,
+  "kullanici_uzatma": false,
+  "kullanici_okuma": false
+ }
+]
