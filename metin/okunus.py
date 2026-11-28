@@ -180,6 +180,7 @@ def okunus(metin: str, ciftler: list[tuple[str, str]] | None = None, ayar: dict 
     t = t.replace("*", "").replace("✱", ",").replace("…", ",")
     t = re.sub(r"\s*[—–]\s*", ", ", t)
     t = t.replace("[", "").replace("]", "")
+    t = t.replace("ñ", "n").replace("Ñ", "N")             # sağır kef (saña, göñül): TTS'te İspanyolca "ny" okunmasın
     # Kısaltmalar: (ö. 13/634) -> ölümü on üç, altı yüz otuz dört; Hz. -> Hazreti
     t = re.sub(r"(?<![\wÇĞİÖŞÜçğıöşü])ö\.\s*(?=\d)", "ölümü ", t)
     t = re.sub(r"(?<![\wÇĞİÖŞÜçğıöşü])Hz\.\s*", "Hazreti ", t)
