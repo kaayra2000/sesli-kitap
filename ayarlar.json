@@ -18,6 +18,7 @@
  "seslendirme": {
   "aday": 4,
   "erken_dur": 1,
+  "mos_sinir": 3.3,
   "sicaklik": 0.5,
   "referans": "canli",
   "hakem": "large-v3",

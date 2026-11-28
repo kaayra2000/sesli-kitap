@@ -410,7 +410,8 @@ def yanlis(p: dict, ayar: dict) -> bool:
 
 def temiz(p: dict, ayar: dict) -> bool:
     return (p["whisper"]["cer"] <= 0.01 and p["kuyruk"] <= ayar["kuyruk_sinir"]
-            and p["bosluk"] <= ayar["sessizlik_sinir"] and not p.get("yersiz_ara"))
+            and p["bosluk"] <= ayar["sessizlik_sinir"] and not p.get("yersiz_ara")
+            and p.get("mos", 5) >= ayar.get("mos_sinir", 0))
 
 
 def anahtar(p: dict, ayar: dict) -> tuple:
